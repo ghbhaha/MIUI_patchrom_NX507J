@@ -1,0 +1,1 @@
+MIUI patchrom for Nubia Z7 mini
