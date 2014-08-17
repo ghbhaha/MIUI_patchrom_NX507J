@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <com.ztemt.widget.NubiaAnalogClock android:id="@id/analog_clock" android:layout_width="wrap_content" android:layout_height="0.0dip" android:layout_weight="8.0" android:nubia_dial="@drawable/nubia_clock_dial" android:nubia_hand_hour="@drawable/nubia_clock_hand_hour" android:nubia_hand_minute="@drawable/nubia_clock_hand_minute" android:nubia_ampm_text_size="26.0px" android:nubia_ampm_text_color="@color/white" />
+        <TextView android:ellipsize="end" android:id="@id/city_name" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="0.0dip" android:singleLine="true" android:layout_weight="1.0" />
+        <TextView android:ellipsize="end" android:id="@id/city_date" android:layout_width="wrap_content" android:layout_height="0.0dip" android:singleLine="true" android:layout_weight="1.0" />
+    </LinearLayout>
+</FrameLayout>

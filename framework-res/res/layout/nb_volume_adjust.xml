@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="480.0dip" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/visible_panel" android:background="@drawable/nb_volume_backupground" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:id="@id/slider_group" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <ImageView android:id="@id/expand_button_divider" android:layout_width="wrap_content" android:layout_height="32.0dip" android:src="?dividerVertical" android:scaleType="fitXY" />
+        <ImageView android:id="@id/expand_button" android:background="@drawable/nb_sys_circle_button_background" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/nb_volume_settings" />
+    </LinearLayout>
+</FrameLayout>

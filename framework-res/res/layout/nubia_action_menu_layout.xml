@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.internal.view.menu.ActionMenuView android:gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingStart="@dimen/nubia_action_bar_menu_layout_margin_left_right" android:paddingEnd="@dimen/nubia_action_bar_menu_layout_margin_left_right"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

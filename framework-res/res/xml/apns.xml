@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<apns version="8">
+    <apn carrier="中国联通互联网设置" mcc="460" mnc="01" apn="3gnet" proxy="" port="" user="" server="" password="" mmsc="" type="default,supl" preferred="true" />
+    <apn carrier="中国联通WAP设置" mcc="460" mnc="01" apn="3gwap" proxy="10.0.0.172" port="80" user="" server="" password="" mmsc="" type="default" />
+    <apn carrier="中国联通MMS设置" mcc="460" mnc="01" apn="3gwap" proxy="10.0.0.172" port="80" user="" server="" password="" mmsc="http://mmsc.myuni.com.cn" mmsproxy="10.0.0.172" mmsport="80" type="mms" />
+    <apn carrier="GPRS连接互联网" mcc="460" mnc="00" apn="cmnet" proxy="" port="" user="" server="" password="" mmsc="" type="default,supl" preferred="true" />
+    <apn carrier="移动梦网GPRS Wap" mcc="460" mnc="00" apn="cmwap" proxy="10.0.0.172" port="80" user="" server="" password="" mmsc="" type="default" />
+    <apn carrier="移动梦网MMS设置" mcc="460" mnc="00" apn="cmwap" proxy="10.0.0.172" port="80" user="" server="" password="" mmsc="http://mmsc.monternet.com" mmsproxy="10.0.0.172" mmsport="80" type="mms" />
+    <apn carrier="GPRS连接互联网" mcc="460" mnc="02" apn="cmnet" proxy="" port="" user="" server="" password="" mmsc="" type="default,supl" preferred="true" />
+    <apn carrier="移动梦网GPRS Wap" mcc="460" mnc="02" apn="cmwap" proxy="10.0.0.172" port="80" user="" server="" password="" mmsc="" type="default" />
+    <apn carrier="移动梦网MMS设置" mcc="460" mnc="02" apn="cmwap" proxy="10.0.0.172" port="80" user="" server="" password="" mmsc="http://mmsc.monternet.com" mmsproxy="10.0.0.172" mmsport="80" type="mms" />
+    <apn apn="cmnet" carrier="GPRS连接互联网" mcc="460" mmsc="" mnc="07" password="" port="" proxy="" server="" preferred="true" type="default,supl" user="" />
+    <apn apn="cmwap" carrier="移动梦网GPRS Wap" mcc="460" mmsc="" mnc="07" password="" port="80" proxy="10.0.0.172" server="" type="default" user="" />
+    <apn apn="cmwap" carrier="移动梦网MMS设置" mcc="460" mmsc="http://mmsc.monternet.com" mmsport="80" mmsproxy="10.0.0.172" mnc="07" password="" port="80" proxy="10.0.0.172" server="" type="mms" user="" />
+    <apn carrier="GPRS连接互联网" mcc="460" mnc="08" apn="cmnet" proxy="" port="" user="" server="" password="" mmsc="" type="default,supl" preferred="true" />
+    <apn carrier="移动梦网GPRS Wap" mcc="460" mnc="08" apn="cmwap" proxy="10.0.0.172" port="80" user="" server="" password="" mmsc="" type="default,supl" />
+    <apn carrier="移动梦网MMS设置" mcc="460" mnc="08" apn="cmwap" proxy="10.0.0.172" port="80" user="" server="" password="" mmsc="http://mmsc.monternet.com" mmsproxy="10.0.0.172" mmsport="80" type="mms" />
+    <apn carrier="中国电信互联网设置CTNET" mcc="460" mnc="03" apn="ctnet" proxy="" port="" user="ctnet@mycdma.cn" server="" password="vnet.mobi" mmsc="" authtype="3" type="default" preferred="true" />
+    <apn carrier="中国电信WAP设置CTWAP" mcc="460" mnc="03" apn="ctwap" proxy="10.0.0.200" port="80" user="ctwap@mycdma.cn" server="" password="vnet.mobi" mmsc="http://mmsc.vnet.mobi" mmsproxy="10.0.0.200" mmsport="80" authtype="2" type="default,mms,supl" />
+    <apn carrier="中国电信互联网设置CTNET" mcc="460" mnc="12" apn="ctnet" proxy="" port="" user="ctnet@mycdma.cn" server="" password="vnet.mobi" mmsc="" authtype="3" type="default" preferred="true" />
+    <apn carrier="中国电信WAP设置CTWAP" mcc="460" mnc="12" apn="ctwap" proxy="10.0.0.200" port="80" user="ctwap@mycdma.cn" server="" password="vnet.mobi" mmsc="http://mmsc.vnet.mobi" mmsproxy="10.0.0.200" mmsport="80" authtype="2" type="default,mms,supl" />
+</apns>

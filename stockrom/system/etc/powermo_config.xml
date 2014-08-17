@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<!--sample-->
+<powermo-setting>
+
+<global>
+    <product value="POWERMOREF"/> <!-- case sensitive -->
+    <acls-package-name value="com.powermo.smartshow.hack" />
+        <!-- when installed, use aclslist, otherwise defaultlist-->
+    <defaultlist value="hack-mode"/> <!-- case sensitive -->
+    <aclslist value="hack-mode" /> <!-- case sensitive -->
+    <split-bar-size value="6" />
+    <split-bar-overlap-size value="16" />
+    <split-bar-panel-size value="150" />
+    <floating-ime-enable value="1" />
+    <floating-ime-port-scale  value="0.8" />
+    <floating-ime-land-scale  value="0.6" />
+    <split-bar-color value="0xFF00A5E0" />
+    <focused-frame-color value="0xFF00A5E0" />
+    <smallest-input-widget-size value="130" />
+    <!-- if value equals 'com.powermo.smartshow.activity/.idlerDisable'
+         system will not start idler
+    -->
+    <!-- idler activity on normal stack-->
+    <normal-idle-activity value="cn.nubia.minilauncher/com.android.launcher2.Launcher" />
+    <!-- idler activity on floating stack-->
+    <floating-idle-activity value="com.powermo.smartshow.activity/.MiniLauncherActivity" />
+    <draw-split-bar value="1" />
+    <!-- home key configuration, format:  config1:target1|config2:target2,
+         native for local display, tv for tv
+         default: do not remove slipt-screen and float stacks, just show home
+         exit: remove slipt-screen and float stacks and show home
+         exit-ignore-float: remove slipt-screen stacks and show home
+         two-stage-exit: show minilauncher on focused subscreen first time,
+                         if shown, remove slipt-screen and float stacks and show home
+         two-stage-exit-ignore-float: if focused is float, remove slipt-screen stacks and show home
+                         otherwise show minilauncher on focused subscreen first time,
+                         if shown, remove slipt-screen and show home
+    -->
+    <home-key-behavior value="two-stage-exit:native" />
+    <auto-keep-size-ratio value="0.5" />
+    <allow-camera-fullscreen value="1" />
+    <smartshow-animation-enable value="1" />
+</global>
+
+<smartbar-POWERMOREF>
+    <config-with-shopm value="true" />
+    <style-shopm-bottom-bar-mode value="auto" /> <!-- auto/force-show/force-hide -->
+    <style-shopm-bottom-bar-auto-hide value="true" />
+
+    <style-entry-key value="back" /> <!-- back/menu -->
+
+    <style-mle-nosort value="false"/>
+    <style-cp-nohome value="false" />
+    <style-cp-nomove value="false" />
+    <style-cp-alignment value="edge" /> <!-- center/edge -->
+
+    <style-ml-dock-mode value="corner" /> <!-- corner/middle -->
+
+</smartbar-POWERMOREF>
+
+<!-- all apps in the "normal-mode" is white-list. -->
+<name-list name="normal-mode" type="white-list">
+    <item value="com.android.calculator2"/>
+    <item value="com.android.gallery3d"/>
+    <exception value="com.android.gallery3d/com.android.camera.CameraLauncher"/>
+</name-list>
+
+<!-- all apps in the "hack-mode" is black-list. -->
+<name-list name="hack-mode" type="black-list">
+    <item value="com.android.gallery3d/com.android.camera.CameraLauncher"/>
+    <item value="com.android.contacts/.activities.DialtactsActivity"/>
+    <item value="zte.android.flashlight"/>
+</name-list>
+
+<!-- all apps in the "keep-size" is white-list. -->
+<name-list name="keep-size" type="white-list">
+    <item value="cn.nubia.control"/>
+    <item value="cn.nubia.fmradio.preset"/>
+    <item value="cn.nubia.bleobj"/>
+    <item value="cn.nubia.v5light.preset"/>
+    <item value="cn.nubia.calculator2.preset"/>
+    <item value="cn.nubia.deskclock.preset"/>
+    <item value="cn.nubia.calendar.preset"/>
+    <item value="cn.nubia.powermanage"/>
+    <item value="cn.nubia.security"/>
+</name-list>
+
+<!-- all apps in the "best-fit" is white-list. -->
+<name-list name="best-fit" type="white-list">
+    <item value="com.powermo.smartshow.activity/.MiniLauncherActivity"/>
+    <item value="cn.nubia.minilauncher/com.android.launcher2.Launcher"/>
+</name-list>
+
+<!-- all apps in the "full-screen" is white-list. -->
+<name-list name="full-screen" type="white-list">
+    <item value="com.android.packageinstaller"/>
+    <item value="com.android.camera/.CameraLauncher"/>
+    <item value="com.powermo.geekshow/.MainActivity"/>
+    <item value="cn.nubia.factory"/>
+    <item value="cn.nubia.apps"/>
+    <item value="cn.nubia.advanced"/>
+    <item value="com.android.incallui/.InCallActivity"/>
+    <item value="cn.nubia.music.preset/cn.nubia.music.MediaPlaybackActivityJoygorNew"/>
+    <item value="com.android.systemui"/>
+    <item value="cn.nubia.HouseLauncher.Local"/>
+	<item value="com.android.phone/.EmergencyDialer"/>
+	<item value="cn.nubia.deskclock.preset/cn.nubia.deskclock.SleepClockActivity"/>
+	<item value="cn.nubia.v5light.preset/cn.nubia.v5light.MainActivity"/>
+    <item value="com.android.camera/com.android.gallery3d.app.Gallery"/>
+</name-list>
+
+<!-- all apps in the "never-scale" is white-list. -->
+<name-list name="never-scale" type="white-list">
+    <item value="cn.nubia.minilauncher/com.android.launcher2.Launcher"/>
+</name-list>
+
+
+<!-- all apps in the "update-focus" is black-list. -->
+<name-list name="update-focus" type="black-list">
+    <item value="com.popcap.pvz2cthdwdj/com.popcap.pvz2cthdwdj.SexyAppActivity" />
+    <item value="com.popcap.pvz2wdj/com.popcap.pvz2wdj.SexyAppActivity" />
+</name-list>
+
+</powermo-setting>
+

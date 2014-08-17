@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<client>
+<default>
+    <normal_save> 2 </normal_save>
+    <high_save> 3 </high_save>
+    <ultra_save> 4 </ultra_save>
+  </default>
+  <apps>
+    <com.tencent.mtt>
+      <normal_save>3</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>3</ultra_save>
+    </com.tencent.mtt>
+    <com.qihoo.browser>
+      <normal_save>2</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>3</ultra_save>
+    </com.qihoo.browser>
+    <com.ijinshan.browser_fast>
+      <normal_save>2</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>3</ultra_save>
+    </com.ijinshan.browser_fast>
+    <com.oupeng.mini.android>
+      <normal_save>2</normal_save>
+      <high_save>2</high_save>
+      <ultra_save>2</ultra_save>
+    </com.oupeng.mini.android>
+    <sogou.mobile.explorer>
+      <normal_save>2</normal_save>
+      <high_save>2</high_save>
+      <ultra_save>2</ultra_save>
+    </sogou.mobile.explorer>
+    <com.browser2345>
+      <normal_save>2</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>3</ultra_save>
+    </com.browser2345>
+    <com.ijinshan.browser>
+      <normal_save>2</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>3</ultra_save>
+    </com.ijinshan.browser>
+    <com.android.chrome>
+      <normal_save>2</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>3</ultra_save>
+    </com.android.chrome>
+    <mobi.mgeek.TunnyBrowser>
+      <normal_save>2</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>3</ultra_save>
+    </mobi.mgeek.TunnyBrowser>
+    <com.UCMobile.intl>
+      <normal_save>2</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>3</ultra_save>
+    </com.UCMobile.intl>
+    <com.uc.browser.hd>
+      <normal_save>3</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>4</ultra_save>
+    </com.uc.browser.hd>
+    <com.opera.mini.android>
+      <normal_save>3</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>4</ultra_save>
+    </com.opera.mini.android>
+    <com.opera.browser>
+    <normal_save> 2 </normal_save>
+    <high_save> 3 </high_save>
+    <ultra_save> 4 </ultra_save>
+    </com.opera.browser>
+    <com.baidu.browser.apps>
+      <normal_save>3</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>4</ultra_save>
+    </com.baidu.browser.apps>
+    <com.dolphin.browser.xf>
+      <normal_save>2</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>4</ultra_save>
+    </com.dolphin.browser.xf>
+    </apps>
+</client>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:oneshot="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="30" android:drawable="@drawable/nubia_alert_dialog_frame_1" />
+    <item android:duration="30" android:drawable="@drawable/nubia_alert_dialog_frame_2" />
+    <item android:duration="30" android:drawable="@drawable/nubia_alert_dialog_frame_3" />
+    <item android:duration="30" android:drawable="@drawable/nubia_alert_dialog_frame_4" />
+    <item android:duration="30" android:drawable="@drawable/nubia_alert_dialog_frame_5" />
+    <item android:duration="30" android:drawable="@drawable/nubia_alert_dialog_frame_6" />
+    <item android:duration="30" android:drawable="@drawable/nubia_alert_dialog_frame_7" />
+    <item android:duration="30" android:drawable="@drawable/nubia_alert_dialog_frame_8" />
+    <item android:duration="30" android:drawable="@drawable/nubia_alert_dialog_frame_9" />
+    <item android:duration="30" android:drawable="@drawable/nubia_alert_dialog_frame_10" />
+    <item android:duration="30" android:drawable="@drawable/nubia_alert_dialog_frame_11" />
+    <item android:duration="30" android:drawable="@drawable/nubia_alert_dialog_frame_12" />
+    <item android:duration="30" android:drawable="@drawable/nubia_alert_dialog_frame_13" />
+    <item android:duration="30" android:drawable="@drawable/nubia_alert_dialog_frame_14" />
+    <item android:duration="30" android:drawable="@drawable/nubia_alert_dialog_frame_15" />
+    <item android:duration="30" android:drawable="@drawable/nubia_alert_dialog_frame_16" />
+    <item android:duration="30" android:drawable="@drawable/nubia_alert_dialog_frame_17" />
+    <item android:duration="30" android:drawable="@drawable/nubia_alert_dialog_frame_18" />
+    <item android:duration="30" android:drawable="@drawable/nubia_alert_dialog_frame_19" />
+    <item android:duration="30" android:drawable="@drawable/nubia_alert_dialog_frame_20" />
+</animation-list>

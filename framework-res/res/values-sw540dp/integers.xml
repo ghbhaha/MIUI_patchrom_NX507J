@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="max_action_buttons">6</integer>
+    <integer name="preferences_left_pane_weight">3</integer>
+    <integer name="preferences_right_pane_weight">7</integer>
+</resources>

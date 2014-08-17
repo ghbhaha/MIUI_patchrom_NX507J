@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="thumbnail_height">360.0dip</dimen>
+    <dimen name="thumbnail_width">210.0dip</dimen>
+    <dimen name="action_bar_stacked_tab_max_width">216.0dip</dimen>
+</resources>

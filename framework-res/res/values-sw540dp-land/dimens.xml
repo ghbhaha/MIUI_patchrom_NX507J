@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="thumbnail_height">377.0dip</dimen>
+    <dimen name="thumbnail_width">220.0dip</dimen>
+    <dimen name="action_bar_menu_default_height">45.0dip</dimen>
+    <dimen name="nubia_action_bar_menu_size">30.0dip</dimen>
+</resources>

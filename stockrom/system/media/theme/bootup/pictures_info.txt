@@ -1,0 +1,11 @@
+9
+000
+picture_1.nubia picture_1.txt
+picture_2.nubia picture_2.txt
+picture_3.nubia picture_3.txt
+picture_4.nubia picture_4.txt
+picture_5.nubia picture_5.txt
+picture_6.nubia picture_6.txt
+picture_7.nubia picture_7.txt
+picture_8.nubia picture_8.txt
+picture_9.nubia picture_9.txt

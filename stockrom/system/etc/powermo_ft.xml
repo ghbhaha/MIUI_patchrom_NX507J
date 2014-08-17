@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+
+<powermo-setting>
+
+<global>
+    <disable-remote-display value="0" />
+    <disable-floating value="0" />
+    <disable-shopm value="0" />
+</global>
+
+<name-list name="multi-process" type="white-list">
+    <item value="com.android.browser" />
+</name-list>
+
+</powermo-setting>

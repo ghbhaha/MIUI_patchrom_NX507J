@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<client>
+<default>
+    <normal_save> 4 </normal_save>
+    <high_save> 4 </high_save>
+    <ultra_save> 4 </ultra_save>
+    </default>
+    <apps> 
+    <cld.navi.mainframe>
+      <normal_save>3</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>3</ultra_save>
+    </cld.navi.mainframe>
+    <com.tencent.map>
+      <normal_save>3</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>3</ultra_save>
+    </com.tencent.map>
+    <com.sogou.map.android.maps>
+      <normal_save>4</normal_save>
+      <high_save>4</high_save>
+      <ultra_save>4</ultra_save>
+    </com.sogou.map.android.maps>
+    </apps>
+</client>

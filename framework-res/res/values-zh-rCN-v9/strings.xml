@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ringtone_silent">静音</string>
+    <string name="storage_internal">手机存储</string>
+</resources>

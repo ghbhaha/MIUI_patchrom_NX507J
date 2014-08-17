@@ -1,0 +1,26 @@
+<LucidPowerLevels>
+<NoPowerSupplyConnected>	
+<BatteryLevelThreshold>
+ <normal_save > 70 </normal_save>
+ <high_save> 30</high_save>
+ <ultra_save> 15 </ultra_save>
+</BatteryLevelThreshold>
+<BatteryTempThreshold>
+ <normal_save > 33 </normal_save>
+ <high_save> 38</high_save>
+ <ultra_save> 43 </ultra_save>
+</BatteryTempThreshold>
+</NoPowerSupplyConnected>	
+<PowerSupplyConnected>
+<BatteryLevelThreshold>
+ <normal_save > 0 </normal_save>
+ <high_save> 0</high_save>
+ <ultra_save> 0 </ultra_save>
+</BatteryLevelThreshold>
+<BatteryTempThreshold>
+ <normal_save > 35 </normal_save>
+ <high_save> 40</high_save>
+ <ultra_save> 45 </ultra_save>
+</BatteryTempThreshold>
+</PowerSupplyConnected> 
+</LucidPowerLevels>

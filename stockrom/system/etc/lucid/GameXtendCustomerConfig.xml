@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<client>
+  <default>
+    <normal_save> 2 </normal_save>
+    <high_save> 3 </high_save>
+    <ultra_save> 4 </ultra_save>
+  </default>
+  <apps>
+    <com.dotgears.flappybird>
+      <normal_save> 0 </normal_save>
+      <high_save> 2 </high_save>
+      <ultra_save> 2 </ultra_save>
+    </com.dotgears.flappybird>  
+    <com.king.candycrushsaga>
+      <normal_save> 0 </normal_save>
+      <high_save> 2 </high_save>
+      <ultra_save> 2 </ultra_save>
+    </com.king.candycrushsaga>
+    <com.sagego.panda.run>
+      <normal_save> 2 </normal_save>
+      <high_save> 3 </high_save>
+      <ultra_save> 3 </ultra_save>
+    </com.sagego.panda.run>
+    <com.rovio.angrybirdsgo>
+      <normal_save> 2 </normal_save>
+      <high_save> 3 </high_save>
+      <ultra_save> 3 </ultra_save>
+    </com.rovio.angrybirdsgo>
+    <com.rovio.angrybirds>
+      <normal_save> 2 </normal_save>
+      <high_save> 3 </high_save>
+      <ultra_save> 4 </ultra_save>
+    </com.rovio.angrybirds>
+    <com.rovio.angrybirdsrio>
+      <normal_save> 2 </normal_save>
+      <high_save> 2 </high_save>
+      <ultra_save> 3 </ultra_save>
+    </com.rovio.angrybirdsrio>
+    <com.kiloo.subwaysurf>
+      <normal_save> 2 </normal_save>
+      <high_save> 2 </high_save>
+      <ultra_save> 3 </ultra_save>
+    </com.kiloo.subwaysurf>
+    <com.supercell.clashofclans>
+      <normal_save> 2 </normal_save>
+      <high_save> 3 </high_save>
+      <ultra_save> 4 </ultra_save>
+    </com.supercell.clashofclans>
+    <com.estoty.game2048>
+      <normal_save> 3 </normal_save>
+      <high_save> 3 </high_save>
+      <ultra_save> 4 </ultra_save>
+    </com.estoty.game2048>
+    <com.zeptolab.ctr2.f2p.google>
+      <normal_save>2</normal_save>
+      <high_save> 3 </high_save>
+      <ultra_save> 4 </ultra_save>
+    </com.zeptolab.ctr2.f2p.google>
+    <com.seriouscorp.clumsybird>
+      <normal_save>2</normal_save>
+      <high_save>2</high_save>
+      <ultra_save>2</ultra_save>
+    </com.seriouscorp.clumsybird>
+    <com.scnstudios.policecardriver3d>
+      <normal_save>2</normal_save>
+      <high_save>2</high_save>
+      <ultra_save>2</ultra_save>
+    </com.scnstudios.policecardriver3d>
+    <com.ea.tetrisblitz_row>
+      <normal_save>2</normal_save>
+      <high_save>2</high_save>
+      <ultra_save>3</ultra_save>
+    </com.ea.tetrisblitz_row>
+    <com.disney.wheresmywater2_goo>
+      <normal_save> 3 </normal_save>
+      <high_save> 3 </high_save>
+      <ultra_save> 4 </ultra_save>
+    </com.disney.wheresmywater2_goo>
+    <com.imangi.templerun2>
+      <normal_save>0</normal_save>
+      <high_save>2</high_save>
+      <ultra_save>2</ultra_save>
+    </com.imangi.templerun2>
+    <com.mediocre.smashhit>
+      <normal_save>2</normal_save>
+      <high_save>2</high_save>
+      <ultra_save>2</ultra_save>
+    </com.mediocre.smashhit>
+    <com.mediocre.grannysmithfree>
+      <normal_save>2</normal_save>
+      <high_save>2</high_save>
+      <ultra_save>3</ultra_save>
+    </com.mediocre.grannysmithfree>
+    <com.imangi.templerun>
+      <normal_save>0</normal_save>
+      <high_save>2</high_save>
+      <ultra_save>2</ultra_save>
+    </com.imangi.templerun>
+    <com.aemobile.games.aemotor3d2.qihoo>
+      <normal_save>2</normal_save>
+      <high_save>2</high_save>
+      <ultra_save>2</ultra_save>
+    </com.aemobile.games.aemotor3d2.qihoo>
+    <com.king.farmheroessaga>
+      <normal_save>2</normal_save>
+      <high_save>2</high_save>
+      <ultra_save>3</ultra_save>
+    </com.king.farmheroessaga>
+    <com.halfbrick.fruitninjafree>
+      <normal_save>2</normal_save>
+      <high_save>2</high_save>
+      <ultra_save>3</ultra_save>
+    </com.halfbrick.fruitninjafree>
+    <org.cocos2dx.FishGame>
+      <normal_save>2</normal_save>
+      <high_save>2</high_save>
+      <ultra_save>3</ultra_save>
+    </org.cocos2dx.FishGame>
+    <com.carrot.carrotfantasy>
+      <normal_save>2</normal_save>
+      <high_save>2</high_save>
+      <ultra_save>3</ultra_save>
+    </com.carrot.carrotfantasy>
+    <com.vg.AirplaneFlightSimulator>
+      <normal_save>2</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>3</ultra_save>
+    </com.vg.AirplaneFlightSimulator>
+    <com.rovio.angrybirdsspace.ads>
+      <normal_save>2</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>4</ultra_save>
+    </com.rovio.angrybirdsspace.ads>
+    <com.rovio.angrybirdsspace.premium>
+      <normal_save>2</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>4</ultra_save>
+    </com.rovio.angrybirdsspace.premium>
+    <com.aceviral.angrygranrun>
+      <normal_save>2</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>3</ultra_save>
+    </com.aceviral.angrygranrun>
+    <com.g6677.android.artnail2>
+      <normal_save>2</normal_save>
+      <high_save>2</high_save>
+      <ultra_save>2</ultra_save>
+    </com.g6677.android.artnail2>
+    <com.westriversw.CatWar2>
+      <normal_save>2</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>4</ultra_save>
+    </com.westriversw.CatWar2>
+    <com.ea.game.fifa14_row>
+      <normal_save>2</normal_save>
+      <high_save>2</high_save>
+      <ultra_save>2</ultra_save>
+    </com.ea.game.fifa14_row>
+    <com.fullfat.android.flickgolffree>
+      <normal_save>2</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>4</ultra_save>
+    </com.fullfat.android.flickgolffree>
+    <com.tencent.gunzdash>
+      <normal_save>2</normal_save>
+      <high_save>2</high_save>
+      <ultra_save>2</ultra_save>
+    </com.tencent.gunzdash>
+    <com.glu.epicheroes>
+      <normal_save>2</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>3</ultra_save>
+    </com.glu.epicheroes>
+    <com.fingersoft.hillclimb>
+      <normal_save>2</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>3</ultra_save>
+    </com.fingersoft.hillclimb>
+    <com.halfbrick.jetpackjoyride>
+      <normal_save>2</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>3</ultra_save>
+    </com.halfbrick.jetpackjoyride>
+    <com.Alper.Manuganu>
+      <normal_save>2</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>4</ultra_save>
+    </com.Alper.Manuganu>
+    <com.ea.games.nfs13_row>
+      <normal_save>2</normal_save>
+      <high_save>2</high_save>
+      <ultra_save>2</ultra_save>
+    </com.ea.games.nfs13_row>
+    <com.bfs.ninjump>
+      <normal_save>2</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>3</ultra_save>
+    </com.bfs.ninjump>
+    <com.sega.sonic1>
+      <normal_save>2</normal_save>
+      <high_save>2</high_save>
+      <ultra_save>2</ultra_save>
+    </com.sega.sonic1>
+    <com.minigames.spiderguy_2>
+      <normal_save>2</normal_save>
+      <high_save>2</high_save>
+      <ultra_save>2</ultra_save>
+    </com.minigames.spiderguy_2>
+    <com.gamesonwheels.templefun>
+      <normal_save>2</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>3</ultra_save>
+    </com.gamesonwheels.templefun>
+    <com.disney.brave_google>
+      <normal_save>2</normal_save>
+      <high_save>2</high_save>
+      <ultra_save>2</ultra_save>
+    </com.disney.brave_google>
+    <com.ea.game.simpsons4_row>
+      <normal_save>2</normal_save>
+      <high_save>2</high_save>
+      <ultra_save>2</ultra_save>
+    </com.ea.game.simpsons4_row>
+    <com.roviostars.tinythief>
+      <normal_save>2</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>4</ultra_save>
+    </com.roviostars.tinythief>
+    <com.disney.WMPLite>
+      <normal_save>2</normal_save>
+      <high_save>2</high_save>
+      <ultra_save>2</ultra_save>
+    </com.disney.WMPLite>
+    <com.qqgame.hlddz>
+      <normal_save>4</normal_save>
+      <high_save>4</high_save>
+      <ultra_save>4</ultra_save>
+    </com.qqgame.hlddz>
+    <com.tencent.clover>
+      <normal_save>3</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>4</ultra_save>
+    </com.tencent.clover>
+    <com.tencent.ttx5>
+      <normal_save>3</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>4</ultra_save>
+    </com.tencent.ttx5>
+    <com.qqgame.happymj>
+      <normal_save>4</normal_save>
+      <high_save>4</high_save>
+      <ultra_save>4</ultra_save>
+    </com.qqgame.happymj>
+    <com.tencent.game.SSGame>
+      <normal_save>3</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>3</ultra_save>
+    </com.tencent.game.SSGame>
+    <com.tencent.kittypong>
+      <normal_save>3</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>3</ultra_save>
+    </com.tencent.kittypong>
+    <com.tencent.pao>
+      <normal_save>2</normal_save>
+      <high_save>2</high_save>
+      <ultra_save>3</ultra_save>
+    </com.tencent.pao>
+    <com.tencent.feiji_10>
+      <normal_save>2</normal_save>
+      <high_save>2</high_save>
+      <ultra_save>2</ultra_save>
+    </com.tencent.feiji_10>
+    <com.tencent.castleclash>
+      <normal_save>4</normal_save>
+      <high_save>4</high_save>
+      <ultra_save>4</ultra_save>
+    </com.tencent.castleclash>
+    <com.tencent.lian>
+      <normal_save>4</normal_save>
+      <high_save>4</high_save>
+      <ultra_save>4</ultra_save>
+    </com.tencent.lian>
+    <com.tencent.tmgp.madhead.tos>
+      <normal_save>4</normal_save>
+      <high_save>4</high_save>
+      <ultra_save>4</ultra_save>
+    </com.tencent.tmgp.madhead.tos>
+    <com.gamesonwheels.templefun>
+      <normal_save>2</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>3</ultra_save>
+    </com.gamesonwheels.templefun>
+    <com.disney.brave_google>
+      <normal_save>2</normal_save>
+      <high_save>2</high_save>
+      <ultra_save>2</ultra_save>
+    </com.disney.brave_google>
+    <com.disney.TempleRunOz.goo>
+      <normal_save>2</normal_save>
+      <high_save>2</high_save>
+      <ultra_save>2</ultra_save>
+    </com.disney.TempleRunOz.goo>
+    <com.ea.game.simpsons4_row>
+      <normal_save>2</normal_save>
+      <high_save>2</high_save>
+      <ultra_save>2</ultra_save>
+    </com.ea.game.simpsons4_row>
+    <com.roviostars.tinythief>
+      <normal_save>2</normal_save>
+      <high_save>3</high_save>
+      <ultra_save>4</ultra_save>
+    </com.roviostars.tinythief>
+    <com.disney.WMPLite>
+      <normal_save>2</normal_save>
+      <high_save>2</high_save>
+      <ultra_save>2</ultra_save>
+    </com.disney.WMPLite>
+  </apps>
+</client>

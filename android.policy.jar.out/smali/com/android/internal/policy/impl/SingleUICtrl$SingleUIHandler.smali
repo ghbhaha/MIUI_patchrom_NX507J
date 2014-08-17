@@ -1,0 +1,85 @@
+.class Lcom/android/internal/policy/impl/SingleUICtrl$SingleUIHandler;
+.super Landroid/os/Handler;
+.source "SingleUICtrl.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/internal/policy/impl/SingleUICtrl;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x2
+    name = "SingleUIHandler"
+.end annotation
+
+
+# instance fields
+.field final synthetic this$0:Lcom/android/internal/policy/impl/SingleUICtrl;
+
+
+# direct methods
+.method private constructor <init>(Lcom/android/internal/policy/impl/SingleUICtrl;)V
+    .locals 0
+    .parameter
+
+    .prologue
+    .line 40
+    iput-object p1, p0, Lcom/android/internal/policy/impl/SingleUICtrl$SingleUIHandler;->this$0:Lcom/android/internal/policy/impl/SingleUICtrl;
+
+    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lcom/android/internal/policy/impl/SingleUICtrl;Lcom/android/internal/policy/impl/SingleUICtrl$1;)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 40
+    invoke-direct {p0, p1}, Lcom/android/internal/policy/impl/SingleUICtrl$SingleUIHandler;-><init>(Lcom/android/internal/policy/impl/SingleUICtrl;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public handleMessage(Landroid/os/Message;)V
+    .locals 1
+    .parameter "msg"
+
+    .prologue
+    .line 44
+    iget v0, p1, Landroid/os/Message;->what:I
+
+    packed-switch v0, :pswitch_data_0
+
+    .line 55
+    :goto_0
+    return-void
+
+    .line 47
+    :pswitch_0
+    iget-object v0, p0, Lcom/android/internal/policy/impl/SingleUICtrl$SingleUIHandler;->this$0:Lcom/android/internal/policy/impl/SingleUICtrl;
+
+    invoke-virtual {v0}, Lcom/android/internal/policy/impl/SingleUICtrl;->enableSingleUI()V
+
+    goto :goto_0
+
+    .line 50
+    :pswitch_1
+    iget-object v0, p0, Lcom/android/internal/policy/impl/SingleUICtrl$SingleUIHandler;->this$0:Lcom/android/internal/policy/impl/SingleUICtrl;
+
+    invoke-virtual {v0}, Lcom/android/internal/policy/impl/SingleUICtrl;->disableSingleUI()V
+
+    goto :goto_0
+
+    .line 44
+    :pswitch_data_0
+    .packed-switch 0x64
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
+.end method
