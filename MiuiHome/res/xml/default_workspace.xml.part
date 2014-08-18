@@ -1,0 +1,4 @@
+com.android.camera/com.android.camera.Camera=com.android.camera/com.android.camera.CameraLauncher
+com.android.mms/com.android.mms.ui.MmsTabActivity=com.snda.youni/com.snda.youni.YouNi
+com.android.contacts/com.android.contacts.activities.TwelveKeyDialer=com.android.contacts/com.android.contacts.DialerActivity
+

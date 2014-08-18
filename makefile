@@ -66,10 +66,10 @@ local-pre-zip-misc:
 #	@echo Replace custom lib
 #	cp -rf other/lib/* $(ZIP_DIR)/system/lib/
 
-#	@echo Replace custom bin
-#	cp other/bin/* $(ZIP_DIR)/system/bin/
+	@echo Replace custom bin
+	cp other/bin/* $(ZIP_DIR)/system/bin/
 
-#	@echo Replace custom etc
+	@echo Replace custom etc
 	cp other/etc/* $(ZIP_DIR)/system/etc/
 
 	@echo Replace custom xbin

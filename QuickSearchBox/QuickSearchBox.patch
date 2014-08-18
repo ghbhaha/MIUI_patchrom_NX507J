@@ -1,0 +1,29 @@
+From f35e8f8723a53f865620741138f782aa19454232 Mon Sep 17 00:00:00 2001
+From: ry09iu <ry09iu@gmail.com>
+Date: Sat, 28 Jun 2014 19:34:31 +0800
+Subject: [PATCH] fix searchbox fc
+
+---
+ smali/com/android/quicksearchbox/SingleSourceCorpus.smali | 6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
+
+diff --git a/QuickSearchBox/smali/com/android/quicksearchbox/SingleSourceCorpus.smali b/QuickSearchBox/smali/com/android/quicksearchbox/SingleSourceCorpus.smali
+index f8736a1..d396129 100644
+--- a/QuickSearchBox/smali/com/android/quicksearchbox/SingleSourceCorpus.smali
++++ b/QuickSearchBox/smali/com/android/quicksearchbox/SingleSourceCorpus.smali
+@@ -207,11 +207,7 @@
+ 
+     .prologue
+     .line 92
+-    iget-object v0, p0, Lcom/android/quicksearchbox/SingleSourceCorpus;->mSource:Lcom/android/quicksearchbox/Source;
+-
+-    invoke-interface {v0}, Lcom/android/quicksearchbox/Source;->includeInAll()Z
+-
+-    move-result v0
++    const/4 v0, 0x0
+ 
+     return v0
+ .end method
+-- 
+1.9.1
+

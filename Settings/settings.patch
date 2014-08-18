@@ -1,0 +1,32 @@
+From e01cc2a25160c051f5d1c16e49d4fa4e11e6319d Mon Sep 17 00:00:00 2001
+From: wuxianlin <wuxianlinwxl@gmail.com>
+Date: Sun, 13 Jul 2014 00:01:12 +0800
+Subject: [PATCH] new Settings
+
+---
+ Settings/res/xml/settings_headers.xml |    3 +--
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+--- a/Settings/res/xml/settings_headers.xml
++++ b/Settings/res/xml/settings_headers.xml
+@@ -36,9 +36,6 @@
+     <header android:icon="@drawable/ic_location_settings" android:id="@id/location_settings" android:title="@string/location_settings_title">
+         <intent android:action="android.settings.LOCATION_SOURCE_SETTINGS" />
+     </header>
+-    <header android:icon="@drawable/ic_do_not_disturb_mode_settings" android:id="@id/do_not_disturb_mode" android:title="@string/do_not_disturb_mode">
+-        <intent android:action="android.intent.action.QUIET_MODE" />
+-    </header>
+     <header android:id="@id/account_settings" android:title="@string/header_category_accounts" />
+     <header android:id="@id/mimoney_settings" android:title="@string/xiaomi_money_service" android:fragment="" />
+     <header android:icon="@drawable/ic_add_account_settings" android:id="@id/account_add" android:title="@string/add_account_label">
+@@ -56,7 +55,7 @@
+     <header android:icon="@drawable/ic_headset_settings" android:id="@id/headset_settings" android:title="@string/headset_settings">
+         <intent android:action="miui.intent.action.HEADSET_SETTINGS" />
+     </header>
+-    <header android:id="@id/manufacturer_settings">
++    <header android:icon="@drawable/ic_launcher_settings" android:id="@id/manufacturer_settings">
+         <intent android:action="com.android.settings.MANUFACTURER_APPLICATION_SETTING" />
+     </header>
+     <header android:id="@id/system_section" android:title="@string/header_category_system" />
+-- 
+1.7.9.5
