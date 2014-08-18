@@ -1,3 +1,6 @@
+name="MiThemes.apk" certificate="PRESIGNED" private_key=""
+name="MiTools.apk" certificate="PRESIGNED" private_key=""
+name="WSM.apk" certificate="PRESIGNED" private_key=""
 name="Youniyouni_130.apk" certificate="PRESIGNED" private_key=""
 name="Additional.apk" certificate="build/target/product/security/platform.x509.pem" private_key="build/target/product/security/platform.pk8"
 name="AdvancedTest.apk" certificate="build/target/product/security/platform.x509.pem" private_key="build/target/product/security/platform.pk8"
