@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 387
     iput-object p1, p0, Lcom/android/internal/telephony/dataconnection/DcTrackerBase$4;->this$0:Lcom/android/internal/telephony/dataconnection/DcTrackerBase;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,19 +40,16 @@
     .locals 4
 
     .prologue
-    .line 390
     iget-object v0, p0, Lcom/android/internal/telephony/dataconnection/DcTrackerBase$4;->this$0:Lcom/android/internal/telephony/dataconnection/DcTrackerBase;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/dataconnection/DcTrackerBase;->updateDataActivity()V
 
-    .line 392
     iget-object v0, p0, Lcom/android/internal/telephony/dataconnection/DcTrackerBase$4;->this$0:Lcom/android/internal/telephony/dataconnection/DcTrackerBase;
 
     iget-boolean v0, v0, Lcom/android/internal/telephony/dataconnection/DcTrackerBase;->mIsScreenOn:Z
 
     if-eqz v0, :cond_1
 
-    .line 393
     iget-object v0, p0, Lcom/android/internal/telephony/dataconnection/DcTrackerBase$4;->this$0:Lcom/android/internal/telephony/dataconnection/DcTrackerBase;
 
     iget-object v1, p0, Lcom/android/internal/telephony/dataconnection/DcTrackerBase$4;->this$0:Lcom/android/internal/telephony/dataconnection/DcTrackerBase;
@@ -70,7 +66,6 @@
 
     iput v1, v0, Lcom/android/internal/telephony/dataconnection/DcTrackerBase;->mNetStatPollPeriod:I
 
-    .line 401
     :goto_0
     iget-object v0, p0, Lcom/android/internal/telephony/dataconnection/DcTrackerBase$4;->this$0:Lcom/android/internal/telephony/dataconnection/DcTrackerBase;
 
@@ -78,7 +73,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 402
     iget-object v0, p0, Lcom/android/internal/telephony/dataconnection/DcTrackerBase$4;->this$0:Lcom/android/internal/telephony/dataconnection/DcTrackerBase;
 
     iget-object v0, v0, Lcom/android/internal/telephony/dataconnection/DcTrackerBase;->mDataConnectionTracker:Landroid/os/Handler;
@@ -91,11 +85,9 @@
 
     invoke-virtual {v0, p0, v1, v2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 404
     :cond_0
     return-void
 
-    .line 396
     :cond_1
     iget-object v0, p0, Lcom/android/internal/telephony/dataconnection/DcTrackerBase$4;->this$0:Lcom/android/internal/telephony/dataconnection/DcTrackerBase;
 

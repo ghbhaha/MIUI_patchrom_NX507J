@@ -154,7 +154,7 @@
     .line 1326
     iget-object v0, p0, Landroid/content/res/Resources$Theme;->this$0:Landroid/content/res/Resources;
 
-    invoke-virtual {v0, v7}, Landroid/content/res/Resources;->replaceTypedArray(Landroid/content/res/TypedArray;)Landroid/content/res/TypedArray;
+    invoke-virtual {v0, v7}, Landroid/content/res/Resources;->loadOverlayTypedArray(Landroid/content/res/TypedArray;)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
@@ -217,7 +217,7 @@
     .line 1429
     iget-object v0, p0, Landroid/content/res/Resources$Theme;->this$0:Landroid/content/res/Resources;
 
-    invoke-virtual {v0, v7}, Landroid/content/res/Resources;->replaceTypedArray(Landroid/content/res/TypedArray;)Landroid/content/res/TypedArray;
+    invoke-virtual {v0, v7}, Landroid/content/res/Resources;->loadOverlayTypedArray(Landroid/content/res/TypedArray;)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
@@ -271,7 +271,7 @@
     .line 1264
     iget-object v0, p0, Landroid/content/res/Resources$Theme;->this$0:Landroid/content/res/Resources;
 
-    invoke-virtual {v0, v7}, Landroid/content/res/Resources;->replaceTypedArray(Landroid/content/res/TypedArray;)Landroid/content/res/TypedArray;
+    invoke-virtual {v0, v7}, Landroid/content/res/Resources;->loadOverlayTypedArray(Landroid/content/res/TypedArray;)Landroid/content/res/TypedArray;
 
     move-result-object v0
 

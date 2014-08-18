@@ -15,10 +15,8 @@
     .parameter "ci"
 
     .prologue
-    .line 34
     invoke-direct {p0, p1, p2, p3}, Lcom/android/internal/telephony/uicc/IccFileHandler;-><init>(Lcom/android/internal/telephony/uicc/UiccCardApplication;Ljava/lang/String;Lcom/android/internal/telephony/CommandsInterface;)V
 
-    .line 35
     return-void
 .end method
 
@@ -29,10 +27,8 @@
     .parameter "efid"
 
     .prologue
-    .line 58
     sparse-switch p1, :sswitch_data_0
 
-    .line 69
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/uicc/IccFileHandler;->getCommonIccEFPath(I)Ljava/lang/String;
 
     move-result-object v0
@@ -40,13 +36,11 @@
     :goto_0
     return-object v0
 
-    .line 67
     :sswitch_0
     const-string v0, "3F007F25"
 
     goto :goto_0
 
-    .line 58
     nop
 
     :sswitch_data_0
@@ -71,7 +65,6 @@
     .parameter "onLoaded"
 
     .prologue
-    .line 42
     const/16 v1, 0xa
 
     const/4 v2, 0x0
@@ -82,7 +75,6 @@
 
     move-result-object v11
 
-    .line 51
     .local v11, response:Landroid/os/Message;
     iget-object v1, p0, Lcom/android/internal/telephony/uicc/IccFileHandler;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
@@ -110,7 +102,6 @@
 
     invoke-interface/range {v1 .. v11}, Lcom/android/internal/telephony/CommandsInterface;->iccIOForApp(IILjava/lang/String;IIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
 
-    .line 54
     return-void
 .end method
 
@@ -119,7 +110,6 @@
     .parameter "msg"
 
     .prologue
-    .line 74
     const-string v0, "RuimFH"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -142,7 +132,6 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 75
     return-void
 .end method
 
@@ -151,7 +140,6 @@
     .parameter "msg"
 
     .prologue
-    .line 79
     const-string v0, "RuimFH"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -174,6 +162,5 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 80
     return-void
 .end method

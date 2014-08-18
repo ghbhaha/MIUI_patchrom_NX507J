@@ -1881,8 +1881,6 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {}, Lcom/android/internal/os/ZygoteInit;->preloadMiuiResources()V
-
     .line 369
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -1952,6 +1950,8 @@
 
     .line 377
     sget-object v6, Lcom/android/internal/os/ZygoteInit;->mResources:Landroid/content/res/Resources;
+
+    invoke-static {}, Lcom/android/internal/os/ZygoteInit;->preloadMiuiResources()V
 
     invoke-virtual {v6}, Landroid/content/res/Resources;->finishPreloading()V
     :try_end_0

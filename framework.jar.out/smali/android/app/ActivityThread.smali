@@ -15509,9 +15509,9 @@
     move-object v0, v6
 
     .line 1599
-    check-cast v0, Landroid/content/res/NubiaResources;
+    check-cast v0, Landroid/content/res/MiuiResources;
 
-    invoke-virtual {v0, p1}, Landroid/content/res/NubiaResources;->init(Ljava/lang/String;)V
+    invoke-virtual {v0, p1}, Landroid/content/res/MiuiResources;->init(Ljava/lang/String;)V
 
     .line 1601
     :cond_0

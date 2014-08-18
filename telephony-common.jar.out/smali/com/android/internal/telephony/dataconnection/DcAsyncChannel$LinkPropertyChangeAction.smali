@@ -44,7 +44,6 @@
 
     const/4 v2, 0x0
 
-    .line 100
     new-instance v0, Lcom/android/internal/telephony/dataconnection/DcAsyncChannel$LinkPropertyChangeAction;
 
     const-string v1, "NONE"
@@ -69,7 +68,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/dataconnection/DcAsyncChannel$LinkPropertyChangeAction;->RESET:Lcom/android/internal/telephony/dataconnection/DcAsyncChannel$LinkPropertyChangeAction;
 
-    .line 99
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/android/internal/telephony/dataconnection/DcAsyncChannel$LinkPropertyChangeAction;
@@ -102,7 +100,6 @@
     .end annotation
 
     .prologue
-    .line 99
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -113,7 +110,6 @@
     .parameter "value"
 
     .prologue
-    .line 103
     sget-object v0, Lcom/android/internal/telephony/dataconnection/DcAsyncChannel$LinkPropertyChangeAction;->NONE:Lcom/android/internal/telephony/dataconnection/DcAsyncChannel$LinkPropertyChangeAction;
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
@@ -122,14 +118,11 @@
 
     if-ne p0, v0, :cond_0
 
-    .line 104
     sget-object v0, Lcom/android/internal/telephony/dataconnection/DcAsyncChannel$LinkPropertyChangeAction;->NONE:Lcom/android/internal/telephony/dataconnection/DcAsyncChannel$LinkPropertyChangeAction;
 
-    .line 108
     :goto_0
     return-object v0
 
-    .line 105
     :cond_0
     sget-object v0, Lcom/android/internal/telephony/dataconnection/DcAsyncChannel$LinkPropertyChangeAction;->CHANGED:Lcom/android/internal/telephony/dataconnection/DcAsyncChannel$LinkPropertyChangeAction;
 
@@ -139,12 +132,10 @@
 
     if-ne p0, v0, :cond_1
 
-    .line 106
     sget-object v0, Lcom/android/internal/telephony/dataconnection/DcAsyncChannel$LinkPropertyChangeAction;->CHANGED:Lcom/android/internal/telephony/dataconnection/DcAsyncChannel$LinkPropertyChangeAction;
 
     goto :goto_0
 
-    .line 107
     :cond_1
     sget-object v0, Lcom/android/internal/telephony/dataconnection/DcAsyncChannel$LinkPropertyChangeAction;->RESET:Lcom/android/internal/telephony/dataconnection/DcAsyncChannel$LinkPropertyChangeAction;
 
@@ -154,12 +145,10 @@
 
     if-ne p0, v0, :cond_2
 
-    .line 108
     sget-object v0, Lcom/android/internal/telephony/dataconnection/DcAsyncChannel$LinkPropertyChangeAction;->RESET:Lcom/android/internal/telephony/dataconnection/DcAsyncChannel$LinkPropertyChangeAction;
 
     goto :goto_0
 
-    .line 110
     :cond_2
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -191,7 +180,6 @@
     .parameter "name"
 
     .prologue
-    .line 99
     const-class v0, Lcom/android/internal/telephony/dataconnection/DcAsyncChannel$LinkPropertyChangeAction;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -207,7 +195,6 @@
     .locals 1
 
     .prologue
-    .line 99
     sget-object v0, Lcom/android/internal/telephony/dataconnection/DcAsyncChannel$LinkPropertyChangeAction;->$VALUES:[Lcom/android/internal/telephony/dataconnection/DcAsyncChannel$LinkPropertyChangeAction;
 
     invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;

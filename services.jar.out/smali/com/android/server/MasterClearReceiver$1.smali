@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 3
+    .locals 5
 
     .prologue
     .line 46
@@ -55,9 +55,16 @@
 
     iget-object v2, p0, Lcom/android/server/MasterClearReceiver$1;->val$intent:Landroid/content/Intent;
 
-    invoke-static {v1, v2}, Landroid/os/RecoverySystemWrapper;->rebootWipeUserData(Landroid/content/Context;Landroid/content/Intent;)V
+    const-string v3, "format_sdcard"
 
-    .line 47
+    const/4 v4, 0x0
+
+    invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+
+    move-result v2
+
+    invoke-static {v1, v2}, Landroid/os/RecoverySystem;->rebootFactoryReset(Landroid/content/Context;Z)V
+
     const-string v1, "MasterClear"
 
     const-string v2, "Still running after master clear?!"

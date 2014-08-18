@@ -45,11 +45,6 @@
     .line 2246
     invoke-virtual {p0}, Landroid/widget/Editor$PinnedPopupWindow;->createPopupWindow()V
 
-    .line 2248
-    sget-boolean v1, Landroid/util/PowerMoConfig;->WITHOUT_ALL:Z
-
-    if-eqz v1, :cond_0
-
     .line 2249
     iget-object v1, p0, Landroid/widget/Editor$PinnedPopupWindow;->mPopupWindow:Landroid/widget/PopupWindow;
 
@@ -57,8 +52,6 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/PopupWindow;->setWindowLayoutType(I)V
 
-    .line 2253
-    :goto_0
     iget-object v1, p0, Landroid/widget/Editor$PinnedPopupWindow;->mPopupWindow:Landroid/widget/PopupWindow;
 
     invoke-virtual {v1, v3}, Landroid/widget/PopupWindow;->setWidth(I)V
@@ -80,7 +73,7 @@
     .local v0, wrapContent:Landroid/view/ViewGroup$LayoutParams;
     iget-object v1, p0, Landroid/widget/Editor$PinnedPopupWindow;->mContentView:Landroid/view/ViewGroup;
 
-    invoke-virtual {v1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 2262
     iget-object v1, p0, Landroid/widget/Editor$PinnedPopupWindow;->mPopupWindow:Landroid/widget/PopupWindow;
@@ -91,17 +84,6 @@
 
     .line 2263
     return-void
-
-    .line 2251
-    .end local v0           #wrapContent:Landroid/view/ViewGroup$LayoutParams;
-    :cond_0
-    iget-object v1, p0, Landroid/widget/Editor$PinnedPopupWindow;->mPopupWindow:Landroid/widget/PopupWindow;
-
-    const/16 v2, 0x514
-
-    invoke-virtual {v1, v2}, Landroid/widget/PopupWindow;->setWindowLayoutType(I)V
-
-    goto :goto_0
 .end method
 
 .method private computeLocalPosition()V
@@ -114,7 +96,7 @@
     .line 2289
     iget-object v3, p0, Landroid/widget/Editor$PinnedPopupWindow;->mContentView:Landroid/view/ViewGroup;
 
-    invoke-virtual {v3}, Landroid/view/View;->getMeasuredWidth()I
+    invoke-virtual {v3}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v2
 
@@ -252,7 +234,7 @@
 
     move-result-object v4
 
-    invoke-virtual {v4}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v4}, Landroid/widget/TextView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v4
 
@@ -264,7 +246,7 @@
     .local v0, displayMetrics:Landroid/util/DisplayMetrics;
     iget-object v4, p0, Landroid/widget/Editor$PinnedPopupWindow;->mContentView:Landroid/view/ViewGroup;
 
-    invoke-virtual {v4}, Landroid/view/View;->getMeasuredWidth()I
+    invoke-virtual {v4}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v3
 
@@ -383,7 +365,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v1}, Landroid/widget/TextView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
@@ -407,7 +389,7 @@
 
     move-result v3
 
-    invoke-virtual {v1, v2, v3}, Landroid/view/View;->measure(II)V
+    invoke-virtual {v1, v2, v3}, Landroid/view/ViewGroup;->measure(II)V
 
     .line 2281
     return-void

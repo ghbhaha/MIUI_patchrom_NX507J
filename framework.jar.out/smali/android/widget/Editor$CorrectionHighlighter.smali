@@ -69,7 +69,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v1}, Landroid/widget/TextView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
@@ -233,7 +233,7 @@
 
     add-int/2addr v6, v1
 
-    invoke-virtual {v2, v3, v4, v5, v6}, Landroid/view/View;->postInvalidateOnAnimation(IIII)V
+    invoke-virtual {v2, v3, v4, v5, v6}, Landroid/widget/TextView;->postInvalidateOnAnimation(IIII)V
 
     goto :goto_0
 
@@ -270,7 +270,7 @@
 
     float-to-int v6, v6
 
-    invoke-virtual {v2, v3, v4, v5, v6}, Landroid/view/View;->postInvalidate(IIII)V
+    invoke-virtual {v2, v3, v4, v5, v6}, Landroid/widget/TextView;->postInvalidate(IIII)V
 
     goto :goto_0
 .end method

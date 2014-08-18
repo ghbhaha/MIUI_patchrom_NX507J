@@ -172,20 +172,24 @@
     .parameter "listView"
 
     .prologue
-    .line 144
-    invoke-virtual {p1, p0}, Landroid/widget/AdapterView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
+    invoke-virtual {p1, p0}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    .line 145
+    invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->getRootAdapter()Landroid/widget/ListAdapter;
+
+    move-result-object v0
+
+    invoke-static {p1, v0}, Landroid/preference/Injector$PreferenceScreenHook;->addHeaderView(Landroid/widget/ListView;Landroid/widget/ListAdapter;)V
+
     invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->getRootAdapter()Landroid/widget/ListAdapter;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    .line 147
-    invoke-virtual {p0}, Landroid/preference/PreferenceGroup;->onAttachedToActivity()V
+    invoke-static {p1}, Landroid/preference/Injector$PreferenceScreenHook;->bind(Landroid/widget/ListView;)V
 
-    .line 148
+    invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->onAttachedToActivity()V
+
     return-void
 .end method
 

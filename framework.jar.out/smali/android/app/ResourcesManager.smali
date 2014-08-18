@@ -239,7 +239,7 @@
 
     .line 270
     :cond_3
-    invoke-static {v0}, Landroid/app/NubiaThemeHelper;->handleExtraConfigurationChanges(I)V
+    invoke-static {v0, p1}, Landroid/app/Injector$ActivityThreadHook;->handleExtraConfigurationChanges(ILandroid/content/res/Configuration;)V
 
     .line 275
     iget-object v10, p1, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
@@ -891,7 +891,7 @@
 
     move-object/from16 v1, p5
 
-    invoke-static {v8, v10, v9, v0, v1}, Landroid/content/res/NubiaClassFactory;->newResources(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;Landroid/os/IBinder;)Landroid/content/res/Resources;
+    invoke-static {v8, v10, v9, v0, v1}, Landroid/app/Injector$ActivityThreadHook;->createResources(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;Landroid/os/IBinder;)Landroid/content/res/Resources;
 
     move-result-object v14
 
@@ -1047,9 +1047,9 @@
     move-object v0, v6
 
     .line 238
-    check-cast v0, Landroid/content/res/NubiaResources;
+    check-cast v0, Landroid/content/res/MiuiResources;
 
-    invoke-virtual {v0, p1}, Landroid/content/res/NubiaResources;->init(Ljava/lang/String;)V
+    invoke-virtual {v0, p1}, Landroid/content/res/MiuiResources;->init(Ljava/lang/String;)V
 
     .line 240
     :cond_0

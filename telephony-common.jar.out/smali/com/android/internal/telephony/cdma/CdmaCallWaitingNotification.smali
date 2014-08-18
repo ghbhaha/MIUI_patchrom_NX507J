@@ -38,37 +38,26 @@
 
     const/4 v0, 0x0
 
-    .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 29
     iput-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;->number:Ljava/lang/String;
 
-    .line 30
     iput v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;->numberPresentation:I
 
-    .line 31
     iput-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;->name:Ljava/lang/String;
 
-    .line 32
     iput v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;->namePresentation:I
 
-    .line 33
     iput v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;->numberType:I
 
-    .line 34
     iput v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;->numberPlan:I
 
-    .line 35
     iput v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;->isPresent:I
 
-    .line 36
     iput v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;->signalType:I
 
-    .line 37
     iput v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;->alertPitch:I
 
-    .line 38
     iput v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;->signal:I
 
     return-void
@@ -79,10 +68,8 @@
     .parameter "cli"
 
     .prologue
-    .line 59
     packed-switch p0, :pswitch_data_0
 
-    .line 65
     const-string v0, "CdmaCallWaitingNotification"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -105,31 +92,26 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 66
     sget v0, Lcom/android/internal/telephony/PhoneConstants;->PRESENTATION_UNKNOWN:I
 
     :goto_0
     return v0
 
-    .line 60
     :pswitch_0
     sget v0, Lcom/android/internal/telephony/PhoneConstants;->PRESENTATION_ALLOWED:I
 
     goto :goto_0
 
-    .line 61
     :pswitch_1
     sget v0, Lcom/android/internal/telephony/PhoneConstants;->PRESENTATION_RESTRICTED:I
 
     goto :goto_0
 
-    .line 62
     :pswitch_2
     sget v0, Lcom/android/internal/telephony/PhoneConstants;->PRESENTATION_UNKNOWN:I
 
     goto :goto_0
 
-    .line 59
     nop
 
     :pswitch_data_0
@@ -146,7 +128,6 @@
     .locals 2
 
     .prologue
-    .line 43
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

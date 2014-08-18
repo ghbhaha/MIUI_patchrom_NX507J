@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 47
     iput-object p1, p0, Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll$1;->this$0:Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,12 +39,10 @@
     .parameter "intent"
 
     .prologue
-    .line 50
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 51
     .local v0, action:Ljava/lang/String;
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -68,7 +65,6 @@
     #calls: Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;->log(Ljava/lang/String;)V
     invoke-static {v3}, Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;->access$000(Ljava/lang/String;)V
 
-    .line 52
     sget-object v3, Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;->sActionDcTesterDeactivateAll:Ljava/lang/String;
 
     invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -94,14 +90,12 @@
 
     if-eqz v3, :cond_3
 
-    .line 54
     :cond_0
     const-string v3, "Send DEACTIVATE to all Dcc\'s"
 
     #calls: Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;->log(Ljava/lang/String;)V
     invoke-static {v3}, Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;->access$000(Ljava/lang/String;)V
 
-    .line 55
     iget-object v3, p0, Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll$1;->this$0:Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;
 
     #getter for: Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;->mDcc:Lcom/android/internal/telephony/dataconnection/DcController;
@@ -111,7 +105,6 @@
 
     if-eqz v3, :cond_1
 
-    .line 56
     iget-object v3, p0, Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll$1;->this$0:Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;
 
     #getter for: Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;->mDcc:Lcom/android/internal/telephony/dataconnection/DcController;
@@ -139,13 +132,11 @@
 
     check-cast v1, Lcom/android/internal/telephony/dataconnection/DataConnection;
 
-    .line 57
     .local v1, dc:Lcom/android/internal/telephony/dataconnection/DataConnection;
     invoke-virtual {v1}, Lcom/android/internal/telephony/dataconnection/DataConnection;->tearDownNow()V
 
     goto :goto_0
 
-    .line 60
     .end local v1           #dc:Lcom/android/internal/telephony/dataconnection/DataConnection;
     .end local v2           #i$:Ljava/util/Iterator;
     :cond_1
@@ -154,12 +145,10 @@
     #calls: Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;->log(Ljava/lang/String;)V
     invoke-static {v3}, Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;->access$000(Ljava/lang/String;)V
 
-    .line 65
     :cond_2
     :goto_1
     return-void
 
-    .line 63
     :cond_3
     new-instance v3, Ljava/lang/StringBuilder;
 

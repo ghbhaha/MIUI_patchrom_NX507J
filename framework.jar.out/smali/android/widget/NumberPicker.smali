@@ -190,7 +190,10 @@
 
     sput-object v0, Landroid/widget/NumberPicker;->sTwoDigitFormatter:Landroid/widget/NumberPicker$TwoDigitFormatter;
 
-    .line 1974
+    sget-object v0, Landroid/widget/NumberPicker;->sTwoDigitFormatter:Landroid/widget/NumberPicker$TwoDigitFormatter;
+
+    sput-object v0, Landroid/widget/NumberPicker;->TWO_DIGIT_FORMATTER:Landroid/widget/NumberPicker$Formatter;
+
     const/16 v0, 0x28
 
     new-array v0, v0, [C
@@ -5081,6 +5084,10 @@
     .line 852
     :cond_2
     :goto_1
+    iget-boolean v5, p0, Landroid/widget/NumberPicker;->mIsV5:Z
+
+    if-nez v5, :cond_miui
+
     invoke-virtual {p0}, Landroid/widget/NumberPicker;->getParent()Landroid/view/ViewParent;
 
     move-result-object v5
@@ -5088,6 +5095,7 @@
     invoke-interface {v5, v3}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
     .line 853
+    :cond_miui
     iget-object v5, p0, Landroid/widget/NumberPicker;->mFlingScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v5}, Landroid/widget/Scroller;->isFinished()Z

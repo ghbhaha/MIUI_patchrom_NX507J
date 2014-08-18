@@ -61,7 +61,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v1}, Landroid/widget/TextView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
@@ -124,7 +124,7 @@
     .line 3579
     iget-object v0, p0, Landroid/widget/Editor$InsertionPointCursorController;->mHandle:Landroid/widget/Editor$InsertionHandleView;
 
-    invoke-virtual {v0}, Landroid/widget/Editor$HandleView;->hide()V
+    invoke-virtual {v0}, Landroid/widget/Editor$InsertionHandleView;->hide()V
 
     .line 3581
     :cond_0
@@ -143,7 +143,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+    invoke-virtual {v1}, Landroid/widget/TextView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v0
 

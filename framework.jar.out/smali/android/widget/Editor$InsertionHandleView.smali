@@ -76,7 +76,7 @@
 
     const-wide/16 v2, 0xfa0
 
-    invoke-virtual {v0, v1, v2, v3}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v0, v1, v2, v3}, Landroid/widget/TextView;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 3370
     return-void
@@ -107,7 +107,7 @@
 
     iget-object v1, p0, Landroid/widget/Editor$InsertionHandleView;->mHider:Ljava/lang/Runnable;
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     .line 3376
     :cond_0
@@ -221,7 +221,7 @@
 
     .line 3394
     :pswitch_2
-    invoke-virtual {p0}, Landroid/widget/Editor$HandleView;->offsetHasBeenChanged()Z
+    invoke-virtual {p0}, Landroid/widget/Editor$InsertionHandleView;->offsetHasBeenChanged()Z
 
     move-result v6
 
@@ -263,7 +263,7 @@
 
     move-result-object v6
 
-    invoke-virtual {v6}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {v6}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
 
     move-result-object v6
 
@@ -288,22 +288,22 @@
     if-gez v6, :cond_0
 
     .line 3404
-    iget-object v6, p0, Landroid/widget/Editor$HandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
+    iget-object v6, p0, Landroid/widget/Editor$InsertionHandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
 
     if-eqz v6, :cond_1
 
-    iget-object v6, p0, Landroid/widget/Editor$HandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
+    iget-object v6, p0, Landroid/widget/Editor$InsertionHandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
 
-    invoke-virtual {v6}, Landroid/widget/Editor$PinnedPopupWindow;->isShowing()Z
+    invoke-virtual {v6}, Landroid/widget/Editor$ActionPopupWindow;->isShowing()Z
 
     move-result v6
 
     if-eqz v6, :cond_1
 
     .line 3406
-    iget-object v6, p0, Landroid/widget/Editor$HandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
+    iget-object v6, p0, Landroid/widget/Editor$InsertionHandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
 
-    invoke-virtual {v6}, Landroid/widget/Editor$PinnedPopupWindow;->hide()V
+    invoke-virtual {v6}, Landroid/widget/Editor$ActionPopupWindow;->hide()V
 
     .line 3412
     .end local v0           #deltaX:F
@@ -378,7 +378,7 @@
     .line 3348
     const/4 v2, 0x0
 
-    invoke-virtual {p0, v2}, Landroid/widget/Editor$HandleView;->showActionPopupWindow(I)V
+    invoke-virtual {p0, v2}, Landroid/widget/Editor$InsertionHandleView;->showActionPopupWindow(I)V
 
     .line 3351
     :cond_0
@@ -398,7 +398,7 @@
     .line 3356
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Landroid/widget/Editor$HandleView;->showActionPopupWindow(I)V
+    invoke-virtual {p0, v0}, Landroid/widget/Editor$InsertionHandleView;->showActionPopupWindow(I)V
 
     .line 3357
     return-void
@@ -424,7 +424,7 @@
 
     const/4 v1, 0x0
 
-    invoke-virtual {p0, v0, v1}, Landroid/widget/Editor$HandleView;->positionAtCursorOffset(IZ)V
+    invoke-virtual {p0, v0, v1}, Landroid/widget/Editor$InsertionHandleView;->positionAtCursorOffset(IZ)V
 
     .line 3439
     return-void

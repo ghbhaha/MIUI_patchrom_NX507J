@@ -86,18 +86,6 @@
 
     aput-object v2, v0, v1
 
-    const/4 v1, 0x5
-
-    const-string v2, "WAPI_PSK"
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x6
-
-    const-string v2, "WAPI_CERT"
-
-    aput-object v2, v0, v1
-
     sput-object v0, Landroid/net/wifi/WifiConfiguration$KeyMgmt;->strings:[Ljava/lang/String;
 
     return-void

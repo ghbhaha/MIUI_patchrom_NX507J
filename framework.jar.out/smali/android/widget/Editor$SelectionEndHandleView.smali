@@ -94,8 +94,7 @@
     .parameter "actionPopupWindow"
 
     .prologue
-    .line 3538
-    iput-object p1, p0, Landroid/widget/Editor$HandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
+    iput-object p1, p0, Landroid/widget/Editor$SelectionEndHandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
 
     .line 3539
     return-void
@@ -162,7 +161,7 @@
     :cond_0
     const/4 v2, 0x0
 
-    invoke-virtual {p0, v0, v2}, Landroid/widget/Editor$HandleView;->positionAtCursorOffset(IZ)V
+    invoke-virtual {p0, v0, v2}, Landroid/widget/Editor$SelectionEndHandleView;->positionAtCursorOffset(IZ)V
 
     .line 3535
     return-void
@@ -200,8 +199,7 @@
 
     invoke-static {v0, v1, p1}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;II)V
 
-    .line 3521
-    invoke-virtual {p0}, Landroid/widget/Editor$HandleView;->updateDrawable()V
+    invoke-virtual {p0}, Landroid/widget/Editor$SelectionEndHandleView;->updateDrawable()V
 
     .line 3522
     return-void

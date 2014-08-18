@@ -44,7 +44,7 @@
     .line 3363
     iget-object v0, p0, Landroid/widget/Editor$InsertionHandleView$1;->this$1:Landroid/widget/Editor$InsertionHandleView;
 
-    invoke-virtual {v0}, Landroid/widget/Editor$HandleView;->hide()V
+    invoke-virtual {v0}, Landroid/widget/Editor$InsertionHandleView;->hide()V
 
     .line 3364
     return-void

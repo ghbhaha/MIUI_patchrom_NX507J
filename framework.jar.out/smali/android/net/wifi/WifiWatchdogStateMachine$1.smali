@@ -145,6 +145,16 @@
 
     move-result-object v2
 
+    if-eqz v2, :cond_0
+
+    .line 375
+    iget-object v2, p0, Landroid/net/wifi/WifiWatchdogStateMachine$1;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
+
+    #getter for: Landroid/net/wifi/WifiWatchdogStateMachine;->mRssiInfo:Landroid/net/wifi/WifiRssiInfo;
+    invoke-static {v2}, Landroid/net/wifi/WifiWatchdogStateMachine;->access$000(Landroid/net/wifi/WifiWatchdogStateMachine;)Landroid/net/wifi/WifiRssiInfo;
+
+    move-result-object v2
+
     const/16 v3, -0x64
 
     invoke-virtual {v2, v3}, Landroid/net/wifi/WifiRssiInfo;->updateLastSignalRssi(I)V

@@ -645,21 +645,16 @@
 
     const/high16 v11, 0x4000
 
-    .line 276
-    iget-object v7, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mNubiaActionBar:Lnubia/ui/IActionBar;
-
-    invoke-interface {v7, p1, p2}, Lnubia/ui/IActionBar;->getActionMenuItemViewOnMeasure(II)Z
+    .line 282
+    invoke-static {p0, p1, p2}, Lcom/android/internal/view/menu/Injector$ActionMenuItemViewHook;->before_onMeasure(Lcom/android/internal/view/menu/ActionMenuItemView;II)Z
 
     move-result v7
 
-    if-eqz v7, :cond_1
+    if-eqz v7, :cond_miui
 
-    .line 314
-    :cond_0
-    :goto_0
     return-void
 
-    .line 282
+    :cond_miui
     :cond_1
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
@@ -730,7 +725,7 @@
 
     .line 298
     .local v1, oldMeasuredWidth:I
-    if-ne v5, v12, :cond_5
+    if-ne v5, v12, :cond_6
 
     iget v7, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mMinWidth:I
 
@@ -758,11 +753,11 @@
 
     .line 307
     :cond_4
-    if-nez v3, :cond_0
+    if-nez v3, :cond_5
 
     iget-object v7, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mIcon:Landroid/graphics/drawable/Drawable;
 
-    if-eqz v7, :cond_0
+    if-eqz v7, :cond_5
 
     .line 310
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
@@ -801,13 +796,14 @@
 
     invoke-super {p0, v7, v8, v9, v10}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    goto :goto_0
-
     .line 298
     .end local v0           #dw:I
-    .end local v2           #targetWidth:I
     .end local v4           #w:I
     :cond_5
+    return-void
+
+    .end local v2           #targetWidth:I
+    :cond_6
     iget v2, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mMinWidth:I
 
     goto :goto_1

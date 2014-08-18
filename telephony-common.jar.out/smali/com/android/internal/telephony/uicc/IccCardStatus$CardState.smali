@@ -44,7 +44,6 @@
 
     const/4 v2, 0x0
 
-    .line 28
     new-instance v0, Lcom/android/internal/telephony/uicc/IccCardStatus$CardState;
 
     const-string v1, "CARDSTATE_ABSENT"
@@ -53,7 +52,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/uicc/IccCardStatus$CardState;->CARDSTATE_ABSENT:Lcom/android/internal/telephony/uicc/IccCardStatus$CardState;
 
-    .line 29
     new-instance v0, Lcom/android/internal/telephony/uicc/IccCardStatus$CardState;
 
     const-string v1, "CARDSTATE_PRESENT"
@@ -62,7 +60,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/uicc/IccCardStatus$CardState;->CARDSTATE_PRESENT:Lcom/android/internal/telephony/uicc/IccCardStatus$CardState;
 
-    .line 30
     new-instance v0, Lcom/android/internal/telephony/uicc/IccCardStatus$CardState;
 
     const-string v1, "CARDSTATE_ERROR"
@@ -71,7 +68,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/uicc/IccCardStatus$CardState;->CARDSTATE_ERROR:Lcom/android/internal/telephony/uicc/IccCardStatus$CardState;
 
-    .line 27
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/android/internal/telephony/uicc/IccCardStatus$CardState;
@@ -104,7 +100,6 @@
     .end annotation
 
     .prologue
-    .line 27
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -115,7 +110,6 @@
     .parameter "name"
 
     .prologue
-    .line 27
     const-class v0, Lcom/android/internal/telephony/uicc/IccCardStatus$CardState;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -131,7 +125,6 @@
     .locals 1
 
     .prologue
-    .line 27
     sget-object v0, Lcom/android/internal/telephony/uicc/IccCardStatus$CardState;->$VALUES:[Lcom/android/internal/telephony/uicc/IccCardStatus$CardState;
 
     invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
@@ -149,7 +142,6 @@
     .locals 1
 
     .prologue
-    .line 37
     sget-object v0, Lcom/android/internal/telephony/uicc/IccCardStatus$CardState;->CARDSTATE_ERROR:Lcom/android/internal/telephony/uicc/IccCardStatus$CardState;
 
     if-ne p0, v0, :cond_0
@@ -169,7 +161,6 @@
     .locals 1
 
     .prologue
-    .line 33
     sget-object v0, Lcom/android/internal/telephony/uicc/IccCardStatus$CardState;->CARDSTATE_PRESENT:Lcom/android/internal/telephony/uicc/IccCardStatus$CardState;
 
     if-ne p0, v0, :cond_0

@@ -762,6 +762,8 @@
 
 .field mSmartShowContext:Landroid/content/ISmartShowContext;
 
+.field mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+
 .field mStackSupervisor:Lcom/android/server/am/IActivityStackSupervisor;
 
 .field mStartRunning:Z
@@ -68669,7 +68671,7 @@
 
     move/from16 v1, v21
 
-    move-object/from16 v2, v27
+    move-object/from16 v2, v28
 
     invoke-static {v0, v1, v2}, Lcom/android/server/am/Injector$ActivityManagerServiceHook;->handleConfigurationChanges(Lcom/android/server/am/ActivityManagerService;ILandroid/content/res/Configuration;)V
 

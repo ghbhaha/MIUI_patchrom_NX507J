@@ -96,7 +96,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {v1}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -134,13 +134,13 @@
 
     move-result-object v2
 
-    invoke-virtual {v2}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {v2}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
     const/4 v3, 0x0
 
-    const v4, 0x10102c8
+    sget v4, Lcom/android/internal/R$attr;->textSelectHandleWindowStyle:I
 
     invoke-direct {v1, v2, v3, v4}, Landroid/widget/PopupWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -499,7 +499,7 @@
 
     iget-object v1, p0, Landroid/widget/Editor$HandleView;->mActionPopupShower:Ljava/lang/Runnable;
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     .line 3167
     :cond_0
@@ -510,7 +510,7 @@
     .line 3168
     iget-object v0, p0, Landroid/widget/Editor$HandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
 
-    invoke-virtual {v0}, Landroid/widget/Editor$PinnedPopupWindow;->hide()V
+    invoke-virtual {v0}, Landroid/widget/Editor$ActionPopupWindow;->hide()V
 
     .line 3170
     :cond_1
@@ -582,15 +582,15 @@
     .line 3261
     iget-object v0, p0, Landroid/widget/Editor$HandleView;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    iget v1, p0, Landroid/view/View;->mRight:I
+    iget v1, p0, Landroid/widget/Editor$HandleView;->mRight:I
 
-    iget v2, p0, Landroid/view/View;->mLeft:I
+    iget v2, p0, Landroid/widget/Editor$HandleView;->mLeft:I
 
     sub-int/2addr v1, v2
 
-    iget v2, p0, Landroid/view/View;->mBottom:I
+    iget v2, p0, Landroid/widget/Editor$HandleView;->mBottom:I
 
-    iget v3, p0, Landroid/view/View;->mTop:I
+    iget v3, p0, Landroid/widget/Editor$HandleView;->mTop:I
 
     sub-int/2addr v2, v3
 
@@ -635,7 +635,7 @@
 
     move-result v1
 
-    invoke-virtual {p0, v0, v1}, Landroid/view/View;->setMeasuredDimension(II)V
+    invoke-virtual {p0, v0, v1}, Landroid/widget/Editor$HandleView;->setMeasuredDimension(II)V
 
     .line 3121
     return-void
@@ -1107,7 +1107,7 @@
 
     int-to-long v2, p1
 
-    invoke-virtual {v0, v1, v2, v3}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v0, v1, v2, v3}, Landroid/widget/TextView;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 3161
     return-void
@@ -1123,7 +1123,7 @@
 
     iget-object v1, p0, Landroid/widget/Editor$HandleView;->mActionPopupShower:Ljava/lang/Runnable;
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     goto :goto_0
 .end method

@@ -453,6 +453,13 @@
 
     .line 1088
     :goto_0
+    add-int/lit8 v0, p1, -0x1
+
+    if-lt v2, v0, :cond_2
+
+    add-int/lit8 v2, p1, -0x1
+
+    :cond_2
     return v2
 
     .line 1083
@@ -478,7 +485,7 @@
 
     .line 1088
     .local v1, outputRange:F
-    add-int/lit8 v2, p0, 0x64
+    add-int/lit8 v2, p0, 0x75
 
     int-to-float v2, v2
 

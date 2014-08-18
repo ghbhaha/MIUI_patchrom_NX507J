@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 472
     iput-object p1, p0, Lcom/android/internal/telephony/uicc/RuimRecords$EfCsimEprlLoaded;->this$0:Lcom/android/internal/telephony/uicc/RuimRecords;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .parameter "x1"
 
     .prologue
-    .line 472
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/uicc/RuimRecords$EfCsimEprlLoaded;-><init>(Lcom/android/internal/telephony/uicc/RuimRecords;)V
 
     return-void
@@ -53,7 +51,6 @@
     .locals 1
 
     .prologue
-    .line 475
     const-string v0, "EF_CSIM_EPRL"
 
     return-object v0
@@ -64,12 +61,10 @@
     .parameter "ar"
 
     .prologue
-    .line 479
     iget-object v0, p0, Lcom/android/internal/telephony/uicc/RuimRecords$EfCsimEprlLoaded;->this$0:Lcom/android/internal/telephony/uicc/RuimRecords;
 
     #calls: Lcom/android/internal/telephony/uicc/RuimRecords;->onGetCSimEprlDone(Landroid/os/AsyncResult;)V
     invoke-static {v0, p1}, Lcom/android/internal/telephony/uicc/RuimRecords;->access$700(Lcom/android/internal/telephony/uicc/RuimRecords;Landroid/os/AsyncResult;)V
 
-    .line 480
     return-void
 .end method

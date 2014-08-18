@@ -316,12 +316,8 @@
 
     .line 986
     .local v1, listView:Landroid/widget/ListView;
-    invoke-virtual {v1, p1}, Landroid/view/View;->setTextDirection(I)V
+    invoke-static {v1, p1, p2}, Landroid/widget/Injector$SpinnerHook;->setListViewRtl(Landroid/widget/ListView;II)V
 
-    .line 987
-    invoke-virtual {v1, p2}, Landroid/view/View;->setTextAlignment(I)V
-
-    .line 988
     iget-object v2, p0, Landroid/widget/Spinner$DialogPopup;->mPopup:Landroid/app/AlertDialog;
 
     invoke-virtual {v2}, Landroid/app/AlertDialog;->show()V

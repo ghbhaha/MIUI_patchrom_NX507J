@@ -12,6 +12,8 @@
 
 
 # static fields
+.field public static final FILE_TYPE_3G2B:I = 0xd0
+
 .field public static final FILE_TYPE_3GPA:I = 0x12d
 
 .field public static final FILE_TYPE_3GPP:I = 0x17
@@ -23,8 +25,6 @@
 .field public static final FILE_TYPE_AC3:I = 0x12e
 
 .field public static final FILE_TYPE_AMR:I = 0x4
-
-.field public static final FILE_TYPE_APE:I = 0x14
 
 .field public static final FILE_TYPE_APE:I = 0x3e9
 
@@ -102,8 +102,6 @@
 
 .field public static final FILE_TYPE_QCP:I = 0x12f
 
-.field public static final FILE_TYPE_RMVB:I = 0xc8
-
 .field public static final FILE_TYPE_RM:I = 0xcc
 
 .field public static final FILE_TYPE_RMVB:I = 0xcd
@@ -164,7 +162,7 @@
 
 .field private static final LAST_VIDEO_FILE_TYPE:I = 0x1e
 
-.field private static final LAST_VIDEO_FILE_TYPE2:I = 0xc9
+.field private static final LAST_VIDEO_FILE_TYPE2:I = 0xd0
 
 .field private static final LAST_VIDEO_FILE_TYPE3:I = 0xca
 
@@ -1528,9 +1526,11 @@
     if-le p0, v0, :cond_2
 
     :cond_0
+    const/16 v1, 0xc8
+
     if-lt p0, v1, :cond_1
 
-    const/16 v0, 0xc9
+    const/16 v0, 0xd0
 
     if-le p0, v0, :cond_2
 

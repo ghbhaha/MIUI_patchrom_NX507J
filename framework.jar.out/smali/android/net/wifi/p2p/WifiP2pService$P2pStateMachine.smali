@@ -2738,6 +2738,16 @@
 
     .line 2705
     .local v0, peersChanged:Z
+    iget-object v1, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;->mSavedPeerConfig:Landroid/net/wifi/p2p/WifiP2pConfig;
+
+    iget-object v1, v1, Landroid/net/wifi/p2p/WifiP2pConfig;->deviceAddress:Ljava/lang/String;
+
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
     iget-object v1, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;->mPeers:Landroid/net/wifi/p2p/WifiP2pDeviceList;
 
     iget-object v2, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;->mSavedPeerConfig:Landroid/net/wifi/p2p/WifiP2pConfig;
@@ -2760,6 +2770,7 @@
 
     .line 2709
     :cond_0
+    :goto_0
     if-eqz v0, :cond_1
 
     .line 2710
@@ -2786,6 +2797,16 @@
 
     .line 2717
     return-void
+    .restart local v0       #peersChanged:Z
+    :cond_3
+    const/4 v0, 0x1
+
+    .line 2712
+    iget-object v1, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;->mWifiNative:Landroid/net/wifi/WifiNative;
+
+    invoke-virtual {v1}, Landroid/net/wifi/WifiNative;->p2pFlush()Z
+
+    goto :goto_0
 .end method
 
 .method private handleGroupRemoved()V

@@ -17,7 +17,6 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 50
     const-string v1, "GsmInboundSmsHandler"
 
     move-object v0, p0
@@ -30,10 +29,8 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/internal/telephony/InboundSmsHandler;-><init>(Ljava/lang/String;Landroid/content/Context;Lcom/android/internal/telephony/SmsStorageMonitor;Lcom/android/internal/telephony/PhoneBase;Lcom/android/internal/telephony/CellBroadcastHandler;)V
 
-    .line 51
     invoke-virtual {p0, p1, p3}, Lcom/android/internal/telephony/gsm/GsmInboundSmsHandler;->init(Landroid/content/Context;Lcom/android/internal/telephony/PhoneBase;)V
 
-    .line 52
     iget-object v0, p3, Lcom/android/internal/telephony/PhoneBase;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-virtual {p0}, Lcom/android/internal/util/StateMachine;->getHandler()Landroid/os/Handler;
@@ -44,7 +41,6 @@
 
     invoke-interface {v0, v1, v2, v5}, Lcom/android/internal/telephony/CommandsInterface;->setOnNewGsmSms(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 53
     new-instance v0, Lcom/android/internal/telephony/gsm/UsimDataDownloadHandler;
 
     iget-object v1, p3, Lcom/android/internal/telephony/PhoneBase;->mCi:Lcom/android/internal/telephony/CommandsInterface;
@@ -53,7 +49,6 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/gsm/GsmInboundSmsHandler;->mDataDownloadHandler:Lcom/android/internal/telephony/gsm/UsimDataDownloadHandler;
 
-    .line 54
     return-void
 .end method
 
@@ -64,16 +59,13 @@
     .parameter "phone"
 
     .prologue
-    .line 78
     new-instance v0, Lcom/android/internal/telephony/gsm/GsmInboundSmsHandler;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/android/internal/telephony/gsm/GsmInboundSmsHandler;-><init>(Landroid/content/Context;Lcom/android/internal/telephony/SmsStorageMonitor;Lcom/android/internal/telephony/PhoneBase;)V
 
-    .line 79
     .local v0, handler:Lcom/android/internal/telephony/gsm/GsmInboundSmsHandler;
     invoke-virtual {v0}, Lcom/android/internal/util/StateMachine;->start()V
 
-    .line 80
     return-object v0
 .end method
 
@@ -82,29 +74,24 @@
     .parameter "rc"
 
     .prologue
-    .line 196
     packed-switch p0, :pswitch_data_0
 
-    .line 205
     :pswitch_0
     const/16 v0, 0xff
 
     :goto_0
     return v0
 
-    .line 200
     :pswitch_1
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 202
     :pswitch_2
     const/16 v0, 0xd3
 
     goto :goto_0
 
-    .line 196
     nop
 
     :pswitch_data_0
@@ -126,7 +113,6 @@
     .parameter "response"
 
     .prologue
-    .line 172
     iget-object v0, p0, Lcom/android/internal/telephony/InboundSmsHandler;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v0, v0, Lcom/android/internal/telephony/PhoneBase;->mCi:Lcom/android/internal/telephony/CommandsInterface;
@@ -137,7 +123,6 @@
 
     invoke-interface {v0, p1, v1, p3}, Lcom/android/internal/telephony/CommandsInterface;->acknowledgeLastIncomingGsmSms(ZILandroid/os/Message;)V
 
-    .line 173
     return-void
 .end method
 
@@ -150,12 +135,10 @@
 
     const/4 v4, 0x1
 
-    .line 102
     move-object v1, p1
 
     check-cast v1, Lcom/android/internal/telephony/gsm/SmsMessage;
 
-    .line 104
     .local v1, sms:Lcom/android/internal/telephony/gsm/SmsMessage;
     invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SmsMessage;->isTypeZero()Z
 
@@ -163,17 +146,14 @@
 
     if-eqz v5, :cond_1
 
-    .line 107
     const-string v3, "Received short message type 0, Don\'t display or store it. Send Ack"
 
     invoke-virtual {p0, v3}, Lcom/android/internal/telephony/InboundSmsHandler;->log(Ljava/lang/String;)V
 
-    .line 138
     :cond_0
     :goto_0
     return v4
 
-    .line 112
     :cond_1
     invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SmsMessage;->isUsimDataDownload()Z
 
@@ -181,14 +161,12 @@
 
     if-eqz v5, :cond_2
 
-    .line 113
     iget-object v3, p0, Lcom/android/internal/telephony/InboundSmsHandler;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/PhoneBase;->getUsimServiceTable()Lcom/android/internal/telephony/uicc/UsimServiceTable;
 
     move-result-object v2
 
-    .line 114
     .local v2, ust:Lcom/android/internal/telephony/uicc/UsimServiceTable;
     iget-object v3, p0, Lcom/android/internal/telephony/gsm/GsmInboundSmsHandler;->mDataDownloadHandler:Lcom/android/internal/telephony/gsm/UsimDataDownloadHandler;
 
@@ -198,12 +176,10 @@
 
     goto :goto_0
 
-    .line 117
     .end local v2           #ust:Lcom/android/internal/telephony/uicc/UsimServiceTable;
     :cond_2
     const/4 v0, 0x0
 
-    .line 118
     .local v0, handled:Z
     invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SmsMessage;->isMWISetMessage()Z
 
@@ -211,19 +187,16 @@
 
     if-eqz v5, :cond_5
 
-    .line 119
     invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SmsMessage;->getNumOfVoicemails()I
 
     move-result v5
 
     invoke-virtual {p0, v5}, Lcom/android/internal/telephony/gsm/GsmInboundSmsHandler;->updateMessageWaitingIndicator(I)V
 
-    .line 120
     invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SmsMessage;->isMwiDontStore()Z
 
     move-result v0
 
-    .line 121
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -249,12 +222,10 @@
 
     invoke-virtual {p0, v3}, Lcom/android/internal/telephony/InboundSmsHandler;->log(Ljava/lang/String;)V
 
-    .line 127
     :cond_4
     :goto_1
     if-nez v0, :cond_0
 
-    .line 131
     iget-object v3, p0, Lcom/android/internal/telephony/InboundSmsHandler;->mStorageMonitor:Lcom/android/internal/telephony/SmsStorageMonitor;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/SmsStorageMonitor;->isStorageAvailable()Z
@@ -271,12 +242,10 @@
 
     if-eq v3, v4, :cond_7
 
-    .line 135
     const/4 v4, 0x3
 
     goto :goto_0
 
-    .line 122
     :cond_5
     invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SmsMessage;->isMWIClearMessage()Z
 
@@ -284,15 +253,12 @@
 
     if-eqz v5, :cond_4
 
-    .line 123
     invoke-virtual {p0, v3}, Lcom/android/internal/telephony/gsm/GsmInboundSmsHandler;->updateMessageWaitingIndicator(I)V
 
-    .line 124
     invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SmsMessage;->isMwiDontStore()Z
 
     move-result v0
 
-    .line 125
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -320,7 +286,6 @@
 
     goto :goto_1
 
-    .line 138
     :cond_7
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/InboundSmsHandler;->dispatchNormalMessage(Lcom/android/internal/telephony/SmsMessageBase;)I
 
@@ -335,14 +300,12 @@
     .parameter "phone"
 
     .prologue
-    .line 57
     invoke-static {p1, p2}, Lcom/android/internal/telephony/gsm/GsmCellBroadcastHandler;->makeGsmCellBroadcastHandler(Landroid/content/Context;Lcom/android/internal/telephony/PhoneBase;)Lcom/android/internal/telephony/gsm/GsmCellBroadcastHandler;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/telephony/InboundSmsHandler;->mCellBroadcastHandler:Lcom/android/internal/telephony/CellBroadcastHandler;
 
-    .line 59
     return-void
 .end method
 
@@ -350,7 +313,6 @@
     .locals 1
 
     .prologue
-    .line 89
     const/4 v0, 0x0
 
     return v0
@@ -360,7 +322,6 @@
     .locals 2
 
     .prologue
-    .line 66
     iget-object v0, p0, Lcom/android/internal/telephony/InboundSmsHandler;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v0, v0, Lcom/android/internal/telephony/PhoneBase;->mCi:Lcom/android/internal/telephony/CommandsInterface;
@@ -371,20 +332,16 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/telephony/CommandsInterface;->unSetOnNewGsmSms(Landroid/os/Handler;)V
 
-    .line 67
     iget-object v0, p0, Lcom/android/internal/telephony/InboundSmsHandler;->mCellBroadcastHandler:Lcom/android/internal/telephony/CellBroadcastHandler;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/WakeLockStateMachine;->dispose()V
 
-    .line 69
     const-string v0, "unregistered for 3GPP SMS"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/InboundSmsHandler;->log(Ljava/lang/String;)V
 
-    .line 70
     invoke-super {p0}, Lcom/android/internal/telephony/InboundSmsHandler;->onQuitting()V
 
-    .line 71
     return-void
 .end method
 
@@ -393,25 +350,20 @@
     .parameter "phone"
 
     .prologue
-    .line 184
     invoke-super {p0, p1}, Lcom/android/internal/telephony/InboundSmsHandler;->onUpdatePhoneObject(Lcom/android/internal/telephony/PhoneBase;)V
 
-    .line 185
     const-string v0, "onUpdatePhoneObject: dispose of old CellBroadcastHandler and make a new one"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/InboundSmsHandler;->log(Ljava/lang/String;)V
 
-    .line 186
     iget-object v0, p0, Lcom/android/internal/telephony/InboundSmsHandler;->mCellBroadcastHandler:Lcom/android/internal/telephony/CellBroadcastHandler;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/WakeLockStateMachine;->dispose()V
 
-    .line 187
     iget-object v0, p0, Lcom/android/internal/telephony/InboundSmsHandler;->mContext:Landroid/content/Context;
 
     invoke-virtual {p0, v0, p1}, Lcom/android/internal/telephony/gsm/GsmInboundSmsHandler;->init(Landroid/content/Context;Lcom/android/internal/telephony/PhoneBase;)V
 
-    .line 188
     return-void
 .end method
 
@@ -422,20 +374,16 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 143
     if-gez p1, :cond_1
 
-    .line 144
     const/4 p1, -0x1
 
-    .line 151
     :cond_0
     :goto_0
     iget-object v1, p0, Lcom/android/internal/telephony/InboundSmsHandler;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v1, p1}, Lcom/android/internal/telephony/PhoneBase;->setVoiceMessageCount(I)V
 
-    .line 153
     invoke-static {}, Lcom/android/internal/telephony/uicc/UiccController;->getInstance()Lcom/android/internal/telephony/uicc/UiccController;
 
     move-result-object v1
@@ -444,38 +392,30 @@
 
     move-result-object v0
 
-    .line 155
     .local v0, records:Lcom/android/internal/telephony/uicc/IccRecords;
     if-eqz v0, :cond_2
 
-    .line 156
     const-string v1, "updateMessageWaitingIndicator: updating SIM Records"
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/InboundSmsHandler;->log(Ljava/lang/String;)V
 
-    .line 157
     invoke-virtual {v0, v2, p1}, Lcom/android/internal/telephony/uicc/IccRecords;->setVoiceMessageWaiting(II)V
 
-    .line 161
     :goto_1
     invoke-virtual {p0}, Lcom/android/internal/telephony/InboundSmsHandler;->storeVoiceMailCount()V
 
-    .line 162
     return-void
 
-    .line 145
     .end local v0           #records:Lcom/android/internal/telephony/uicc/IccRecords;
     :cond_1
     const/16 v1, 0xff
 
     if-le p1, v1, :cond_0
 
-    .line 148
     const/16 p1, 0xff
 
     goto :goto_0
 
-    .line 159
     .restart local v0       #records:Lcom/android/internal/telephony/uicc/IccRecords;
     :cond_2
     const-string v1, "updateMessageWaitingIndicator: SIM Records not found"

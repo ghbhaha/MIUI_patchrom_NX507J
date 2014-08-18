@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 220
     iput-object p1, p0, Lcom/android/internal/telephony/WakeLockStateMachine$1;->this$0:Lcom/android/internal/telephony/WakeLockStateMachine;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,13 +39,11 @@
     .parameter "intent"
 
     .prologue
-    .line 223
     iget-object v0, p0, Lcom/android/internal/telephony/WakeLockStateMachine$1;->this$0:Lcom/android/internal/telephony/WakeLockStateMachine;
 
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1}, Lcom/android/internal/util/StateMachine;->sendMessage(I)V
 
-    .line 224
     return-void
 .end method

@@ -115,37 +115,37 @@
 .end method
 
 .method public getStartOffset()I
-    .locals 2
+    .locals 3
 
     .prologue
-    .line 1536
-    iget-object v0, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mUpView:Landroid/widget/ImageView;
+    invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarView$HomeView;->getContext()Landroid/content/Context;
 
-    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mUpView:Landroid/widget/ImageView;
+
+    iget v2, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mUpWidth:I
+
+    invoke-static {v0, v1, v2}, Lcom/android/internal/widget/Injector$ActionBarViewHook;->getStartOffset(Landroid/content/Context;Landroid/view/View;I)I
 
     move-result v0
 
-    const/16 v1, 0x8
-
-    if-ne v0, v1, :cond_0
-
-    iget v0, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mStartOffset:I
-
-    :goto_0
     return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method
 
 .method public getUpWidth()I
-    .locals 1
+    .locals 2
 
     .prologue
-    .line 1546
-    iget v0, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mUpWidth:I
+    invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarView$HomeView;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    iget v1, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mUpWidth:I
+
+    invoke-static {v0, v1}, Lcom/android/internal/widget/Injector$ActionBarViewHook;->getUpWidth(Landroid/content/Context;I)I
+
+    move-result v0
 
     return v0
 .end method

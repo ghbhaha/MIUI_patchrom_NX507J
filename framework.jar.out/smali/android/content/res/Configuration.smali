@@ -208,7 +208,7 @@
 
 .field public densityDpi:I
 
-.field public extraConfig:Lnubia/content/res/ExtraConfiguration;
+.field public extraConfig:Lmiui/content/res/ExtraConfiguration;
 
 .field public fontScale:F
 
@@ -276,12 +276,11 @@
     .line 611
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 614
-    new-instance v0, Lnubia/content/res/ExtraConfiguration;
+    new-instance v0, Lmiui/content/res/ExtraConfiguration;
 
-    invoke-direct {v0}, Lnubia/content/res/ExtraConfiguration;-><init>()V
+    invoke-direct {v0}, Lmiui/content/res/ExtraConfiguration;-><init>()V
 
-    iput-object v0, p0, Landroid/content/res/Configuration;->extraConfig:Lnubia/content/res/ExtraConfiguration;
+    iput-object v0, p0, Landroid/content/res/Configuration;->extraConfig:Lmiui/content/res/ExtraConfiguration;
 
     .line 617
     invoke-virtual {p0}, Landroid/content/res/Configuration;->setToDefaults()V
@@ -298,12 +297,11 @@
     .line 623
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 626
-    new-instance v0, Lnubia/content/res/ExtraConfiguration;
+    new-instance v0, Lmiui/content/res/ExtraConfiguration;
 
-    invoke-direct {v0}, Lnubia/content/res/ExtraConfiguration;-><init>()V
+    invoke-direct {v0}, Lmiui/content/res/ExtraConfiguration;-><init>()V
 
-    iput-object v0, p0, Landroid/content/res/Configuration;->extraConfig:Lnubia/content/res/ExtraConfiguration;
+    iput-object v0, p0, Landroid/content/res/Configuration;->extraConfig:Lmiui/content/res/ExtraConfiguration;
 
     .line 629
     invoke-virtual {p0, p1}, Landroid/content/res/Configuration;->setTo(Landroid/content/res/Configuration;)V
@@ -320,12 +318,11 @@
     .line 1243
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1246
-    new-instance v0, Lnubia/content/res/ExtraConfiguration;
+    new-instance v0, Lmiui/content/res/ExtraConfiguration;
 
-    invoke-direct {v0}, Lnubia/content/res/ExtraConfiguration;-><init>()V
+    invoke-direct {v0}, Lmiui/content/res/ExtraConfiguration;-><init>()V
 
-    iput-object v0, p0, Landroid/content/res/Configuration;->extraConfig:Lnubia/content/res/ExtraConfiguration;
+    iput-object v0, p0, Landroid/content/res/Configuration;->extraConfig:Lmiui/content/res/ExtraConfiguration;
 
     .line 1249
     invoke-virtual {p0, p1}, Landroid/content/res/Configuration;->readFromParcel(Landroid/os/Parcel;)V
@@ -370,15 +367,15 @@
 
     and-int/2addr v0, p0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_miui
 
-    invoke-static {p0}, Lnubia/content/res/ExtraConfiguration;->needNewResources(I)Z
+    invoke-static {p0}, Lmiui/content/res/ExtraConfiguration;->needNewResources(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    :cond_0
+    :cond_miui
     const/4 v0, 0x1
 
     :goto_0
@@ -832,15 +829,7 @@
 
     sub-int v2, v3, v4
 
-    .line 1302
-    if-nez v2, :cond_0
-
-    .line 1303
-    iget-object v3, p0, Landroid/content/res/Configuration;->extraConfig:Lnubia/content/res/ExtraConfiguration;
-
-    iget-object v4, p1, Landroid/content/res/Configuration;->extraConfig:Lnubia/content/res/ExtraConfiguration;
-
-    invoke-virtual {v3, v4}, Lnubia/content/res/ExtraConfiguration;->compareTo(Lnubia/content/res/ExtraConfiguration;)I
+    invoke-static {p0, v2, p1}, Landroid/content/res/Injector$ConfigurationHook;->compareTo(Landroid/content/res/Configuration;ILandroid/content/res/Configuration;)I
 
     move-result v2
 
@@ -1190,18 +1179,11 @@
 
     .line 1092
     :cond_12
-    iget-object v2, p0, Landroid/content/res/Configuration;->extraConfig:Lnubia/content/res/ExtraConfiguration;
-
-    iget-object v3, p1, Landroid/content/res/Configuration;->extraConfig:Lnubia/content/res/ExtraConfiguration;
-
-    invoke-virtual {v2, v3}, Lnubia/content/res/ExtraConfiguration;->diff(Lnubia/content/res/ExtraConfiguration;)I
+    invoke-static {p0, p1, v0}, Landroid/content/res/Injector$ConfigurationHook;->diff(Landroid/content/res/Configuration;Landroid/content/res/Configuration;I)I
 
     move-result v2
 
-    or-int/2addr v0, v2
-
-    .line 1095
-    return v0
+    return v2
 .end method
 
 .method public equals(Landroid/content/res/Configuration;)Z
@@ -1431,17 +1413,13 @@
 
     add-int v0, v1, v2
 
-    .line 1344
-    iget-object v1, p0, Landroid/content/res/Configuration;->extraConfig:Lnubia/content/res/ExtraConfiguration;
-
-    invoke-virtual {v1}, Lnubia/content/res/ExtraConfiguration;->hashCode()I
+    invoke-static {p0}, Landroid/content/res/Injector$ConfigurationHook;->hashCode(Landroid/content/res/Configuration;)I
 
     move-result v1
 
-    add-int/2addr v0, v1
+    add-int/2addr v1, v0
 
-    .line 1347
-    return v0
+    return v1
 
     .line 1328
     :cond_0
@@ -1733,10 +1711,7 @@
 
     iput v0, p0, Landroid/content/res/Configuration;->seq:I
 
-    .line 1224
-    iget-object v0, p0, Landroid/content/res/Configuration;->extraConfig:Lnubia/content/res/ExtraConfiguration;
-
-    invoke-virtual {v0, p1}, Lnubia/content/res/ExtraConfiguration;->readFromParcel(Landroid/os/Parcel;)V
+    invoke-static {p0, p1}, Landroid/content/res/Injector$ConfigurationHook;->readFromParcel(Landroid/content/res/Configuration;Landroid/os/Parcel;)V
 
     .line 1227
     return-void
@@ -1925,12 +1900,7 @@
 
     iput v0, p0, Landroid/content/res/Configuration;->seq:I
 
-    .line 659
-    iget-object v0, p0, Landroid/content/res/Configuration;->extraConfig:Lnubia/content/res/ExtraConfiguration;
-
-    iget-object v1, p1, Landroid/content/res/Configuration;->extraConfig:Lnubia/content/res/ExtraConfiguration;
-
-    invoke-virtual {v0, v1}, Lnubia/content/res/ExtraConfiguration;->setTo(Lnubia/content/res/ExtraConfiguration;)V
+    invoke-static {p0, p1}, Landroid/content/res/Injector$ConfigurationHook;->setTo(Landroid/content/res/Configuration;Landroid/content/res/Configuration;)V
 
     .line 662
     return-void
@@ -2008,10 +1978,7 @@
     .line 827
     iput v1, p0, Landroid/content/res/Configuration;->seq:I
 
-    .line 830
-    iget-object v0, p0, Landroid/content/res/Configuration;->extraConfig:Lnubia/content/res/ExtraConfiguration;
-
-    invoke-virtual {v0}, Lnubia/content/res/ExtraConfiguration;->setToDefaults()V
+    invoke-static {p0}, Landroid/content/res/Injector$ConfigurationHook;->setToDefaults(Landroid/content/res/Configuration;)V
 
     .line 833
     return-void
@@ -2391,14 +2358,6 @@
 
     .line 799
     :cond_0
-    iget-object v2, p0, Landroid/content/res/Configuration;->extraConfig:Lnubia/content/res/ExtraConfiguration;
-
-    invoke-virtual {v2}, Lnubia/content/res/ExtraConfiguration;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     .line 802
     const/16 v2, 0x7d
 
@@ -2406,6 +2365,10 @@
 
     .line 803
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {p0, v2}, Landroid/content/res/Injector$ConfigurationHook;->toString(Landroid/content/res/Configuration;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -3463,20 +3426,12 @@
 
     .line 977
     :cond_19
-    iget-object v2, p0, Landroid/content/res/Configuration;->extraConfig:Lnubia/content/res/ExtraConfiguration;
-
-    iget-object v3, p1, Landroid/content/res/Configuration;->extraConfig:Lnubia/content/res/ExtraConfiguration;
-
-    invoke-virtual {v2, v3}, Lnubia/content/res/ExtraConfiguration;->updateFrom(Lnubia/content/res/ExtraConfiguration;)I
+    invoke-static {p0, p1, v0}, Landroid/content/res/Injector$ConfigurationHook;->updateFrom(Landroid/content/res/Configuration;Landroid/content/res/Configuration;I)I
 
     move-result v2
 
-    or-int/2addr v0, v2
+    return v2
 
-    .line 980
-    return v0
-
-    .line 865
     .end local v1           #deltaScreenLayoutDir:I
     :cond_1a
     const/4 v2, 0x0
@@ -3621,10 +3576,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1191
-    iget-object v0, p0, Landroid/content/res/Configuration;->extraConfig:Lnubia/content/res/ExtraConfiguration;
-
-    invoke-virtual {v0, p1, p2}, Lnubia/content/res/ExtraConfiguration;->writeToParcel(Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Landroid/content/res/Injector$ConfigurationHook;->writeToParcel(Landroid/content/res/Configuration;Landroid/os/Parcel;I)V
 
     .line 1194
     return-void

@@ -169,8 +169,6 @@
     :goto_0
     sput-boolean v0, Lcom/android/server/am/ActivityStack;->SCREENSHOT_FORCE_565:Z
 
-    invoke-static {p0, p1}, Lcom/android/server/am/Injector$ActivityStackHook;->after_ActivityStack(Lcom/android/server/am/ActivityStack;Lcom/android/server/am/ActivityManagerService;)V
-
     return-void
 
     :cond_0
@@ -296,6 +294,8 @@
     iget v0, p1, Lcom/android/server/am/ActivityManagerService;->mCurrentUserId:I
 
     iput v0, p0, Lcom/android/server/am/ActivityStack;->mCurrentUser:I
+
+    invoke-static {p0, p1}, Lcom/android/server/am/Injector$ActivityStackHook;->after_ActivityStack(Lcom/android/server/am/ActivityStack;Lcom/android/server/am/ActivityManagerService;)V
 
     .line 348
     sget-boolean v0, Landroid/util/PowerMoConfig;->WITHOUT_ALL:Z
@@ -4362,19 +4362,18 @@
 
     if-eqz v5, :cond_e
 
-    .line 3448
     :cond_9
-    iget-object v5, p1, Lcom/android/server/am/ActivityRecord;->info:Landroid/content/pm/ActivityInfo;
-
-    iget-object v5, v5, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
-
-    invoke-static {v5, v0, v1}, Landroid/app/NubiaThemeHelper;->needRestartActivity(Ljava/lang/String;ILandroid/content/res/Configuration;)Z
+    invoke-static {p1, v0}, Lcom/android/server/am/Injector$ActivityStackHook;->needRestartActivity(Lcom/android/server/am/ActivityRecord;I)Z
 
     move-result v5
 
-    if-nez v5, :cond_0
+    if-eqz v5, :cond_miui_0
 
-    .line 3452
+    const/4 v5, 0x1
+
+    return v5
+
+    :cond_miui_0
     iget v5, p1, Lcom/android/server/am/ActivityRecord;->configChangeFlags:I
 
     or-int/2addr v5, v0

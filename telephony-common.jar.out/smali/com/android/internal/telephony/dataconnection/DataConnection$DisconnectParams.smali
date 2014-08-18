@@ -32,19 +32,14 @@
     .parameter "onCompletedMsg"
 
     .prologue
-    .line 145
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 146
     iput-object p1, p0, Lcom/android/internal/telephony/dataconnection/DataConnection$DisconnectParams;->mApnContext:Lcom/android/internal/telephony/dataconnection/ApnContext;
 
-    .line 147
     iput-object p2, p0, Lcom/android/internal/telephony/dataconnection/DataConnection$DisconnectParams;->mReason:Ljava/lang/String;
 
-    .line 148
     iput-object p3, p0, Lcom/android/internal/telephony/dataconnection/DataConnection$DisconnectParams;->mOnCompletedMsg:Landroid/os/Message;
 
-    .line 149
     return-void
 .end method
 
@@ -54,7 +49,6 @@
     .locals 2
 
     .prologue
-    .line 153
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

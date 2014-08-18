@@ -13,13 +13,10 @@
     .parameter "iccPhoneBookInterfaceManager"
 
     .prologue
-    .line 34
     invoke-direct {p0}, Lcom/android/internal/telephony/IIccPhoneBook$Stub;-><init>()V
 
-    .line 35
     iput-object p1, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
-    .line 36
     const-string v0, "simphonebook"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -28,12 +25,10 @@
 
     if-nez v0, :cond_0
 
-    .line 37
     const-string v0, "simphonebook"
 
     invoke-static {v0, p0}, Landroid/os/ServiceManager;->addService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 39
     :cond_0
     return-void
 .end method
@@ -54,7 +49,6 @@
     .end annotation
 
     .prologue
-    .line 71
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->getAdnRecordsInEf(I)Ljava/util/List;
@@ -69,7 +63,6 @@
     .parameter "efid"
 
     .prologue
-    .line 66
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->getAdnRecordsSize(I)[I
@@ -93,10 +86,8 @@
     .parameter "iccPhoneBookInterfaceManager"
 
     .prologue
-    .line 43
     iput-object p1, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
-    .line 44
     return-void
 .end method
 
@@ -109,7 +100,6 @@
     .parameter "pin2"
 
     .prologue
-    .line 60
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
     move v1, p1
@@ -139,7 +129,6 @@
     .parameter "pin2"
 
     .prologue
-    .line 52
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
     move v1, p1

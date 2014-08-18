@@ -60,11 +60,11 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {v1}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    const v2, 0x1030118
+    sget v2, Lcom/android/internal/R$style;->TextAppearance_SuggestionHighlight:I
 
     invoke-direct {v0, v1, v2}, Landroid/text/style/TextAppearanceSpan;-><init>(Landroid/content/Context;I)V
 

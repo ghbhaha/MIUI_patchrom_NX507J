@@ -43,7 +43,7 @@
 
     .prologue
     .line 3493
-    iget-object v0, p0, Landroid/widget/Editor$HandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
+    iget-object v0, p0, Landroid/widget/Editor$SelectionStartHandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
 
     return-object v0
 .end method
@@ -144,7 +144,7 @@
 
     .line 3489
     :cond_0
-    invoke-virtual {p0, v0, v3}, Landroid/widget/Editor$HandleView;->positionAtCursorOffset(IZ)V
+    invoke-virtual {p0, v0, v3}, Landroid/widget/Editor$SelectionStartHandleView;->positionAtCursorOffset(IZ)V
 
     .line 3490
     return-void
@@ -183,7 +183,7 @@
     invoke-static {v0, p1, v1}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;II)V
 
     .line 3478
-    invoke-virtual {p0}, Landroid/widget/Editor$HandleView;->updateDrawable()V
+    invoke-virtual {p0}, Landroid/widget/Editor$SelectionStartHandleView;->updateDrawable()V
 
     .line 3479
     return-void

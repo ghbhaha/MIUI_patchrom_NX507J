@@ -67,48 +67,40 @@
     .parameter "phone"
 
     .prologue
-    .line 121
     invoke-direct {p0}, Lcom/android/internal/telephony/ISms$Stub;-><init>()V
 
-    .line 58
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mLock:Ljava/lang/Object;
 
-    .line 62
     new-instance v0, Lcom/android/internal/telephony/IccSmsInterfaceManager$CellBroadcastRangeManager;
 
     invoke-direct {v0, p0}, Lcom/android/internal/telephony/IccSmsInterfaceManager$CellBroadcastRangeManager;-><init>(Lcom/android/internal/telephony/IccSmsInterfaceManager;)V
 
     iput-object v0, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mCellBroadcastRangeManager:Lcom/android/internal/telephony/IccSmsInterfaceManager$CellBroadcastRangeManager;
 
-    .line 64
     new-instance v0, Lcom/android/internal/telephony/IccSmsInterfaceManager$CdmaBroadcastRangeManager;
 
     invoke-direct {v0, p0}, Lcom/android/internal/telephony/IccSmsInterfaceManager$CdmaBroadcastRangeManager;-><init>(Lcom/android/internal/telephony/IccSmsInterfaceManager;)V
 
     iput-object v0, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mCdmaBroadcastRangeManager:Lcom/android/internal/telephony/IccSmsInterfaceManager$CdmaBroadcastRangeManager;
 
-    .line 79
     new-instance v0, Lcom/android/internal/telephony/IccSmsInterfaceManager$1;
 
     invoke-direct {v0, p0}, Lcom/android/internal/telephony/IccSmsInterfaceManager$1;-><init>(Lcom/android/internal/telephony/IccSmsInterfaceManager;)V
 
     iput-object v0, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mHandler:Landroid/os/Handler;
 
-    .line 122
     iput-object p1, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
-    .line 123
     invoke-virtual {p1}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mContext:Landroid/content/Context;
 
-    .line 124
     iget-object v0, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mContext:Landroid/content/Context;
 
     const-string v1, "appops"
@@ -121,10 +113,8 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mAppOps:Landroid/app/AppOpsManager;
 
-    .line 125
     invoke-virtual {p0}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->initDispatchers()V
 
-    .line 126
     const-string v0, "isms"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -133,12 +123,10 @@
 
     if-nez v0, :cond_0
 
-    .line 127
     const-string v0, "isms"
 
     invoke-static {v0, p0}, Landroid/os/ServiceManager;->addService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 129
     :cond_0
     return-void
 .end method
@@ -148,7 +136,6 @@
     .parameter "x0"
 
     .prologue
-    .line 54
     iget-object v0, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mSms:Ljava/util/List;
 
     return-object v0
@@ -160,7 +147,6 @@
     .parameter "x1"
 
     .prologue
-    .line 54
     iput-object p1, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mSms:Ljava/util/List;
 
     return-object p1
@@ -172,7 +158,6 @@
     .parameter "x1"
 
     .prologue
-    .line 54
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->setCellBroadcastConfig([Lcom/android/internal/telephony/gsm/SmsBroadcastConfigInfo;)Z
 
     move-result v0
@@ -186,7 +171,6 @@
     .parameter "x1"
 
     .prologue
-    .line 54
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->setCdmaBroadcastConfig([Lcom/android/internal/telephony/cdma/CdmaSmsBroadcastConfigInfo;)Z
 
     move-result v0
@@ -199,14 +183,11 @@
     .parameter "uid"
 
     .prologue
-    .line 938
     const-string v0, "com.android.contacts"
 
-    .line 939
     .local v0, CONTACTS_PKG:Ljava/lang/String;
     const/4 v1, -0x1
 
-    .line 941
     .local v1, contactsUid:I
     :try_start_0
     iget-object v2, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mContext:Landroid/content/Context;
@@ -227,7 +208,6 @@
 
     move-result v1
 
-    .line 946
     :goto_0
     if-ne v1, p1, :cond_0
 
@@ -241,7 +221,6 @@
 
     goto :goto_1
 
-    .line 944
     :catch_0
     move-exception v2
 
@@ -253,14 +232,11 @@
     .parameter "uid"
 
     .prologue
-    .line 927
     const-string v0, "com.android.mms"
 
-    .line 928
     .local v0, MMS_PKG:Ljava/lang/String;
     const/4 v1, -0x1
 
-    .line 930
     .local v1, mmsUid:I
     :try_start_0
     iget-object v2, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mContext:Landroid/content/Context;
@@ -281,7 +257,6 @@
 
     move-result v1
 
-    .line 934
     :goto_0
     if-ne v1, p1, :cond_0
 
@@ -295,7 +270,6 @@
 
     goto :goto_1
 
-    .line 932
     :catch_0
     move-exception v2
 
@@ -307,7 +281,6 @@
     .parameter "activate"
 
     .prologue
-    .line 896
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -334,12 +307,10 @@
 
     invoke-virtual {p0, v2}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->log(Ljava/lang/String;)V
 
-    .line 898
     iget-object v3, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 899
     :try_start_0
     iget-object v2, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mHandler:Landroid/os/Handler;
 
@@ -349,13 +320,11 @@
 
     move-result-object v1
 
-    .line 901
     .local v1, response:Landroid/os/Message;
     const/4 v2, 0x0
 
     iput-boolean v2, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mSuccess:Z
 
-    .line 902
     iget-object v2, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v2, v2, Lcom/android/internal/telephony/PhoneBase;->mCi:Lcom/android/internal/telephony/CommandsInterface;
@@ -364,7 +333,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 905
     :try_start_1
     iget-object v2, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mLock:Ljava/lang/Object;
 
@@ -373,23 +341,19 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 909
     :goto_0
     :try_start_2
     monitor-exit v3
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 911
     iget-boolean v2, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mSuccess:Z
 
     return v2
 
-    .line 906
     :catch_0
     move-exception v0
 
-    .line 907
     .local v0, e:Ljava/lang/InterruptedException;
     :try_start_3
     const-string v2, "interrupted while trying to set cdma broadcast activation"
@@ -398,7 +362,6 @@
 
     goto :goto_0
 
-    .line 909
     .end local v0           #e:Ljava/lang/InterruptedException;
     .end local v1           #response:Landroid/os/Message;
     :catchall_0
@@ -416,7 +379,6 @@
     .parameter "configs"
 
     .prologue
-    .line 876
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -445,12 +407,10 @@
 
     invoke-virtual {p0, v2}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->log(Ljava/lang/String;)V
 
-    .line 878
     iget-object v3, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 879
     :try_start_0
     iget-object v2, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mHandler:Landroid/os/Handler;
 
@@ -460,13 +420,11 @@
 
     move-result-object v1
 
-    .line 881
     .local v1, response:Landroid/os/Message;
     const/4 v2, 0x0
 
     iput-boolean v2, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mSuccess:Z
 
-    .line 882
     iget-object v2, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v2, v2, Lcom/android/internal/telephony/PhoneBase;->mCi:Lcom/android/internal/telephony/CommandsInterface;
@@ -475,7 +433,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 885
     :try_start_1
     iget-object v2, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mLock:Ljava/lang/Object;
 
@@ -484,23 +441,19 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 889
     :goto_0
     :try_start_2
     monitor-exit v3
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 891
     iget-boolean v2, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mSuccess:Z
 
     return v2
 
-    .line 886
     :catch_0
     move-exception v0
 
-    .line 887
     .local v0, e:Ljava/lang/InterruptedException;
     :try_start_3
     const-string v2, "interrupted while trying to set cdma broadcast config"
@@ -509,7 +462,6 @@
 
     goto :goto_0
 
-    .line 889
     .end local v0           #e:Ljava/lang/InterruptedException;
     .end local v1           #response:Landroid/os/Message;
     :catchall_0
@@ -527,7 +479,6 @@
     .parameter "activate"
 
     .prologue
-    .line 856
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -554,12 +505,10 @@
 
     invoke-virtual {p0, v2}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->log(Ljava/lang/String;)V
 
-    .line 858
     iget-object v3, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 859
     :try_start_0
     iget-object v2, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mHandler:Landroid/os/Handler;
 
@@ -569,13 +518,11 @@
 
     move-result-object v1
 
-    .line 861
     .local v1, response:Landroid/os/Message;
     const/4 v2, 0x0
 
     iput-boolean v2, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mSuccess:Z
 
-    .line 862
     iget-object v2, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v2, v2, Lcom/android/internal/telephony/PhoneBase;->mCi:Lcom/android/internal/telephony/CommandsInterface;
@@ -584,7 +531,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 865
     :try_start_1
     iget-object v2, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mLock:Ljava/lang/Object;
 
@@ -593,23 +539,19 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 869
     :goto_0
     :try_start_2
     monitor-exit v3
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 871
     iget-boolean v2, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mSuccess:Z
 
     return v2
 
-    .line 866
     :catch_0
     move-exception v0
 
-    .line 867
     .local v0, e:Ljava/lang/InterruptedException;
     :try_start_3
     const-string v2, "interrupted while trying to set cell broadcast activation"
@@ -618,7 +560,6 @@
 
     goto :goto_0
 
-    .line 869
     .end local v0           #e:Ljava/lang/InterruptedException;
     .end local v1           #response:Landroid/os/Message;
     :catchall_0
@@ -636,7 +577,6 @@
     .parameter "configs"
 
     .prologue
-    .line 836
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -665,12 +605,10 @@
 
     invoke-virtual {p0, v2}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->log(Ljava/lang/String;)V
 
-    .line 838
     iget-object v3, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 839
     :try_start_0
     iget-object v2, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mHandler:Landroid/os/Handler;
 
@@ -680,13 +618,11 @@
 
     move-result-object v1
 
-    .line 841
     .local v1, response:Landroid/os/Message;
     const/4 v2, 0x0
 
     iput-boolean v2, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mSuccess:Z
 
-    .line 842
     iget-object v2, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v2, v2, Lcom/android/internal/telephony/PhoneBase;->mCi:Lcom/android/internal/telephony/CommandsInterface;
@@ -695,7 +631,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 845
     :try_start_1
     iget-object v2, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mLock:Ljava/lang/Object;
 
@@ -704,23 +639,19 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 849
     :goto_0
     :try_start_2
     monitor-exit v3
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 851
     iget-boolean v2, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mSuccess:Z
 
     return v2
 
-    .line 846
     :catch_0
     move-exception v0
 
-    .line 847
     .local v0, e:Ljava/lang/InterruptedException;
     :try_start_3
     const-string v2, "interrupted while trying to set cell broadcast config"
@@ -729,7 +660,6 @@
 
     goto :goto_0
 
-    .line 849
     .end local v0           #e:Ljava/lang/InterruptedException;
     .end local v1           #response:Landroid/os/Message;
     :catchall_0
@@ -760,19 +690,16 @@
     .end annotation
 
     .prologue
-    .line 577
     .local p1, messages:Ljava/util/ArrayList;,"Ljava/util/ArrayList<[B>;"
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 580
     .local v1, count:I
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 582
     .local v3, ret:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/SmsRawData;>;"
     const/4 v2, 0x0
 
@@ -780,14 +707,12 @@
     :goto_0
     if-ge v2, v1, :cond_1
 
-    .line 583
     invoke-virtual {p1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, [B
 
-    .line 584
     .local v0, ba:[B
     const/4 v4, 0x0
 
@@ -795,18 +720,15 @@
 
     if-nez v4, :cond_0
 
-    .line 585
     const/4 v4, 0x0
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 582
     :goto_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 587
     :cond_0
     new-instance v5, Lcom/android/internal/telephony/SmsRawData;
 
@@ -822,7 +744,6 @@
 
     goto :goto_1
 
-    .line 591
     .end local v0           #ba:[B
     :cond_1
     return-object v3
@@ -838,7 +759,6 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 255
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -899,12 +819,10 @@
 
     invoke-virtual {p0, v3}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->log(Ljava/lang/String;)V
 
-    .line 258
     const-string v3, "Copying message to Icc"
 
     invoke-virtual {p0, v3}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->enforceReceiveAndSend(Ljava/lang/String;)V
 
-    .line 259
     iget-object v3, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mAppOps:Landroid/app/AppOpsManager;
 
     const/16 v4, 0x16
@@ -919,23 +837,19 @@
 
     if-eqz v3, :cond_0
 
-    .line 282
     :goto_0
     return v2
 
-    .line 263
     :cond_0
     iget-object v3, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 264
     const/4 v2, 0x0
 
     :try_start_0
     iput-boolean v2, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mSuccess:Z
 
-    .line 265
     iget-object v2, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mHandler:Landroid/os/Handler;
 
     const/4 v4, 0x2
@@ -944,7 +858,6 @@
 
     move-result-object v1
 
-    .line 268
     .local v1, response:Landroid/os/Message;
     const/4 v2, 0x1
 
@@ -956,7 +869,6 @@
 
     if-ne v2, v4, :cond_1
 
-    .line 269
     iget-object v2, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v2, v2, Lcom/android/internal/telephony/PhoneBase;->mCi:Lcom/android/internal/telephony/CommandsInterface;
@@ -973,7 +885,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 277
     :goto_1
     :try_start_1
     iget-object v2, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mLock:Ljava/lang/Object;
@@ -983,19 +894,16 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 281
     :goto_2
     :try_start_2
     monitor-exit v3
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 282
     iget-boolean v2, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mSuccess:Z
 
     goto :goto_0
 
-    .line 272
     :cond_1
     :try_start_3
     iget-object v2, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mPhone:Lcom/android/internal/telephony/PhoneBase;
@@ -1010,7 +918,6 @@
 
     goto :goto_1
 
-    .line 281
     .end local v1           #response:Landroid/os/Message;
     :catchall_0
     move-exception v2
@@ -1021,12 +928,10 @@
 
     throw v2
 
-    .line 278
     .restart local v1       #response:Landroid/os/Message;
     :catch_0
     move-exception v0
 
-    .line 279
     .local v0, e:Ljava/lang/InterruptedException;
     :try_start_4
     const-string v2, "interrupted while trying to update by index"
@@ -1048,7 +953,6 @@
 
     const/4 v2, 0x0
 
-    .line 728
     monitor-enter p0
 
     :try_start_0
@@ -1056,14 +960,12 @@
 
     invoke-virtual {p0, v4}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->log(Ljava/lang/String;)V
 
-    .line 730
     iget-object v4, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v4}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    .line 732
     .local v1, context:Landroid/content/Context;
     const-string v4, "android.permission.RECEIVE_SMS"
 
@@ -1071,7 +973,6 @@
 
     invoke-virtual {v1, v4, v5}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 736
     invoke-virtual {v1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v4
@@ -1084,7 +985,6 @@
 
     move-result-object v0
 
-    .line 739
     .local v0, client:Ljava/lang/String;
     iget-object v4, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mCdmaBroadcastRangeManager:Lcom/android/internal/telephony/IccSmsInterfaceManager$CdmaBroadcastRangeManager;
 
@@ -1094,7 +994,6 @@
 
     if-nez v4, :cond_0
 
-    .line 740
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1137,13 +1036,11 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 751
     :goto_0
     monitor-exit p0
 
     return v2
 
-    .line 746
     :cond_0
     :try_start_1
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1186,7 +1083,6 @@
 
     invoke-virtual {p0, v4}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->log(Ljava/lang/String;)V
 
-    .line 749
     iget-object v4, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mCdmaBroadcastRangeManager:Lcom/android/internal/telephony/IccSmsInterfaceManager$CdmaBroadcastRangeManager;
 
     invoke-virtual {v4}, Lcom/android/internal/telephony/IntRangeManager;->isEmpty()Z
@@ -1204,10 +1100,8 @@
 
     move v2, v3
 
-    .line 751
     goto :goto_0
 
-    .line 728
     .end local v0           #client:Ljava/lang/String;
     .end local v1           #context:Landroid/content/Context;
     :catchall_0
@@ -1223,7 +1117,6 @@
     .parameter "messageIdentifier"
 
     .prologue
-    .line 627
     invoke-virtual {p0, p1, p1}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->disableCellBroadcastRange(II)Z
 
     move-result v0
@@ -1237,7 +1130,6 @@
     .parameter "endMessageId"
 
     .prologue
-    .line 639
     const/4 v0, 0x1
 
     iget-object v1, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mPhone:Lcom/android/internal/telephony/PhoneBase;
@@ -1248,12 +1140,10 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 640
     invoke-virtual {p0, p1, p2}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->disableGsmBroadcastRange(II)Z
 
     move-result v0
 
-    .line 642
     :goto_0
     return v0
 
@@ -1275,7 +1165,6 @@
 
     const/4 v2, 0x0
 
-    .line 674
     monitor-enter p0
 
     :try_start_0
@@ -1283,14 +1172,12 @@
 
     invoke-virtual {p0, v4}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->log(Ljava/lang/String;)V
 
-    .line 676
     iget-object v4, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v4}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    .line 678
     .local v1, context:Landroid/content/Context;
     const-string v4, "android.permission.RECEIVE_SMS"
 
@@ -1298,7 +1185,6 @@
 
     invoke-virtual {v1, v4, v5}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 682
     invoke-virtual {v1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v4
@@ -1311,7 +1197,6 @@
 
     move-result-object v0
 
-    .line 685
     .local v0, client:Ljava/lang/String;
     iget-object v4, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mCellBroadcastRangeManager:Lcom/android/internal/telephony/IccSmsInterfaceManager$CellBroadcastRangeManager;
 
@@ -1321,7 +1206,6 @@
 
     if-nez v4, :cond_0
 
-    .line 686
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1364,13 +1248,11 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 697
     :goto_0
     monitor-exit p0
 
     return v2
 
-    .line 692
     :cond_0
     :try_start_1
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1413,7 +1295,6 @@
 
     invoke-virtual {p0, v4}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->log(Ljava/lang/String;)V
 
-    .line 695
     iget-object v4, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mCellBroadcastRangeManager:Lcom/android/internal/telephony/IccSmsInterfaceManager$CellBroadcastRangeManager;
 
     invoke-virtual {v4}, Lcom/android/internal/telephony/IntRangeManager;->isEmpty()Z
@@ -1431,10 +1312,8 @@
 
     move v2, v3
 
-    .line 697
     goto :goto_0
 
-    .line 674
     .end local v0           #client:Ljava/lang/String;
     .end local v1           #context:Landroid/content/Context;
     :catchall_0
@@ -1455,7 +1334,6 @@
 
     const/4 v2, 0x0
 
-    .line 701
     monitor-enter p0
 
     :try_start_0
@@ -1463,14 +1341,12 @@
 
     invoke-virtual {p0, v4}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->log(Ljava/lang/String;)V
 
-    .line 703
     iget-object v4, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v4}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    .line 705
     .local v1, context:Landroid/content/Context;
     const-string v4, "android.permission.RECEIVE_SMS"
 
@@ -1478,7 +1354,6 @@
 
     invoke-virtual {v1, v4, v5}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 709
     invoke-virtual {v1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v4
@@ -1491,7 +1366,6 @@
 
     move-result-object v0
 
-    .line 712
     .local v0, client:Ljava/lang/String;
     iget-object v4, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mCdmaBroadcastRangeManager:Lcom/android/internal/telephony/IccSmsInterfaceManager$CdmaBroadcastRangeManager;
 
@@ -1501,7 +1375,6 @@
 
     if-nez v4, :cond_0
 
-    .line 713
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1544,13 +1417,11 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 724
     :goto_0
     monitor-exit p0
 
     return v2
 
-    .line 719
     :cond_0
     :try_start_1
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1593,7 +1464,6 @@
 
     invoke-virtual {p0, v4}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->log(Ljava/lang/String;)V
 
-    .line 722
     iget-object v4, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mCdmaBroadcastRangeManager:Lcom/android/internal/telephony/IccSmsInterfaceManager$CdmaBroadcastRangeManager;
 
     invoke-virtual {v4}, Lcom/android/internal/telephony/IntRangeManager;->isEmpty()Z
@@ -1611,10 +1481,8 @@
 
     move v2, v3
 
-    .line 724
     goto :goto_0
 
-    .line 701
     .end local v0           #client:Ljava/lang/String;
     .end local v1           #context:Landroid/content/Context;
     :catchall_0
@@ -1630,7 +1498,6 @@
     .parameter "messageIdentifier"
 
     .prologue
-    .line 623
     invoke-virtual {p0, p1, p1}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->enableCellBroadcastRange(II)Z
 
     move-result v0
@@ -1644,7 +1511,6 @@
     .parameter "endMessageId"
 
     .prologue
-    .line 631
     const/4 v0, 0x1
 
     iget-object v1, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mPhone:Lcom/android/internal/telephony/PhoneBase;
@@ -1655,12 +1521,10 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 632
     invoke-virtual {p0, p1, p2}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->enableGsmBroadcastRange(II)Z
 
     move-result v0
 
-    .line 634
     :goto_0
     return v0
 
@@ -1682,7 +1546,6 @@
 
     const/4 v2, 0x0
 
-    .line 647
     monitor-enter p0
 
     :try_start_0
@@ -1690,14 +1553,12 @@
 
     invoke-virtual {p0, v4}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->log(Ljava/lang/String;)V
 
-    .line 649
     iget-object v4, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v4}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    .line 651
     .local v1, context:Landroid/content/Context;
     const-string v4, "android.permission.RECEIVE_SMS"
 
@@ -1705,7 +1566,6 @@
 
     invoke-virtual {v1, v4, v5}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 655
     invoke-virtual {v1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v4
@@ -1718,7 +1578,6 @@
 
     move-result-object v0
 
-    .line 658
     .local v0, client:Ljava/lang/String;
     iget-object v4, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mCellBroadcastRangeManager:Lcom/android/internal/telephony/IccSmsInterfaceManager$CellBroadcastRangeManager;
 
@@ -1728,7 +1587,6 @@
 
     if-nez v4, :cond_0
 
-    .line 659
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1771,13 +1629,11 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 670
     :goto_0
     monitor-exit p0
 
     return v2
 
-    .line 665
     :cond_0
     :try_start_1
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1820,7 +1676,6 @@
 
     invoke-virtual {p0, v4}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->log(Ljava/lang/String;)V
 
-    .line 668
     iget-object v4, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mCellBroadcastRangeManager:Lcom/android/internal/telephony/IccSmsInterfaceManager$CellBroadcastRangeManager;
 
     invoke-virtual {v4}, Lcom/android/internal/telephony/IntRangeManager;->isEmpty()Z
@@ -1838,10 +1693,8 @@
 
     move v2, v3
 
-    .line 670
     goto :goto_0
 
-    .line 647
     .end local v0           #client:Ljava/lang/String;
     .end local v1           #context:Landroid/content/Context;
     :catchall_0
@@ -1857,21 +1710,18 @@
     .parameter "message"
 
     .prologue
-    .line 176
     iget-object v0, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.RECEIVE_SMS"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 178
     iget-object v0, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.SEND_SMS"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 180
     return-void
 .end method
 
@@ -1891,12 +1741,10 @@
     .end annotation
 
     .prologue
-    .line 292
     const-string v5, "getAllMessagesFromEF"
 
     invoke-virtual {p0, v5}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->log(Ljava/lang/String;)V
 
-    .line 294
     iget-object v5, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mContext:Landroid/content/Context;
 
     const-string v6, "android.permission.RECEIVE_SMS"
@@ -1905,7 +1753,6 @@
 
     invoke-virtual {v5, v6, v7}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 298
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v5
@@ -1914,7 +1761,6 @@
 
     move-result v2
 
-    .line 299
     .local v2, isContactUid:Z
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
@@ -1924,7 +1770,6 @@
 
     move-result v3
 
-    .line 301
     .local v3, isMmsUid:Z
     if-nez v2, :cond_0
 
@@ -1944,22 +1789,18 @@
 
     if-eqz v5, :cond_0
 
-    .line 303
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
-    .line 325
     :goto_0
     return-object v5
 
-    .line 305
     :cond_0
     iget-object v6, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mLock:Ljava/lang/Object;
 
     monitor-enter v6
 
-    .line 307
     :try_start_0
     iget-object v5, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
@@ -1967,35 +1808,29 @@
 
     move-result-object v1
 
-    .line 308
     .local v1, fh:Lcom/android/internal/telephony/uicc/IccFileHandler;
     if-nez v1, :cond_1
 
-    .line 309
     const-string v5, "IccSmsInterfaceManager"
 
     const-string v7, "Cannot load Sms records. No icc card?"
 
     invoke-static {v5, v7}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 310
     iget-object v5, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mSms:Ljava/util/List;
 
     if-eqz v5, :cond_1
 
-    .line 311
     iget-object v5, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mSms:Ljava/util/List;
 
     invoke-interface {v5}, Ljava/util/List;->clear()V
 
-    .line 312
     iget-object v5, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mSms:Ljava/util/List;
 
     monitor-exit v6
 
     goto :goto_0
 
-    .line 324
     .end local v1           #fh:Lcom/android/internal/telephony/uicc/IccFileHandler;
     :catchall_0
     move-exception v5
@@ -2006,7 +1841,6 @@
 
     throw v5
 
-    .line 316
     .restart local v1       #fh:Lcom/android/internal/telephony/uicc/IccFileHandler;
     :cond_1
     :try_start_1
@@ -2018,7 +1852,6 @@
 
     move-result-object v4
 
-    .line 317
     .local v4, response:Landroid/os/Message;
     const/16 v5, 0x6f3c
 
@@ -2026,7 +1859,6 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 320
     :try_start_2
     iget-object v5, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mLock:Ljava/lang/Object;
 
@@ -2035,23 +1867,19 @@
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 324
     :goto_1
     :try_start_3
     monitor-exit v6
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 325
     iget-object v5, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mSms:Ljava/util/List;
 
     goto :goto_0
 
-    .line 321
     :catch_0
     move-exception v0
 
-    .line 322
     .local v0, e:Ljava/lang/InterruptedException;
     :try_start_4
     const-string v5, "interrupted while trying to load from the Icc"
@@ -2067,7 +1895,6 @@
     .locals 1
 
     .prologue
-    .line 923
     iget-object v0, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mDispatcher:Lcom/android/internal/telephony/SMSDispatcher;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/SMSDispatcher;->getImsSmsFormat()Ljava/lang/String;
@@ -2082,7 +1909,6 @@
     .parameter "packageName"
 
     .prologue
-    .line 561
     iget-object v0, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mDispatcher:Lcom/android/internal/telephony/SMSDispatcher;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/telephony/SMSDispatcher;->getPremiumSmsPermission(Ljava/lang/String;)I
@@ -2096,14 +1922,12 @@
     .locals 4
 
     .prologue
-    .line 132
     const-string v0, "IccSmsInterfaceManager"
 
     const-string v1, "IccSmsInterfaceManager: initDispatchers()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 133
     new-instance v0, Lcom/android/internal/telephony/ImsSMSDispatcher;
 
     iget-object v1, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mPhone:Lcom/android/internal/telephony/PhoneBase;
@@ -2120,7 +1944,6 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mDispatcher:Lcom/android/internal/telephony/SMSDispatcher;
 
-    .line 135
     return-void
 .end method
 
@@ -2128,7 +1951,6 @@
     .locals 1
 
     .prologue
-    .line 919
     iget-object v0, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mDispatcher:Lcom/android/internal/telephony/SMSDispatcher;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/SMSDispatcher;->isIms()Z
@@ -2143,7 +1965,6 @@
     .parameter "msg"
 
     .prologue
-    .line 915
     const-string v0, "IccSmsInterfaceManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2166,7 +1987,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 916
     return-void
 .end method
 
@@ -2180,7 +2000,6 @@
 
     const/4 v3, 0x0
 
-    .line 603
     iget-object v2, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/PhoneBase;->getPhoneType()I
@@ -2189,12 +2008,10 @@
 
     if-ne v4, v2, :cond_0
 
-    .line 604
     const/16 v2, 0xb0
 
     new-array v0, v2, [B
 
-    .line 610
     .local v0, data:[B
     :goto_0
     and-int/lit8 v2, p1, 0x7
@@ -2203,12 +2020,10 @@
 
     aput-byte v2, v0, v3
 
-    .line 612
     array-length v2, p2
 
     invoke-static {p2, v3, v0, v4, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 615
     array-length v2, p2
 
     add-int/lit8 v1, v2, 0x1
@@ -2219,17 +2034,14 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 616
     const/4 v2, -0x1
 
     aput-byte v2, v0, v1
 
-    .line 615
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 606
     .end local v0           #data:[B
     .end local v1           #j:I
     :cond_0
@@ -2240,7 +2052,6 @@
     .restart local v0       #data:[B
     goto :goto_0
 
-    .line 619
     .restart local v1       #j:I
     :cond_1
     return-object v0
@@ -2267,15 +2078,12 @@
 
     const/4 v11, 0x3
 
-    .line 138
     if-nez p1, :cond_1
 
-    .line 168
     :cond_0
     :goto_0
     return-void
 
-    .line 143
     :cond_1
     iget-object v1, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
@@ -2283,11 +2091,9 @@
 
     move-result-object v0
 
-    .line 144
     .local v0, fh:Lcom/android/internal/telephony/uicc/IccFileHandler;
     if-nez v0, :cond_2
 
-    .line 147
     const-string v1, "SMS"
 
     invoke-static {v1, v11}, Landroid/telephony/Rlog;->isLoggable(Ljava/lang/String;I)Z
@@ -2296,20 +2102,17 @@
 
     if-eqz v1, :cond_0
 
-    .line 148
     const-string v1, "markMessagesAsRead - aborting, no icc card present."
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->log(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 153
     :cond_2
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v7
 
-    .line 155
     .local v7, count:I
     const/4 v8, 0x0
 
@@ -2317,40 +2120,33 @@
     :goto_1
     if-ge v8, v7, :cond_0
 
-    .line 156
     invoke-virtual {p1, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
     check-cast v6, [B
 
-    .line 157
     .local v6, ba:[B
     aget-byte v1, v6, v12
 
     if-ne v1, v11, :cond_3
 
-    .line 158
     array-length v9, v6
 
-    .line 159
     .local v9, n:I
     add-int/lit8 v1, v9, -0x1
 
     new-array v10, v1, [B
 
-    .line 160
     .local v10, nba:[B
     add-int/lit8 v1, v9, -0x1
 
     invoke-static {v6, v13, v10, v12, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 161
     invoke-virtual {p0, v13, v10}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->makeSmsRecordData(I[B)[B
 
     move-result-object v3
 
-    .line 162
     .local v3, record:[B
     const/16 v1, 0x6f3c
 
@@ -2360,7 +2156,6 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/android/internal/telephony/uicc/IccFileHandler;->updateEFLinearFixed(II[BLjava/lang/String;Landroid/os/Message;)V
 
-    .line 163
     const-string v1, "SMS"
 
     invoke-static {v1, v11}, Landroid/telephony/Rlog;->isLoggable(Ljava/lang/String;I)Z
@@ -2369,7 +2164,6 @@
 
     if-eqz v1, :cond_3
 
-    .line 164
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2398,7 +2192,6 @@
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->log(Ljava/lang/String;)V
 
-    .line 155
     .end local v3           #record:[B
     .end local v9           #n:I
     .end local v10           #nba:[B
@@ -2419,7 +2212,6 @@
     .parameter "deliveryIntent"
 
     .prologue
-    .line 356
     iget-object v0, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
@@ -2432,7 +2224,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 359
     const-string v0, "SMS"
 
     const/4 v1, 0x2
@@ -2443,7 +2234,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 360
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2518,7 +2308,6 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->log(Ljava/lang/String;)V
 
-    .line 364
     :cond_0
     iget-object v0, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mAppOps:Landroid/app/AppOpsManager;
 
@@ -2534,11 +2323,9 @@
 
     if-eqz v0, :cond_1
 
-    .line 369
     :goto_0
     return-void
 
-    .line 368
     :cond_1
     iget-object v0, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mDispatcher:Lcom/android/internal/telephony/SMSDispatcher;
 
@@ -2589,7 +2376,6 @@
     .end annotation
 
     .prologue
-    .line 489
     .local p4, parts:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     .local p5, sentIntents:Ljava/util/List;,"Ljava/util/List<Landroid/app/PendingIntent;>;"
     .local p6, deliveryIntents:Ljava/util/List;,"Ljava/util/List<Landroid/app/PendingIntent;>;"
@@ -2605,7 +2391,6 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 492
     const-string v1, "SMS"
 
     const/4 v2, 0x2
@@ -2616,10 +2401,8 @@
 
     if-eqz v1, :cond_0
 
-    .line 493
     const/4 v10, 0x0
 
-    .line 494
     .local v10, i:I
     invoke-interface/range {p4 .. p4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -2639,7 +2422,6 @@
 
     check-cast v13, Ljava/lang/String;
 
-    .line 495
     .local v13, part:Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -2705,7 +2487,6 @@
     .restart local v10       #i:I
     goto :goto_0
 
-    .line 499
     .end local v10           #i:I
     .end local v12           #i$:Ljava/util/Iterator;
     .end local v13           #part:Ljava/lang/String;
@@ -2724,11 +2505,9 @@
 
     if-eqz v1, :cond_1
 
-    .line 506
     :goto_1
     return-void
 
-    .line 503
     :cond_1
     iget-object v1, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mDispatcher:Lcom/android/internal/telephony/SMSDispatcher;
 
@@ -2792,7 +2571,6 @@
     .end annotation
 
     .prologue
-    .line 540
     .local p4, parts:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     .local p5, sentIntents:Ljava/util/List;,"Ljava/util/List<Landroid/app/PendingIntent;>;"
     .local p6, deliveryIntents:Ljava/util/List;,"Ljava/util/List<Landroid/app/PendingIntent;>;"
@@ -2808,7 +2586,6 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 543
     const-string v1, "SMS"
 
     const/4 v2, 0x2
@@ -2819,10 +2596,8 @@
 
     if-eqz v1, :cond_0
 
-    .line 544
     const/4 v10, 0x0
 
-    .line 545
     .local v10, i:I
     invoke-interface/range {p4 .. p4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -2842,7 +2617,6 @@
 
     check-cast v13, Ljava/lang/String;
 
-    .line 546
     .local v13, part:Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -2908,7 +2682,6 @@
     .restart local v10       #i:I
     goto :goto_0
 
-    .line 550
     .end local v10           #i:I
     .end local v12           #i$:Ljava/util/Iterator;
     .end local v13           #part:Ljava/lang/String;
@@ -2927,11 +2700,9 @@
 
     if-eqz v1, :cond_1
 
-    .line 557
     :goto_1
     return-void
 
-    .line 554
     :cond_1
     iget-object v1, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mDispatcher:Lcom/android/internal/telephony/SMSDispatcher;
 
@@ -2974,7 +2745,6 @@
     .prologue
     const/4 v6, -0x1
 
-    .line 398
     iget-object v0, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
@@ -2987,7 +2757,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 401
     const-string v0, "SMS"
 
     const/4 v1, 0x2
@@ -2998,7 +2767,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 402
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -3059,7 +2827,6 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->log(Ljava/lang/String;)V
 
-    .line 406
     :cond_0
     iget-object v0, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mAppOps:Landroid/app/AppOpsManager;
 
@@ -3075,11 +2842,9 @@
 
     if-eqz v0, :cond_1
 
-    .line 411
     :goto_0
     return-void
 
-    .line 410
     :cond_1
     iget-object v0, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mDispatcher:Lcom/android/internal/telephony/SMSDispatcher;
 
@@ -3115,7 +2880,6 @@
     .parameter "validityPeriod"
 
     .prologue
-    .line 443
     iget-object v1, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
@@ -3128,7 +2892,6 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 446
     const-string v1, "SMS"
 
     const/4 v2, 0x2
@@ -3139,7 +2902,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 447
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3214,7 +2976,6 @@
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->log(Ljava/lang/String;)V
 
-    .line 452
     :cond_0
     iget-object v1, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mAppOps:Landroid/app/AppOpsManager;
 
@@ -3230,11 +2991,9 @@
 
     if-eqz v1, :cond_1
 
-    .line 458
     :goto_0
     return-void
 
-    .line 456
     :cond_1
     iget-object v1, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mDispatcher:Lcom/android/internal/telephony/SMSDispatcher;
 
@@ -3265,12 +3024,10 @@
     .parameter "permission"
 
     .prologue
-    .line 566
     iget-object v0, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mDispatcher:Lcom/android/internal/telephony/SMSDispatcher;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/internal/telephony/SMSDispatcher;->setPremiumSmsPermission(Ljava/lang/String;I)V
 
-    .line 567
     return-void
 .end method
 
@@ -3284,7 +3041,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 196
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -3341,12 +3097,10 @@
 
     invoke-virtual {p0, v2}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->log(Ljava/lang/String;)V
 
-    .line 199
     const-string v2, "Updating message on Icc"
 
     invoke-virtual {p0, v2}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->enforceReceiveAndSend(Ljava/lang/String;)V
 
-    .line 201
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v2
@@ -3355,7 +3109,6 @@
 
     move-result v7
 
-    .line 202
     .local v7, isContactUid:Z
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
@@ -3365,7 +3118,6 @@
 
     move-result v8
 
-    .line 204
     .local v8, isMmsUid:Z
     if-nez v7, :cond_0
 
@@ -3385,23 +3137,19 @@
 
     if-eqz v2, :cond_0
 
-    .line 240
     :goto_0
     return v1
 
-    .line 208
     :cond_0
     iget-object v9, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mLock:Ljava/lang/Object;
 
     monitor-enter v9
 
-    .line 209
     const/4 v1, 0x0
 
     :try_start_0
     iput-boolean v1, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mSuccess:Z
 
-    .line 210
     iget-object v1, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mHandler:Landroid/os/Handler;
 
     const/4 v2, 0x2
@@ -3410,11 +3158,9 @@
 
     move-result-object v5
 
-    .line 212
     .local v5, response:Landroid/os/Message;
     if-nez p3, :cond_2
 
-    .line 217
     const/4 v1, 0x1
 
     iget-object v2, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mPhone:Lcom/android/internal/telephony/PhoneBase;
@@ -3425,7 +3171,6 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 218
     iget-object v1, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v1, v1, Lcom/android/internal/telephony/PhoneBase;->mCi:Lcom/android/internal/telephony/CommandsInterface;
@@ -3434,7 +3179,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 235
     :goto_1
     :try_start_1
     iget-object v1, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mLock:Ljava/lang/Object;
@@ -3444,19 +3188,16 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 239
     :goto_2
     :try_start_2
     monitor-exit v9
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 240
     iget-boolean v1, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mSuccess:Z
 
     goto :goto_0
 
-    .line 220
     :cond_1
     :try_start_3
     iget-object v1, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mPhone:Lcom/android/internal/telephony/PhoneBase;
@@ -3467,7 +3208,6 @@
 
     goto :goto_1
 
-    .line 239
     .end local v5           #response:Landroid/os/Message;
     :catchall_0
     move-exception v1
@@ -3478,7 +3218,6 @@
 
     throw v1
 
-    .line 224
     .restart local v5       #response:Landroid/os/Message;
     :cond_2
     :try_start_4
@@ -3488,27 +3227,22 @@
 
     move-result-object v0
 
-    .line 225
     .local v0, fh:Lcom/android/internal/telephony/uicc/IccFileHandler;
     if-nez v0, :cond_3
 
-    .line 226
     invoke-virtual {v5}, Landroid/os/Message;->recycle()V
 
-    .line 227
     iget-boolean v1, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mSuccess:Z
 
     monitor-exit v9
 
     goto :goto_0
 
-    .line 229
     :cond_3
     invoke-virtual {p0, p3, p4}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->makeSmsRecordData(I[B)[B
 
     move-result-object v3
 
-    .line 230
     .local v3, record:[B
     const/16 v1, 0x6f3c
 
@@ -3520,13 +3254,11 @@
 
     goto :goto_1
 
-    .line 236
     .end local v0           #fh:Lcom/android/internal/telephony/uicc/IccFileHandler;
     .end local v3           #record:[B
     :catch_0
     move-exception v6
 
-    .line 237
     .local v6, e:Ljava/lang/InterruptedException;
     const-string v1, "interrupted while trying to update by index"
 
@@ -3542,14 +3274,11 @@
     .parameter "phone"
 
     .prologue
-    .line 171
     iput-object p1, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
-    .line 172
     iget-object v0, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mDispatcher:Lcom/android/internal/telephony/SMSDispatcher;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/telephony/SMSDispatcher;->updatePhoneObject(Lcom/android/internal/telephony/PhoneBase;)V
 
-    .line 173
     return-void
 .end method

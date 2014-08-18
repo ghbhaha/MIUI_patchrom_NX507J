@@ -256,7 +256,7 @@
 
 .field mForcingShowNavBarLayer:I
 
-.field mGlobalActions:Lcom/android/internal/policy/impl/NubiaGlobalActions;
+.field mGlobalActions:Lcom/android/internal/policy/impl/MiuiGlobalActions;
 
 .field private mGlobalKeyManager:Lcom/android/internal/policy/impl/GlobalKeyManager;
 
@@ -9238,10 +9238,10 @@
     move v2, v4
 
     .line 3705
-    :goto_4
+    :cond_d
     sget-boolean v6, Landroid/util/PowerMoConfig;->WITHOUT_ALL:Z
 
-    if-nez v6, :cond_d
+    if-nez v6, :goto_4
 
     .line 3706
     iget-object v6, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mPolicyFuncs:Lcom/android/internal/policy/impl/IPolicySmartShowFuncs;
@@ -9252,13 +9252,13 @@
 
     move-result v6
 
-    if-nez v6, :cond_d
+    if-nez v6, :goto_4
 
     .line 3707
     const/4 v2, 0x0
 
     .line 3716
-    :cond_d
+    :goto_4
     iget-object v6, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mStatusBarController:Lcom/android/internal/policy/impl/BarController;
 
     invoke-virtual {v6}, Lcom/android/internal/policy/impl/BarController;->isTransientShowing()Z
@@ -9294,12 +9294,12 @@
 
     move-result v6
 
-    if-eqz v6, :cond_miui_1
+    if-eqz v6, :cond_miui_0
 
     or-int/lit8 v0, v0, 0x1
 
-    :cond_miui_1
-    invoke-virtual {p0, v4}, Lcom/android/internal/policy/impl/PhoneWindowManager;->notifyStatusBarShowingOrHiding(Z)V
+    :cond_miui_0
+    invoke-virtual {p0, v5}, Lcom/android/internal/policy/impl/PhoneWindowManager;->notifyStatusBarShowingOrHiding(Z)V
 
     goto/16 :goto_2
 
@@ -9310,11 +9310,14 @@
 
     move-result v6
 
-    if-eqz v6, :cond_3
+    if-eqz v6, :cond_miui_1
 
     .line 3718
     .line 3730
     or-int/lit8 v0, v0, 0x1
+
+    :cond_miui_1
+    invoke-virtual {p0, v4}, Lcom/android/internal/policy/impl/PhoneWindowManager;->notifyStatusBarShowingOrHiding(Z)V
 
     goto/16 :goto_2
 
@@ -11840,6 +11843,16 @@
 
     if-eqz v3, :cond_c
 
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    invoke-static {v3}, Lcom/android/internal/policy/impl/PhoneWindowManager$Injector;->isInCallScreenShowing(Landroid/content/Context;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_c
+
     .line 2220
     const-string v3, "WindowManager"
 
@@ -13424,7 +13437,7 @@
     .line 4124
     .local v11, isWakeKey:Z
     :goto_5
-    if-eqz v6, :cond_8
+    invoke-static/range {p0 .. p2}, Lcom/android/internal/policy/impl/PhoneWindowManager$Injector;->performReleaseHapticFeedback(Lcom/android/internal/policy/impl/PhoneWindowManager;Landroid/view/KeyEvent;I)V
 
     move/from16 v0, p2
 
@@ -13443,7 +13456,13 @@
     .line 4126
     const/16 v18, 0x0
 
+    const/16 v19, 0x2
+    
+    if-eqz v6, :cond_miui_0
+    
     const/16 v19, 0x1
+
+    :cond_miui_0
 
     const/16 v20, 0x0
 
@@ -14009,8 +14028,6 @@
 
     or-int/lit8 v16, v18, 0x4
 
-    invoke-static/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindowManager$Injector;->sendPowerUpBroadcast(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
-
     goto/16 :goto_0
 
     :sswitch_3
@@ -14356,6 +14373,8 @@
     move-object/from16 v1, p0
 
     iput-boolean v0, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mPendingPowerKeyUpCanceled:Z
+
+    invoke-static/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindowManager$Injector;->sendPowerUpBroadcast(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
 
     goto/16 :goto_0
 
@@ -20269,20 +20288,20 @@
 
     .prologue
     .line 827
-    iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mGlobalActions:Lcom/android/internal/policy/impl/NubiaGlobalActions;
+    iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mGlobalActions:Lcom/android/internal/policy/impl/MiuiGlobalActions;
 
     if-nez v1, :cond_0
 
     .line 828
-    new-instance v1, Lcom/android/internal/policy/impl/NubiaGlobalActions;
+    new-instance v1, Lcom/android/internal/policy/impl/MiuiGlobalActions;
 
     iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
 
     iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mWindowManagerFuncs:Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
 
-    invoke-direct {v1, v2, v3}, Lcom/android/internal/policy/impl/NubiaGlobalActions;-><init>(Landroid/content/Context;Landroid/view/WindowManagerPolicy$WindowManagerFuncs;)V
+    invoke-direct {v1, v2, v3}, Lcom/android/internal/policy/impl/MiuiGlobalActions;-><init>(Landroid/content/Context;Landroid/view/WindowManagerPolicy$WindowManagerFuncs;)V
 
-    iput-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mGlobalActions:Lcom/android/internal/policy/impl/NubiaGlobalActions;
+    iput-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mGlobalActions:Lcom/android/internal/policy/impl/MiuiGlobalActions;
 
     .line 830
     :cond_0
@@ -20292,13 +20311,13 @@
 
     .line 831
     .local v0, keyguardShowing:Z
-    iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mGlobalActions:Lcom/android/internal/policy/impl/NubiaGlobalActions;
+    iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mGlobalActions:Lcom/android/internal/policy/impl/MiuiGlobalActions;
 
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->isDeviceProvisioned()Z
 
     move-result v2
 
-    invoke-virtual {v1, v0, v2}, Lcom/android/internal/policy/impl/NubiaGlobalActions;->showDialog(ZZ)V
+    invoke-virtual {v1, v0, v2}, Lcom/android/internal/policy/impl/MiuiGlobalActions;->showDialog(ZZ)V
 
     .line 832
     if-eqz v0, :cond_1

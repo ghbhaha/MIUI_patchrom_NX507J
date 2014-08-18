@@ -1345,9 +1345,7 @@
     if-nez v4, :cond_0
 
     .line 109
-    iget-object v4, p0, Lcom/android/internal/view/menu/ActionMenuPresenter;->mNubiaActionBar:Lnubia/ui/IActionBar;
-
-    invoke-interface {v4, v0}, Lnubia/ui/IActionBar;->isShowsOverflowMenuButton(Lcom/android/internal/view/ActionBarPolicy;)Z
+    invoke-virtual {v0}, Lcom/android/internal/view/ActionBarPolicy;->showsOverflowMenuButton()Z
 
     move-result v4
 
@@ -1840,14 +1838,7 @@
     .line 154
     iput p1, p0, Lcom/android/internal/view/menu/ActionMenuPresenter;->mWidthLimit:I
 
-    .line 156
-    iget-object v0, p0, Lcom/android/internal/view/menu/ActionMenuPresenter;->mNubiaActionBar:Lnubia/ui/IActionBar;
-
-    invoke-interface {v0, p2}, Lnubia/ui/IActionBar;->isSetWidthLimit(Z)Z
-
-    move-result v0
-
-    iput-boolean v0, p0, Lcom/android/internal/view/menu/ActionMenuPresenter;->mStrictWidthLimit:Z
+    iput-boolean p2, p0, Lcom/android/internal/view/menu/ActionMenuPresenter;->mStrictWidthLimit:Z
 
     .line 158
     const/4 v0, 0x1

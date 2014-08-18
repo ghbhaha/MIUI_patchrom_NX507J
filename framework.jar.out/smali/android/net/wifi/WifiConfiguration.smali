@@ -63,12 +63,6 @@
 
 .field public static final wapiAsCertFileVarName:Ljava/lang/String; = "as_cert_file"
 
-.field public static final wapiPskTypeVarName:Ljava/lang/String; = "wapi_key_type"
-
-.field public static final wapiPskVarName:Ljava/lang/String; = "wapi_psk"
-
-.field public static final wapiUserCertFileVarName:Ljava/lang/String; = "user_cert_file"
-
 .field public static final wapiAsCertVarName:Ljava/lang/String; = "as_cert_file"
 
 .field public static final wapiCertIndexVarName:Ljava/lang/String; = "cert_index"
@@ -76,6 +70,8 @@
 .field public static final wapiPskTypeVarName:Ljava/lang/String; = "wapi_key_type"
 
 .field public static final wapiPskVarName:Ljava/lang/String; = "wapi_psk"
+
+.field public static final wapiUserCertFileVarName:Ljava/lang/String; = "user_cert_file"
 
 .field public static final wapiUserCertVarName:Ljava/lang/String; = "user_cert_file"
 
@@ -118,14 +114,6 @@
 .field public proxySettings:Landroid/net/wifi/WifiConfiguration$ProxySettings;
 
 .field public status:I
-
-.field public wapiASCert:Ljava/lang/String;
-
-.field public wapiPsk:Ljava/lang/String;
-
-.field public wapiPskType:I
-
-.field public wapiUserCert:Ljava/lang/String;
 
 .field public wapiASCert:Ljava/lang/String;
 
@@ -1805,21 +1793,6 @@
 
     invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    iget-object v4, p0, Landroid/net/wifi/WifiConfiguration;->wapiASCert:Ljava/lang/String;
-
-    invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    iget-object v4, p0, Landroid/net/wifi/WifiConfiguration;->wapiUserCert:Ljava/lang/String;
-
-    invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    iget-object v4, p0, Landroid/net/wifi/WifiConfiguration;->wapiPsk:Ljava/lang/String;
-
-    invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    iget v4, p0, Landroid/net/wifi/WifiConfiguration;->wapiPskType:I
-
-    invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeInt(I)V
 
     iget-object v0, p0, Landroid/net/wifi/WifiConfiguration;->wepKeys:[Ljava/lang/String;
 

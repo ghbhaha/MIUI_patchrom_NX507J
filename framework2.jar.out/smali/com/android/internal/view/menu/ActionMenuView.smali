@@ -2506,11 +2506,11 @@
 
     invoke-virtual {v0, v1, v2, v4, v5}, Landroid/view/View;->layout(IIII)V
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v32
 
     move/from16 v1, p2
 
-    move/from16 v2, v26
+    move/from16 v2, v17
 
     move/from16 v3, p4
 

@@ -38,25 +38,18 @@
     .parameter "onCompletedMsg"
 
     .prologue
-    .line 119
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 120
     iput-object p1, p0, Lcom/android/internal/telephony/dataconnection/DataConnection$ConnectionParams;->mApnContext:Lcom/android/internal/telephony/dataconnection/ApnContext;
 
-    .line 121
     iput p2, p0, Lcom/android/internal/telephony/dataconnection/DataConnection$ConnectionParams;->mInitialMaxRetry:I
 
-    .line 122
     iput p3, p0, Lcom/android/internal/telephony/dataconnection/DataConnection$ConnectionParams;->mProfileId:I
 
-    .line 123
     iput p4, p0, Lcom/android/internal/telephony/dataconnection/DataConnection$ConnectionParams;->mRilRat:I
 
-    .line 124
     iput-object p5, p0, Lcom/android/internal/telephony/dataconnection/DataConnection$ConnectionParams;->mOnCompletedMsg:Landroid/os/Message;
 
-    .line 125
     return-void
 .end method
 
@@ -66,7 +59,6 @@
     .locals 2
 
     .prologue
-    .line 129
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

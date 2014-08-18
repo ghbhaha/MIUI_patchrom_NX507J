@@ -88,10 +88,13 @@
     .prologue
     const/4 v0, 0x0
 
+    .line 146
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 148
     iput-boolean v0, p0, Lcom/android/internal/telephony/CallerInfo;->mIsEmergency:Z
 
+    .line 149
     iput-boolean v0, p0, Lcom/android/internal/telephony/CallerInfo;->mIsVoiceMail:Z
 
     new-instance v0, Lmiui/telephony/ExtraCallerInfo;
@@ -340,7 +343,7 @@
     :cond_2
     const-string v3, "normalized_number"
 
-    invoke-static {p2, v3}, Lcom/android/internal/telephony/CallerInfo$Injector;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-interface {p2, v3}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v0
 
@@ -362,29 +365,35 @@
 
     move-result v0
 
+    .line 200
     if-eq v0, v9, :cond_4
 
+    .line 201
     const-string v3, "type"
 
     invoke-static {p2, v3}, Lcom/android/internal/telephony/CallerInfo$Injector;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v2
 
+    .line 202
     .local v2, typeColumnIndex:I
     if-eq v2, v9, :cond_4
 
+    .line 203
     invoke-interface {p2, v2}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v3
 
     iput v3, v1, Lcom/android/internal/telephony/CallerInfo;->numberType:I
 
+    .line 204
     invoke-interface {p2, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
     iput-object v3, v1, Lcom/android/internal/telephony/CallerInfo;->numberLabel:Ljava/lang/String;
 
+    .line 205
     iget v3, v1, Lcom/android/internal/telephony/CallerInfo;->numberType:I
 
     iget-object v6, v1, Lcom/android/internal/telephony/CallerInfo;->numberLabel:Ljava/lang/String;
@@ -496,6 +505,7 @@
     :goto_2
     iput-boolean v3, v1, Lcom/android/internal/telephony/CallerInfo;->shouldSendToVoicemail:Z
 
+    .line 238
     iput-boolean v4, v1, Lcom/android/internal/telephony/CallerInfo;->contactExists:Z
 
     invoke-static {p0, v1, p2}, Lmiui/telephony/ExtraCallerInfo;->getExtraCallerInfo(Landroid/content/Context;Lcom/android/internal/telephony/CallerInfo;Landroid/database/Cursor;)Lmiui/telephony/ExtraCallerInfo;
@@ -508,9 +518,11 @@
     :cond_6
     invoke-interface {p2}, Landroid/database/Cursor;->close()V
 
+    .line 243
     :cond_7
     iput-boolean v5, v1, Lcom/android/internal/telephony/CallerInfo;->needUpdate:Z
 
+    .line 244
     iget-object v3, v1, Lcom/android/internal/telephony/CallerInfo;->name:Ljava/lang/String;
 
     invoke-static {v3}, Lcom/android/internal/telephony/CallerInfo;->normalize(Ljava/lang/String;)Ljava/lang/String;

@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 261
     iput-object p1, p0, Lcom/android/internal/telephony/InboundSmsHandler$StartupState;->this$0:Lcom/android/internal/telephony/InboundSmsHandler;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -41,19 +40,16 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 264
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 279
     :pswitch_0
     const/4 v0, 0x0
 
     :goto_0
     return v0
 
-    .line 267
     :pswitch_1
     iget-object v1, p0, Lcom/android/internal/telephony/InboundSmsHandler$StartupState;->this$0:Lcom/android/internal/telephony/InboundSmsHandler;
 
@@ -62,7 +58,6 @@
 
     goto :goto_0
 
-    .line 271
     :pswitch_2
     iget-object v1, p0, Lcom/android/internal/telephony/InboundSmsHandler$StartupState;->this$0:Lcom/android/internal/telephony/InboundSmsHandler;
 
@@ -75,7 +70,6 @@
 
     goto :goto_0
 
-    .line 264
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1

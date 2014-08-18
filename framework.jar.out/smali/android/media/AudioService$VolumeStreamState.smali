@@ -160,7 +160,7 @@
     return v0
 .end method
 
-.method static synthetic access$4300(Landroid/media/AudioService$VolumeStreamState;)I
+.method static synthetic access$4200(Landroid/media/AudioService$VolumeStreamState;)I
     .locals 1
     .parameter "x0"
 
@@ -183,7 +183,7 @@
     return-void
 .end method
 
-.method static synthetic access$5600(Landroid/media/AudioService$VolumeStreamState;)I
+.method static synthetic access$5500(Landroid/media/AudioService$VolumeStreamState;)I
     .locals 1
     .parameter "x0"
 
@@ -357,7 +357,7 @@
     .line 3196
     .local v0, handler:Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;
     #getter for: Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->mICallback:Landroid/os/IBinder;
-    invoke-static {v0}, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->access$4400(Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;)Landroid/os/IBinder;
+    invoke-static {v0}, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->access$4300(Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;)Landroid/os/IBinder;
 
     move-result-object v4
 
@@ -403,7 +403,7 @@
     :cond_2
     const-string v4, "AudioService"
 
-    const-string/jumbo v5, "stream was not muted by this client"
+    const-string v5, "stream was not muted by this client"
 
     invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -1086,16 +1086,15 @@
     :try_start_1
     iget v6, p0, Landroid/media/AudioService$VolumeStreamState;->mStreamType:I
 
-    if-ne v6, v11, :cond_2
+    if-eq v6, v11, :cond_2
 
-    :cond_2
     iget v6, p0, Landroid/media/AudioService$VolumeStreamState;->mStreamType:I
 
     const/4 v8, 0x7
 
     if-ne v6, v8, :cond_4
 
-    .line 2912
+    :cond_2
     sget-object v6, Landroid/media/AudioManager;->DEFAULT_STREAM_VOLUME:[I
 
     iget v7, p0, Landroid/media/AudioService$VolumeStreamState;->mStreamType:I
@@ -1269,9 +1268,7 @@
 
     if-ne v6, v8, :cond_9
 
-    const v6, 0x47400
-
-    and-int/2addr v6, v1
+    and-int/lit16 v6, v1, 0x7c00
 
     if-eqz v6, :cond_9
 
@@ -1364,7 +1361,7 @@
     iget v7, p0, Landroid/media/AudioService$VolumeStreamState;->mStreamType:I
 
     #calls: Landroid/media/AudioService;->rescaleIndex(III)I
-    invoke-static {v6, v3, v5, v7}, Landroid/media/AudioService;->access$4100(Landroid/media/AudioService;III)I
+    invoke-static {v6, v3, v5, v7}, Landroid/media/AudioService;->access$4000(Landroid/media/AudioService;III)I
 
     move-result v3
 
@@ -1485,7 +1482,7 @@
     iget v7, p0, Landroid/media/AudioService$VolumeStreamState;->mStreamType:I
 
     #calls: Landroid/media/AudioService;->rescaleIndex(III)I
-    invoke-static {v6, v3, v5, v7}, Landroid/media/AudioService;->access$4100(Landroid/media/AudioService;III)I
+    invoke-static {v6, v3, v5, v7}, Landroid/media/AudioService;->access$4000(Landroid/media/AudioService;III)I
 
     move-result v3
 
@@ -1576,16 +1573,15 @@
 .end method
 
 .method public declared-synchronized setIndex(II)Z
-    .locals 11
+    .locals 10
     .parameter "index"
     .parameter "device"
 
     .prologue
-    const/4 v6, 0x0
-
     const/4 v5, 0x1
 
-    .line 3002
+    const/4 v6, 0x0
+
     monitor-enter p0
 
     :try_start_0
@@ -1661,33 +1657,10 @@
     .line 3012
     iget-object v7, p0, Landroid/media/AudioService$VolumeStreamState;->this$0:Landroid/media/AudioService;
 
-    #getter for: Landroid/media/AudioService;->mNubiaVolume:Landroid/media/NubiaVolume;
-    invoke-static {v7}, Landroid/media/AudioService;->access$3900(Landroid/media/AudioService;)Landroid/media/NubiaVolume;
-
-    move-result-object v7
-
-    const/4 v8, 0x1
-
-    iget-object v9, p0, Landroid/media/AudioService$VolumeStreamState;->this$0:Landroid/media/AudioService;
-
-    #getter for: Landroid/media/AudioService;->mStreamVolumeAlias:[I
-    invoke-static {v9}, Landroid/media/AudioService;->access$3700(Landroid/media/AudioService;)[I
-
-    move-result-object v9
-
-    iget v10, p0, Landroid/media/AudioService$VolumeStreamState;->mStreamType:I
-
-    aget v9, v9, v10
-
-    invoke-virtual {v7, v8, v9}, Landroid/media/NubiaVolume;->setFlagVolumeChangedWhenSilent(II)V
-
-    .line 3016
-    iget-object v7, p0, Landroid/media/AudioService$VolumeStreamState;->this$0:Landroid/media/AudioService;
-
     iget v8, p0, Landroid/media/AudioService$VolumeStreamState;->mStreamType:I
 
     #calls: Landroid/media/AudioService;->getDeviceForStream(I)I
-    invoke-static {v7, v8}, Landroid/media/AudioService;->access$4000(Landroid/media/AudioService;I)I
+    invoke-static {v7, v8}, Landroid/media/AudioService;->access$3900(Landroid/media/AudioService;I)I
 
     move-result v7
 
@@ -1734,7 +1707,7 @@
     iget v7, p0, Landroid/media/AudioService$VolumeStreamState;->mStreamType:I
 
     #calls: Landroid/media/AudioService;->rescaleIndex(III)I
-    invoke-static {v6, p1, v7, v4}, Landroid/media/AudioService;->access$4100(Landroid/media/AudioService;III)I
+    invoke-static {v6, p1, v7, v4}, Landroid/media/AudioService;->access$4000(Landroid/media/AudioService;III)I
 
     move-result v3
 
@@ -1743,7 +1716,7 @@
     iget-object v6, p0, Landroid/media/AudioService$VolumeStreamState;->this$0:Landroid/media/AudioService;
 
     #getter for: Landroid/media/AudioService;->mStreamStates:[Landroid/media/AudioService$VolumeStreamState;
-    invoke-static {v6}, Landroid/media/AudioService;->access$4200(Landroid/media/AudioService;)[Landroid/media/AudioService$VolumeStreamState;
+    invoke-static {v6}, Landroid/media/AudioService;->access$4100(Landroid/media/AudioService;)[Landroid/media/AudioService$VolumeStreamState;
 
     move-result-object v6
 
@@ -1758,7 +1731,7 @@
     iget-object v6, p0, Landroid/media/AudioService$VolumeStreamState;->this$0:Landroid/media/AudioService;
 
     #getter for: Landroid/media/AudioService;->mStreamStates:[Landroid/media/AudioService$VolumeStreamState;
-    invoke-static {v6}, Landroid/media/AudioService;->access$4200(Landroid/media/AudioService;)[Landroid/media/AudioService$VolumeStreamState;
+    invoke-static {v6}, Landroid/media/AudioService;->access$4100(Landroid/media/AudioService;)[Landroid/media/AudioService$VolumeStreamState;
 
     move-result-object v6
 
@@ -1767,7 +1740,7 @@
     iget-object v7, p0, Landroid/media/AudioService$VolumeStreamState;->this$0:Landroid/media/AudioService;
 
     #calls: Landroid/media/AudioService;->getDeviceForStream(I)I
-    invoke-static {v7, v4}, Landroid/media/AudioService;->access$4000(Landroid/media/AudioService;I)I
+    invoke-static {v7, v4}, Landroid/media/AudioService;->access$3900(Landroid/media/AudioService;I)I
 
     move-result v7
 

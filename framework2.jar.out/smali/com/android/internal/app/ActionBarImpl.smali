@@ -1346,25 +1346,8 @@
     .line 802
     iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mActionView:Lcom/android/internal/widget/ActionBarView;
-
-    invoke-virtual {v0}, Lcom/android/internal/widget/ActionBarView;->hasEmbeddedTabs()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mActionView:Lcom/android/internal/widget/ActionBarView;
-
-    invoke-virtual {v0}, Lcom/android/internal/widget/ActionBarView;->isCollapsed()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    :cond_0
     iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
 
     if-eqz v0, :cond_2

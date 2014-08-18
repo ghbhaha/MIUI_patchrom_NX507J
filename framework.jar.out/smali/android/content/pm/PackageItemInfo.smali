@@ -374,48 +374,15 @@
 .end method
 
 .method public loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
-    .locals 5
+    .locals 1
     .parameter "pm"
 
     .prologue
-    .line 141
-    iget v1, p0, Landroid/content/pm/PackageItemInfo;->icon:I
-
-    if-eqz v1, :cond_0
-
-    .line 143
-    const/4 v0, 0x0
-
-    .line 145
-    .local v0, dr:Landroid/graphics/drawable/Drawable;
-    iget-object v1, p0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
-
-    iget v2, p0, Landroid/content/pm/PackageItemInfo;->icon:I
-
-    invoke-virtual {p0}, Landroid/content/pm/PackageItemInfo;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
-
-    move-result-object v3
-
-    iget-object v4, p0, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
-
-    invoke-static {p1, v1, v2, v3, v4}, Landroid/app/NubiaThemeHelper;->getDrawable(Landroid/content/pm/PackageManager;Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-static {p0, p1}, Landroid/content/pm/Injector$PackageItemInfoHook;->loadIcon(Landroid/content/pm/PackageItemInfo;Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 150
-    if-eqz v0, :cond_0
-
-    .line 154
-    .end local v0           #dr:Landroid/graphics/drawable/Drawable;
-    :goto_0
     return-object v0
-
-    :cond_0
-    invoke-virtual {p0, p1}, Landroid/content/pm/PackageItemInfo;->loadDefaultIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    goto :goto_0
 .end method
 
 .method public loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;

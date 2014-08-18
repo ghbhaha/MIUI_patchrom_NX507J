@@ -67,7 +67,7 @@
     return p1
 .end method
 
-.method static synthetic access$4400(Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;)Landroid/os/IBinder;
+.method static synthetic access$4300(Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;)Landroid/os/IBinder;
     .locals 1
     .parameter "x0"
 
@@ -100,7 +100,7 @@
     iget-object v2, p0, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->this$1:Landroid/media/AudioService$VolumeStreamState;
 
     #getter for: Landroid/media/AudioService$VolumeStreamState;->mStreamType:I
-    invoke-static {v2}, Landroid/media/AudioService$VolumeStreamState;->access$4300(Landroid/media/AudioService$VolumeStreamState;)I
+    invoke-static {v2}, Landroid/media/AudioService$VolumeStreamState;->access$4200(Landroid/media/AudioService$VolumeStreamState;)I
 
     move-result v2
 
@@ -253,7 +253,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "stream: "
+    const-string v2, "stream: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -262,7 +262,7 @@
     iget-object v2, p0, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->this$1:Landroid/media/AudioService$VolumeStreamState;
 
     #getter for: Landroid/media/AudioService$VolumeStreamState;->mStreamType:I
-    invoke-static {v2}, Landroid/media/AudioService$VolumeStreamState;->access$4300(Landroid/media/AudioService$VolumeStreamState;)I
+    invoke-static {v2}, Landroid/media/AudioService$VolumeStreamState;->access$4200(Landroid/media/AudioService$VolumeStreamState;)I
 
     move-result v2
 
@@ -297,7 +297,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "unexpected unmute for stream: "
+    const-string v2, "unexpected unmute for stream: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -306,7 +306,7 @@
     iget-object v2, p0, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->this$1:Landroid/media/AudioService$VolumeStreamState;
 
     #getter for: Landroid/media/AudioService$VolumeStreamState;->mStreamType:I
-    invoke-static {v2}, Landroid/media/AudioService$VolumeStreamState;->access$4300(Landroid/media/AudioService$VolumeStreamState;)I
+    invoke-static {v2}, Landroid/media/AudioService$VolumeStreamState;->access$4200(Landroid/media/AudioService$VolumeStreamState;)I
 
     move-result v2
 

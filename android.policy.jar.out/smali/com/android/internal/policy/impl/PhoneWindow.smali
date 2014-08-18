@@ -1441,6 +1441,10 @@
 
     .line 3123
     :cond_7
+    iget-object v7, p0, Lcom/android/internal/policy/impl/PhoneWindow;->mActionBar:Lcom/android/internal/widget/ActionBarView;
+
+    invoke-static {p0, v7}, Lcom/android/internal/policy/impl/Injector$PhoneWindowHook;->handleStartingWindow(Lcom/android/internal/policy/impl/PhoneWindow;Lcom/android/internal/widget/ActionBarView;)V
+
     const v7, 0x1020340
 
     invoke-virtual {p0, v7}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
@@ -1758,21 +1762,7 @@
 
     .line 3189
     :try_start_0
-    invoke-virtual {p0}, Landroid/view/Window;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1}, Landroid/content/ContentResolver;->openInputStream(Landroid/net/Uri;)Ljava/io/InputStream;
-
-    move-result-object v2
-
-    const/4 v3, 0x0
-
-    invoke-static {v2, v3}, Landroid/graphics/drawable/Drawable;->createFromStream(Ljava/io/InputStream;Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-static {p0, p1}, Lcom/android/internal/policy/impl/Injector$PhoneWindowHook;->before_loadImageURI(Lcom/android/internal/policy/impl/PhoneWindow;Landroid/net/Uri;)Landroid/graphics/drawable/Drawable;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -2304,7 +2294,7 @@
 
     iget-object v4, v0, Lcom/android/internal/policy/impl/PhoneWindow$PanelFeatureState;->createdPanelView:Landroid/view/View;
 
-    if-eqz v4, :cond_d
+    if-eqz v4, :cond_miui_0
 
     .line 653
     move-object/from16 v0, p1
@@ -2353,7 +2343,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_a
+    if-nez v4, :cond_d
 
     goto/16 :goto_0
 
@@ -5060,7 +5050,7 @@
 
     move/from16 v1, v19
 
-    invoke-virtual {v0, v1}, Landroid/view/Window;->clearFlags(I)V
+    invoke-virtual {v0, v1}, Landroid/view/Window;->addFlags(I)V
 
     goto/16 :goto_6
 
@@ -5221,8 +5211,13 @@
 
     if-eqz v19, :cond_29
 
-    .line 3009
-    const v10, 0x109009b
+    sget v19, Lcom/android/internal/R$layout;->screen_action_bar:I
+
+    move/from16 v0, v19
+
+    invoke-static {v5, v0}, Lcom/android/internal/policy/impl/Injector$PhoneWindowHook;->getActionBarResourceId(Landroid/content/Context;I)I
+
+    move-result v10
 
     .restart local v10       #layoutResource:I
     goto/16 :goto_8

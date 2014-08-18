@@ -41,7 +41,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {v0}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -188,7 +188,7 @@
 
     .line 2454
     :cond_1
-    invoke-virtual {v1, v5}, Landroid/view/View;->setBackgroundColor(I)V
+    invoke-virtual {v1, v5}, Landroid/widget/TextView;->setBackgroundColor(I)V
 
     .line 2459
     :goto_0
@@ -196,7 +196,7 @@
 
     .line 2456
     :cond_2
-    invoke-virtual {v1, v4}, Landroid/view/View;->setBackgroundColor(I)V
+    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setBackgroundColor(I)V
 
     goto :goto_0
 .end method

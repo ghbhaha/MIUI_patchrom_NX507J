@@ -24,17 +24,14 @@
     .locals 1
 
     .prologue
-    .line 34
     const/4 v0, 0x0
 
     sput v0, Lcom/android/internal/telephony/CallModify;->E_SUCCESS:I
 
-    .line 35
     const/4 v0, 0x7
 
     sput v0, Lcom/android/internal/telephony/CallModify;->E_CANCELLED:I
 
-    .line 36
     const/16 v0, 0x10
 
     sput v0, Lcom/android/internal/telephony/CallModify;->E_UNUSED:I
@@ -46,7 +43,6 @@
     .locals 2
 
     .prologue
-    .line 45
     new-instance v0, Lcom/android/internal/telephony/CallDetails;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/CallDetails;-><init>()V
@@ -55,7 +51,6 @@
 
     invoke-direct {p0, v0, v1}, Lcom/android/internal/telephony/CallModify;-><init>(Lcom/android/internal/telephony/CallDetails;I)V
 
-    .line 46
     return-void
 .end method
 
@@ -65,12 +60,10 @@
     .parameter "callIndex"
 
     .prologue
-    .line 49
     sget v0, Lcom/android/internal/telephony/CallModify;->E_SUCCESS:I
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/internal/telephony/CallModify;-><init>(Lcom/android/internal/telephony/CallDetails;II)V
 
-    .line 50
     return-void
 .end method
 
@@ -81,19 +74,14 @@
     .parameter "err"
 
     .prologue
-    .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 53
     iput-object p1, p0, Lcom/android/internal/telephony/CallModify;->call_details:Lcom/android/internal/telephony/CallDetails;
 
-    .line 54
     iput p2, p0, Lcom/android/internal/telephony/CallModify;->call_index:I
 
-    .line 55
     iput p3, p0, Lcom/android/internal/telephony/CallModify;->error:I
 
-    .line 56
     return-void
 .end method
 
@@ -103,7 +91,6 @@
     .locals 2
 
     .prologue
-    .line 66
     iget v0, p0, Lcom/android/internal/telephony/CallModify;->error:I
 
     sget v1, Lcom/android/internal/telephony/CallModify;->E_UNUSED:I
@@ -132,14 +119,12 @@
     .parameter "calldetails"
 
     .prologue
-    .line 59
     new-instance v0, Lcom/android/internal/telephony/CallDetails;
 
     invoke-direct {v0, p1}, Lcom/android/internal/telephony/CallDetails;-><init>(Lcom/android/internal/telephony/CallDetails;)V
 
     iput-object v0, p0, Lcom/android/internal/telephony/CallModify;->call_details:Lcom/android/internal/telephony/CallDetails;
 
-    .line 60
     return-void
 .end method
 
@@ -147,7 +132,6 @@
     .locals 2
 
     .prologue
-    .line 74
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

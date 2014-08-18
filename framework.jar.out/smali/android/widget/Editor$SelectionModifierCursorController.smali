@@ -88,7 +88,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {v1}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -133,7 +133,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {v1}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -227,19 +227,19 @@
     :cond_1
     iget-object v0, p0, Landroid/widget/Editor$SelectionModifierCursorController;->mStartHandle:Landroid/widget/Editor$SelectionStartHandleView;
 
-    invoke-virtual {v0}, Landroid/widget/Editor$HandleView;->show()V
+    invoke-virtual {v0}, Landroid/widget/Editor$SelectionStartHandleView;->show()V
 
     .line 3656
     iget-object v0, p0, Landroid/widget/Editor$SelectionModifierCursorController;->mEndHandle:Landroid/widget/Editor$SelectionEndHandleView;
 
-    invoke-virtual {v0}, Landroid/widget/Editor$HandleView;->show()V
+    invoke-virtual {v0}, Landroid/widget/Editor$SelectionEndHandleView;->show()V
 
     .line 3660
     iget-object v0, p0, Landroid/widget/Editor$SelectionModifierCursorController;->mStartHandle:Landroid/widget/Editor$SelectionStartHandleView;
 
     const/16 v1, 0xc8
 
-    invoke-virtual {v0, v1}, Landroid/widget/Editor$HandleView;->showActionPopupWindow(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/Editor$SelectionStartHandleView;->showActionPopupWindow(I)V
 
     .line 3661
     iget-object v0, p0, Landroid/widget/Editor$SelectionModifierCursorController;->mEndHandle:Landroid/widget/Editor$SelectionEndHandleView;
@@ -361,7 +361,7 @@
 
     iget-object v0, p0, Landroid/widget/Editor$SelectionModifierCursorController;->mStartHandle:Landroid/widget/Editor$SelectionStartHandleView;
 
-    invoke-virtual {v0}, Landroid/widget/Editor$HandleView;->hide()V
+    invoke-virtual {v0}, Landroid/widget/Editor$SelectionStartHandleView;->hide()V
 
     .line 3668
     :cond_0
@@ -371,7 +371,7 @@
 
     iget-object v0, p0, Landroid/widget/Editor$SelectionModifierCursorController;->mEndHandle:Landroid/widget/Editor$SelectionEndHandleView;
 
-    invoke-virtual {v0}, Landroid/widget/Editor$HandleView;->hide()V
+    invoke-virtual {v0}, Landroid/widget/Editor$SelectionEndHandleView;->hide()V
 
     .line 3669
     :cond_1
@@ -389,7 +389,7 @@
 
     iget-object v0, p0, Landroid/widget/Editor$SelectionModifierCursorController;->mStartHandle:Landroid/widget/Editor$SelectionStartHandleView;
 
-    invoke-virtual {v0}, Landroid/widget/Editor$HandleView;->isDragging()Z
+    invoke-virtual {v0}, Landroid/widget/Editor$SelectionStartHandleView;->isDragging()Z
 
     move-result v0
 
@@ -418,7 +418,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+    invoke-virtual {v1}, Landroid/widget/TextView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v0
 
@@ -433,7 +433,7 @@
 
     iget-object v1, p0, Landroid/widget/Editor$SelectionModifierCursorController;->mStartHandle:Landroid/widget/Editor$SelectionStartHandleView;
 
-    invoke-virtual {v1}, Landroid/widget/Editor$HandleView;->onDetached()V
+    invoke-virtual {v1}, Landroid/widget/Editor$SelectionStartHandleView;->onDetached()V
 
     .line 3782
     :cond_0
@@ -443,7 +443,7 @@
 
     iget-object v1, p0, Landroid/widget/Editor$SelectionModifierCursorController;->mEndHandle:Landroid/widget/Editor$SelectionEndHandleView;
 
-    invoke-virtual {v1}, Landroid/widget/Editor$HandleView;->onDetached()V
+    invoke-virtual {v1}, Landroid/widget/Editor$SelectionEndHandleView;->onDetached()V
 
     .line 3783
     :cond_1
@@ -551,7 +551,7 @@
 
     move-result-object v11
 
-    invoke-virtual {v11}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {v11}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
 
     move-result-object v11
 
@@ -653,7 +653,7 @@
 
     move-result-object v11
 
-    invoke-virtual {v11}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {v11}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
 
     move-result-object v11
 
@@ -716,7 +716,7 @@
 
     move-result-object v11
 
-    invoke-virtual {v11}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {v11}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
 
     move-result-object v11
 

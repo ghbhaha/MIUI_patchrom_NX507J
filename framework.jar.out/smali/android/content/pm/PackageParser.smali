@@ -15701,7 +15701,7 @@
     goto :goto_2
 
     :cond_9
-    const-string/jumbo v5, "must have at least one \'.\' separator"
+    const-string v5, "must have at least one \'.\' separator"
 
     goto :goto_2
 .end method
@@ -15709,917 +15709,769 @@
 
 # virtual methods
 .method public collectCertificates(Landroid/content/pm/PackageParser$Package;I)Z
-    .locals 20
+    .locals 18
     .parameter "pkg"
     .parameter "flags"
 
     .prologue
-    .line 619
-    const/16 v17, 0x0
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, p1
-
-    iput-object v0, v1, Landroid/content/pm/PackageParser$Package;->mSignatures:[Landroid/content/pm/Signature;
-
-    .line 622
     const/4 v15, 0x0
 
-    .line 623
-    .local v15, readBuffer:[B
-    sget-object v18, Landroid/content/pm/PackageParser;->mSync:Ljava/lang/Object;
+    move-object/from16 v0, p1
 
-    monitor-enter v18
+    iput-object v15, v0, Landroid/content/pm/PackageParser$Package;->mSignatures:[Landroid/content/pm/Signature;
 
-    .line 624
+    const/4 v13, 0x0
+
+    .local v13, readBuffer:[B
+    sget-object v16, Landroid/content/pm/PackageParser;->mSync:Ljava/lang/Object;
+
+    monitor-enter v16
+
     :try_start_0
-    sget-object v16, Landroid/content/pm/PackageParser;->mReadBuffer:Ljava/lang/ref/WeakReference;
+    sget-object v14, Landroid/content/pm/PackageParser;->mReadBuffer:Ljava/lang/ref/WeakReference;
 
-    .line 625
-    .local v16, readBufferRef:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<[B>;"
-    if-eqz v16, :cond_0
+    .local v14, readBufferRef:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<[B>;"
+    if-eqz v14, :cond_0
 
-    .line 626
-    const/16 v17, 0x0
+    const/4 v15, 0x0
 
-    sput-object v17, Landroid/content/pm/PackageParser;->mReadBuffer:Ljava/lang/ref/WeakReference;
+    sput-object v15, Landroid/content/pm/PackageParser;->mReadBuffer:Ljava/lang/ref/WeakReference;
 
-    .line 627
-    invoke-virtual/range {v16 .. v16}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v14}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
-    move-result-object v17
+    move-result-object v15
 
-    move-object/from16 v0, v17
+    move-object v0, v15
 
     check-cast v0, [B
 
-    move-object v15, v0
+    move-object v13, v0
 
-    .line 629
     :cond_0
-    if-nez v15, :cond_1
+    if-nez v13, :cond_1
 
-    .line 630
-    const/16 v17, 0x2000
+    const/16 v15, 0x2000
 
-    move/from16 v0, v17
+    new-array v13, v15, [B
 
-    new-array v15, v0, [B
+    new-instance v14, Ljava/lang/ref/WeakReference;
 
-    .line 631
-    new-instance v16, Ljava/lang/ref/WeakReference;
+    .end local v14           #readBufferRef:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<[B>;"
+    invoke-direct {v14, v13}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    .end local v16           #readBufferRef:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<[B>;"
-    move-object/from16 v0, v16
-
-    invoke-direct {v0, v15}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    .line 633
-    .restart local v16       #readBufferRef:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<[B>;"
+    .restart local v14       #readBufferRef:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<[B>;"
     :cond_1
-    monitor-exit v18
+    monitor-exit v16
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 636
     :try_start_1
-    new-instance v11, Ljava/util/jar/JarFile;
+    new-instance v9, Ljava/util/jar/JarFile;
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Landroid/content/pm/PackageParser;->mArchiveSourcePath:Ljava/lang/String;
+    iget-object v15, v0, Landroid/content/pm/PackageParser;->mArchiveSourcePath:Ljava/lang/String;
 
-    move-object/from16 v17, v0
+    invoke-direct {v9, v15}, Ljava/util/jar/JarFile;-><init>(Ljava/lang/String;)V
 
-    const/16 v18, 0x1
+    .local v9, jarFile:Ljava/util/jar/JarFile;
+    const/4 v2, 0x0
 
-    const/16 v19, 0x1
+    .local v2, certs:[Ljava/security/cert/Certificate;
+    and-int/lit8 v15, p2, 0x1
 
-    move-object/from16 v0, v17
+    if-eqz v15, :cond_2
 
-    move/from16 v1, v18
+    const-string v15, "AndroidManifest.xml"
 
-    move/from16 v2, v19
+    invoke-virtual {v9, v15}, Ljava/util/jar/JarFile;->getJarEntry(Ljava/lang/String;)Ljava/util/jar/JarEntry;
 
-    invoke-direct {v11, v0, v1, v2}, Ljava/util/jar/JarFile;-><init>(Ljava/lang/String;ZZ)V
+    move-result-object v8
 
-    .line 638
-    .local v11, jarFile:Ljava/util/jar/JarFile;
-    const/4 v4, 0x0
-
-    .line 640
-    .local v4, certs:[Ljava/security/cert/Certificate;
-    and-int/lit8 v17, p2, 0x1
-
-    if-eqz v17, :cond_2
-
-    .line 645
-    const-string v17, "AndroidManifest.xml"
-
-    move-object/from16 v0, v17
-
-    invoke-virtual {v11, v0}, Ljava/util/jar/JarFile;->getJarEntry(Ljava/lang/String;)Ljava/util/jar/JarEntry;
-
-    move-result-object v10
-
-    .line 646
-    .local v10, jarEntry:Ljava/util/jar/JarEntry;
+    .local v8, jarEntry:Ljava/util/jar/JarEntry;
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v11, v10, v15}, Landroid/content/pm/PackageParser;->loadCertificates(Ljava/util/jar/JarFile;Ljava/util/jar/JarEntry;[B)[Ljava/security/cert/Certificate;
+    invoke-direct {v0, v9, v8, v13}, Landroid/content/pm/PackageParser;->loadCertificates(Ljava/util/jar/JarFile;Ljava/util/jar/JarEntry;[B)[Ljava/security/cert/Certificate;
 
-    move-result-object v4
+    move-result-object v2
 
-    .line 647
-    if-nez v4, :cond_b
+    if-nez v2, :cond_b
 
-    .line 648
-    const-string v17, "PackageParser"
+    const-string v15, "PackageParser"
 
-    new-instance v18, Ljava/lang/StringBuilder;
+    new-instance v16, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v16 .. v16}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v19, "Package "
+    const-string v17, "Package "
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v16
 
     move-object/from16 v0, p1
 
     iget-object v0, v0, Landroid/content/pm/PackageParser$Package;->packageName:Ljava/lang/String;
 
-    move-object/from16 v19, v0
+    move-object/from16 v17, v0
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v16
 
-    const-string v19, " has no certificates at entry "
+    const-string v17, " has no certificates at entry "
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v16
 
-    invoke-virtual {v10}, Ljava/util/jar/JarEntry;->getName()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/util/jar/JarEntry;->getName()Ljava/lang/String;
 
-    move-result-object v19
+    move-result-object v17
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v16
 
-    const-string v19, "; ignoring!"
+    const-string v17, "; ignoring!"
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v16
 
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v16 .. v16}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v18
+    move-result-object v16
 
-    invoke-static/range {v17 .. v18}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static/range {v15 .. v16}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 651
-    invoke-virtual {v11}, Ljava/util/jar/JarFile;->close()V
+    invoke-virtual {v9}, Ljava/util/jar/JarFile;->close()V
 
-    .line 652
-    const/16 v17, -0x67
+    const/16 v15, -0x67
 
-    move/from16 v0, v17
+    move-object/from16 v0, p0
 
-    move-object/from16 v1, p0
-
-    iput v0, v1, Landroid/content/pm/PackageParser;->mParseError:I
+    iput v15, v0, Landroid/content/pm/PackageParser;->mParseError:I
     :try_end_1
     .catch Ljava/security/cert/CertificateEncodingException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
     .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_2
 
-    .line 653
-    const/16 v17, 0x0
+    const/4 v15, 0x0
 
-    .line 762
-    .end local v4           #certs:[Ljava/security/cert/Certificate;
-    .end local v10           #jarEntry:Ljava/util/jar/JarEntry;
-    .end local v11           #jarFile:Ljava/util/jar/JarFile;
+    .end local v2           #certs:[Ljava/security/cert/Certificate;
+    .end local v8           #jarEntry:Ljava/util/jar/JarEntry;
+    .end local v9           #jarFile:Ljava/util/jar/JarFile;
     :goto_0
-    return v17
+    return v15
 
-    .line 633
-    .end local v16           #readBufferRef:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<[B>;"
+    .end local v14           #readBufferRef:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<[B>;"
     :catchall_0
-    move-exception v17
+    move-exception v15
 
     :try_start_2
-    monitor-exit v18
+    monitor-exit v16
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    throw v17
+    throw v15
 
-    .line 668
-    .restart local v4       #certs:[Ljava/security/cert/Certificate;
-    .restart local v11       #jarFile:Ljava/util/jar/JarFile;
-    .restart local v16       #readBufferRef:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<[B>;"
+    .restart local v2       #certs:[Ljava/security/cert/Certificate;
+    .restart local v9       #jarFile:Ljava/util/jar/JarFile;
+    .restart local v14       #readBufferRef:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<[B>;"
     :cond_2
     :try_start_3
-    invoke-virtual {v11}, Ljava/util/jar/JarFile;->entries()Ljava/util/Enumeration;
+    invoke-virtual {v9}, Ljava/util/jar/JarFile;->entries()Ljava/util/Enumeration;
 
-    move-result-object v6
+    move-result-object v4
 
-    .line 669
-    .local v6, entries:Ljava/util/Enumeration;,"Ljava/util/Enumeration<Ljava/util/jar/JarEntry;>;"
+    .local v4, entries:Ljava/util/Enumeration;,"Ljava/util/Enumeration<Ljava/util/jar/JarEntry;>;"
     :cond_3
     :goto_1
-    invoke-interface {v6}, Ljava/util/Enumeration;->hasMoreElements()Z
+    invoke-interface {v4}, Ljava/util/Enumeration;->hasMoreElements()Z
 
-    move-result v17
+    move-result v15
 
-    if-eqz v17, :cond_b
+    if-eqz v15, :cond_b
 
-    .line 670
-    invoke-interface {v6}, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;
+    invoke-interface {v4}, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;
+
+    move-result-object v10
+
+    check-cast v10, Ljava/util/jar/JarEntry;
+
+    .local v10, je:Ljava/util/jar/JarEntry;
+    invoke-virtual {v10}, Ljava/util/jar/JarEntry;->isDirectory()Z
+
+    move-result v15
+
+    if-nez v15, :cond_3
+
+    invoke-virtual {v10}, Ljava/util/jar/JarEntry;->getName()Ljava/lang/String;
 
     move-result-object v12
 
-    check-cast v12, Ljava/util/jar/JarEntry;
+    .local v12, name:Ljava/lang/String;
+    const-string v15, "META-INF/"
 
-    .line 671
-    .local v12, je:Ljava/util/jar/JarEntry;
-    invoke-virtual {v12}, Ljava/util/jar/JarEntry;->isDirectory()Z
+    invoke-virtual {v12, v15}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v17
+    move-result v15
 
-    if-nez v17, :cond_3
+    if-nez v15, :cond_3
 
-    .line 673
-    invoke-virtual {v12}, Ljava/util/jar/JarEntry;->getName()Ljava/lang/String;
+    const-string v15, "AndroidManifest.xml"
 
-    move-result-object v14
+    invoke-virtual {v15, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    .line 675
-    .local v14, name:Ljava/lang/String;
-    const-string v17, "META-INF/"
+    move-result v15
 
-    move-object/from16 v0, v17
+    if-eqz v15, :cond_4
 
-    invoke-virtual {v14, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v9, v10}, Ljava/util/jar/JarFile;->getInputStream(Ljava/util/zip/ZipEntry;)Ljava/io/InputStream;
 
-    move-result v17
+    move-result-object v15
 
-    if-nez v17, :cond_3
+    invoke-static {v15}, Landroid/content/pm/ManifestDigest;->fromInputStream(Ljava/io/InputStream;)Landroid/content/pm/ManifestDigest;
 
-    .line 678
-    const-string v17, "AndroidManifest.xml"
+    move-result-object v15
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, p1
 
-    invoke-virtual {v0, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v17
-
-    if-eqz v17, :cond_4
-
-    .line 679
-    invoke-virtual {v11, v12}, Ljava/util/jar/JarFile;->getInputStream(Ljava/util/zip/ZipEntry;)Ljava/io/InputStream;
-
-    move-result-object v17
-
-    invoke-static/range {v17 .. v17}, Landroid/content/pm/ManifestDigest;->fromInputStream(Ljava/io/InputStream;)Landroid/content/pm/ManifestDigest;
-
-    move-result-object v17
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, p1
-
-    iput-object v0, v1, Landroid/content/pm/PackageParser$Package;->manifestDigest:Landroid/content/pm/ManifestDigest;
+    iput-object v15, v0, Landroid/content/pm/PackageParser$Package;->manifestDigest:Landroid/content/pm/ManifestDigest;
 
     .line 683
     :cond_4
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v11, v12, v15}, Landroid/content/pm/PackageParser;->loadCertificates(Ljava/util/jar/JarFile;Ljava/util/jar/JarEntry;[B)[Ljava/security/cert/Certificate;
+    invoke-direct {v0, v9, v10, v13}, Landroid/content/pm/PackageParser;->loadCertificates(Ljava/util/jar/JarFile;Ljava/util/jar/JarEntry;[B)[Ljava/security/cert/Certificate;
 
-    move-result-object v13
+    move-result-object v11
 
-    .line 690
-    .local v13, localCerts:[Ljava/security/cert/Certificate;
-    if-nez v13, :cond_5
+    .local v11, localCerts:[Ljava/security/cert/Certificate;
+    if-nez v11, :cond_5
 
-    .line 691
-    const-string v17, "PackageParser"
+    move-object/from16 v0, p1
 
-    new-instance v18, Ljava/lang/StringBuilder;
+    iget-object v15, v0, Landroid/content/pm/PackageParser$Package;->packageName:Ljava/lang/String;
 
-    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-static {v10, v15}, Landroid/content/pm/Injector$PackageParserHook;->acceptNoCertificatesPackage(Ljava/util/jar/JarEntry;Ljava/lang/String;)Z
 
-    const-string v19, "Package "
+    move-result v15
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-nez v15, :cond_3
 
-    move-result-object v18
+    const-string v15, "PackageParser"
+
+    new-instance v16, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v16 .. v16}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v17, "Package "
+
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v16
 
     move-object/from16 v0, p1
 
     iget-object v0, v0, Landroid/content/pm/PackageParser$Package;->packageName:Ljava/lang/String;
 
-    move-object/from16 v19, v0
+    move-object/from16 v17, v0
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v16
 
-    const-string v19, " has no certificates at entry "
+    const-string v17, " has no certificates at entry "
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v16
 
-    invoke-virtual {v12}, Ljava/util/jar/JarEntry;->getName()Ljava/lang/String;
+    invoke-virtual {v10}, Ljava/util/jar/JarEntry;->getName()Ljava/lang/String;
 
-    move-result-object v19
+    move-result-object v17
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v16
 
-    const-string v19, "; ignoring!"
+    const-string v17, "; ignoring!"
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v16
 
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v16 .. v16}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v18
+    move-result-object v16
 
-    invoke-static/range {v17 .. v18}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static/range {v15 .. v16}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 694
-    invoke-virtual {v11}, Ljava/util/jar/JarFile;->close()V
+    invoke-virtual {v9}, Ljava/util/jar/JarFile;->close()V
 
-    .line 695
-    const/16 v17, -0x67
+    const/16 v15, -0x67
 
-    move/from16 v0, v17
+    move-object/from16 v0, p0
 
-    move-object/from16 v1, p0
+    iput v15, v0, Landroid/content/pm/PackageParser;->mParseError:I
 
-    iput v0, v1, Landroid/content/pm/PackageParser;->mParseError:I
-
-    .line 696
-    const/16 v17, 0x0
+    const/4 v15, 0x0
 
     goto/16 :goto_0
 
-    .line 697
     :cond_5
-    if-nez v4, :cond_6
+    if-nez v2, :cond_6
 
-    .line 698
-    move-object v4, v13
+    move-object v2, v11
 
     goto/16 :goto_1
 
-    .line 701
     :cond_6
-    const/4 v8, 0x0
+    const/4 v6, 0x0
 
-    .local v8, i:I
+    .local v6, i:I
     :goto_2
-    array-length v0, v4
+    array-length v15, v2
 
-    move/from16 v17, v0
+    if-ge v6, v15, :cond_3
 
-    move/from16 v0, v17
+    const/4 v5, 0x0
 
-    if-ge v8, v0, :cond_3
-
-    .line 702
+    .local v5, found:Z
     const/4 v7, 0x0
 
-    .line 703
-    .local v7, found:Z
-    const/4 v9, 0x0
-
-    .local v9, j:I
+    .local v7, j:I
     :goto_3
-    array-length v0, v13
+    array-length v15, v11
 
-    move/from16 v17, v0
+    if-ge v7, v15, :cond_7
 
-    move/from16 v0, v17
+    aget-object v15, v2, v6
 
-    if-ge v9, v0, :cond_7
+    if-eqz v15, :cond_9
 
-    .line 704
-    aget-object v17, v4, v8
+    aget-object v15, v2, v6
 
-    if-eqz v17, :cond_9
+    aget-object v16, v11, v7
 
-    aget-object v17, v4, v8
+    invoke-virtual/range {v15 .. v16}, Ljava/security/cert/Certificate;->equals(Ljava/lang/Object;)Z
 
-    aget-object v18, v13, v9
+    move-result v15
 
-    invoke-virtual/range {v17 .. v18}, Ljava/security/cert/Certificate;->equals(Ljava/lang/Object;)Z
+    if-eqz v15, :cond_9
 
-    move-result v17
+    const/4 v5, 0x1
 
-    if-eqz v17, :cond_9
-
-    .line 706
-    const/4 v7, 0x1
-
-    .line 710
     :cond_7
-    if-eqz v7, :cond_8
+    if-eqz v5, :cond_8
 
-    array-length v0, v4
+    array-length v15, v2
 
-    move/from16 v17, v0
+    array-length v0, v11
 
-    array-length v0, v13
+    move/from16 v16, v0
 
-    move/from16 v18, v0
+    move/from16 v0, v16
 
-    move/from16 v0, v17
-
-    move/from16 v1, v18
-
-    if-eq v0, v1, :cond_a
+    if-eq v15, v0, :cond_a
 
     .line 711
     :cond_8
-    const-string v17, "PackageParser"
+    const-string v15, "PackageParser"
 
-    new-instance v18, Ljava/lang/StringBuilder;
+    new-instance v16, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v16 .. v16}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v19, "Package "
+    const-string v17, "Package "
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v16
 
     move-object/from16 v0, p1
 
     iget-object v0, v0, Landroid/content/pm/PackageParser$Package;->packageName:Ljava/lang/String;
 
-    move-object/from16 v19, v0
+    move-object/from16 v17, v0
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v16
 
-    const-string v19, " has mismatched certificates at entry "
+    const-string v17, " has mismatched certificates at entry "
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v16
 
-    invoke-virtual {v12}, Ljava/util/jar/JarEntry;->getName()Ljava/lang/String;
+    invoke-virtual {v10}, Ljava/util/jar/JarEntry;->getName()Ljava/lang/String;
 
-    move-result-object v19
+    move-result-object v17
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v16
 
-    const-string v19, "; ignoring!"
+    const-string v17, "; ignoring!"
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v16
 
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v16 .. v16}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v18
+    move-result-object v16
 
-    invoke-static/range {v17 .. v18}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static/range {v15 .. v16}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 714
-    invoke-virtual {v11}, Ljava/util/jar/JarFile;->close()V
+    invoke-virtual {v9}, Ljava/util/jar/JarFile;->close()V
 
-    .line 715
-    const/16 v17, -0x68
+    const/16 v15, -0x68
 
-    move/from16 v0, v17
+    move-object/from16 v0, p0
 
-    move-object/from16 v1, p0
+    iput v15, v0, Landroid/content/pm/PackageParser;->mParseError:I
 
-    iput v0, v1, Landroid/content/pm/PackageParser;->mParseError:I
-
-    .line 716
-    const/16 v17, 0x0
+    const/4 v15, 0x0
 
     goto/16 :goto_0
 
-    .line 703
     :cond_9
-    add-int/lit8 v9, v9, 0x1
+    add-int/lit8 v7, v7, 0x1
 
     goto :goto_3
 
-    .line 701
     :cond_a
-    add-int/lit8 v8, v8, 0x1
+    add-int/lit8 v6, v6, 0x1
 
     goto :goto_2
 
-    .line 722
-    .end local v6           #entries:Ljava/util/Enumeration;,"Ljava/util/Enumeration<Ljava/util/jar/JarEntry;>;"
-    .end local v7           #found:Z
-    .end local v8           #i:I
-    .end local v9           #j:I
-    .end local v12           #je:Ljava/util/jar/JarEntry;
-    .end local v13           #localCerts:[Ljava/security/cert/Certificate;
-    .end local v14           #name:Ljava/lang/String;
+    .end local v4           #entries:Ljava/util/Enumeration;,"Ljava/util/Enumeration<Ljava/util/jar/JarEntry;>;"
+    .end local v5           #found:Z
+    .end local v6           #i:I
+    .end local v7           #j:I
+    .end local v10           #je:Ljava/util/jar/JarEntry;
+    .end local v11           #localCerts:[Ljava/security/cert/Certificate;
+    .end local v12           #name:Ljava/lang/String;
     :cond_b
-    invoke-virtual {v11}, Ljava/util/jar/JarFile;->close()V
+    invoke-virtual {v9}, Ljava/util/jar/JarFile;->close()V
 
-    .line 724
-    sget-object v18, Landroid/content/pm/PackageParser;->mSync:Ljava/lang/Object;
+    sget-object v16, Landroid/content/pm/PackageParser;->mSync:Ljava/lang/Object;
 
-    monitor-enter v18
+    monitor-enter v16
     :try_end_3
     .catch Ljava/security/cert/CertificateEncodingException; {:try_start_3 .. :try_end_3} :catch_0
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
     .catch Ljava/lang/RuntimeException; {:try_start_3 .. :try_end_3} :catch_2
 
-    .line 725
     :try_start_4
-    sput-object v16, Landroid/content/pm/PackageParser;->mReadBuffer:Ljava/lang/ref/WeakReference;
+    sput-object v14, Landroid/content/pm/PackageParser;->mReadBuffer:Ljava/lang/ref/WeakReference;
 
-    .line 726
-    monitor-exit v18
+    monitor-exit v16
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    .line 728
-    if-eqz v4, :cond_c
+    if-eqz v2, :cond_c
 
     :try_start_5
-    array-length v0, v4
+    array-length v15, v2
 
-    move/from16 v17, v0
+    if-lez v15, :cond_c
 
-    if-lez v17, :cond_c
+    array-length v1, v2
 
-    .line 729
-    array-length v3, v4
+    .local v1, N:I
+    array-length v15, v2
 
-    .line 730
-    .local v3, N:I
-    array-length v0, v4
+    new-array v15, v15, [Landroid/content/pm/Signature;
 
-    move/from16 v17, v0
-
-    move/from16 v0, v17
-
-    new-array v0, v0, [Landroid/content/pm/Signature;
-
-    move-object/from16 v17, v0
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, p1
-
-    iput-object v0, v1, Landroid/content/pm/PackageParser$Package;->mSignatures:[Landroid/content/pm/Signature;
-
-    .line 731
-    const/4 v8, 0x0
-
-    .restart local v8       #i:I
-    :goto_4
-    if-ge v8, v3, :cond_d
-
-    .line 732
     move-object/from16 v0, p1
 
-    iget-object v0, v0, Landroid/content/pm/PackageParser$Package;->mSignatures:[Landroid/content/pm/Signature;
+    iput-object v15, v0, Landroid/content/pm/PackageParser$Package;->mSignatures:[Landroid/content/pm/Signature;
 
-    move-object/from16 v17, v0
+    const/4 v6, 0x0
 
-    new-instance v18, Landroid/content/pm/Signature;
+    .restart local v6       #i:I
+    :goto_4
+    if-ge v6, v1, :cond_d
 
-    aget-object v19, v4, v8
+    move-object/from16 v0, p1
 
-    invoke-virtual/range {v19 .. v19}, Ljava/security/cert/Certificate;->getEncoded()[B
+    iget-object v15, v0, Landroid/content/pm/PackageParser$Package;->mSignatures:[Landroid/content/pm/Signature;
 
-    move-result-object v19
+    new-instance v16, Landroid/content/pm/Signature;
 
-    invoke-direct/range {v18 .. v19}, Landroid/content/pm/Signature;-><init>([B)V
+    aget-object v17, v2, v6
 
-    aput-object v18, v17, v8
+    invoke-virtual/range {v17 .. v17}, Ljava/security/cert/Certificate;->getEncoded()[B
+
+    move-result-object v17
+
+    invoke-direct/range {v16 .. v17}, Landroid/content/pm/Signature;-><init>([B)V
+
+    aput-object v16, v15, v6
     :try_end_5
     .catch Ljava/security/cert/CertificateEncodingException; {:try_start_5 .. :try_end_5} :catch_0
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_1
     .catch Ljava/lang/RuntimeException; {:try_start_5 .. :try_end_5} :catch_2
 
-    .line 731
-    add-int/lit8 v8, v8, 0x1
+    add-int/lit8 v6, v6, 0x1
 
     goto :goto_4
 
-    .line 726
-    .end local v3           #N:I
-    .end local v8           #i:I
+    .end local v1           #N:I
+    .end local v6           #i:I
     :catchall_1
-    move-exception v17
+    move-exception v15
 
     :try_start_6
-    monitor-exit v18
+    monitor-exit v16
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
     :try_start_7
-    throw v17
+    throw v15
     :try_end_7
     .catch Ljava/security/cert/CertificateEncodingException; {:try_start_7 .. :try_end_7} :catch_0
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_1
     .catch Ljava/lang/RuntimeException; {:try_start_7 .. :try_end_7} :catch_2
 
-    .line 748
-    .end local v4           #certs:[Ljava/security/cert/Certificate;
-    .end local v11           #jarFile:Ljava/util/jar/JarFile;
+    .end local v2           #certs:[Ljava/security/cert/Certificate;
+    .end local v9           #jarFile:Ljava/util/jar/JarFile;
     :catch_0
-    move-exception v5
+    move-exception v3
 
-    .line 749
-    .local v5, e:Ljava/security/cert/CertificateEncodingException;
-    const-string v17, "PackageParser"
+    .local v3, e:Ljava/security/cert/CertificateEncodingException;
+    const-string v15, "PackageParser"
 
-    new-instance v18, Ljava/lang/StringBuilder;
+    new-instance v16, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v16 .. v16}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v19, "Exception reading "
+    const-string v17, "Exception reading "
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v16
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/content/pm/PackageParser;->mArchiveSourcePath:Ljava/lang/String;
 
-    move-object/from16 v19, v0
+    move-object/from16 v17, v0
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v16
 
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v16 .. v16}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v18
+    move-result-object v16
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v16
 
-    move-object/from16 v1, v18
+    invoke-static {v15, v0, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    invoke-static {v0, v1, v5}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    const/16 v15, -0x69
 
-    .line 750
-    const/16 v17, -0x69
+    move-object/from16 v0, p0
 
-    move/from16 v0, v17
+    iput v15, v0, Landroid/content/pm/PackageParser;->mParseError:I
 
-    move-object/from16 v1, p0
-
-    iput v0, v1, Landroid/content/pm/PackageParser;->mParseError:I
-
-    .line 751
-    const/16 v17, 0x0
+    const/4 v15, 0x0
 
     goto/16 :goto_0
 
-    .line 736
-    .end local v5           #e:Ljava/security/cert/CertificateEncodingException;
-    .restart local v4       #certs:[Ljava/security/cert/Certificate;
-    .restart local v11       #jarFile:Ljava/util/jar/JarFile;
+    .end local v3           #e:Ljava/security/cert/CertificateEncodingException;
+    .restart local v2       #certs:[Ljava/security/cert/Certificate;
+    .restart local v9       #jarFile:Ljava/util/jar/JarFile;
     :cond_c
     :try_start_8
-    const-string v17, "PackageParser"
+    const-string v15, "PackageParser"
 
-    new-instance v18, Ljava/lang/StringBuilder;
+    new-instance v16, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v16 .. v16}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v19, "Package "
+    const-string v17, "Package "
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v16
 
     move-object/from16 v0, p1
 
     iget-object v0, v0, Landroid/content/pm/PackageParser$Package;->packageName:Ljava/lang/String;
 
-    move-object/from16 v19, v0
+    move-object/from16 v17, v0
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v16
 
-    const-string v19, " has no certificates; ignoring!"
+    const-string v17, " has no certificates; ignoring!"
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v16
 
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v16 .. v16}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v18
+    move-result-object v16
 
-    invoke-static/range {v17 .. v18}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static/range {v15 .. v16}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 738
-    const/16 v17, -0x67
+    const/16 v15, -0x67
 
-    move/from16 v0, v17
+    move-object/from16 v0, p0
 
-    move-object/from16 v1, p0
+    iput v15, v0, Landroid/content/pm/PackageParser;->mParseError:I
 
-    iput v0, v1, Landroid/content/pm/PackageParser;->mParseError:I
-
-    .line 739
-    const/16 v17, 0x0
+    const/4 v15, 0x0
 
     goto/16 :goto_0
 
-    .line 743
-    .restart local v3       #N:I
-    .restart local v8       #i:I
+    .restart local v1       #N:I
+    .restart local v6       #i:I
     :cond_d
-    new-instance v17, Ljava/util/HashSet;
+    new-instance v15, Ljava/util/HashSet;
 
-    invoke-direct/range {v17 .. v17}, Ljava/util/HashSet;-><init>()V
+    invoke-direct {v15}, Ljava/util/HashSet;-><init>()V
 
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, p1
-
-    iput-object v0, v1, Landroid/content/pm/PackageParser$Package;->mSigningKeys:Ljava/util/Set;
-
-    .line 744
-    const/4 v8, 0x0
-
-    :goto_5
-    array-length v0, v4
-
-    move/from16 v17, v0
-
-    move/from16 v0, v17
-
-    if-ge v8, v0, :cond_e
-
-    .line 745
     move-object/from16 v0, p1
 
-    iget-object v0, v0, Landroid/content/pm/PackageParser$Package;->mSigningKeys:Ljava/util/Set;
+    iput-object v15, v0, Landroid/content/pm/PackageParser$Package;->mSigningKeys:Ljava/util/Set;
 
-    move-object/from16 v17, v0
+    const/4 v6, 0x0
 
-    aget-object v18, v4, v8
+    :goto_5
+    array-length v15, v2
 
-    invoke-virtual/range {v18 .. v18}, Ljava/security/cert/Certificate;->getPublicKey()Ljava/security/PublicKey;
+    if-ge v6, v15, :cond_e
 
-    move-result-object v18
+    move-object/from16 v0, p1
 
-    invoke-interface/range {v17 .. v18}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    iget-object v15, v0, Landroid/content/pm/PackageParser$Package;->mSigningKeys:Ljava/util/Set;
+
+    aget-object v16, v2, v6
+
+    invoke-virtual/range {v16 .. v16}, Ljava/security/cert/Certificate;->getPublicKey()Ljava/security/PublicKey;
+
+    move-result-object v16
+
+    invoke-interface/range {v15 .. v16}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
     :try_end_8
     .catch Ljava/security/cert/CertificateEncodingException; {:try_start_8 .. :try_end_8} :catch_0
     .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_1
     .catch Ljava/lang/RuntimeException; {:try_start_8 .. :try_end_8} :catch_2
 
-    .line 744
-    add-int/lit8 v8, v8, 0x1
+    add-int/lit8 v6, v6, 0x1
 
     goto :goto_5
 
-    .line 752
-    .end local v3           #N:I
-    .end local v4           #certs:[Ljava/security/cert/Certificate;
-    .end local v8           #i:I
-    .end local v11           #jarFile:Ljava/util/jar/JarFile;
+    .end local v1           #N:I
+    .end local v2           #certs:[Ljava/security/cert/Certificate;
+    .end local v6           #i:I
+    .end local v9           #jarFile:Ljava/util/jar/JarFile;
     :catch_1
-    move-exception v5
+    move-exception v3
 
-    .line 753
-    .local v5, e:Ljava/io/IOException;
-    const-string v17, "PackageParser"
+    .local v3, e:Ljava/io/IOException;
+    const-string v15, "PackageParser"
 
-    new-instance v18, Ljava/lang/StringBuilder;
+    new-instance v16, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v16 .. v16}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v19, "Exception reading "
+    const-string v17, "Exception reading "
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v16
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/content/pm/PackageParser;->mArchiveSourcePath:Ljava/lang/String;
 
-    move-object/from16 v19, v0
+    move-object/from16 v17, v0
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v16
 
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v16 .. v16}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v18
+    move-result-object v16
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v16
 
-    move-object/from16 v1, v18
+    invoke-static {v15, v0, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    invoke-static {v0, v1, v5}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    const/16 v15, -0x69
 
-    .line 754
-    const/16 v17, -0x69
+    move-object/from16 v0, p0
 
-    move/from16 v0, v17
+    iput v15, v0, Landroid/content/pm/PackageParser;->mParseError:I
 
-    move-object/from16 v1, p0
-
-    iput v0, v1, Landroid/content/pm/PackageParser;->mParseError:I
-
-    .line 755
-    const/16 v17, 0x0
+    const/4 v15, 0x0
 
     goto/16 :goto_0
 
-    .line 756
-    .end local v5           #e:Ljava/io/IOException;
+    .end local v3           #e:Ljava/io/IOException;
     :catch_2
-    move-exception v5
+    move-exception v3
 
-    .line 757
-    .local v5, e:Ljava/lang/RuntimeException;
-    const-string v17, "PackageParser"
+    .local v3, e:Ljava/lang/RuntimeException;
+    const-string v15, "PackageParser"
 
-    new-instance v18, Ljava/lang/StringBuilder;
+    new-instance v16, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v16 .. v16}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v19, "Exception reading "
+    const-string v17, "Exception reading "
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v16
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/content/pm/PackageParser;->mArchiveSourcePath:Ljava/lang/String;
 
-    move-object/from16 v19, v0
+    move-object/from16 v17, v0
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v16
 
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v16 .. v16}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v18
+    move-result-object v16
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v16
 
-    move-object/from16 v1, v18
+    invoke-static {v15, v0, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    invoke-static {v0, v1, v5}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    const/16 v15, -0x66
 
-    .line 758
-    const/16 v17, -0x66
+    move-object/from16 v0, p0
 
-    move/from16 v0, v17
+    iput v15, v0, Landroid/content/pm/PackageParser;->mParseError:I
 
-    move-object/from16 v1, p0
-
-    iput v0, v1, Landroid/content/pm/PackageParser;->mParseError:I
-
-    .line 759
-    const/16 v17, 0x0
+    const/4 v15, 0x0
 
     goto/16 :goto_0
 
-    .line 762
-    .end local v5           #e:Ljava/lang/RuntimeException;
-    .restart local v3       #N:I
-    .restart local v4       #certs:[Ljava/security/cert/Certificate;
-    .restart local v8       #i:I
-    .restart local v11       #jarFile:Ljava/util/jar/JarFile;
+    .end local v3           #e:Ljava/lang/RuntimeException;
+    .restart local v1       #N:I
+    .restart local v2       #certs:[Ljava/security/cert/Certificate;
+    .restart local v6       #i:I
+    .restart local v9       #jarFile:Ljava/util/jar/JarFile;
     :cond_e
-    const/16 v17, 0x1
+    const/4 v15, 0x1
 
     goto/16 :goto_0
 .end method
@@ -16895,7 +16747,7 @@
 
     move-object/from16 v0, p3
 
-    invoke-static {v5, v0, v6}, Landroid/content/res/NubiaClassFactory;->newResources(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;)Landroid/content/res/Resources;
+    invoke-static {v5, v0, v6}, Landroid/content/pm/Injector$PackageParserHook;->createResources(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;)Landroid/content/res/Resources;
 
     move-result-object v31
 

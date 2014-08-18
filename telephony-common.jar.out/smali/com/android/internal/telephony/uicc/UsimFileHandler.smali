@@ -18,10 +18,8 @@
     .parameter "ci"
 
     .prologue
-    .line 32
     invoke-direct {p0, p1, p2, p3}, Lcom/android/internal/telephony/uicc/IccFileHandler;-><init>(Lcom/android/internal/telephony/uicc/UiccCardApplication;Ljava/lang/String;Lcom/android/internal/telephony/CommandsInterface;)V
 
-    .line 33
     return-void
 .end method
 
@@ -32,40 +30,32 @@
     .parameter "efid"
 
     .prologue
-    .line 37
     sparse-switch p1, :sswitch_data_0
 
-    .line 69
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/uicc/IccFileHandler;->getCommonIccEFPath(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 70
     .local v0, path:Ljava/lang/String;
     if-nez v0, :cond_0
 
-    .line 74
     const-string v0, "3F007F105F3A"
 
-    .line 76
     .end local v0           #path:Ljava/lang/String;
     :cond_0
     :goto_0
     return-object v0
 
-    .line 63
     :sswitch_0
     const-string v0, "3F007FFF"
 
     goto :goto_0
 
-    .line 67
     :sswitch_1
     const-string v0, "3F007F105F3A"
 
     goto :goto_0
 
-    .line 37
     :sswitch_data_0
     .sparse-switch
         0x4f30 -> :sswitch_1
@@ -102,12 +92,10 @@
     .parameter "msg"
 
     .prologue
-    .line 81
     const-string v0, "UsimFH"
 
     invoke-static {v0, p1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 82
     return-void
 .end method
 
@@ -116,11 +104,9 @@
     .parameter "msg"
 
     .prologue
-    .line 86
     const-string v0, "UsimFH"
 
     invoke-static {v0, p1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 87
     return-void
 .end method

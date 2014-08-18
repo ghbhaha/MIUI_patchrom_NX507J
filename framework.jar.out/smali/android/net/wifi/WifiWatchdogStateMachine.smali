@@ -352,6 +352,15 @@
 
     iput-object v0, p0, Landroid/net/wifi/WifiWatchdogStateMachine;->mOnlineState:Landroid/net/wifi/WifiWatchdogStateMachine$OnlineState;
 
+    .line 954
+    new-instance v0, Landroid/net/wifi/WifiRssiInfo;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Landroid/net/wifi/WifiRssiInfo;-><init>(Landroid/net/wifi/WifiStateMachine;)V
+
+    iput-object v0, p0, Landroid/net/wifi/WifiWatchdogStateMachine;->mRssiInfo:Landroid/net/wifi/WifiRssiInfo;
+
     .line 310
     iput-object p1, p0, Landroid/net/wifi/WifiWatchdogStateMachine;->mContext:Landroid/content/Context;
 

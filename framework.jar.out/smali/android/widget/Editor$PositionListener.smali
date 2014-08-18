@@ -110,7 +110,7 @@
 
     iget-object v3, p0, Landroid/widget/Editor$PositionListener;->mTempCoords:[I
 
-    invoke-virtual {v0, v3}, Landroid/view/View;->getLocationInWindow([I)V
+    invoke-virtual {v0, v3}, Landroid/widget/TextView;->getLocationInWindow([I)V
 
     .line 2223
     iget-object v0, p0, Landroid/widget/Editor$PositionListener;->mTempCoords:[I
@@ -183,7 +183,7 @@
 
     move-result-object v4
 
-    invoke-virtual {v4}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+    invoke-virtual {v4}, Landroid/widget/TextView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v3
 
@@ -411,7 +411,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+    invoke-virtual {v2}, Landroid/widget/TextView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v1
 

@@ -3162,6 +3162,7 @@
 
     iput-object v2, v0, Lcom/android/server/pm/PackageManagerService;->mRequiredVerifierPackage:Ljava/lang/String;
 
+    invoke-static {}, Lcom/android/server/pm/Injector$PackageManagerServiceHook;->postScanPackages()V
     .line 1510
     monitor-exit v48
     :try_end_9
@@ -38244,6 +38245,12 @@
     .line 6600
     .local v5, filteredFlags:I
     :goto_2
+    move-object/from16 v0, p4
+
+    invoke-static {p0, v0}, Lcom/android/server/pm/Injector$PackageManagerServiceHook;->getPackageInstaller(Lcom/android/server/pm/PackageManagerService;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p4
+
     invoke-static {}, Landroid/app/AppOpsManager;->isStrictEnable()Z
 
     move-result v1

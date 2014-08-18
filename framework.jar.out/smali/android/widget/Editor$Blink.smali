@@ -61,7 +61,7 @@
     if-nez v0, :cond_0
 
     .line 1805
-    invoke-virtual {p0, p0}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+    invoke-virtual {p0, p0}, Landroid/widget/Editor$Blink;->removeCallbacks(Ljava/lang/Runnable;)V
 
     .line 1806
     const/4 v0, 0x1
@@ -89,7 +89,7 @@
 
     .line 1792
     :cond_1
-    invoke-virtual {p0, p0}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+    invoke-virtual {p0, p0}, Landroid/widget/Editor$Blink;->removeCallbacks(Ljava/lang/Runnable;)V
 
     .line 1794
     iget-object v0, p0, Landroid/widget/Editor$Blink;->this$0:Landroid/widget/Editor;
@@ -135,7 +135,7 @@
 
     add-long/2addr v0, v2
 
-    invoke-virtual {p0, p0, v0, v1}, Landroid/os/Handler;->postAtTime(Ljava/lang/Runnable;J)Z
+    invoke-virtual {p0, p0, v0, v1}, Landroid/widget/Editor$Blink;->postAtTime(Ljava/lang/Runnable;J)Z
 
     goto :goto_0
 .end method

@@ -25,7 +25,6 @@
     .locals 3
 
     .prologue
-    .line 925
     invoke-static {}, Lcom/android/internal/telephony/cat/ResultCode;->values()[Lcom/android/internal/telephony/cat/ResultCode;
 
     move-result-object v0
@@ -307,7 +306,6 @@
     :try_end_10
     .catch Ljava/lang/NoSuchFieldError; {:try_start_10 .. :try_end_10} :catch_14
 
-    .line 304
     :goto_10
     invoke-static {}, Lcom/android/internal/telephony/cat/AppInterface$CommandType;->values()[Lcom/android/internal/telephony/cat/AppInterface$CommandType;
 
@@ -741,7 +739,6 @@
 
     goto/16 :goto_11
 
-    .line 925
     :catch_14
     move-exception v0
 
