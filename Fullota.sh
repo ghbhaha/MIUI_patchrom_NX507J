@@ -1,4 +1,4 @@
-#usage: ./fullota.sh 14.8.9
+#usage: ./Fullota.sh 4.8.21
 # !/bin/sh
 OTAPATH=otapath
 DATE=$1
