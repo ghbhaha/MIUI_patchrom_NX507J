@@ -16,7 +16,11 @@
 
 .field private mPhoneWindowManager:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
+.field mPowerManager:Landroid/os/PowerManager;
+
 .field mProximity:Landroid/hardware/Sensor;
+
+.field mProximityakeLock:Landroid/os/PowerManager$WakeLock;
 
 .field private mSensorEventLister:Landroid/hardware/SensorEventListener;
 
@@ -29,12 +33,14 @@
 
 # direct methods
 .method public constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;Landroid/content/Context;)V
-    .locals 2
+    .locals 4
     .parameter "manager"
     .parameter "context"
 
     .prologue
-    .line 52
+    const/4 v3, 0x0
+
+    .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 32
@@ -43,31 +49,29 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->TAG:Ljava/lang/String;
 
     .line 37
-    const/4 v0, 0x0
+    iput v3, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->dbStatus:I
 
-    iput v0, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->dbStatus:I
-
-    .line 42
+    .line 46
     new-instance v0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl$1;
 
     invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl$1;-><init>(Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;)V
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->runnable:Ljava/lang/Runnable;
 
-    .line 120
+    .line 128
     new-instance v0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl$3;
 
     invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl$3;-><init>(Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;)V
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->mSensorEventLister:Landroid/hardware/SensorEventListener;
 
-    .line 53
+    .line 57
     iput-object p1, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->mPhoneWindowManager:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    .line 54
+    .line 58
     iput-object p2, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->mContext:Landroid/content/Context;
 
-    .line 55
+    .line 59
     iget-object v0, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->mContext:Landroid/content/Context;
 
     const-string v1, "sensor"
@@ -80,7 +84,7 @@
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->sensorManager:Landroid/hardware/SensorManager;
 
-    .line 56
+    .line 60
     iget-object v0, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->sensorManager:Landroid/hardware/SensorManager;
 
     const/16 v1, 0x8
@@ -91,7 +95,7 @@
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->mProximity:Landroid/hardware/Sensor;
 
-    .line 57
+    .line 61
     new-instance v0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl$2;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->mContext:Landroid/content/Context;
@@ -104,7 +108,36 @@
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->mWaitTimeouthandler:Landroid/os/Handler;
 
-    .line 64
+    .line 68
+    const-string v0, "power"
+
+    invoke-virtual {p2, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/os/PowerManager;
+
+    iput-object v0, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->mPowerManager:Landroid/os/PowerManager;
+
+    .line 69
+    iget-object v0, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->mPowerManager:Landroid/os/PowerManager;
+
+    const/4 v1, 0x1
+
+    const-string v2, "DoubleClickScreenOnCtrl prox"
+
+    invoke-virtual {v0, v1, v2}, Landroid/os/PowerManager;->newWakeLock(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->mProximityakeLock:Landroid/os/PowerManager$WakeLock;
+
+    .line 71
+    iget-object v0, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->mProximityakeLock:Landroid/os/PowerManager$WakeLock;
+
+    invoke-virtual {v0, v3}, Landroid/os/PowerManager$WakeLock;->setReferenceCounted(Z)V
+
+    .line 72
     return-void
 .end method
 
@@ -151,23 +184,23 @@
     .parameter "sleep"
 
     .prologue
-    .line 148
+    .line 156
     invoke-virtual {p1, p2}, Landroid/hardware/SensorManager;->unregisterListener(Landroid/hardware/SensorEventListener;)V
 
-    .line 149
+    .line 157
     invoke-direct {p0}, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->releaseWakeLock()V
 
-    .line 150
+    .line 158
     if-eqz p3, :cond_0
 
-    .line 151
+    .line 159
     const-string v0, "DoubleClickScreenOnCtrl"
 
     const-string v1, "disableProximity : go to sleep"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 152
+    .line 160
     iget-object v0, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->mPhoneWindowManager:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mPowerManager:Landroid/os/PowerManager;
@@ -178,7 +211,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/PowerManager;->goToSleep(J)V
 
-    .line 155
+    .line 163
     :cond_0
     return-void
 .end method
@@ -188,7 +221,7 @@
     .parameter "enable"
 
     .prologue
-    .line 87
+    .line 95
     const-string v2, "wakeGesture"
 
     invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -199,12 +232,12 @@
 
     move-result-object v1
 
-    .line 90
+    .line 98
     .local v1, mWakeGestureService:Landroid/os/IWakeGestureService;
     :try_start_0
     invoke-interface {v1, p1}, Landroid/os/IWakeGestureService;->enableWakeGesture(Z)Z
 
-    .line 91
+    .line 99
     const-string v2, "DoubleClickScreenOnCtrl"
 
     const-string v3, "needed"
@@ -213,15 +246,15 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 95
+    .line 103
     :goto_0
     return-void
 
-    .line 92
+    .line 100
     :catch_0
     move-exception v0
 
-    .line 93
+    .line 101
     .local v0, e:Ljava/lang/Exception;
     const-string v2, "DoubleClickScreenOnCtrl"
 
@@ -239,37 +272,37 @@
     .parameter "listener"
 
     .prologue
-    .line 142
+    .line 150
     invoke-direct {p0}, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->getWakeLock()V
 
-    .line 143
+    .line 151
     const/4 v0, 0x2
 
     invoke-virtual {p1, p3, p2, v0}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
 
-    .line 144
+    .line 152
     return-void
 .end method
 
 .method private getWakeLock()V
-    .locals 2
+    .locals 3
 
     .prologue
-    .line 169
+    .line 177
     const-string v0, "DoubleClickScreenOnCtrl"
 
     const-string v1, "getWakeLock"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 170
-    iget-object v0, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->mPhoneWindowManager:Lcom/android/internal/policy/impl/PhoneWindowManager;
+    .line 178
+    iget-object v0, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->mProximityakeLock:Landroid/os/PowerManager$WakeLock;
 
-    iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mBroadcastWakeLock:Landroid/os/PowerManager$WakeLock;
+    const-wide/16 v1, 0x3e8
 
-    invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->acquire()V
+    invoke-virtual {v0, v1, v2}, Landroid/os/PowerManager$WakeLock;->acquire(J)V
 
-    .line 171
+    .line 179
     return-void
 .end method
 
@@ -277,10 +310,8 @@
     .locals 2
 
     .prologue
-    .line 174
-    iget-object v0, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->mPhoneWindowManager:Lcom/android/internal/policy/impl/PhoneWindowManager;
-
-    iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mBroadcastWakeLock:Landroid/os/PowerManager$WakeLock;
+    .line 182
+    iget-object v0, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->mProximityakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->isHeld()Z
 
@@ -288,21 +319,19 @@
 
     if-eqz v0, :cond_0
 
-    .line 175
+    .line 183
     const-string v0, "DoubleClickScreenOnCtrl"
 
     const-string v1, "releaseWakeLock"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 176
-    iget-object v0, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->mPhoneWindowManager:Lcom/android/internal/policy/impl/PhoneWindowManager;
-
-    iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mBroadcastWakeLock:Landroid/os/PowerManager$WakeLock;
+    .line 184
+    iget-object v0, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->mProximityakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 178
+    .line 186
     :cond_0
     return-void
 .end method
@@ -311,14 +340,14 @@
     .locals 4
 
     .prologue
-    .line 158
+    .line 166
     const-string v1, "DoubleClickScreenOnCtrl"
 
     const-string v2, "turnScreenOn"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 159
+    .line 167
     iget-object v1, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->mPhoneWindowManager:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iget-object v1, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mPowerManager:Landroid/os/PowerManager;
@@ -331,19 +360,19 @@
 
     move-result-object v0
 
-    .line 163
+    .line 171
     .local v0, doubleClickWake:Landroid/os/PowerManager$WakeLock;
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/os/PowerManager$WakeLock;->setReferenceCounted(Z)V
 
-    .line 164
+    .line 172
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    .line 165
+    .line 173
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 166
+    .line 174
     return-void
 .end method
 
@@ -355,7 +384,7 @@
     .parameter "isScreenOn"
 
     .prologue
-    .line 108
+    .line 116
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
 
     move-result v0
@@ -364,12 +393,12 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 117
+    .line 125
     :cond_0
     :goto_0
     return-void
 
-    .line 112
+    .line 120
     :cond_1
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
 
@@ -379,7 +408,7 @@
 
     if-nez p2, :cond_0
 
-    .line 114
+    .line 122
     iget-object v0, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->mWaitTimeouthandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->runnable:Ljava/lang/Runnable;
@@ -388,7 +417,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 115
+    .line 123
     iget-object v0, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->sensorManager:Landroid/hardware/SensorManager;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->mProximity:Landroid/hardware/Sensor;
@@ -407,10 +436,10 @@
     .parameter "isScreenOn"
 
     .prologue
-    .line 100
+    .line 108
     invoke-virtual {p0, p1, p3}, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->handleWakeupKeyEvent(Landroid/view/KeyEvent;Z)V
 
-    .line 101
+    .line 109
     const/4 v0, -0x1
 
     return v0
@@ -422,7 +451,7 @@
     .parameter "observer"
 
     .prologue
-    .line 69
+    .line 77
     const-string v0, "double_click_wake"
 
     invoke-static {v0}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -435,7 +464,7 @@
 
     invoke-virtual {p1, v0, v1, p2, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 72
+    .line 80
     return-void
 .end method
 
@@ -447,14 +476,14 @@
 
     const/4 v3, 0x0
 
-    .line 76
+    .line 84
     iget-object v4, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->mContext:Landroid/content/Context;
 
     invoke-virtual {v4}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    .line 77
+    .line 85
     .local v1, resolver:Landroid/content/ContentResolver;
     const-string v4, "double_click_wake"
 
@@ -464,16 +493,16 @@
 
     move-result v0
 
-    .line 79
+    .line 87
     .local v0, doubleClickWake:I
     iget v4, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->dbStatus:I
 
     if-eq v4, v0, :cond_0
 
-    .line 80
+    .line 88
     iput v0, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->dbStatus:I
 
-    .line 81
+    .line 89
     iget v4, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->dbStatus:I
 
     if-ne v4, v2, :cond_1
@@ -481,13 +510,13 @@
     :goto_0
     invoke-direct {p0, v2}, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->enableDoubleClickWake(Z)V
 
-    .line 83
+    .line 91
     :cond_0
     return-void
 
     :cond_1
     move v2, v3
 
-    .line 81
+    .line 89
     goto :goto_0
 .end method

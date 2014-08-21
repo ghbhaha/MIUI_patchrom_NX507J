@@ -26,10 +26,12 @@
     .parameter
 
     .prologue
+    .line 1742
     iput-object p1, p0, Landroid/media/AudioService$LoadSoundEffectReply;->this$0:Landroid/media/AudioService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 1743
     const/4 v0, 0x1
 
     iput v0, p0, Landroid/media/AudioService$LoadSoundEffectReply;->mStatus:I

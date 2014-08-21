@@ -45,7 +45,6 @@
 
     invoke-direct {p0, p1}, Lcom/android/server/am/BaseErrorDialog;-><init>(Landroid/content/Context;)V
 
-    .line 108
     new-instance v3, Lcom/android/server/am/AppErrorDialog$1;
 
     invoke-direct {v3, p0}, Lcom/android/server/am/AppErrorDialog$1;-><init>(Lcom/android/server/am/AppErrorDialog;)V
@@ -56,17 +55,13 @@
 
     move-result-object v2
 
-    .line 56
     .local v2, res:Landroid/content/res/Resources;
     iput-object p2, p0, Lcom/android/server/am/AppErrorDialog;->mService:Lcom/android/server/am/ActivityManagerService;
 
-    .line 57
     iput-object p4, p0, Lcom/android/server/am/AppErrorDialog;->mProc:Lcom/android/server/am/ProcessRecord;
 
-    .line 58
     iput-object p3, p0, Lcom/android/server/am/AppErrorDialog;->mResult:Lcom/android/server/am/AppErrorResult;
 
-    .line 60
     iget-object v3, p4, Lcom/android/server/am/ProcessRecord;->pkgList:Landroid/util/ArrayMap;
 
     invoke-virtual {v3}, Landroid/util/ArrayMap;->size()I
@@ -88,7 +83,6 @@
     .local v1, name:Ljava/lang/CharSequence;
     if-eqz v1, :cond_2
 
-    .line 62
     const v3, 0x1040403
 
     const/4 v4, 0x2
@@ -113,7 +107,6 @@
 
     invoke-virtual {p0, v3}, Landroid/app/AlertDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    .line 72
     :goto_0
     invoke-virtual {p0, v6}, Landroid/app/Dialog;->setCancelable(Z)V
 
@@ -134,7 +127,6 @@
     invoke-virtual {p0, v3, v4, v5}, Landroid/app/AlertDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
 
     iget-object v3, p4, Lcom/android/server/am/ProcessRecord;->errorReportReceiver:Landroid/content/ComponentName;
-    .line 83
     if-eqz v3, :cond_0
 
     const/4 v3, -0x2
@@ -322,7 +314,6 @@
     .parameter "x0"
 
     .prologue
-    .line 32
     iget-object v0, p0, Lcom/android/server/am/AppErrorDialog;->mService:Lcom/android/server/am/ActivityManagerService;
 
     return-object v0
@@ -333,7 +324,6 @@
     .parameter "x0"
 
     .prologue
-    .line 32
     iget-object v0, p0, Lcom/android/server/am/AppErrorDialog;->mProc:Lcom/android/server/am/ProcessRecord;
 
     return-object v0
@@ -344,7 +334,6 @@
     .parameter "x0"
 
     .prologue
-    .line 32
     iget-object v0, p0, Lcom/android/server/am/AppErrorDialog;->mResult:Lcom/android/server/am/AppErrorResult;
 
     return-object v0
@@ -355,7 +344,6 @@
     .parameter "x0"
 
     .prologue
-    .line 32
     iget-object v0, p0, Lcom/android/server/am/AppErrorDialog;->mMsg:Ljava/lang/String;
 
     return-object v0
@@ -366,7 +354,6 @@
     .parameter "x0"
 
     .prologue
-    .line 32
     iget-object v0, p0, Lcom/android/server/am/AppErrorDialog;->mPackageName:Ljava/lang/String;
 
     return-object v0
@@ -377,7 +364,6 @@
     .parameter "x0"
 
     .prologue
-    .line 32
     iget-object v0, p0, Lcom/android/server/am/AppErrorDialog;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -388,19 +374,15 @@
     .parameter "app"
 
     .prologue
-    .line 151
     const/4 v1, 0x0
 
-    .line 152
     .local v1, packageName:Ljava/lang/String;
     if-eqz p1, :cond_1
 
-    .line 153
     iget-object v3, p1, Lcom/android/server/am/ProcessRecord;->pkgList:Landroid/util/ArrayMap;
 
     if-eqz v3, :cond_0
 
-    .line 154
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -413,7 +395,6 @@
 
     if-ge v0, v3, :cond_0
 
-    .line 155
     iget-object v3, p1, Lcom/android/server/am/ProcessRecord;->pkgList:Landroid/util/ArrayMap;
 
     invoke-virtual {v3, v0}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
@@ -422,7 +403,6 @@
 
     check-cast v2, Lcom/android/internal/app/ProcessStats$ProcessState;
 
-    .line 156
     .local v2, ps:Lcom/android/internal/app/ProcessStats$ProcessState;
     if-eqz v2, :cond_2
 
@@ -430,16 +410,13 @@
 
     if-eqz v3, :cond_2
 
-    .line 157
     iget-object v1, v2, Lcom/android/internal/app/ProcessStats$ProcessState;->mPackage:Ljava/lang/String;
 
-    .line 163
     .end local v0           #i:I
     .end local v2           #ps:Lcom/android/internal/app/ProcessStats$ProcessState;
     :cond_0
     if-nez v1, :cond_1
 
-    .line 164
     iget-object v3, p1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
 
     if-eqz v3, :cond_1
@@ -450,16 +427,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 165
     iget-object v3, p1, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
 
     iget-object v1, v3, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
-    .line 169
     :cond_1
     return-object v1
 
-    .line 154
     .restart local v0       #i:I
     .restart local v2       #ps:Lcom/android/internal/app/ProcessStats$ProcessState;
     :cond_2
@@ -496,6 +470,7 @@
     :goto_0
     invoke-static {v1, v2, v3, v0}, Lcom/android/server/am/MiuiErrorReport;->sendFcErrorReport(Landroid/content/Context;Lcom/android/server/am/ProcessRecord;Landroid/app/ApplicationErrorReport$CrashInfo;Z)V
 
+    .line 99
     :cond_0
     return-void
 

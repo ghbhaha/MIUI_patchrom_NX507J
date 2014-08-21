@@ -43,7 +43,7 @@
 
     .prologue
     .line 22
-    const v0, 0x1090074
+    const v0, 0x1090075
 
     return v0
 .end method

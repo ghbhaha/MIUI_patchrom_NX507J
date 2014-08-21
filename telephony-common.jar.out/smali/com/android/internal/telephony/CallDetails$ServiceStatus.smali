@@ -31,11 +31,14 @@
     .locals 1
 
     .prologue
+    .line 181
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 182
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/CallDetails$ServiceStatus;->isValid:Z
 
+    .line 183
     return-void
 .end method

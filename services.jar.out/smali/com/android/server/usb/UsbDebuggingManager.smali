@@ -282,28 +282,40 @@
     :try_start_0
     iget-object v2, p0, Lcom/android/server/usb/UsbDebuggingManager;->mOutputStream:Ljava/io/OutputStream;
 
+    if-eqz v2, :cond_0
+
+    .line 122
+    iget-object v2, p0, Lcom/android/server/usb/UsbDebuggingManager;->mOutputStream:Ljava/io/OutputStream;
+
     invoke-virtual {v2}, Ljava/io/OutputStream;->close()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 127
+    .line 129
+    :cond_0
     :goto_0
     :try_start_1
+    iget-object v2, p0, Lcom/android/server/usb/UsbDebuggingManager;->mSocket:Landroid/net/LocalSocket;
+
+    if-eqz v2, :cond_1
+
+    .line 130
     iget-object v2, p0, Lcom/android/server/usb/UsbDebuggingManager;->mSocket:Landroid/net/LocalSocket;
 
     invoke-virtual {v2}, Landroid/net/LocalSocket;->close()V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 131
+    .line 135
+    :cond_1
     :goto_1
     return-void
 
-    .line 122
+    .line 124
     :catch_0
     move-exception v0
 
-    .line 123
+    .line 125
     .local v0, e:Ljava/io/IOException;
     const-string v2, "UsbDebuggingManager"
 
@@ -329,12 +341,12 @@
 
     goto :goto_0
 
-    .line 128
+    .line 132
     .end local v0           #e:Ljava/io/IOException;
     :catch_1
     move-exception v1
 
-    .line 129
+    .line 133
     .local v1, ex:Ljava/io/IOException;
     const-string v2, "UsbDebuggingManager"
 
@@ -365,19 +377,19 @@
     .locals 1
 
     .prologue
-    .line 299
+    .line 306
     invoke-direct {p0}, Lcom/android/server/usb/UsbDebuggingManager;->getUserKeyFile()Ljava/io/File;
 
     move-result-object v0
 
-    .line 300
+    .line 307
     .local v0, keyFile:Ljava/io/File;
     if-eqz v0, :cond_0
 
-    .line 301
+    .line 308
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
-    .line 303
+    .line 310
     :cond_0
     return-void
 .end method
@@ -389,16 +401,16 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 223
+    .line 230
     const-string v4, "0123456789ABCDEF"
 
-    .line 224
+    .line 231
     .local v4, hex:Ljava/lang/String;
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 228
+    .line 235
     .local v6, sb:Ljava/lang/StringBuilder;
     :try_start_0
     const-string v7, "MD5"
@@ -409,7 +421,7 @@
 
     move-result-object v2
 
-    .line 234
+    .line 241
     .local v2, digester:Ljava/security/MessageDigest;
     const-string v7, "\\s+"
 
@@ -423,7 +435,7 @@
 
     move-result-object v0
 
-    .line 235
+    .line 242
     .local v0, base64_data:[B
     invoke-static {v0, v8}, Landroid/util/Base64;->decode([BI)[B
 
@@ -433,7 +445,7 @@
 
     move-result-object v1
 
-    .line 237
+    .line 244
     .local v1, digest:[B
     const/4 v5, 0x0
 
@@ -443,7 +455,7 @@
 
     if-ge v5, v7, :cond_1
 
-    .line 238
+    .line 245
     aget-byte v7, v1, v5
 
     shr-int/lit8 v7, v7, 0x4
@@ -456,7 +468,7 @@
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 239
+    .line 246
     aget-byte v7, v1, v5
 
     and-int/lit8 v7, v7, 0xf
@@ -467,25 +479,25 @@
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 240
+    .line 247
     array-length v7, v1
 
     add-int/lit8 v7, v7, -0x1
 
     if-ge v5, v7, :cond_0
 
-    .line 241
+    .line 248
     const-string v7, ":"
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 237
+    .line 244
     :cond_0
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
-    .line 229
+    .line 236
     .end local v0           #base64_data:[B
     .end local v1           #digest:[B
     .end local v2           #digester:Ljava/security/MessageDigest;
@@ -493,7 +505,7 @@
     :catch_0
     move-exception v3
 
-    .line 230
+    .line 237
     .local v3, ex:Ljava/lang/Exception;
     const-string v7, "UsbDebuggingManager"
 
@@ -517,10 +529,10 @@
 
     invoke-static {v7, v8}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 231
+    .line 238
     const-string v7, ""
 
-    .line 243
+    .line 250
     .end local v3           #ex:Ljava/lang/Exception;
     :goto_1
     return-object v7
@@ -541,12 +553,12 @@
     .locals 4
 
     .prologue
-    .line 262
+    .line 269
     invoke-static {}, Landroid/os/Environment;->getDataDirectory()Ljava/io/File;
 
     move-result-object v1
 
-    .line 263
+    .line 270
     .local v1, dataDir:Ljava/io/File;
     new-instance v0, Ljava/io/File;
 
@@ -554,7 +566,7 @@
 
     invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 265
+    .line 272
     .local v0, adbDir:Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
@@ -562,17 +574,17 @@
 
     if-nez v2, :cond_0
 
-    .line 266
+    .line 273
     const-string v2, "UsbDebuggingManager"
 
     const-string v3, "ADB data directory does not exist"
 
     invoke-static {v2, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 267
+    .line 274
     const/4 v2, 0x0
 
-    .line 270
+    .line 277
     :goto_0
     return-object v2
 
@@ -855,12 +867,12 @@
     .parameter "msg"
 
     .prologue
-    .line 134
+    .line 138
     iget-object v1, p0, Lcom/android/server/usb/UsbDebuggingManager;->mOutputStream:Ljava/io/OutputStream;
 
     if-eqz v1, :cond_0
 
-    .line 136
+    .line 140
     :try_start_0
     iget-object v1, p0, Lcom/android/server/usb/UsbDebuggingManager;->mOutputStream:Ljava/io/OutputStream;
 
@@ -872,16 +884,16 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 142
+    .line 146
     :cond_0
     :goto_0
     return-void
 
-    .line 138
+    .line 142
     :catch_0
     move-exception v0
 
-    .line 139
+    .line 143
     .local v0, ex:Ljava/io/IOException;
     const-string v1, "UsbDebuggingManager"
 
@@ -898,12 +910,12 @@
     .parameter "fingerprints"
 
     .prologue
-    .line 247
+    .line 254
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 249
+    .line 256
     .local v0, dialogIntent:Landroid/content/Intent;
     const-string v2, "com.android.systemui"
 
@@ -911,22 +923,22 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 251
+    .line 258
     const/high16 v2, 0x1000
 
     invoke-virtual {v0, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 252
+    .line 259
     const-string v2, "key"
 
     invoke-virtual {v0, v2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 253
+    .line 260
     const-string v2, "fingerprints"
 
     invoke-virtual {v0, v2, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 255
+    .line 262
     :try_start_0
     iget-object v2, p0, Lcom/android/server/usb/UsbDebuggingManager;->mContext:Landroid/content/Context;
 
@@ -934,15 +946,15 @@
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 259
+    .line 266
     :goto_0
     return-void
 
-    .line 256
+    .line 263
     :catch_0
     move-exception v1
 
-    .line 257
+    .line 264
     .local v1, e:Landroid/content/ActivityNotFoundException;
     const-string v2, "UsbDebuggingManager"
 
@@ -958,22 +970,22 @@
     .parameter "key"
 
     .prologue
-    .line 275
+    .line 282
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/usb/UsbDebuggingManager;->getUserKeyFile()Ljava/io/File;
 
     move-result-object v2
 
-    .line 277
+    .line 284
     .local v2, keyFile:Ljava/io/File;
     if-nez v2, :cond_0
 
-    .line 296
+    .line 303
     .end local v2           #keyFile:Ljava/io/File;
     :goto_0
     return-void
 
-    .line 281
+    .line 288
     .restart local v2       #keyFile:Ljava/io/File;
     :cond_0
     invoke-virtual {v2}, Ljava/io/File;->exists()Z
@@ -982,10 +994,10 @@
 
     if-nez v3, :cond_1
 
-    .line 282
+    .line 289
     invoke-virtual {v2}, Ljava/io/File;->createNewFile()Z
 
-    .line 283
+    .line 290
     invoke-virtual {v2}, Ljava/io/File;->toString()Ljava/lang/String;
 
     move-result-object v3
@@ -998,7 +1010,7 @@
 
     invoke-static {v3, v4, v5, v6}, Landroid/os/FileUtils;->setPermissions(Ljava/lang/String;III)I
 
-    .line 288
+    .line 295
     :cond_1
     new-instance v1, Ljava/io/FileOutputStream;
 
@@ -1006,7 +1018,7 @@
 
     invoke-direct {v1, v2, v3}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;Z)V
 
-    .line 289
+    .line 296
     .local v1, fo:Ljava/io/FileOutputStream;
     invoke-virtual {p1}, Ljava/lang/String;->getBytes()[B
 
@@ -1014,25 +1026,25 @@
 
     invoke-virtual {v1, v3}, Ljava/io/OutputStream;->write([B)V
 
-    .line 290
+    .line 297
     const/16 v3, 0xa
 
     invoke-virtual {v1, v3}, Ljava/io/FileOutputStream;->write(I)V
 
-    .line 291
+    .line 298
     invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 293
+    .line 300
     .end local v1           #fo:Ljava/io/FileOutputStream;
     .end local v2           #keyFile:Ljava/io/File;
     :catch_0
     move-exception v0
 
-    .line 294
+    .line 301
     .local v0, ex:Ljava/io/IOException;
     const-string v3, "UsbDebuggingManager"
 
@@ -1067,7 +1079,7 @@
     .parameter "publicKey"
 
     .prologue
-    .line 311
+    .line 318
     iget-object v1, p0, Lcom/android/server/usb/UsbDebuggingManager;->mHandler:Landroid/os/Handler;
 
     const/4 v2, 0x3
@@ -1076,7 +1088,7 @@
 
     move-result-object v0
 
-    .line 312
+    .line 319
     .local v0, msg:Landroid/os/Message;
     if-eqz p1, :cond_0
 
@@ -1085,18 +1097,18 @@
     :goto_0
     iput v1, v0, Landroid/os/Message;->arg1:I
 
-    .line 313
+    .line 320
     iput-object p2, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 314
+    .line 321
     iget-object v1, p0, Lcom/android/server/usb/UsbDebuggingManager;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 315
+    .line 322
     return-void
 
-    .line 312
+    .line 319
     :cond_0
     const/4 v1, 0x0
 
@@ -1107,14 +1119,14 @@
     .locals 2
 
     .prologue
-    .line 322
+    .line 329
     iget-object v0, p0, Lcom/android/server/usb/UsbDebuggingManager;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x6
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 323
+    .line 330
     return-void
 .end method
 
@@ -1122,14 +1134,14 @@
     .locals 2
 
     .prologue
-    .line 318
+    .line 325
     iget-object v0, p0, Lcom/android/server/usb/UsbDebuggingManager;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 319
+    .line 326
     return-void
 .end method
 
@@ -1141,12 +1153,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 326
+    .line 333
     const-string v2, "  USB Debugging State:"
 
     invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 327
+    .line 334
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1174,7 +1186,7 @@
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 328
+    .line 335
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1197,12 +1209,12 @@
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 329
+    .line 336
     const-string v1, "    User keys:"
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 331
+    .line 338
     :try_start_0
     new-instance v1, Ljava/io/File;
 
@@ -1222,13 +1234,13 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 335
+    .line 342
     :goto_0
     const-string v1, "    System keys:"
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 337
+    .line 344
     :try_start_1
     new-instance v1, Ljava/io/File;
 
@@ -1248,15 +1260,15 @@
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 341
+    .line 348
     :goto_1
     return-void
 
-    .line 332
+    .line 339
     :catch_0
     move-exception v0
 
-    .line 333
+    .line 340
     .local v0, e:Ljava/io/IOException;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1280,12 +1292,12 @@
 
     goto :goto_0
 
-    .line 338
+    .line 345
     .end local v0           #e:Ljava/io/IOException;
     :catch_1
     move-exception v0
 
-    .line 339
+    .line 346
     .restart local v0       #e:Ljava/io/IOException;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1351,7 +1363,7 @@
     .parameter "enabled"
 
     .prologue
-    .line 306
+    .line 313
     iget-object v1, p0, Lcom/android/server/usb/UsbDebuggingManager;->mHandler:Landroid/os/Handler;
 
     if-eqz p1, :cond_0
@@ -1361,10 +1373,10 @@
     :goto_0
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 308
+    .line 315
     return-void
 
-    .line 306
+    .line 313
     :cond_0
     const/4 v0, 0x2
 

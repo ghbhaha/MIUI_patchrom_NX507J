@@ -12,6 +12,7 @@
     .locals 0
 
     .prologue
+    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -24,31 +25,39 @@
     .parameter "length"
 
     .prologue
+    .line 177
     if-nez p2, :cond_0
 
+    .line 178
     const-string v10, ""
 
+    .line 263
     :goto_0
     return-object v10
 
+    .line 180
     :cond_0
     const/4 v10, 0x1
 
     if-lt p2, v10, :cond_2
 
+    .line 181
     aget-byte v10, p0, p1
 
     const/16 v11, -0x80
 
     if-ne v10, v11, :cond_2
 
+    .line 182
     add-int/lit8 v10, p2, -0x1
 
     div-int/lit8 v9, v10, 0x2
 
+    .line 183
     .local v9, ucslen:I
     const/4 v7, 0x0
 
+    .line 186
     .local v7, ret:Ljava/lang/String;
     :try_start_0
     new-instance v8, Ljava/lang/String;
@@ -67,15 +76,18 @@
     .local v8, ret:Ljava/lang/String;
     move-object v7, v8
 
+    .line 192
     .end local v8           #ret:Ljava/lang/String;
     .restart local v7       #ret:Ljava/lang/String;
     :goto_1
     if-eqz v7, :cond_2
 
+    .line 195
     invoke-virtual {v7}, Ljava/lang/String;->length()I
 
     move-result v9
 
+    .line 196
     :goto_2
     if-lez v9, :cond_1
 
@@ -89,13 +101,16 @@
 
     if-ne v10, v11, :cond_1
 
+    .line 197
     add-int/lit8 v9, v9, -0x1
 
     goto :goto_2
 
+    .line 187
     :catch_0
     move-exception v3
 
+    .line 188
     .local v3, ex:Ljava/io/UnsupportedEncodingException;
     const-string v10, "IccUtils"
 
@@ -105,6 +120,7 @@
 
     goto :goto_1
 
+    .line 199
     .end local v3           #ex:Ljava/io/UnsupportedEncodingException;
     :cond_1
     const/4 v10, 0x0
@@ -115,17 +131,21 @@
 
     goto :goto_0
 
+    .line 204
     .end local v7           #ret:Ljava/lang/String;
     .end local v9           #ucslen:I
     :cond_2
     const/4 v4, 0x0
 
+    .line 205
     .local v4, isucs2:Z
     const/4 v0, 0x0
 
+    .line 206
     .local v0, base:C
     const/4 v5, 0x0
 
+    .line 208
     .local v5, len:I
     const/4 v10, 0x3
 
@@ -137,18 +157,22 @@
 
     if-ne v10, v11, :cond_6
 
+    .line 209
     add-int/lit8 v10, p1, 0x1
 
     aget-byte v10, p0, v10
 
     and-int/lit16 v5, v10, 0xff
 
+    .line 210
     add-int/lit8 v10, p2, -0x3
 
     if-le v5, v10, :cond_3
 
+    .line 211
     add-int/lit8 v5, p2, -0x3
 
+    .line 213
     :cond_3
     add-int/lit8 v10, p1, 0x2
 
@@ -160,26 +184,33 @@
 
     int-to-char v0, v10
 
+    .line 214
     add-int/lit8 p1, p1, 0x3
 
+    .line 215
     const/4 v4, 0x1
 
+    .line 227
     :cond_4
     :goto_3
     if-eqz v4, :cond_a
 
+    .line 228
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
+    .line 230
     .local v7, ret:Ljava/lang/StringBuilder;
     :goto_4
     if-lez v5, :cond_9
 
+    .line 233
     aget-byte v10, p0, p1
 
     if-gez v10, :cond_5
 
+    .line 234
     aget-byte v10, p0, p1
 
     and-int/lit8 v10, v10, 0x7f
@@ -190,13 +221,17 @@
 
     invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
+    .line 235
     add-int/lit8 p1, p1, 0x1
 
+    .line 236
     add-int/lit8 v5, v5, -0x1
 
+    .line 241
     :cond_5
     const/4 v1, 0x0
 
+    .line 242
     .local v1, count:I
     :goto_5
     if-ge v1, v5, :cond_8
@@ -207,10 +242,12 @@
 
     if-ltz v10, :cond_8
 
+    .line 243
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_5
 
+    .line 216
     .end local v1           #count:I
     .end local v7           #ret:Ljava/lang/StringBuilder;
     :cond_6
@@ -224,18 +261,22 @@
 
     if-ne v10, v11, :cond_4
 
+    .line 217
     add-int/lit8 v10, p1, 0x1
 
     aget-byte v10, p0, v10
 
     and-int/lit16 v5, v10, 0xff
 
+    .line 218
     add-int/lit8 v10, p2, -0x4
 
     if-le v5, v10, :cond_7
 
+    .line 219
     add-int/lit8 v5, p2, -0x4
 
+    .line 221
     :cond_7
     add-int/lit8 v10, p1, 0x2
 
@@ -255,12 +296,15 @@
 
     int-to-char v0, v10
 
+    .line 223
     add-int/lit8 p1, p1, 0x4
 
+    .line 224
     const/4 v4, 0x1
 
     goto :goto_3
 
+    .line 245
     .restart local v1       #count:I
     .restart local v7       #ret:Ljava/lang/StringBuilder;
     :cond_8
@@ -270,12 +314,16 @@
 
     invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 248
     add-int/2addr p1, v1
 
+    .line 249
     sub-int/2addr v5, v1
 
+    .line 250
     goto :goto_4
 
+    .line 252
     .end local v1           #count:I
     :cond_9
     invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -284,15 +332,18 @@
 
     goto/16 :goto_0
 
+    .line 255
     .end local v7           #ret:Ljava/lang/StringBuilder;
     :cond_a
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
     move-result-object v6
 
+    .line 256
     .local v6, resource:Landroid/content/res/Resources;
     const-string v2, ""
 
+    .line 258
     .local v2, defaultCharset:Ljava/lang/String;
     const v10, 0x104002a
 
@@ -303,6 +354,7 @@
 
     move-result-object v2
 
+    .line 263
     :goto_6
     invoke-virtual {v2}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -314,6 +366,7 @@
 
     goto/16 :goto_0
 
+    .line 260
     :catch_1
     move-exception v10
 
@@ -329,12 +382,14 @@
     .prologue
     const/16 v4, 0x9
 
+    .line 44
     new-instance v1, Ljava/lang/StringBuilder;
 
     mul-int/lit8 v3, p2, 0x2
 
     invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
+    .line 46
     .local v1, ret:Ljava/lang/StringBuilder;
     move v0, p1
 
@@ -344,13 +399,16 @@
 
     if-ge v0, v3, :cond_0
 
+    .line 50
     aget-byte v3, p0, v0
 
     and-int/lit8 v2, v3, 0xf
 
+    .line 51
     .local v2, v:I
     if-le v2, v4, :cond_1
 
+    .line 61
     .end local v2           #v:I
     :cond_0
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -359,6 +417,7 @@
 
     return-object v3
 
+    .line 52
     .restart local v2       #v:I
     :cond_1
     add-int/lit8 v3, v2, 0x30
@@ -367,24 +426,29 @@
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
+    .line 54
     aget-byte v3, p0, v0
 
     shr-int/lit8 v3, v3, 0x4
 
     and-int/lit8 v2, v3, 0xf
 
+    .line 56
     const/16 v3, 0xf
 
     if-ne v2, v3, :cond_2
 
+    .line 46
     :goto_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
+    .line 57
     :cond_2
     if-gt v2, v4, :cond_0
 
+    .line 58
     add-int/lit8 v3, v2, 0x30
 
     int-to-char v3, v3
@@ -399,12 +463,15 @@
     .parameter "bit"
 
     .prologue
+    .line 416
     const/4 v0, 0x1
 
     if-ne p0, v0, :cond_0
 
+    .line 417
     const/4 v0, -0x1
 
+    .line 419
     :goto_0
     return v0
 
@@ -419,13 +486,16 @@
     .parameter "bytes"
 
     .prologue
+    .line 313
     if-nez p0, :cond_0
 
     const/4 v3, 0x0
 
+    .line 329
     :goto_0
     return-object v3
 
+    .line 315
     :cond_0
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -435,6 +505,7 @@
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
+    .line 317
     .local v2, ret:Ljava/lang/StringBuilder;
     const/4 v1, 0x0
 
@@ -444,12 +515,14 @@
 
     if-ge v1, v3, :cond_1
 
+    .line 320
     aget-byte v3, p0, v1
 
     shr-int/lit8 v3, v3, 0x4
 
     and-int/lit8 v0, v3, 0xf
 
+    .line 322
     .local v0, b:I
     const-string v3, "0123456789abcdef"
 
@@ -459,10 +532,12 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
+    .line 324
     aget-byte v3, p0, v1
 
     and-int/lit8 v0, v3, 0xf
 
+    .line 326
     const-string v3, "0123456789abcdef"
 
     invoke-virtual {v3, v0}, Ljava/lang/String;->charAt(I)C
@@ -471,10 +546,12 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
+    .line 317
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
+    .line 329
     .end local v0           #b:I
     :cond_1
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -489,8 +566,10 @@
     .parameter "b"
 
     .prologue
+    .line 126
     const/4 v0, 0x0
 
+    .line 129
     .local v0, ret:I
     and-int/lit16 v1, p0, 0xf0
 
@@ -498,12 +577,14 @@
 
     if-gt v1, v2, :cond_0
 
+    .line 130
     shr-int/lit8 v1, p0, 0x4
 
     and-int/lit8 v1, v1, 0xf
 
     mul-int/lit8 v0, v1, 0xa
 
+    .line 133
     :cond_0
     and-int/lit8 v1, p0, 0xf
 
@@ -511,10 +592,12 @@
 
     if-gt v1, v2, :cond_1
 
+    .line 134
     and-int/lit8 v1, p0, 0xf
 
     add-int/2addr v0, v1
 
+    .line 137
     :cond_1
     return v0
 .end method
@@ -528,13 +611,16 @@
     .prologue
     const/16 v5, 0x9
 
+    .line 69
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2, p2}, Ljava/lang/StringBuilder;-><init>(I)V
 
+    .line 71
     .local v2, ret:Ljava/lang/StringBuilder;
     const/4 v0, 0x0
 
+    .line 72
     .local v0, count:I
     move v1, p1
 
@@ -542,15 +628,18 @@
     :goto_0
     if-ge v0, p2, :cond_1
 
+    .line 74
     aget-byte v4, p0, v1
 
     and-int/lit8 v3, v4, 0xf
 
+    .line 75
     .local v3, v:I
     if-le v3, v5, :cond_0
 
     const/4 v3, 0x0
 
+    .line 76
     :cond_0
     add-int/lit8 v4, v3, 0x30
 
@@ -558,10 +647,12 @@
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
+    .line 78
     add-int/lit8 v0, v0, 0x1
 
     if-ne v0, p2, :cond_2
 
+    .line 85
     .end local v3           #v:I
     :cond_1
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -570,6 +661,7 @@
 
     return-object v4
 
+    .line 80
     .restart local v3       #v:I
     :cond_2
     aget-byte v4, p0, v1
@@ -578,10 +670,12 @@
 
     and-int/lit8 v3, v4, 0xf
 
+    .line 81
     if-le v3, v5, :cond_3
 
     const/4 v3, 0x0
 
+    .line 82
     :cond_3
     add-int/lit8 v4, v3, 0x30
 
@@ -589,8 +683,10 @@
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
+    .line 83
     add-int/lit8 v0, v0, 0x1
 
+    .line 72
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
@@ -603,30 +699,39 @@
     .parameter "number"
 
     .prologue
+    .line 511
     if-nez p0, :cond_1
 
+    .line 512
     const/4 v4, 0x0
 
+    .line 526
     :cond_0
     return-object v4
 
+    .line 515
     :cond_1
     new-array v4, p2, [I
 
+    .line 516
     .local v4, result:[I
     mul-int/lit8 v7, p2, 0x3
 
     add-int v3, p1, v7
 
+    .line 517
     .local v3, endIndex:I
     move v5, p1
 
+    .line 518
     .local v5, valueIndex:I
     const/4 v1, 0x0
 
+    .line 519
     .local v1, colorIndex:I
     const/high16 v0, -0x100
 
+    .line 521
     .local v0, alpha:I
     :goto_0
     add-int/lit8 v2, v1, 0x1
@@ -669,6 +774,7 @@
 
     aput v7, v4, v1
 
+    .line 525
     if-ge v6, v3, :cond_0
 
     move v1, v2
@@ -687,8 +793,10 @@
     .parameter "b"
 
     .prologue
+    .line 104
     const/4 v0, 0x0
 
+    .line 107
     .local v0, ret:I
     and-int/lit16 v1, p0, 0xf0
 
@@ -696,10 +804,12 @@
 
     if-gt v1, v2, :cond_0
 
+    .line 108
     shr-int/lit8 v1, p0, 0x4
 
     and-int/lit8 v0, v1, 0xf
 
+    .line 111
     :cond_0
     and-int/lit8 v1, p0, 0xf
 
@@ -707,12 +817,14 @@
 
     if-gt v1, v2, :cond_1
 
+    .line 112
     and-int/lit8 v1, p0, 0xf
 
     mul-int/lit8 v1, v1, 0xa
 
     add-int/2addr v0, v1
 
+    .line 115
     :cond_1
     return v0
 .end method
@@ -722,6 +834,7 @@
     .parameter "c"
 
     .prologue
+    .line 268
     const/16 v0, 0x30
 
     if-lt p0, v0, :cond_0
@@ -732,9 +845,11 @@
 
     add-int/lit8 v0, p0, -0x30
 
+    .line 270
     :goto_0
     return v0
 
+    .line 269
     :cond_0
     const/16 v0, 0x41
 
@@ -750,6 +865,7 @@
 
     goto :goto_0
 
+    .line 270
     :cond_1
     const/16 v0, 0x61
 
@@ -765,6 +881,7 @@
 
     goto :goto_0
 
+    .line 272
     :cond_2
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -802,23 +919,28 @@
     .parameter "s"
 
     .prologue
+    .line 289
     if-nez p0, :cond_1
 
     const/4 v1, 0x0
 
+    .line 300
     :cond_0
     return-object v1
 
+    .line 291
     :cond_1
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v2
 
+    .line 293
     .local v2, sz:I
     div-int/lit8 v3, v2, 0x2
 
     new-array v1, v3, [B
 
+    .line 295
     .local v1, ret:[B
     const/4 v0, 0x0
 
@@ -826,6 +948,7 @@
     :goto_0
     if-ge v0, v2, :cond_0
 
+    .line 296
     div-int/lit8 v3, v0, 0x2
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->charAt(I)C
@@ -854,6 +977,7 @@
 
     aput-byte v4, v1, v3
 
+    .line 295
     add-int/lit8 v0, v0, 0x2
 
     goto :goto_0
@@ -870,53 +994,65 @@
     .prologue
     const/16 v10, 0x8
 
+    .line 461
     rem-int v9, v10, p4
 
     if-eqz v9, :cond_0
 
+    .line 462
     const-string v9, "IccUtils"
 
     const-string v10, "not event number of color"
 
     invoke-static {v9, v10}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 463
     invoke-static {p0, p1, p2, p3, p4}, Lcom/android/internal/telephony/IccUtils;->mapToNon2OrderBitColor([BII[II)[I
 
     move-result-object v2
 
+    .line 494
     :goto_0
     return-object v2
 
+    .line 467
     :cond_0
     const/4 v0, 0x1
 
+    .line 468
     .local v0, mask:I
     packed-switch p4, :pswitch_data_0
 
+    .line 483
     :goto_1
     :pswitch_0
     new-array v2, p2, [I
 
+    .line 484
     .local v2, resultArray:[I
     const/4 v3, 0x0
 
+    .line 485
     .local v3, resultIndex:I
     div-int v5, v10, p4
 
     .local v5, run:I
     move v8, p1
 
+    .line 486
     .end local p1
     .local v8, valueIndex:I
     :goto_2
     if-ge v3, p2, :cond_2
 
+    .line 487
     add-int/lit8 p1, v8, 0x1
 
     .end local v8           #valueIndex:I
     .restart local p1
     aget-byte v7, p0, v8
 
+    .line 488
     .local v7, tempByte:B
     const/4 v6, 0x0
 
@@ -928,10 +1064,12 @@
     :goto_3
     if-ge v6, v5, :cond_1
 
+    .line 489
     sub-int v9, v5, v6
 
     add-int/lit8 v1, v9, -0x1
 
+    .line 490
     .local v1, offset:I
     add-int/lit8 v3, v4, 0x1
 
@@ -947,6 +1085,7 @@
 
     aput v9, v2, v4
 
+    .line 488
     add-int/lit8 v6, v6, 0x1
 
     move v4, v3
@@ -955,6 +1094,7 @@
     .restart local v4       #resultIndex:I
     goto :goto_3
 
+    .line 470
     .end local v1           #offset:I
     .end local v2           #resultArray:[I
     .end local v4           #resultIndex:I
@@ -964,18 +1104,24 @@
     :pswitch_1
     const/4 v0, 0x1
 
+    .line 471
     goto :goto_1
 
+    .line 473
     :pswitch_2
     const/4 v0, 0x3
 
+    .line 474
     goto :goto_1
 
+    .line 476
     :pswitch_3
     const/16 v0, 0xf
 
+    .line 477
     goto :goto_1
 
+    .line 479
     :pswitch_4
     const/16 v0, 0xff
 
@@ -993,6 +1139,7 @@
     .restart local v3       #resultIndex:I
     move v8, p1
 
+    .line 493
     .end local p1
     .restart local v8       #valueIndex:I
     goto :goto_2
@@ -1002,10 +1149,12 @@
     :cond_2
     move p1, v8
 
+    .line 494
     .end local v8           #valueIndex:I
     .restart local p1
     goto :goto_0
 
+    .line 468
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1
@@ -1028,28 +1177,34 @@
     .parameter "bits"
 
     .prologue
+    .line 499
     const/16 v1, 0x8
 
     rem-int/2addr v1, p4
 
     if-nez v1, :cond_0
 
+    .line 500
     const-string v1, "IccUtils"
 
     const-string v2, "not odd number of color"
 
     invoke-static {v1, v2}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 501
     invoke-static {p0, p1, p2, p3, p4}, Lcom/android/internal/telephony/IccUtils;->mapTo2OrderBitColor([BII[II)[I
 
     move-result-object v0
 
+    .line 507
     :goto_0
     return-object v0
 
+    .line 505
     :cond_0
     new-array v0, p2, [I
 
+    .line 507
     .local v0, resultArray:[I
     goto :goto_0
 .end method
@@ -1061,6 +1216,7 @@
     .parameter "length"
 
     .prologue
+    .line 342
     aget-byte v4, p0, p1
 
     and-int/lit16 v4, v4, 0x80
@@ -1073,13 +1229,16 @@
 
     if-ge p2, v4, :cond_2
 
+    .line 343
     :cond_0
     const-string v2, ""
 
+    .line 380
     :cond_1
     :goto_0
     return-object v2
 
+    .line 346
     :cond_2
     aget-byte v4, p0, p1
 
@@ -1089,8 +1248,10 @@
 
     packed-switch v4, :pswitch_data_0
 
+    .line 367
     const-string v2, ""
 
+    .line 375
     .local v2, ret:Ljava/lang/String;
     :goto_1
     aget-byte v4, p0, p1
@@ -1101,12 +1262,14 @@
 
     goto :goto_0
 
+    .line 350
     .end local v2           #ret:Ljava/lang/String;
     :pswitch_0
     aget-byte v4, p0, p1
 
     and-int/lit8 v3, v4, 0x7
 
+    .line 351
     .local v3, unusedBits:I
     add-int/lit8 v4, p2, -0x1
 
@@ -1116,6 +1279,7 @@
 
     div-int/lit8 v0, v4, 0x7
 
+    .line 352
     .local v0, countSeptets:I
     add-int/lit8 v4, p1, 0x1
 
@@ -1123,9 +1287,11 @@
 
     move-result-object v2
 
+    .line 353
     .restart local v2       #ret:Ljava/lang/String;
     goto :goto_1
 
+    .line 357
     .end local v0           #countSeptets:I
     .end local v2           #ret:Ljava/lang/String;
     .end local v3           #unusedBits:I
@@ -1146,13 +1312,16 @@
     .restart local v2       #ret:Ljava/lang/String;
     goto :goto_1
 
+    .line 359
     .end local v2           #ret:Ljava/lang/String;
     :catch_0
     move-exception v1
 
+    .line 360
     .local v1, ex:Ljava/io/UnsupportedEncodingException;
     const-string v2, ""
 
+    .line 361
     .restart local v2       #ret:Ljava/lang/String;
     const-string v4, "IccUtils"
 
@@ -1162,6 +1331,7 @@
 
     goto :goto_1
 
+    .line 346
     nop
 
     :pswitch_data_0
@@ -1177,8 +1347,10 @@
     .parameter "length"
 
     .prologue
+    .line 390
     const/4 v8, 0x0
 
+    .line 391
     .local v8, valueIndex:I
     add-int/lit8 v9, v8, 0x1
 
@@ -1188,6 +1360,7 @@
 
     and-int/lit16 v10, v11, 0xff
 
+    .line 392
     .local v10, width:I
     add-int/lit8 v8, v9, 0x1
 
@@ -1197,18 +1370,23 @@
 
     and-int/lit16 v3, v11, 0xff
 
+    .line 393
     .local v3, height:I
     mul-int v4, v10, v3
 
+    .line 395
     .local v4, numOfPixels:I
     new-array v7, v4, [I
 
+    .line 397
     .local v7, pixels:[I
     const/4 v5, 0x0
 
+    .line 398
     .local v5, pixelIndex:I
     const/4 v0, 0x7
 
+    .line 399
     .local v0, bitIndex:I
     const/4 v2, 0x0
 
@@ -1219,23 +1397,28 @@
     .local v6, pixelIndex:I
     move v9, v8
 
+    .line 400
     .end local v8           #valueIndex:I
     .restart local v9       #valueIndex:I
     :goto_0
     if-ge v6, v4, :cond_0
 
+    .line 402
     rem-int/lit8 v11, v6, 0x8
 
     if-nez v11, :cond_2
 
+    .line 403
     add-int/lit8 v8, v9, 0x1
 
     .end local v9           #valueIndex:I
     .restart local v8       #valueIndex:I
     aget-byte v2, p0, v9
 
+    .line 404
     const/4 v0, 0x7
 
+    .line 406
     :goto_1
     add-int/lit8 v5, v6, 0x1
 
@@ -1269,15 +1452,18 @@
     .restart local v9       #valueIndex:I
     goto :goto_0
 
+    .line 409
     :cond_0
     if-eq v6, v4, :cond_1
 
+    .line 410
     const-string v11, "IccUtils"
 
     const-string v12, "parse end and size error"
 
     invoke-static {v11, v12}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 412
     :cond_1
     sget-object v11, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
@@ -1302,8 +1488,10 @@
     .parameter "transparency"
 
     .prologue
+    .line 433
     const/4 v6, 0x0
 
+    .line 434
     .local v6, valueIndex:I
     add-int/lit8 v7, v6, 0x1
 
@@ -1313,6 +1501,7 @@
 
     and-int/lit16 v8, v9, 0xff
 
+    .line 435
     .local v8, width:I
     add-int/lit8 v6, v7, 0x1
 
@@ -1322,6 +1511,7 @@
 
     and-int/lit16 v4, v9, 0xff
 
+    .line 436
     .local v4, height:I
     add-int/lit8 v7, v6, 0x1
 
@@ -1331,6 +1521,7 @@
 
     and-int/lit16 v0, v9, 0xff
 
+    .line 437
     .local v0, bits:I
     add-int/lit8 v6, v7, 0x1
 
@@ -1340,6 +1531,7 @@
 
     and-int/lit16 v3, v9, 0xff
 
+    .line 438
     .local v3, colorNumber:I
     add-int/lit8 v7, v6, 0x1
 
@@ -1361,25 +1553,30 @@
 
     or-int v1, v9, v10
 
+    .line 441
     .local v1, clutOffset:I
     invoke-static {p0, v1, v3}, Lcom/android/internal/telephony/IccUtils;->getCLUT([BII)[I
 
     move-result-object v2
 
+    .line 442
     .local v2, colorIndexArray:[I
     const/4 v9, 0x1
 
     if-ne v9, p2, :cond_0
 
+    .line 443
     add-int/lit8 v9, v3, -0x1
 
     const/4 v10, 0x0
 
     aput v10, v2, v9
 
+    .line 446
     :cond_0
     const/4 v5, 0x0
 
+    .line 447
     .local v5, resultArray:[I
     const/16 v9, 0x8
 
@@ -1387,12 +1584,14 @@
 
     if-nez v9, :cond_1
 
+    .line 448
     mul-int v9, v8, v4
 
     invoke-static {p0, v6, v9, v2, v0}, Lcom/android/internal/telephony/IccUtils;->mapTo2OrderBitColor([BII[II)[I
 
     move-result-object v5
 
+    .line 455
     :goto_0
     sget-object v9, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
@@ -1402,6 +1601,7 @@
 
     return-object v9
 
+    .line 451
     :cond_1
     mul-int v9, v8, v4
 

@@ -88,7 +88,7 @@
     .line 281
     iget-object v4, p0, Landroid/preference/PreferenceActivity$HeaderAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v5, 0x1090085
+    const v5, 0x1090086
 
     invoke-static {p0, v5}, Landroid/preference/Injector$PreferenceActivityHook;->getPreferenceHeaderLayout(Landroid/widget/ArrayAdapter;I)I
 

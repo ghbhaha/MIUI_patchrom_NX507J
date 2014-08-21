@@ -100,7 +100,7 @@
     const/4 v3, -0x1
 
     .line 100
-    const v1, 0x10900a4
+    const v1, 0x10900a5
 
     const/4 v2, 0x0
 

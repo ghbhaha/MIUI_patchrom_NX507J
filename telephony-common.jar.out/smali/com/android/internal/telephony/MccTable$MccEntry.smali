@@ -45,10 +45,12 @@
     .parameter "smallestDigitsMCC"
 
     .prologue
+    .line 58
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, p3, v0}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;ILjava/lang/String;)V
 
+    .line 59
     return-void
 .end method
 
@@ -60,16 +62,22 @@
     .parameter "language"
 
     .prologue
+    .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 62
     iput p1, p0, Lcom/android/internal/telephony/MccTable$MccEntry;->mMcc:I
 
+    .line 63
     iput-object p2, p0, Lcom/android/internal/telephony/MccTable$MccEntry;->mIso:Ljava/lang/String;
 
+    .line 64
     iput p3, p0, Lcom/android/internal/telephony/MccTable$MccEntry;->mSmallestDigitsMnc:I
 
+    .line 65
     iput-object p4, p0, Lcom/android/internal/telephony/MccTable$MccEntry;->mLanguage:Ljava/lang/String;
 
+    .line 66
     return-void
 .end method
 
@@ -80,6 +88,7 @@
     .parameter "o"
 
     .prologue
+    .line 72
     iget v0, p0, Lcom/android/internal/telephony/MccTable$MccEntry;->mMcc:I
 
     iget v1, p1, Lcom/android/internal/telephony/MccTable$MccEntry;->mMcc:I
@@ -94,6 +103,7 @@
     .parameter "x0"
 
     .prologue
+    .line 50
     check-cast p1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     .end local p1

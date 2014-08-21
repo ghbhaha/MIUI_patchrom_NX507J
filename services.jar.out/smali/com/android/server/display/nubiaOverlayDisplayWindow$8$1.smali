@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 876
+    .line 879
     iput-object p1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$8$1;->this$1:Lcom/android/server/display/nubiaOverlayDisplayWindow$8;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -41,7 +41,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 879
+    .line 882
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$8$1;->this$1:Lcom/android/server/display/nubiaOverlayDisplayWindow$8;
 
     iget-object v0, v0, Lcom/android/server/display/nubiaOverlayDisplayWindow$8;->val$listener:Lcom/android/server/display/OnDoubleTouchListener;
@@ -52,19 +52,19 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 880
+    .line 883
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$8$1;->this$1:Lcom/android/server/display/nubiaOverlayDisplayWindow$8;
 
     iget-object v0, v0, Lcom/android/server/display/nubiaOverlayDisplayWindow$8;->val$listener:Lcom/android/server/display/OnDoubleTouchListener;
 
     invoke-interface {v0}, Lcom/android/server/display/OnDoubleTouchListener;->onSingleTouch()V
 
-    .line 885
+    .line 888
     :cond_0
     :goto_0
     return-void
 
-    .line 881
+    .line 884
     :cond_1
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$8$1;->this$1:Lcom/android/server/display/nubiaOverlayDisplayWindow$8;
 
@@ -78,10 +78,10 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 882
+    .line 885
     invoke-virtual {p0, v2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 883
+    .line 886
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$8$1;->this$1:Lcom/android/server/display/nubiaOverlayDisplayWindow$8;
 
     iget-object v0, v0, Lcom/android/server/display/nubiaOverlayDisplayWindow$8;->val$listener:Lcom/android/server/display/OnDoubleTouchListener;

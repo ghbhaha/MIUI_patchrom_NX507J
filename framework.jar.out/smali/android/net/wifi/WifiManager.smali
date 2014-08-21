@@ -443,15 +443,12 @@
     .parameter "numLevels"
 
     .prologue
-    .line 1081
     const/16 v2, -0x64
 
     if-gt p0, v2, :cond_0
 
-    .line 1082
     const/4 v2, 0x0
 
-    .line 1088
     :goto_0
     add-int/lit8 v0, p1, -0x1
 
@@ -462,28 +459,23 @@
     :cond_2
     return v2
 
-    .line 1083
     :cond_0
     const/16 v2, -0x37
 
     if-lt p0, v2, :cond_1
 
-    .line 1084
     add-int/lit8 v2, p1, -0x1
 
     goto :goto_0
 
-    .line 1086
     :cond_1
     const/high16 v0, 0x4234
 
-    .line 1087
     .local v0, inputRange:F
     add-int/lit8 v2, p1, -0x1
 
     int-to-float v1, v2
 
-    .line 1088
     .local v1, outputRange:F
     add-int/lit8 v2, p0, 0x75
 

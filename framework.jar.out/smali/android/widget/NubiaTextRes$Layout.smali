@@ -15,17 +15,17 @@
 
 
 # static fields
-.field public static final CLIPBOARD_PANEL:I = 0x10900c3
+.field public static final CLIPBOARD_PANEL:I = 0x10900c4
 
-.field public static final CLIPBOARD_PANEL_ITEM:I = 0x10900c4
+.field public static final CLIPBOARD_PANEL_ITEM:I = 0x10900c5
 
-.field public static final INSERTION_PANEL:I = 0x10900c2
+.field public static final INSERTION_PANEL:I = 0x10900c3
 
-.field public static final SELECT_PANEL:I = 0x10900c5
+.field public static final SELECT_PANEL:I = 0x10900c6
 
-.field public static final WEB_INPUT_INSERTION_PANEL:I = 0x10900d0
+.field public static final WEB_INPUT_INSERTION_PANEL:I = 0x10900d1
 
-.field public static final WEB_INPUT_SELECTION_PANEL:I = 0x10900d1
+.field public static final WEB_INPUT_SELECTION_PANEL:I = 0x10900d2
 
 
 # direct methods

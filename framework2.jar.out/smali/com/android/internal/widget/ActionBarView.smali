@@ -1563,7 +1563,6 @@
     .locals 1
 
     .prologue
-    .line 842
     iget-object v0, p0, Lcom/android/internal/widget/ActionBarView;->mExpandedActionView:Landroid/view/View;
 
     return-object v0
@@ -1573,6 +1572,7 @@
     .locals 1
 
     .prologue
+    .line 842
     iget-object v0, p0, Lcom/android/internal/widget/AbsActionBarView;->mMenuView:Lcom/android/internal/view/menu/ActionMenuView;
 
     return-object v0
@@ -1825,7 +1825,7 @@
     .line 346
     iget-object v0, p0, Lcom/android/internal/widget/ActionBarView;->mIndeterminateProgressView:Landroid/widget/ProgressBar;
 
-    const v1, 0x102033e
+    const v1, 0x1020343
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setId(I)V
 
@@ -1867,7 +1867,7 @@
     .line 337
     iget-object v0, p0, Lcom/android/internal/widget/ActionBarView;->mProgressView:Landroid/widget/ProgressBar;
 
-    const v1, 0x102033f
+    const v1, 0x1020344
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setId(I)V
 
@@ -1994,13 +1994,10 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 263
     invoke-super {p0, p1}, Lcom/android/internal/widget/AbsActionBarView;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 265
     iput-object v3, p0, Lcom/android/internal/widget/ActionBarView;->mTitleView:Landroid/widget/TextView;
 
-    .line 266
     iput-object v3, p0, Lcom/android/internal/widget/ActionBarView;->mSubtitleView:Landroid/widget/TextView;
 
     iput-object v3, p0, Lcom/android/internal/widget/ActionBarView;->mTitleUpView:Landroid/view/View;
@@ -5981,16 +5978,13 @@
 
     check-cast v3, Landroid/view/ViewGroup;
 
-    .line 435
     .local v3, oldParent:Landroid/view/ViewGroup;
     if-eqz v3, :cond_2
 
-    .line 436
     iget-object v4, p0, Lcom/android/internal/widget/AbsActionBarView;->mMenuView:Lcom/android/internal/view/menu/ActionMenuView;
 
     invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 439
     .end local v3           #oldParent:Landroid/view/ViewGroup;
     :cond_2
     iget-object v4, p0, Lcom/android/internal/widget/AbsActionBarView;->mActionMenuPresenter:Lcom/android/internal/view/menu/ActionMenuPresenter;

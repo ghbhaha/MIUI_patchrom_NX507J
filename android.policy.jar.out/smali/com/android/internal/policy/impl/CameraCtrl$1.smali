@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 39
+    .line 42
     iput-object p1, p0, Lcom/android/internal/policy/impl/CameraCtrl$1;->this$0:Lcom/android/internal/policy/impl/CameraCtrl;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,6 +39,6 @@
     .parameter "msg"
 
     .prologue
-    .line 42
+    .line 45
     return-void
 .end method

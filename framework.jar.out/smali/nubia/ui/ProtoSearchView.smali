@@ -43,7 +43,7 @@
 
     .prologue
     .line 21
-    const v0, 0x10900a5
+    const v0, 0x10900a6
 
     return v0
 .end method

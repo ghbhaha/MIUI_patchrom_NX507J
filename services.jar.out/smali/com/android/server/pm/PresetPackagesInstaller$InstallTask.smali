@@ -44,21 +44,21 @@
     .parameter "observer"
 
     .prologue
-    .line 200
+    .line 201
     iput-object p1, p0, Lcom/android/server/pm/PresetPackagesInstaller$InstallTask;->this$0:Lcom/android/server/pm/PresetPackagesInstaller;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 201
+    .line 202
     iput-object p2, p0, Lcom/android/server/pm/PresetPackagesInstaller$InstallTask;->mUri:Landroid/net/Uri;
 
-    .line 202
+    .line 203
     iput p3, p0, Lcom/android/server/pm/PresetPackagesInstaller$InstallTask;->mFlags:I
 
-    .line 203
+    .line 204
     iput-object p4, p0, Lcom/android/server/pm/PresetPackagesInstaller$InstallTask;->mObserver:Landroid/content/pm/IPackageInstallObserver;
 
-    .line 204
+    .line 205
     return-void
 .end method
 
@@ -71,7 +71,7 @@
     .parameter "x4"
 
     .prologue
-    .line 195
+    .line 196
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/server/pm/PresetPackagesInstaller$InstallTask;-><init>(Lcom/android/server/pm/PresetPackagesInstaller;Landroid/net/Uri;ILandroid/content/pm/IPackageInstallObserver;)V
 
     return-void
@@ -84,7 +84,7 @@
     .parameter "x0"
 
     .prologue
-    .line 195
+    .line 196
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -96,22 +96,24 @@
 .end method
 
 .method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
-    .locals 4
+    .locals 5
     .parameter "params"
 
     .prologue
-    .line 208
+    const/4 v4, 0x0
+
+    .line 209
     const-string v0, "PresetAppInstaller"
 
     const-string v1, "InstallTask doInBackground"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 209
+    .line 210
     iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller$InstallTask;->this$0:Lcom/android/server/pm/PresetPackagesInstaller;
 
-    #getter for: Lcom/android/server/pm/PresetPackagesInstaller;->mPackageManagerService:Lcom/android/server/pm/PackageManagerService;
-    invoke-static {v0}, Lcom/android/server/pm/PresetPackagesInstaller;->access$600(Lcom/android/server/pm/PresetPackagesInstaller;)Lcom/android/server/pm/PackageManagerService;
+    #getter for: Lcom/android/server/pm/PresetPackagesInstaller;->mPm:Landroid/content/pm/PackageManager;
+    invoke-static {v0}, Lcom/android/server/pm/PresetPackagesInstaller;->access$700(Lcom/android/server/pm/PresetPackagesInstaller;)Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
@@ -121,10 +123,8 @@
 
     iget v3, p0, Lcom/android/server/pm/PresetPackagesInstaller$InstallTask;->mFlags:I
 
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/server/pm/PackageManagerService;->installPackage(Landroid/net/Uri;Landroid/content/pm/IPackageInstallObserver;I)V
+    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/content/pm/PackageManager;->installPackage(Landroid/net/Uri;Landroid/content/pm/IPackageInstallObserver;ILjava/lang/String;)V
 
-    .line 210
-    const/4 v0, 0x0
-
-    return-object v0
+    .line 211
+    return-object v4
 .end method

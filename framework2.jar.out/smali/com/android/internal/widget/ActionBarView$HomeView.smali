@@ -155,20 +155,16 @@
     .parameter "newConfig"
 
     .prologue
-    .line 1500
     invoke-super {p0, p1}, Landroid/view/View;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 1501
     iget v0, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mUpIndicatorRes:I
 
     if-eqz v0, :cond_0
 
-    .line 1503
     iget v0, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mUpIndicatorRes:I
 
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/ActionBarView$HomeView;->setUpIndicator(I)V
 
-    .line 1505
     :cond_0
     return-void
 .end method
@@ -177,7 +173,6 @@
     .locals 1
 
     .prologue
-    .line 1530
     const v0, 0x102025a
 
     invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -188,7 +183,6 @@
 
     iput-object v0, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mUpView:Landroid/widget/ImageView;
 
-    .line 1531
     const v0, 0x102002c
 
     invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -199,7 +193,6 @@
 
     iput-object v0, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mIconView:Landroid/widget/ImageView;
 
-    .line 1532
     iget-object v0, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mUpView:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
@@ -208,7 +201,6 @@
 
     iput-object v0, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mDefaultUpIndicator:Landroid/graphics/drawable/Drawable;
 
-    .line 1533
     return-void
 .end method
 
@@ -221,28 +213,23 @@
     .parameter "b"
 
     .prologue
-    .line 1602
     sub-int v25, p5, p3
 
     div-int/lit8 v23, v25, 0x2
 
-    .line 1603
     .local v23, vCenter:I
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->isLayoutRtl()Z
 
     move-result v13
 
-    .line 1604
     .local v13, isLayoutRtl:Z
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getWidth()I
 
     move-result v24
 
-    .line 1605
     .local v24, width:I
     const/16 v19, 0x0
 
-    .line 1606
     .local v19, upOffset:I
     move-object/from16 v0, p0
 
@@ -262,7 +249,6 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 1607
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/ActionBarView$HomeView;->mUpView:Landroid/widget/ImageView;
@@ -275,7 +261,6 @@
 
     check-cast v18, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 1608
     .local v18, upLp:Landroid/widget/FrameLayout$LayoutParams;
     move-object/from16 v0, p0
 
@@ -287,7 +272,6 @@
 
     move-result v16
 
-    .line 1609
     .local v16, upHeight:I
     move-object/from16 v0, p0
 
@@ -299,7 +283,6 @@
 
     move-result v22
 
-    .line 1610
     .local v22, upWidth:I
     move-object/from16 v0, v18
 
@@ -317,31 +300,24 @@
 
     add-int v19, v25, v26
 
-    .line 1611
     div-int/lit8 v25, v16, 0x2
 
     sub-int v21, v23, v25
 
-    .line 1612
     .local v21, upTop:I
     add-int v15, v21, v16
 
-    .line 1615
     .local v15, upBottom:I
     if-eqz v13, :cond_1
 
-    .line 1616
     move/from16 v20, v24
 
-    .line 1617
     .local v20, upRight:I
     sub-int v17, v20, v22
 
-    .line 1618
     .local v17, upLeft:I
     sub-int p4, p4, v19
 
-    .line 1624
     :goto_0
     move-object/from16 v0, p0
 
@@ -359,7 +335,6 @@
 
     invoke-virtual {v0, v1, v2, v3, v15}, Landroid/view/View;->layout(IIII)V
 
-    .line 1627
     .end local v15           #upBottom:I
     .end local v16           #upHeight:I
     .end local v17           #upLeft:I
@@ -380,7 +355,6 @@
 
     check-cast v9, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 1628
     .local v9, iconLp:Landroid/widget/FrameLayout$LayoutParams;
     move-object/from16 v0, p0
 
@@ -392,7 +366,6 @@
 
     move-result v7
 
-    .line 1629
     .local v7, iconHeight:I
     move-object/from16 v0, p0
 
@@ -404,13 +377,11 @@
 
     move-result v12
 
-    .line 1630
     .local v12, iconWidth:I
     sub-int v25, p4, p2
 
     div-int/lit8 v5, v25, 0x2
 
-    .line 1631
     .local v5, hCenter:I
     iget v0, v9, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
@@ -424,17 +395,14 @@
 
     move-result v11
 
-    .line 1632
     .local v11, iconTop:I
     add-int v6, v11, v7
 
-    .line 1635
     .local v6, iconBottom:I
     invoke-virtual {v9}, Landroid/view/ViewGroup$MarginLayoutParams;->getMarginStart()I
 
     move-result v14
 
-    .line 1636
     .local v14, marginStart:I
     div-int/lit8 v25, v12, 0x2
 
@@ -446,20 +414,16 @@
 
     move-result v4
 
-    .line 1637
     .local v4, delta:I
     if-eqz v13, :cond_2
 
-    .line 1638
     sub-int v25, v24, v19
 
     sub-int v10, v25, v4
 
-    .line 1639
     .local v10, iconRight:I
     sub-int v8, v10, v12
 
-    .line 1644
     .local v8, iconLeft:I
     :goto_1
     move-object/from16 v0, p0
@@ -472,10 +436,8 @@
 
     invoke-virtual {v0, v8, v11, v10, v6}, Landroid/view/View;->layout(IIII)V
 
-    .line 1645
     return-void
 
-    .line 1620
     .end local v4           #delta:I
     .end local v5           #hCenter:I
     .end local v6           #iconBottom:I
@@ -494,17 +456,14 @@
     :cond_1
     move/from16 v20, v22
 
-    .line 1621
     .restart local v20       #upRight:I
     const/16 v17, 0x0
 
-    .line 1622
     .restart local v17       #upLeft:I
     add-int p2, p2, v19
 
     goto :goto_0
 
-    .line 1641
     .end local v15           #upBottom:I
     .end local v16           #upHeight:I
     .end local v17           #upLeft:I
@@ -523,7 +482,6 @@
     :cond_2
     add-int v8, v19, v4
 
-    .line 1642
     .restart local v8       #iconLeft:I
     add-int v10, v8, v12
 
@@ -537,7 +495,6 @@
     .parameter "heightMeasureSpec"
 
     .prologue
-    .line 1551
     iget-object v1, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mUpView:Landroid/widget/ImageView;
 
     const/4 v3, 0x0
@@ -552,7 +509,6 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/view/ViewGroup;->measureChildWithMargins(Landroid/view/View;IIII)V
 
-    .line 1552
     iget-object v0, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mUpView:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -561,7 +517,6 @@
 
     check-cast v10, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 1553
     .local v10, upLp:Landroid/widget/FrameLayout$LayoutParams;
     iget v0, v10, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
@@ -569,7 +524,6 @@
 
     add-int v11, v0, v1
 
-    .line 1554
     .local v11, upMargins:I
     iget-object v0, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mUpView:Landroid/widget/ImageView;
 
@@ -579,14 +533,12 @@
 
     iput v0, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mUpWidth:I
 
-    .line 1555
     iget v0, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mUpWidth:I
 
     add-int/2addr v0, v11
 
     iput v0, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mStartOffset:I
 
-    .line 1556
     iget-object v0, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mUpView:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
@@ -599,7 +551,6 @@
 
     const/4 v3, 0x0
 
-    .line 1557
     .local v3, width:I
     :goto_0
     iget v0, v10, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
@@ -616,7 +567,6 @@
 
     add-int v6, v0, v1
 
-    .line 1559
     .local v6, height:I
     iget-object v0, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mIconView:Landroid/widget/ImageView;
 
@@ -628,7 +578,6 @@
 
     if-eq v0, v1, :cond_2
 
-    .line 1560
     iget-object v1, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mIconView:Landroid/widget/ImageView;
 
     const/4 v5, 0x0
@@ -641,7 +590,6 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/view/ViewGroup;->measureChildWithMargins(Landroid/view/View;IIII)V
 
-    .line 1561
     iget-object v0, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mIconView:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -650,7 +598,6 @@
 
     check-cast v9, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 1562
     .local v9, iconLp:Landroid/widget/FrameLayout$LayoutParams;
     iget v0, v9, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
@@ -668,7 +615,6 @@
 
     add-int/2addr v3, v0
 
-    .line 1563
     iget v0, v9, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     iget-object v1, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mIconView:Landroid/widget/ImageView;
@@ -687,7 +633,6 @@
 
     move-result v6
 
-    .line 1570
     .end local v9           #iconLp:Landroid/widget/FrameLayout$LayoutParams;
     :cond_0
     :goto_1
@@ -695,40 +640,32 @@
 
     move-result v12
 
-    .line 1571
     .local v12, widthMode:I
     invoke-static/range {p2 .. p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v7
 
-    .line 1572
     .local v7, heightMode:I
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v13
 
-    .line 1573
     .local v13, widthSize:I
     invoke-static/range {p2 .. p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v8
 
-    .line 1575
     .local v8, heightSize:I
     sparse-switch v12, :sswitch_data_0
 
-    .line 1586
     :goto_2
     sparse-switch v7, :sswitch_data_1
 
-    .line 1597
     :goto_3
     invoke-virtual {p0, v3, v6}, Landroid/view/View;->setMeasuredDimension(II)V
 
-    .line 1598
     return-void
 
-    .line 1556
     .end local v3           #width:I
     .end local v6           #height:I
     .end local v7           #heightMode:I
@@ -740,18 +677,15 @@
 
     goto :goto_0
 
-    .line 1565
     .restart local v3       #width:I
     .restart local v6       #height:I
     :cond_2
     if-gez v11, :cond_0
 
-    .line 1567
     sub-int/2addr v3, v11
 
     goto :goto_1
 
-    .line 1577
     .restart local v7       #heightMode:I
     .restart local v8       #heightSize:I
     .restart local v12       #widthMode:I
@@ -761,40 +695,31 @@
 
     move-result v3
 
-    .line 1578
     goto :goto_2
 
-    .line 1580
     :sswitch_1
     move v3, v13
 
-    .line 1581
     goto :goto_2
 
-    .line 1588
     :sswitch_2
     invoke-static {v6, v8}, Ljava/lang/Math;->min(II)I
 
     move-result v6
 
-    .line 1589
     goto :goto_3
 
-    .line 1591
     :sswitch_3
     move v6, v8
 
-    .line 1592
     goto :goto_3
 
-    .line 1575
     :sswitch_data_0
     .sparse-switch
         -0x80000000 -> :sswitch_0
         0x40000000 -> :sswitch_1
     .end sparse-switch
 
-    .line 1586
     :sswitch_data_1
     .sparse-switch
         -0x80000000 -> :sswitch_2
@@ -807,15 +732,12 @@
     .parameter "event"
 
     .prologue
-    .line 1515
     invoke-super {p0, p1}, Landroid/view/View;->onPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 1516
     invoke-virtual {p0}, Landroid/view/View;->getContentDescription()Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 1517
     .local v0, cdesc:Ljava/lang/CharSequence;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -823,14 +745,12 @@
 
     if-nez v1, :cond_0
 
-    .line 1518
     invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->getText()Ljava/util/List;
 
     move-result-object v1
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1520
     :cond_0
     return-void
 .end method
@@ -840,12 +760,10 @@
     .parameter "icon"
 
     .prologue
-    .line 1485
     iget-object v0, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mIconView:Landroid/widget/ImageView;
 
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1486
     return-void
 .end method
 
@@ -854,14 +772,12 @@
     .parameter "showIcon"
 
     .prologue
-    .line 1480
     iget-object v0, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mIconView:Landroid/widget/ImageView;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1481
     return-void
 .end method
 
@@ -870,7 +786,6 @@
     .parameter "showIcon"
 
     .prologue
-    .line 1475
     iget-object v1, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mIconView:Landroid/widget/ImageView;
 
     if-eqz p1, :cond_0
@@ -880,10 +795,8 @@
     :goto_0
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1476
     return-void
 
-    .line 1475
     :cond_0
     const/16 v0, 0x8
 
@@ -895,7 +808,6 @@
     .parameter "isUp"
 
     .prologue
-    .line 1471
     iget-object v1, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mUpView:Landroid/widget/ImageView;
 
     if-eqz p1, :cond_0
@@ -905,10 +817,8 @@
     :goto_0
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1472
     return-void
 
-    .line 1471
     :cond_0
     const/16 v0, 0x8
 
@@ -920,10 +830,8 @@
     .parameter "resId"
 
     .prologue
-    .line 1494
     iput p1, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mUpIndicatorRes:I
 
-    .line 1495
     iget-object v1, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mUpView:Landroid/widget/ImageView;
 
     if-eqz p1, :cond_0
@@ -939,10 +847,8 @@
     :goto_0
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1496
     return-void
 
-    .line 1495
     :cond_0
     const/4 v0, 0x0
 
@@ -954,7 +860,7 @@
     .parameter "d"
 
     .prologue
-    .line 1489
+    .line 1536
     iget-object v0, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mUpView:Landroid/widget/ImageView;
 
     if-eqz p1, :cond_0
@@ -963,15 +869,13 @@
     :goto_0
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1490
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mUpIndicatorRes:I
 
-    .line 1491
+    .line 1533
     return-void
 
-    .line 1489
     .restart local p1
     :cond_0
     iget-object p1, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mDefaultUpIndicator:Landroid/graphics/drawable/Drawable;

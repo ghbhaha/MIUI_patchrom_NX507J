@@ -432,6 +432,22 @@
 
 .field public static final dialogTitleIconsDecorLayout:I = 0x1010410
 
+.field public static final digital_ampm_text_color:I = 0x101048e
+
+.field public static final digital_ampm_text_size:I = 0x101048a
+
+.field public static final digital_city_text_color:I = 0x101048c
+
+.field public static final digital_city_text_size:I = 0x1010488
+
+.field public static final digital_date_text_color:I = 0x101048d
+
+.field public static final digital_date_text_size:I = 0x1010489
+
+.field public static final digital_time_text_color:I = 0x101048f
+
+.field public static final digital_time_text_size:I = 0x101048b
+
 .field public static final digits:I = 0x1010166
 
 .field public static final direction:I = 0x10101d1
@@ -2050,9 +2066,9 @@
 
 .field public static final webViewStyle:I = 0x1010085
 
-.field public static final webviewchromium_select_dialog_multichoice:I = 0x101048b
+.field public static final webviewchromium_select_dialog_multichoice:I = 0x1010493
 
-.field public static final webviewchromium_select_dialog_singlechoice:I = 0x101048c
+.field public static final webviewchromium_select_dialog_singlechoice:I = 0x1010494
 
 .field public static final weekDayTextAppearance:I = 0x1010348
 

@@ -24,6 +24,7 @@
     .parameter
 
     .prologue
+    .line 111
     iput-object p1, p0, Lcom/android/internal/telephony/WakeLockStateMachine$DefaultState;->this$0:Lcom/android/internal/telephony/WakeLockStateMachine;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -38,10 +39,12 @@
     .parameter "msg"
 
     .prologue
+    .line 114
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
+    .line 121
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -62,17 +65,20 @@
 
     move-result-object v0
 
+    .line 122
     .local v0, errorText:Ljava/lang/String;
     sget-boolean v1, Landroid/os/Build;->IS_DEBUGGABLE:Z
 
     if-eqz v1, :cond_0
 
+    .line 123
     new-instance v1, Ljava/lang/RuntimeException;
 
     invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
     throw v1
 
+    .line 116
     .end local v0           #errorText:Ljava/lang/String;
     :pswitch_0
     iget-object v2, p0, Lcom/android/internal/telephony/WakeLockStateMachine$DefaultState;->this$0:Lcom/android/internal/telephony/WakeLockStateMachine;
@@ -83,6 +89,7 @@
 
     iput-object v1, v2, Lcom/android/internal/telephony/WakeLockStateMachine;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
+    .line 117
     iget-object v1, p0, Lcom/android/internal/telephony/WakeLockStateMachine$DefaultState;->this$0:Lcom/android/internal/telephony/WakeLockStateMachine;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -117,11 +124,13 @@
 
     invoke-virtual {v1, v2}, Lcom/android/internal/telephony/WakeLockStateMachine;->log(Ljava/lang/String;)V
 
+    .line 130
     :goto_0
     const/4 v1, 0x1
 
     return v1
 
+    .line 125
     .restart local v0       #errorText:Ljava/lang/String;
     :cond_0
     iget-object v1, p0, Lcom/android/internal/telephony/WakeLockStateMachine$DefaultState;->this$0:Lcom/android/internal/telephony/WakeLockStateMachine;
@@ -130,6 +139,7 @@
 
     goto :goto_0
 
+    .line 114
     :pswitch_data_0
     .packed-switch 0x4
         :pswitch_0

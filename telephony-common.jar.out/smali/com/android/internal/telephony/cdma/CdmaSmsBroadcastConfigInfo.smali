@@ -22,16 +22,22 @@
     .parameter "selected"
 
     .prologue
+    .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 47
     iput p1, p0, Lcom/android/internal/telephony/cdma/CdmaSmsBroadcastConfigInfo;->mFromServiceCategory:I
 
+    .line 48
     iput p2, p0, Lcom/android/internal/telephony/cdma/CdmaSmsBroadcastConfigInfo;->mToServiceCategory:I
 
+    .line 49
     iput p3, p0, Lcom/android/internal/telephony/cdma/CdmaSmsBroadcastConfigInfo;->mLanguage:I
 
+    .line 50
     iput-boolean p4, p0, Lcom/android/internal/telephony/cdma/CdmaSmsBroadcastConfigInfo;->mSelected:Z
 
+    .line 51
     return-void
 .end method
 
@@ -41,6 +47,7 @@
     .locals 1
 
     .prologue
+    .line 57
     iget v0, p0, Lcom/android/internal/telephony/cdma/CdmaSmsBroadcastConfigInfo;->mFromServiceCategory:I
 
     return v0
@@ -50,6 +57,7 @@
     .locals 1
 
     .prologue
+    .line 71
     iget v0, p0, Lcom/android/internal/telephony/cdma/CdmaSmsBroadcastConfigInfo;->mLanguage:I
 
     return v0
@@ -59,6 +67,7 @@
     .locals 1
 
     .prologue
+    .line 64
     iget v0, p0, Lcom/android/internal/telephony/cdma/CdmaSmsBroadcastConfigInfo;->mToServiceCategory:I
 
     return v0
@@ -68,6 +77,7 @@
     .locals 1
 
     .prologue
+    .line 78
     iget-boolean v0, p0, Lcom/android/internal/telephony/cdma/CdmaSmsBroadcastConfigInfo;->mSelected:Z
 
     return v0
@@ -77,6 +87,7 @@
     .locals 2
 
     .prologue
+    .line 83
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

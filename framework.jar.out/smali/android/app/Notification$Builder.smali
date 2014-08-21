@@ -1048,7 +1048,7 @@
 
     if-nez v0, :cond_1
 
-    const v0, 0x10900b5
+    const v0, 0x10900b6
 
     :goto_1
     const/4 v1, 0x1
@@ -1060,7 +1060,7 @@
     goto :goto_0
 
     :cond_1
-    const v0, 0x10900b6
+    const v0, 0x10900b7
 
     goto :goto_1
 

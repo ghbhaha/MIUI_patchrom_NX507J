@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 177
+    .line 180
     iput-object p1, p0, Lcom/android/server/pm/PresetPackagesInstaller$3;->this$0:Lcom/android/server/pm/PresetPackagesInstaller;
 
     invoke-direct {p0}, Landroid/content/pm/IPackageInstallObserver$Stub;-><init>()V
@@ -35,12 +35,14 @@
 
 # virtual methods
 .method public packageInstalled(Ljava/lang/String;I)V
-    .locals 3
+    .locals 4
     .parameter "packageName"
     .parameter "returnCode"
 
     .prologue
-    .line 179
+    const/4 v3, 0x0
+
+    .line 182
     const-string v0, "PresetAppInstaller"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -73,16 +75,25 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 181
+    .line 184
     iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller$3;->this$0:Lcom/android/server/pm/PresetPackagesInstaller;
 
-    invoke-static {v0}, Lcom/android/server/pm/PresetPackagesInstaller;->access$208(Lcom/android/server/pm/PresetPackagesInstaller;)I
+    #getter for: Lcom/android/server/pm/PresetPackagesInstaller;->mInstalledCount:Ljava/util/concurrent/atomic/AtomicInteger;
+    invoke-static {v0}, Lcom/android/server/pm/PresetPackagesInstaller;->access$200(Lcom/android/server/pm/PresetPackagesInstaller;)Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 182
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
+
+    .line 185
     iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller$3;->this$0:Lcom/android/server/pm/PresetPackagesInstaller;
 
-    #getter for: Lcom/android/server/pm/PresetPackagesInstaller;->mInstalledCount:I
-    invoke-static {v0}, Lcom/android/server/pm/PresetPackagesInstaller;->access$200(Lcom/android/server/pm/PresetPackagesInstaller;)I
+    #getter for: Lcom/android/server/pm/PresetPackagesInstaller;->mInstalledCount:Ljava/util/concurrent/atomic/AtomicInteger;
+    invoke-static {v0}, Lcom/android/server/pm/PresetPackagesInstaller;->access$200(Lcom/android/server/pm/PresetPackagesInstaller;)Ljava/util/concurrent/atomic/AtomicInteger;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
     move-result v0
 
@@ -93,30 +104,19 @@
 
     move-result v1
 
-    if-ge v0, v1, :cond_1
+    if-ge v0, v1, :cond_0
 
-    .line 183
+    .line 186
     iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller$3;->this$0:Lcom/android/server/pm/PresetPackagesInstaller;
-
-    #getter for: Lcom/android/server/pm/PresetPackagesInstaller;->mMonitor:Lcom/android/server/pm/PresetPackagesInstaller$PackageInstallerMonitor;
-    invoke-static {v0}, Lcom/android/server/pm/PresetPackagesInstaller;->access$400(Lcom/android/server/pm/PresetPackagesInstaller;)Lcom/android/server/pm/PresetPackagesInstaller$PackageInstallerMonitor;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    .line 184
-    iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller$3;->this$0:Lcom/android/server/pm/PresetPackagesInstaller;
-
-    #getter for: Lcom/android/server/pm/PresetPackagesInstaller;->mMonitor:Lcom/android/server/pm/PresetPackagesInstaller$PackageInstallerMonitor;
-    invoke-static {v0}, Lcom/android/server/pm/PresetPackagesInstaller;->access$400(Lcom/android/server/pm/PresetPackagesInstaller;)Lcom/android/server/pm/PresetPackagesInstaller$PackageInstallerMonitor;
-
-    move-result-object v0
 
     iget-object v1, p0, Lcom/android/server/pm/PresetPackagesInstaller$3;->this$0:Lcom/android/server/pm/PresetPackagesInstaller;
 
-    #getter for: Lcom/android/server/pm/PresetPackagesInstaller;->mInstalledCount:I
-    invoke-static {v1}, Lcom/android/server/pm/PresetPackagesInstaller;->access$200(Lcom/android/server/pm/PresetPackagesInstaller;)I
+    #getter for: Lcom/android/server/pm/PresetPackagesInstaller;->mInstalledCount:Ljava/util/concurrent/atomic/AtomicInteger;
+    invoke-static {v1}, Lcom/android/server/pm/PresetPackagesInstaller;->access$200(Lcom/android/server/pm/PresetPackagesInstaller;)Ljava/util/concurrent/atomic/AtomicInteger;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
     move-result v1
 
@@ -129,15 +129,31 @@
 
     move-result v2
 
-    invoke-interface {v0, v1, v2}, Lcom/android/server/pm/PresetPackagesInstaller$PackageInstallerMonitor;->onProgress(II)V
+    #calls: Lcom/android/server/pm/PresetPackagesInstaller;->onProgress(II)V
+    invoke-static {v0, v1, v2}, Lcom/android/server/pm/PresetPackagesInstaller;->access$400(Lcom/android/server/pm/PresetPackagesInstaller;II)V
 
-    .line 192
-    :cond_0
+    .line 193
     :goto_0
     return-void
 
-    .line 187
-    :cond_1
+    .line 188
+    :cond_0
+    iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller$3;->this$0:Lcom/android/server/pm/PresetPackagesInstaller;
+
+    #setter for: Lcom/android/server/pm/PresetPackagesInstaller;->mInstallTotal:I
+    invoke-static {v0, v3}, Lcom/android/server/pm/PresetPackagesInstaller;->access$302(Lcom/android/server/pm/PresetPackagesInstaller;I)I
+
+    .line 189
+    iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller$3;->this$0:Lcom/android/server/pm/PresetPackagesInstaller;
+
+    #getter for: Lcom/android/server/pm/PresetPackagesInstaller;->mInstalledCount:Ljava/util/concurrent/atomic/AtomicInteger;
+    invoke-static {v0}, Lcom/android/server/pm/PresetPackagesInstaller;->access$200(Lcom/android/server/pm/PresetPackagesInstaller;)Ljava/util/concurrent/atomic/AtomicInteger;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v3}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
+
+    .line 190
     iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller$3;->this$0:Lcom/android/server/pm/PresetPackagesInstaller;
 
     #getter for: Lcom/android/server/pm/PresetPackagesInstaller;->mInstallerHelper:Lcom/android/server/pm/InstallerHelper;
@@ -147,25 +163,11 @@
 
     invoke-virtual {v0}, Lcom/android/server/pm/InstallerHelper;->updateDatabase()V
 
-    .line 188
+    .line 191
     iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller$3;->this$0:Lcom/android/server/pm/PresetPackagesInstaller;
 
-    #getter for: Lcom/android/server/pm/PresetPackagesInstaller;->mMonitor:Lcom/android/server/pm/PresetPackagesInstaller$PackageInstallerMonitor;
-    invoke-static {v0}, Lcom/android/server/pm/PresetPackagesInstaller;->access$400(Lcom/android/server/pm/PresetPackagesInstaller;)Lcom/android/server/pm/PresetPackagesInstaller$PackageInstallerMonitor;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    .line 189
-    iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller$3;->this$0:Lcom/android/server/pm/PresetPackagesInstaller;
-
-    #getter for: Lcom/android/server/pm/PresetPackagesInstaller;->mMonitor:Lcom/android/server/pm/PresetPackagesInstaller$PackageInstallerMonitor;
-    invoke-static {v0}, Lcom/android/server/pm/PresetPackagesInstaller;->access$400(Lcom/android/server/pm/PresetPackagesInstaller;)Lcom/android/server/pm/PresetPackagesInstaller$PackageInstallerMonitor;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcom/android/server/pm/PresetPackagesInstaller$PackageInstallerMonitor;->onPackageInstallFinish()V
+    #calls: Lcom/android/server/pm/PresetPackagesInstaller;->onPackageInstallFinish()V
+    invoke-static {v0}, Lcom/android/server/pm/PresetPackagesInstaller;->access$600(Lcom/android/server/pm/PresetPackagesInstaller;)V
 
     goto :goto_0
 .end method

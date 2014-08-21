@@ -15701,7 +15701,7 @@
     goto :goto_2
 
     :cond_9
-    const-string v5, "must have at least one \'.\' separator"
+    const-string/jumbo v5, "must have at least one \'.\' separator"
 
     goto :goto_2
 .end method
@@ -16481,7 +16481,6 @@
     .parameter "pkg"
 
     .prologue
-    .line 603
     :try_start_0
     new-instance v1, Ljava/util/jar/JarFile;
 
@@ -16491,7 +16490,6 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 605
     .local v1, jarFile:Ljava/util/jar/JarFile;
     :try_start_1
     const-string v3, "AndroidManifest.xml"
@@ -16500,11 +16498,9 @@
 
     move-result-object v2
 
-    .line 606
     .local v2, je:Ljava/util/zip/ZipEntry;
     if-eqz v2, :cond_0
 
-    .line 607
     invoke-virtual {v1, v2}, Ljava/util/jar/JarFile;->getInputStream(Ljava/util/zip/ZipEntry;)Ljava/io/InputStream;
 
     move-result-object v3
@@ -16517,21 +16513,17 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 610
     :cond_0
     :try_start_2
     invoke-virtual {v1}, Ljava/util/jar/JarFile;->close()V
 
-    .line 612
     const/4 v3, 0x1
 
-    .line 614
     .end local v1           #jarFile:Ljava/util/jar/JarFile;
     .end local v2           #je:Ljava/util/zip/ZipEntry;
     :goto_0
     return v3
 
-    .line 610
     .restart local v1       #jarFile:Ljava/util/jar/JarFile;
     :catchall_0
     move-exception v3
@@ -16542,12 +16534,10 @@
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 613
     .end local v1           #jarFile:Ljava/util/jar/JarFile;
     :catch_0
     move-exception v0
 
-    .line 614
     .local v0, e:Ljava/io/IOException;
     const/4 v3, 0x0
 
@@ -16558,7 +16548,6 @@
     .locals 1
 
     .prologue
-    .line 493
     iget v0, p0, Landroid/content/pm/PackageParser;->mParseError:I
 
     return v0
@@ -16592,14 +16581,12 @@
 
     iput-object v6, v0, Landroid/content/pm/PackageParser;->mArchiveSourcePath:Ljava/lang/String;
 
-    .line 501
     invoke-virtual/range {p1 .. p1}, Ljava/io/File;->isFile()Z
 
     move-result v6
 
     if-nez v6, :cond_0
 
-    .line 502
     const-string v6, "PackageParser"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -16626,21 +16613,17 @@
 
     invoke-static {v6, v7}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 503
     const/16 v6, -0x64
 
     move-object/from16 v0, p0
 
     iput v6, v0, Landroid/content/pm/PackageParser;->mParseError:I
 
-    .line 504
     const/16 v30, 0x0
 
-    .line 593
     :goto_0
     return-object v30
 
-    .line 506
     :cond_0
     invoke-virtual/range {p1 .. p1}, Ljava/io/File;->getName()Ljava/lang/String;
 
@@ -16656,12 +16639,10 @@
 
     if-eqz v6, :cond_2
 
-    .line 508
     and-int/lit8 v6, p4, 0x1
 
     if-nez v6, :cond_1
 
-    .line 511
     const-string v6, "PackageParser"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -16688,7 +16669,6 @@
 
     invoke-static {v6, v7}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 513
     :cond_1
     const/16 v6, -0x64
 
@@ -16696,28 +16676,22 @@
 
     iput v6, v0, Landroid/content/pm/PackageParser;->mParseError:I
 
-    .line 514
     const/16 v30, 0x0
 
     goto :goto_0
 
-    .line 520
     :cond_2
     const/16 v29, 0x0
 
-    .line 521
     .local v29, parser:Landroid/content/res/XmlResourceParser;
     const/16 v24, 0x0
 
-    .line 522
     .local v24, assmgr:Landroid/content/res/AssetManager;
     const/16 v31, 0x0
 
-    .line 523
     .local v31, res:Landroid/content/res/Resources;
     const/16 v23, 0x1
 
-    .line 525
     .local v23, assetError:Z
     :try_start_0
     new-instance v5, Landroid/content/res/AssetManager;
@@ -16726,7 +16700,6 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
 
-    .line 526
     .end local v24           #assmgr:Landroid/content/res/AssetManager;
     .local v5, assmgr:Landroid/content/res/AssetManager;
     :try_start_1
@@ -16738,11 +16711,9 @@
 
     move-result v25
 
-    .line 527
     .local v25, cookie:I
     if-eqz v25, :cond_4
 
-    .line 530
     const/4 v6, 0x0
 
     move-object/from16 v0, p3
@@ -16751,11 +16722,11 @@
 
     move-result-object v31
 
-    .line 535
     const/4 v6, 0x0
 
     const/4 v7, 0x0
 
+    .line 744
     const/4 v8, 0x0
 
     const/4 v9, 0x0
@@ -16788,7 +16759,6 @@
 
     invoke-virtual/range {v5 .. v22}, Landroid/content/res/AssetManager;->setConfiguration(IILjava/lang/String;IIIIIIIIIIIIII)V
 
-    .line 537
     const-string v6, "AndroidManifest.xml"
 
     move/from16 v0, v25
@@ -16799,20 +16769,16 @@
 
     move-result-object v29
 
-    .line 538
     const/16 v23, 0x0
 
-    .line 546
     .end local v25           #cookie:I
     :goto_1
     if-eqz v23, :cond_5
 
-    .line 547
     if-eqz v5, :cond_3
 
     invoke-virtual {v5}, Landroid/content/res/AssetManager;->close()V
 
-    .line 548
     :cond_3
     const/16 v6, -0x65
 
@@ -16820,12 +16786,10 @@
 
     iput v6, v0, Landroid/content/pm/PackageParser;->mParseError:I
 
-    .line 549
     const/16 v30, 0x0
 
     goto/16 :goto_0
 
-    .line 540
     .restart local v25       #cookie:I
     :cond_4
     :try_start_2
@@ -16859,12 +16823,10 @@
 
     goto :goto_1
 
-    .line 542
     .end local v25           #cookie:I
     :catch_0
     move-exception v26
 
-    .line 543
     .local v26, e:Ljava/lang/Exception;
     :goto_2
     const-string v6, "PackageParser"
@@ -16897,7 +16859,6 @@
 
     goto :goto_1
 
-    .line 551
     .end local v26           #e:Ljava/lang/Exception;
     :cond_5
     const/4 v6, 0x1
@@ -16906,15 +16867,12 @@
 
     move-object/from16 v28, v0
 
-    .line 552
     .local v28, errorText:[Ljava/lang/String;
     const/16 v30, 0x0
 
-    .line 553
     .local v30, pkg:Landroid/content/pm/PackageParser$Package;
     const/16 v27, 0x0
 
-    .line 556
     .local v27, errorException:Ljava/lang/Exception;
     :try_start_3
     move-object/from16 v0, p0
@@ -16933,11 +16891,9 @@
 
     move-result-object v30
 
-    .line 563
     :goto_3
     if-nez v30, :cond_9
 
-    .line 566
     move-object/from16 v0, p0
 
     iget-boolean v6, v0, Landroid/content/pm/PackageParser;->mOnlyCoreApps:Z
@@ -16952,11 +16908,9 @@
 
     if-eq v6, v7, :cond_7
 
-    .line 567
     :cond_6
     if-eqz v27, :cond_8
 
-    .line 568
     const-string v6, "PackageParser"
 
     move-object/from16 v0, p0
@@ -16967,7 +16921,6 @@
 
     invoke-static {v6, v7, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 574
     :goto_4
     move-object/from16 v0, p0
 
@@ -16977,34 +16930,27 @@
 
     if-ne v6, v7, :cond_7
 
-    .line 575
     const/16 v6, -0x6c
 
     move-object/from16 v0, p0
 
     iput v6, v0, Landroid/content/pm/PackageParser;->mParseError:I
 
-    .line 578
     :cond_7
     invoke-interface/range {v29 .. v29}, Landroid/content/res/XmlResourceParser;->close()V
 
-    .line 579
     invoke-virtual {v5}, Landroid/content/res/AssetManager;->close()V
 
-    .line 580
     const/16 v30, 0x0
 
     goto/16 :goto_0
 
-    .line 557
     :catch_1
     move-exception v26
 
-    .line 558
     .restart local v26       #e:Ljava/lang/Exception;
     move-object/from16 v27, v26
 
-    .line 559
     const/16 v6, -0x66
 
     move-object/from16 v0, p0
@@ -17013,7 +16959,6 @@
 
     goto :goto_3
 
-    .line 570
     .end local v26           #e:Ljava/lang/Exception;
     :cond_8
     const-string v6, "PackageParser"
@@ -17066,21 +17011,17 @@
 
     goto :goto_4
 
-    .line 583
     :cond_9
     invoke-interface/range {v29 .. v29}, Landroid/content/res/XmlResourceParser;->close()V
 
-    .line 584
     invoke-virtual {v5}, Landroid/content/res/AssetManager;->close()V
 
-    .line 587
     move-object/from16 v0, p2
 
     move-object/from16 v1, v30
 
     iput-object v0, v1, Landroid/content/pm/PackageParser$Package;->mPath:Ljava/lang/String;
 
-    .line 588
     move-object/from16 v0, p0
 
     iget-object v6, v0, Landroid/content/pm/PackageParser;->mArchiveSourcePath:Ljava/lang/String;
@@ -17089,7 +17030,6 @@
 
     iput-object v6, v0, Landroid/content/pm/PackageParser$Package;->mScanPath:Ljava/lang/String;
 
-    .line 591
     const/4 v6, 0x0
 
     move-object/from16 v0, v30
@@ -17098,7 +17038,6 @@
 
     goto/16 :goto_0
 
-    .line 542
     .end local v5           #assmgr:Landroid/content/res/AssetManager;
     .end local v27           #errorException:Ljava/lang/Exception;
     .end local v28           #errorText:[Ljava/lang/String;
@@ -17109,6 +17048,7 @@
 
     move-object/from16 v5, v24
 
+    .line 526
     .end local v24           #assmgr:Landroid/content/res/AssetManager;
     .restart local v5       #assmgr:Landroid/content/res/AssetManager;
     goto/16 :goto_2

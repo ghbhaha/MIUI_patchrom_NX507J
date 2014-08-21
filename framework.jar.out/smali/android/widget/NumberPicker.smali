@@ -22,7 +22,7 @@
 
 
 # static fields
-.field private static final DEFAULT_LAYOUT_RESOURCE_ID:I = 0x1090079
+.field private static final DEFAULT_LAYOUT_RESOURCE_ID:I = 0x109007a
 
 .field private static final DEFAULT_LONG_PRESS_UPDATE_INTERVAL:J = 0x12cL
 
@@ -183,7 +183,6 @@
     .locals 1
 
     .prologue
-    .line 202
     new-instance v0, Landroid/widget/NumberPicker$TwoDigitFormatter;
 
     invoke-direct {v0}, Landroid/widget/NumberPicker$TwoDigitFormatter;-><init>()V
@@ -378,7 +377,7 @@
     .local v3, attributesArray:Landroid/content/res/TypedArray;
     const/4 v14, 0x1
 
-    const v15, 0x1090079
+    const v15, 0x109007a
 
     invoke-virtual {v3, v14, v15}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -386,7 +385,7 @@
 
     .line 588
     .local v10, layoutResId:I
-    const v14, 0x1090079
+    const v14, 0x109007a
 
     if-eq v10, v14, :cond_0
 
@@ -719,7 +718,7 @@
     if-nez v14, :cond_6
 
     .line 673
-    const v14, 0x1020316
+    const v14, 0x102031b
 
     move-object/from16 v0, p0
 
@@ -756,7 +755,7 @@
     if-nez v14, :cond_7
 
     .line 682
-    const v14, 0x1020318
+    const v14, 0x102031d
 
     move-object/from16 v0, p0
 
@@ -786,7 +785,7 @@
 
     .line 690
     :goto_4
-    const v14, 0x1020317
+    const v14, 0x102031c
 
     move-object/from16 v0, p0
 
@@ -5094,7 +5093,6 @@
 
     invoke-interface {v5, v3}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 853
     :cond_miui
     iget-object v5, p0, Landroid/widget/NumberPicker;->mFlingScroller:Landroid/widget/Scroller;
 
@@ -5104,6 +5102,7 @@
 
     if-nez v5, :cond_4
 
+    .line 853
     .line 854
     iget-object v5, p0, Landroid/widget/NumberPicker;->mFlingScroller:Landroid/widget/Scroller;
 

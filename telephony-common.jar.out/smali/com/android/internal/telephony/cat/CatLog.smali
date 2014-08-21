@@ -12,6 +12,7 @@
     .locals 0
 
     .prologue
+    .line 21
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -23,6 +24,7 @@
     .parameter "msg"
 
     .prologue
+    .line 29
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v1
@@ -31,6 +33,7 @@
 
     move-result-object v0
 
+    .line 30
     .local v0, className:Ljava/lang/String;
     const-string v1, "CAT"
 
@@ -70,6 +73,7 @@
 
     invoke-static {v1, v2}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 32
     return-void
 .end method
 
@@ -79,6 +83,7 @@
     .parameter "msg"
 
     .prologue
+    .line 39
     const-string v0, "CAT"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -105,6 +110,7 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 40
     return-void
 .end method
 
@@ -114,6 +120,7 @@
     .parameter "msg"
 
     .prologue
+    .line 42
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v1
@@ -122,6 +129,7 @@
 
     move-result-object v0
 
+    .line 43
     .local v0, className:Ljava/lang/String;
     const-string v1, "CAT"
 
@@ -161,6 +169,7 @@
 
     invoke-static {v1, v2}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 45
     return-void
 .end method
 
@@ -170,6 +179,7 @@
     .parameter "msg"
 
     .prologue
+    .line 48
     const-string v0, "CAT"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -196,5 +206,6 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 49
     return-void
 .end method

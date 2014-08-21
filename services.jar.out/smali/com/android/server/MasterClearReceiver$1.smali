@@ -65,6 +65,7 @@
 
     invoke-static {v1, v2}, Landroid/os/RecoverySystem;->rebootFactoryReset(Landroid/content/Context;Z)V
 
+    .line 47
     const-string v1, "MasterClear"
 
     const-string v2, "Still running after master clear?!"

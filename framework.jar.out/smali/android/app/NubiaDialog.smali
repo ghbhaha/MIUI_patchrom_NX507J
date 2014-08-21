@@ -63,7 +63,7 @@
 
     move-result-object v0
 
-    const v1, 0x10900ac
+    const v1, 0x10900ad
 
     const/4 v2, 0x0
 
@@ -76,7 +76,7 @@
     .line 121
     iget-object v0, p0, Landroid/app/NubiaDialog;->mdialog_View:Landroid/view/View;
 
-    const v1, 0x102034b
+    const v1, 0x1020350
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -89,7 +89,7 @@
     .line 122
     iget-object v0, p0, Landroid/app/NubiaDialog;->mdialog_View:Landroid/view/View;
 
-    const v1, 0x102034a
+    const v1, 0x102034f
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -102,7 +102,7 @@
     .line 123
     iget-object v0, p0, Landroid/app/NubiaDialog;->mdialog_View:Landroid/view/View;
 
-    const v1, 0x1020348
+    const v1, 0x102034d
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -115,7 +115,7 @@
     .line 124
     iget-object v0, p0, Landroid/app/NubiaDialog;->mdialog_View:Landroid/view/View;
 
-    const v1, 0x1020349
+    const v1, 0x102034e
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

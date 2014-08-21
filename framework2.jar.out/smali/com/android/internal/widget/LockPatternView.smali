@@ -873,8 +873,7 @@
 
     if-eqz v8, :cond_4
 
-    .line 565
-    :cond_4
+    .line 564
     iget-object v8, p0, Lcom/android/internal/widget/LockPatternView;->mNubiaHaptic:Lcom/nubia/os/NubiaHaptic;
 
     invoke-virtual {v8}, Lcom/nubia/os/NubiaHaptic;->clickButton()V
@@ -883,6 +882,7 @@
     .end local v0           #cell:Lcom/android/internal/widget/LockPatternView$Cell;
     .end local v4           #fillInGapCell:Lcom/android/internal/widget/LockPatternView$Cell;
     .end local v7           #pattern:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/widget/LockPatternView$Cell;>;"
+    :cond_4
     :goto_2
     return-object v0
 

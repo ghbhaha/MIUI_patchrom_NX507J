@@ -24,12 +24,15 @@
     .parameter
 
     .prologue
+    .line 3227
     iput-object p1, p0, Landroid/media/AudioService$AudioSystemThread;->this$0:Landroid/media/AudioService;
 
+    .line 3228
     const-string v0, "AudioService"
 
     invoke-direct {p0, v0}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
 
+    .line 3229
     return-void
 .end method
 
@@ -39,12 +42,15 @@
     .locals 5
 
     .prologue
+    .line 3234
     invoke-static {}, Landroid/os/Looper;->prepare()V
 
+    .line 3236
     iget-object v1, p0, Landroid/media/AudioService$AudioSystemThread;->this$0:Landroid/media/AudioService;
 
     monitor-enter v1
 
+    .line 3237
     :try_start_0
     iget-object v0, p0, Landroid/media/AudioService$AudioSystemThread;->this$0:Landroid/media/AudioService;
 
@@ -59,18 +65,23 @@
     #setter for: Landroid/media/AudioService;->mAudioHandler:Landroid/media/AudioService$AudioHandler;
     invoke-static {v0, v2}, Landroid/media/AudioService;->access$002(Landroid/media/AudioService;Landroid/media/AudioService$AudioHandler;)Landroid/media/AudioService$AudioHandler;
 
+    .line 3240
     iget-object v0, p0, Landroid/media/AudioService$AudioSystemThread;->this$0:Landroid/media/AudioService;
 
     invoke-virtual {v0}, Ljava/lang/Object;->notify()V
 
+    .line 3241
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 3244
     invoke-static {}, Landroid/os/Looper;->loop()V
 
+    .line 3245
     return-void
 
+    .line 3241
     :catchall_0
     move-exception v0
 

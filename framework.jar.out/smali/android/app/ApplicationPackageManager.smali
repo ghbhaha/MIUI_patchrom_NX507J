@@ -2970,12 +2970,10 @@
 
     move-result-object v6
 
-    .line 789
     invoke-static {v6, p1}, Landroid/app/Injector$ApplicationPackageManagerHook;->setResourcesPackageName(Landroid/content/res/Resources;Landroid/content/pm/ApplicationInfo;)V
    
     if-nez v6, :cond_0
 
-    .line 792
     new-instance v0, Landroid/content/pm/PackageManager$NameNotFoundException;
 
     new-instance v1, Ljava/lang/StringBuilder;

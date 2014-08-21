@@ -44,7 +44,7 @@
     .locals 4
 
     .prologue
-    .line 20
+    .line 23
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.media.action.STILL_IMAGE_CAMERA"
@@ -73,7 +73,7 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/CameraCtrl;->SECURE_CAMERA_INTENT:Landroid/content/Intent;
 
-    .line 26
+    .line 29
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.media.action.STILL_IMAGE_CAMERA"
@@ -109,59 +109,59 @@
 
     const/4 v0, 0x0
 
-    .line 51
+    .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 30
+    .line 33
     iput-object v0, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mContext:Landroid/content/Context;
 
-    .line 31
+    .line 34
     iput-object v0, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mPhoneWindowManager:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    .line 32
+    .line 35
     iput-object v0, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    .line 33
+    .line 36
     iput v1, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mCleckCount:I
 
-    .line 34
+    .line 37
     const/16 v0, 0x19
 
     iput v0, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mKeyCode:I
 
-    .line 35
+    .line 38
     iput-wide v2, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mKeyCleckTime:J
 
-    .line 36
+    .line 39
     iput v1, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mVolumeUpCleckCount:I
 
-    .line 37
+    .line 40
     iput-wide v2, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mVolumeUpCleckTime:J
 
-    .line 39
+    .line 42
     new-instance v0, Lcom/android/internal/policy/impl/CameraCtrl$1;
 
     invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/CameraCtrl$1;-><init>(Lcom/android/internal/policy/impl/CameraCtrl;)V
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mHandler:Landroid/os/Handler;
 
-    .line 44
+    .line 47
     new-instance v0, Lcom/android/internal/policy/impl/CameraCtrl$2;
 
     invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/CameraCtrl$2;-><init>(Lcom/android/internal/policy/impl/CameraCtrl;)V
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mCameraLongPress:Ljava/lang/Runnable;
 
-    .line 52
+    .line 55
     iput-object p1, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mContext:Landroid/content/Context;
 
-    .line 53
+    .line 56
     iput-object p2, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mPhoneWindowManager:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    .line 54
+    .line 57
     invoke-direct {p0}, Lcom/android/internal/policy/impl/CameraCtrl;->init()V
 
-    .line 55
+    .line 58
     return-void
 .end method
 
@@ -170,7 +170,7 @@
     .parameter "x0"
 
     .prologue
-    .line 16
+    .line 19
     iget-object v0, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mCameraLongPress:Ljava/lang/Runnable;
 
     return-object v0
@@ -181,7 +181,7 @@
     .parameter "x0"
 
     .prologue
-    .line 16
+    .line 19
     iget-object v0, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mHandler:Landroid/os/Handler;
 
     return-object v0
@@ -192,7 +192,7 @@
     .parameter "x0"
 
     .prologue
-    .line 16
+    .line 19
     invoke-direct {p0}, Lcom/android/internal/policy/impl/CameraCtrl;->startCamera()V
 
     return-void
@@ -202,7 +202,7 @@
     .locals 5
 
     .prologue
-    .line 167
+    .line 184
     :try_start_0
     iget-object v2, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mContext:Landroid/content/Context;
 
@@ -216,7 +216,7 @@
 
     check-cast v1, Landroid/app/ActivityManager;
 
-    .line 169
+    .line 186
     .local v1, mActivityManager:Landroid/app/ActivityManager;
     const-string v2, "com.android.camera"
 
@@ -224,16 +224,16 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 173
+    .line 190
     .end local v1           #mActivityManager:Landroid/app/ActivityManager;
     :goto_0
     return-void
 
-    .line 170
+    .line 187
     :catch_0
     move-exception v0
 
-    .line 171
+    .line 188
     .local v0, e:Ljava/lang/Exception;
     const-string v2, "CameraCtrl"
 
@@ -264,14 +264,14 @@
     .locals 8
 
     .prologue
-    .line 176
+    .line 193
     const/16 v2, 0x19
 
-    .line 178
+    .line 195
     .local v2, keyCode:I
     const/4 v1, 0x0
 
-    .line 180
+    .line 197
     .local v1, flashlighgtContext:Landroid/content/Context;
     :try_start_0
     iget-object v5, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mContext:Landroid/content/Context;
@@ -284,7 +284,7 @@
 
     move-result-object v1
 
-    .line 182
+    .line 199
     const-string v5, "capture_camera_keycode"
 
     const/4 v6, 0x4
@@ -293,7 +293,7 @@
 
     move-result-object v3
 
-    .line 184
+    .line 201
     .local v3, sp:Landroid/content/SharedPreferences;
     const-string v5, "camera_keycode"
 
@@ -303,21 +303,21 @@
 
     move-result v4
 
-    .line 185
+    .line 202
     .local v4, state:I
     move v2, v4
 
-    .line 189
+    .line 206
     .end local v3           #sp:Landroid/content/SharedPreferences;
     .end local v4           #state:I
     :goto_0
     return v2
 
-    .line 186
+    .line 203
     :catch_0
     move-exception v0
 
-    .line 187
+    .line 204
     .local v0, e:Ljava/lang/Exception;
     const-string v5, "CameraCtrl"
 
@@ -332,7 +332,7 @@
     .locals 4
 
     .prologue
-    .line 162
+    .line 179
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -348,7 +348,7 @@
     .locals 4
 
     .prologue
-    .line 158
+    .line 175
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -364,7 +364,7 @@
     .locals 3
 
     .prologue
-    .line 58
+    .line 61
     iget-object v1, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mContext:Landroid/content/Context;
 
     const-string v2, "power"
@@ -375,7 +375,7 @@
 
     check-cast v0, Landroid/os/PowerManager;
 
-    .line 60
+    .line 63
     .local v0, powerManager:Landroid/os/PowerManager;
     const/4 v1, 0x1
 
@@ -387,22 +387,126 @@
 
     iput-object v1, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    .line 62
+    .line 65
     return-void
+.end method
+
+.method private isCameraRunning()Z
+    .locals 7
+
+    .prologue
+    .line 246
+    const/4 v1, 0x0
+
+    .line 248
+    .local v1, flag:Z
+    :try_start_0
+    iget-object v4, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mContext:Landroid/content/Context;
+
+    iget-object v5, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mContext:Landroid/content/Context;
+
+    const-string v5, "activity"
+
+    invoke-virtual {v4, v5}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/app/ActivityManager;
+
+    .line 250
+    .local v2, mActivityManager:Landroid/app/ActivityManager;
+    const/4 v4, 0x1
+
+    invoke-virtual {v2, v4}, Landroid/app/ActivityManager;->getRunningTasks(I)Ljava/util/List;
+
+    move-result-object v3
+
+    .line 251
+    .local v3, taskInfo:Ljava/util/List;,"Ljava/util/List<Landroid/app/ActivityManager$RunningTaskInfo;>;"
+    invoke-interface {v3}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    if-lez v4, :cond_0
+
+    .line 252
+    const-string v5, "com.android.camera"
+
+    const/4 v4, 0x0
+
+    invoke-interface {v3, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Landroid/app/ActivityManager$RunningTaskInfo;
+
+    iget-object v4, v4, Landroid/app/ActivityManager$RunningTaskInfo;->topActivity:Landroid/content/ComponentName;
+
+    invoke-virtual {v4}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    .line 253
+    const/4 v1, 0x1
+
+    .line 259
+    .end local v2           #mActivityManager:Landroid/app/ActivityManager;
+    .end local v3           #taskInfo:Ljava/util/List;,"Ljava/util/List<Landroid/app/ActivityManager$RunningTaskInfo;>;"
+    :cond_0
+    :goto_0
+    return v1
+
+    .line 256
+    :catch_0
+    move-exception v0
+
+    .line 257
+    .local v0, e:Ljava/lang/Exception;
+    const-string v4, "CameraCtrl"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "check Camera filed: "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
 .end method
 
 .method private isCanEnterCamera()Z
     .locals 8
 
     .prologue
-    .line 193
+    .line 210
     const/4 v0, 0x1
 
-    .line 195
+    .line 212
     .local v0, bconfilc:Z
     const/4 v2, 0x0
 
-    .line 197
+    .line 214
     .local v2, flashlighgtContext:Landroid/content/Context;
     :try_start_0
     iget-object v5, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mContext:Landroid/content/Context;
@@ -415,7 +519,7 @@
 
     move-result-object v2
 
-    .line 199
+    .line 216
     const-string v5, "visitor"
 
     const/4 v6, 0x4
@@ -424,7 +528,7 @@
 
     move-result-object v3
 
-    .line 201
+    .line 218
     .local v3, sp:Landroid/content/SharedPreferences;
     const-string v5, "visitor"
 
@@ -436,20 +540,20 @@
 
     move-result v4
 
-    .line 202
+    .line 219
     .local v4, state:I
     if-nez v4, :cond_0
 
-    .line 203
+    .line 220
     const/4 v0, 0x1
 
-    .line 210
+    .line 227
     .end local v3           #sp:Landroid/content/SharedPreferences;
     .end local v4           #state:I
     :goto_0
     return v0
 
-    .line 205
+    .line 222
     .restart local v3       #sp:Landroid/content/SharedPreferences;
     .restart local v4       #state:I
     :cond_0
@@ -457,13 +561,13 @@
 
     goto :goto_0
 
-    .line 207
+    .line 224
     .end local v3           #sp:Landroid/content/SharedPreferences;
     .end local v4           #state:I
     :catch_0
     move-exception v1
 
-    .line 208
+    .line 225
     .local v1, e:Ljava/lang/Exception;
     const-string v5, "CameraCtrl"
 
@@ -478,15 +582,15 @@
     .locals 1
 
     .prologue
-    .line 65
+    .line 68
     iget-object v0, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mPhoneWindowManager:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     if-nez v0, :cond_0
 
-    .line 66
+    .line 69
     const/4 v0, 0x0
 
-    .line 67
+    .line 70
     :goto_0
     return v0
 
@@ -504,15 +608,15 @@
     .locals 1
 
     .prologue
-    .line 71
+    .line 74
     iget-object v0, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mPhoneWindowManager:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     if-nez v0, :cond_0
 
-    .line 72
+    .line 75
     const/4 v0, 0x0
 
-    .line 73
+    .line 76
     :goto_0
     return v0
 
@@ -526,14 +630,59 @@
     goto :goto_0
 .end method
 
+.method private sendHomeIntentToCamera()V
+    .locals 4
+
+    .prologue
+    .line 152
+    :try_start_0
+    new-instance v1, Landroid/content/Intent;
+
+    const-string v2, "com.android.camera.homeKey"
+
+    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    .line 154
+    .local v1, in:Landroid/content/Intent;
+    const-string v2, "com.android.camera"
+
+    invoke-virtual {v1, v2}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 155
+    iget-object v2, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 159
+    .end local v1           #in:Landroid/content/Intent;
+    :goto_0
+    return-void
+
+    .line 156
+    :catch_0
+    move-exception v0
+
+    .line 157
+    .local v0, e:Ljava/lang/Exception;
+    const-string v2, "CameraCtrl"
+
+    const-string v3, "send home intent failed"
+
+    invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_0
+.end method
+
 .method private startCamera()V
     .locals 5
 
     .prologue
-    .line 214
+    .line 231
     invoke-direct {p0}, Lcom/android/internal/policy/impl/CameraCtrl;->closeCamera()V
 
-    .line 216
+    .line 233
     :try_start_0
     iget-object v2, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mPhoneWindowManager:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
@@ -543,7 +692,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/os/Vibrator;->vibrate(J)V
 
-    .line 217
+    .line 234
     invoke-direct {p0}, Lcom/android/internal/policy/impl/CameraCtrl;->isKeyguardSecure()Z
 
     move-result v2
@@ -552,24 +701,24 @@
 
     sget-object v1, Lcom/android/internal/policy/impl/CameraCtrl;->SECURE_CAMERA_INTENT:Landroid/content/Intent;
 
-    .line 219
+    .line 236
     .local v1, intent:Landroid/content/Intent;
     :goto_0
     const/high16 v2, 0x3400
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 222
+    .line 239
     iget-object v2, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 226
+    .line 243
     .end local v1           #intent:Landroid/content/Intent;
     :goto_1
     return-void
 
-    .line 217
+    .line 234
     :cond_0
     sget-object v1, Lcom/android/internal/policy/impl/CameraCtrl;->INSECURE_CAMERA_INTENT:Landroid/content/Intent;
     :try_end_0
@@ -577,11 +726,11 @@
 
     goto :goto_0
 
-    .line 223
+    .line 240
     :catch_0
     move-exception v0
 
-    .line 224
+    .line 241
     .local v0, e:Ljava/lang/Exception;
     const-string v2, "CameraCtrl"
 
@@ -596,20 +745,20 @@
     .locals 5
 
     .prologue
-    .line 146
+    .line 163
     :try_start_0
     iget-object v2, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     if-eqz v2, :cond_0
 
-    .line 147
+    .line 164
     iget-object v2, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     const-wide/16 v3, 0x1388
 
     invoke-virtual {v2, v3, v4}, Landroid/os/PowerManager$WakeLock;->acquire(J)V
 
-    .line 149
+    .line 166
     :cond_0
     new-instance v1, Landroid/content/Intent;
 
@@ -617,7 +766,7 @@
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 151
+    .line 168
     .local v1, in:Landroid/content/Intent;
     iget-object v2, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mContext:Landroid/content/Context;
 
@@ -625,16 +774,16 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 155
+    .line 172
     .end local v1           #in:Landroid/content/Intent;
     :goto_0
     return-void
 
-    .line 152
+    .line 169
     :catch_0
     move-exception v0
 
-    .line 153
+    .line 170
     .local v0, e:Ljava/lang/Exception;
     const-string v2, "CameraCtrl"
 
@@ -654,14 +803,14 @@
     .parameter "policyFlags"
 
     .prologue
-    .line 79
+    .line 82
     iget-object v1, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mPhoneWindowManager:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-virtual {v1}, Lcom/android/internal/policy/impl/PhoneWindowManager;->keyguardOn()Z
 
     move-result v0
 
-    .line 80
+    .line 83
     .local v0, keyguardOn:Z
     invoke-virtual {p2}, Landroid/view/KeyEvent;->getKeyCode()I
 
@@ -671,7 +820,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 81
+    .line 84
     if-eqz v0, :cond_0
 
     invoke-virtual {p2}, Landroid/view/KeyEvent;->isLongPress()Z
@@ -686,11 +835,32 @@
 
     if-eqz v1, :cond_0
 
-    .line 82
-    invoke-direct {p0}, Lcom/android/internal/policy/impl/CameraCtrl;->startCamera()V
+    invoke-direct {p0}, Lcom/android/internal/policy/impl/CameraCtrl;->isCameraRunning()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
 
     .line 85
+    invoke-direct {p0}, Lcom/android/internal/policy/impl/CameraCtrl;->startCamera()V
+
+    .line 88
     :cond_0
+    invoke-virtual {p2}, Landroid/view/KeyEvent;->getKeyCode()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    if-ne v1, v2, :cond_1
+
+    if-eqz v0, :cond_1
+
+    .line 89
+    invoke-direct {p0}, Lcom/android/internal/policy/impl/CameraCtrl;->sendHomeIntentToCamera()V
+
+    .line 91
+    :cond_1
     const-wide/high16 v1, -0x8000
 
     return-wide v1
@@ -713,7 +883,7 @@
 
     const/4 v2, 0x1
 
-    .line 91
+    .line 97
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
 
     move-result v4
@@ -722,7 +892,7 @@
 
     move v0, v2
 
-    .line 92
+    .line 98
     .local v0, down:Z
     :goto_0
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
@@ -733,7 +903,7 @@
 
     move v1, v2
 
-    .line 93
+    .line 99
     .local v1, up:Z
     :goto_1
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
@@ -744,10 +914,10 @@
 
     if-ne v4, v5, :cond_0
 
-    .line 94
+    .line 100
     if-eqz v0, :cond_5
 
-    .line 95
+    .line 101
     if-nez p3, :cond_0
 
     invoke-direct {p0}, Lcom/android/internal/policy/impl/CameraCtrl;->isCanEnterCamera()Z
@@ -756,7 +926,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 96
+    .line 102
     iget-object v4, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mHandler:Landroid/os/Handler;
 
     iget-object v5, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mCameraLongPress:Ljava/lang/Runnable;
@@ -767,26 +937,26 @@
 
     if-nez v4, :cond_0
 
-    .line 97
+    .line 103
     iget-object v4, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     if-eqz v4, :cond_0
 
-    .line 98
+    .line 104
     iget-object v4, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     const-wide/16 v5, 0x1388
 
     invoke-virtual {v4, v5, v6}, Landroid/os/PowerManager$WakeLock;->acquire(J)V
 
-    .line 99
+    .line 105
     iget-object v4, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mHandler:Landroid/os/Handler;
 
     iget-object v5, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mCameraLongPress:Ljava/lang/Runnable;
 
     invoke-virtual {v4, v5, v7, v8}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 107
+    .line 113
     :cond_0
     :goto_2
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
@@ -797,29 +967,29 @@
 
     if-ne v4, v5, :cond_1
 
-    .line 108
+    .line 114
     if-eqz v0, :cond_1
 
-    .line 109
+    .line 115
     iget v4, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mCleckCount:I
 
     add-int/lit8 v4, v4, 0x1
 
     iput v4, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mCleckCount:I
 
-    .line 110
+    .line 116
     iget v4, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mCleckCount:I
 
     if-ne v4, v2, :cond_6
 
-    .line 111
+    .line 117
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
 
     iput-wide v4, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mKeyCleckTime:J
 
-    .line 124
+    .line 130
     :cond_1
     :goto_3
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
@@ -830,29 +1000,29 @@
 
     if-ne v4, v5, :cond_2
 
-    .line 125
+    .line 131
     if-eqz v0, :cond_2
 
-    .line 126
+    .line 132
     iget v4, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mVolumeUpCleckCount:I
 
     add-int/lit8 v4, v4, 0x1
 
     iput v4, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mVolumeUpCleckCount:I
 
-    .line 127
+    .line 133
     iget v4, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mVolumeUpCleckCount:I
 
     if-ne v4, v2, :cond_8
 
-    .line 128
+    .line 134
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
 
     iput-wide v2, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mVolumeUpCleckTime:J
 
-    .line 141
+    .line 147
     :cond_2
     :goto_4
     const/4 v2, -0x1
@@ -864,22 +1034,22 @@
     :cond_3
     move v0, v3
 
-    .line 91
+    .line 97
     goto :goto_0
 
     .restart local v0       #down:Z
     :cond_4
     move v1, v3
 
-    .line 92
+    .line 98
     goto :goto_1
 
-    .line 103
+    .line 109
     .restart local v1       #up:Z
     :cond_5
     if-eqz v1, :cond_0
 
-    .line 104
+    .line 110
     iget-object v4, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mHandler:Landroid/os/Handler;
 
     iget-object v5, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mCameraLongPress:Ljava/lang/Runnable;
@@ -888,7 +1058,7 @@
 
     goto :goto_2
 
-    .line 112
+    .line 118
     :cond_6
     iget v4, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mCleckCount:I
 
@@ -902,29 +1072,29 @@
 
     if-gez v4, :cond_7
 
-    .line 114
+    .line 120
     const-string v4, "CameraCtrl"
 
     const-string v5, "CameraCtrl send captureCamera intent"
 
     invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 115
+    .line 121
     invoke-direct {p0}, Lcom/android/internal/policy/impl/CameraCtrl;->startCaptureCamearService()V
 
-    .line 116
+    .line 122
     iput v3, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mCleckCount:I
 
-    .line 117
+    .line 123
     iput-wide v10, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mKeyCleckTime:J
 
     goto :goto_3
 
-    .line 119
+    .line 125
     :cond_7
     iput v2, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mCleckCount:I
 
-    .line 120
+    .line 126
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
@@ -933,7 +1103,7 @@
 
     goto :goto_3
 
-    .line 129
+    .line 135
     :cond_8
     iget v4, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mVolumeUpCleckCount:I
 
@@ -947,29 +1117,29 @@
 
     if-gez v4, :cond_9
 
-    .line 131
+    .line 137
     const-string v2, "CameraCtrl"
 
     const-string v4, "CameraCtrl send captureCamera intent"
 
     invoke-static {v2, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 132
+    .line 138
     invoke-direct {p0}, Lcom/android/internal/policy/impl/CameraCtrl;->startCaptureCamearService()V
 
-    .line 133
+    .line 139
     iput v3, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mVolumeUpCleckCount:I
 
-    .line 134
+    .line 140
     iput-wide v10, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mVolumeUpCleckTime:J
 
     goto :goto_4
 
-    .line 136
+    .line 142
     :cond_9
     iput v2, p0, Lcom/android/internal/policy/impl/CameraCtrl;->mVolumeUpCleckCount:I
 
-    .line 137
+    .line 143
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2

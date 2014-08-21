@@ -3646,7 +3646,7 @@
     .line 2716
     new-instance v6, Lcom/android/server/InputMethodManagerService$ImeSubtypeListAdapter;
 
-    const v22, 0x10900af
+    const v22, 0x10900b0
 
     move/from16 v0, v22
 

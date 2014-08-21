@@ -42,26 +42,26 @@
     .parameter
 
     .prologue
-    .line 872
+    .line 875
     iput-object p1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$8;->this$0:Lcom/android/server/display/nubiaOverlayDisplayWindow;
 
     iput-object p2, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$8;->val$listener:Lcom/android/server/display/OnDoubleTouchListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 874
+    .line 877
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$8;->waitDouble:Z
 
-    .line 876
+    .line 879
     new-instance v0, Lcom/android/server/display/nubiaOverlayDisplayWindow$8$1;
 
     invoke-direct {v0, p0}, Lcom/android/server/display/nubiaOverlayDisplayWindow$8$1;-><init>(Lcom/android/server/display/nubiaOverlayDisplayWindow$8;)V
 
     iput-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$8;->handler:Landroid/os/Handler;
 
-    .line 888
+    .line 891
     new-instance v0, Landroid/view/GestureDetector;
 
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$8;->this$0:Lcom/android/server/display/nubiaOverlayDisplayWindow;
@@ -87,7 +87,7 @@
     .parameter "x0"
 
     .prologue
-    .line 872
+    .line 875
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$8;->handler:Landroid/os/Handler;
 
     return-object v0
@@ -101,7 +101,7 @@
     .parameter "event"
 
     .prologue
-    .line 909
+    .line 912
     iget-object v2, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$8;->this$0:Lcom/android/server/display/nubiaOverlayDisplayWindow;
 
     #getter for: Lcom/android/server/display/nubiaOverlayDisplayWindow;->mSingleParams:Landroid/widget/AbsoluteLayout$LayoutParams;
@@ -111,20 +111,20 @@
 
     if-nez v2, :cond_0
 
-    .line 910
+    .line 913
     const/4 v2, 0x0
 
-    .line 921
+    .line 924
     :goto_0
     return v2
 
-    .line 912
+    .line 915
     :cond_0
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 913
+    .line 916
     .local v0, action:I
     new-instance v1, Landroid/graphics/Rect;
 
@@ -188,7 +188,7 @@
 
     invoke-direct {v1, v2, v3, v4, v5}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 918
+    .line 921
     .local v1, r:Landroid/graphics/Rect;
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawX()F
 
@@ -208,12 +208,12 @@
 
     if-nez v2, :cond_1
 
-    .line 919
+    .line 922
     iget-object v2, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$8;->singleGestureDetector:Landroid/view/GestureDetector;
 
     invoke-virtual {v2, p2}, Landroid/view/GestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 921
+    .line 924
     :cond_1
     const/4 v2, 0x1
 

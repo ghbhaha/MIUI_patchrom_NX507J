@@ -2959,11 +2959,9 @@
 
     iget v4, p0, Lcom/android/server/am/ActivityStackSupervisor;->mDisplayId:I
 
-    invoke-interface {v3, v4}, Lcom/android/server/am/IAmSmartShowFuncs;->showHomeBehindStackLocked(I)Z
+    invoke-interface {v3, v4, v0}, Lcom/android/server/am/IAmSmartShowFuncs;->showHomeBehindStackLocked(IZ)Z
 
-    move-result v3
-
-    or-int/2addr v0, v3
+    move-result v0
 
     .line 2615
     :cond_2

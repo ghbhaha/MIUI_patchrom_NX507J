@@ -64,80 +64,97 @@
 
     const/4 v2, 0x0
 
+    .line 100
     invoke-direct {p0}, Lcom/android/internal/telephony/CallTracker;-><init>()V
 
+    .line 68
     new-array v0, v3, [Lcom/android/internal/telephony/gsm/GsmConnection;
 
     iput-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mConnections:[Lcom/android/internal/telephony/gsm/GsmConnection;
 
+    .line 69
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mVoiceCallEndedRegistrants:Landroid/os/RegistrantList;
 
+    .line 70
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mVoiceCallStartedRegistrants:Landroid/os/RegistrantList;
 
+    .line 74
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0, v3}, Ljava/util/ArrayList;-><init>(I)V
 
     iput-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mDroppedDuringPoll:Ljava/util/ArrayList;
 
+    .line 77
     new-instance v0, Lcom/android/internal/telephony/gsm/GsmCall;
 
     invoke-direct {v0, p0}, Lcom/android/internal/telephony/gsm/GsmCall;-><init>(Lcom/android/internal/telephony/gsm/GsmCallTracker;)V
 
     iput-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mRingingCall:Lcom/android/internal/telephony/gsm/GsmCall;
 
+    .line 79
     new-instance v0, Lcom/android/internal/telephony/gsm/GsmCall;
 
     invoke-direct {v0, p0}, Lcom/android/internal/telephony/gsm/GsmCall;-><init>(Lcom/android/internal/telephony/gsm/GsmCallTracker;)V
 
     iput-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mForegroundCall:Lcom/android/internal/telephony/gsm/GsmCall;
 
+    .line 80
     new-instance v0, Lcom/android/internal/telephony/gsm/GsmCall;
 
     invoke-direct {v0, p0}, Lcom/android/internal/telephony/gsm/GsmCall;-><init>(Lcom/android/internal/telephony/gsm/GsmCallTracker;)V
 
     iput-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mBackgroundCall:Lcom/android/internal/telephony/gsm/GsmCall;
 
+    .line 85
     iput-boolean v1, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->callSwitchPending:Z
 
+    .line 89
     iput-boolean v1, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mDesiredMute:Z
 
+    .line 91
     sget-object v0, Lcom/android/internal/telephony/PhoneConstants$State;->IDLE:Lcom/android/internal/telephony/PhoneConstants$State;
 
     iput-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mState:Lcom/android/internal/telephony/PhoneConstants$State;
 
+    .line 101
     iput-object p1, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPhone:Lcom/android/internal/telephony/gsm/GSMPhone;
 
+    .line 102
     iget-object v0, p1, Lcom/android/internal/telephony/PhoneBase;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     iput-object v0, p0, Lcom/android/internal/telephony/CallTracker;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
+    .line 104
     iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     const/4 v1, 0x2
 
     invoke-interface {v0, p0, v1, v2}, Lcom/android/internal/telephony/CommandsInterface;->registerForCallStateChanged(Landroid/os/Handler;ILjava/lang/Object;)V
 
+    .line 106
     iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     const/16 v1, 0x9
 
     invoke-interface {v0, p0, v1, v2}, Lcom/android/internal/telephony/CommandsInterface;->registerForOn(Landroid/os/Handler;ILjava/lang/Object;)V
 
+    .line 107
     iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     const/16 v1, 0xa
 
     invoke-interface {v0, p0, v1, v2}, Lcom/android/internal/telephony/CommandsInterface;->registerForNotAvailable(Landroid/os/Handler;ILjava/lang/Object;)V
 
+    .line 108
     return-void
 .end method
 
@@ -145,6 +162,7 @@
     .locals 6
 
     .prologue
+    .line 729
     const-string v3, "GsmCallTracker"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -169,6 +187,7 @@
 
     invoke-static {v3, v4}, Landroid/telephony/Rlog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 731
     const-string v3, "GsmCallTracker"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -197,12 +216,14 @@
 
     invoke-static {v3, v4}, Landroid/telephony/Rlog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 733
     iget-object v3, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mRingingCall:Lcom/android/internal/telephony/gsm/GsmCall;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/gsm/GsmCall;->getConnections()Ljava/util/List;
 
     move-result-object v1
 
+    .line 734
     .local v1, l:Ljava/util/List;
     const/4 v0, 0x0
 
@@ -215,6 +236,7 @@
     :goto_0
     if-ge v0, v2, :cond_0
 
+    .line 735
     const-string v3, "GsmCallTracker"
 
     invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -227,10 +249,12 @@
 
     invoke-static {v3, v4}, Landroid/telephony/Rlog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 734
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
+    .line 738
     :cond_0
     const-string v3, "GsmCallTracker"
 
@@ -260,12 +284,14 @@
 
     invoke-static {v3, v4}, Landroid/telephony/Rlog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 740
     iget-object v3, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mForegroundCall:Lcom/android/internal/telephony/gsm/GsmCall;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/gsm/GsmCall;->getConnections()Ljava/util/List;
 
     move-result-object v1
 
+    .line 741
     const/4 v0, 0x0
 
     invoke-interface {v1}, Ljava/util/List;->size()I
@@ -275,6 +301,7 @@
     :goto_1
     if-ge v0, v2, :cond_1
 
+    .line 742
     const-string v3, "GsmCallTracker"
 
     invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -287,10 +314,12 @@
 
     invoke-static {v3, v4}, Landroid/telephony/Rlog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 741
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
+    .line 745
     :cond_1
     const-string v3, "GsmCallTracker"
 
@@ -320,12 +349,14 @@
 
     invoke-static {v3, v4}, Landroid/telephony/Rlog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 747
     iget-object v3, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mBackgroundCall:Lcom/android/internal/telephony/gsm/GsmCall;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/gsm/GsmCall;->getConnections()Ljava/util/List;
 
     move-result-object v1
 
+    .line 748
     const/4 v0, 0x0
 
     invoke-interface {v1}, Ljava/util/List;->size()I
@@ -335,6 +366,7 @@
     :goto_2
     if-ge v0, v2, :cond_2
 
+    .line 749
     const-string v3, "GsmCallTracker"
 
     invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -347,10 +379,12 @@
 
     invoke-static {v3, v4}, Landroid/telephony/Rlog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 748
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
+    .line 752
     :cond_2
     return-void
 .end method
@@ -359,6 +393,7 @@
     .locals 5
 
     .prologue
+    .line 179
     iget-object v4, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mForegroundCall:Lcom/android/internal/telephony/gsm/GsmCall;
 
     iget-object v4, v4, Lcom/android/internal/telephony/Call;->mConnections:Ljava/util/ArrayList;
@@ -369,6 +404,7 @@
 
     check-cast v1, Ljava/util/List;
 
+    .line 181
     .local v1, connCopy:Ljava/util/List;,"Ljava/util/List<Lcom/android/internal/telephony/Connection;>;"
     const/4 v2, 0x0
 
@@ -381,19 +417,23 @@
     :goto_0
     if-ge v2, v3, :cond_0
 
+    .line 182
     invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/internal/telephony/gsm/GsmConnection;
 
+    .line 184
     .local v0, conn:Lcom/android/internal/telephony/gsm/GsmConnection;
     invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/GsmConnection;->fakeHoldBeforeDial()V
 
+    .line 181
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
+    .line 186
     .end local v0           #conn:Lcom/android/internal/telephony/gsm/GsmConnection;
     :cond_0
     return-void
@@ -404,34 +444,41 @@
     .parameter "what"
 
     .prologue
+    .line 911
     packed-switch p1, :pswitch_data_0
 
+    .line 921
     :pswitch_0
     sget-object v0, Lcom/android/internal/telephony/Phone$SuppService;->UNKNOWN:Lcom/android/internal/telephony/Phone$SuppService;
 
     :goto_0
     return-object v0
 
+    .line 913
     :pswitch_1
     sget-object v0, Lcom/android/internal/telephony/Phone$SuppService;->SWITCH:Lcom/android/internal/telephony/Phone$SuppService;
 
     goto :goto_0
 
+    .line 915
     :pswitch_2
     sget-object v0, Lcom/android/internal/telephony/Phone$SuppService;->CONFERENCE:Lcom/android/internal/telephony/Phone$SuppService;
 
     goto :goto_0
 
+    .line 917
     :pswitch_3
     sget-object v0, Lcom/android/internal/telephony/Phone$SuppService;->SEPARATE:Lcom/android/internal/telephony/Phone$SuppService;
 
     goto :goto_0
 
+    .line 919
     :pswitch_4
     sget-object v0, Lcom/android/internal/telephony/Phone$SuppService;->TRANSFER:Lcom/android/internal/telephony/Phone$SuppService;
 
     goto :goto_0
 
+    .line 911
     :pswitch_data_0
     .packed-switch 0x8
         :pswitch_1
@@ -447,8 +494,10 @@
     .locals 0
 
     .prologue
+    .line 722
     invoke-virtual {p0}, Lcom/android/internal/telephony/CallTracker;->pollCallsWhenSafe()V
 
+    .line 723
     return-void
 .end method
 
@@ -456,18 +505,22 @@
     .locals 1
 
     .prologue
+    .line 404
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mRingingCall:Lcom/android/internal/telephony/gsm/GsmCall;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/GsmCall;->clearDisconnected()V
 
+    .line 405
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mForegroundCall:Lcom/android/internal/telephony/gsm/GsmCall;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/GsmCall;->clearDisconnected()V
 
+    .line 406
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mBackgroundCall:Lcom/android/internal/telephony/gsm/GsmCall;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/GsmCall;->clearDisconnected()V
 
+    .line 407
     return-void
 .end method
 
@@ -475,6 +528,7 @@
     .locals 1
 
     .prologue
+    .line 415
     const/4 v0, 0x4
 
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->obtainCompleteMessage(I)Landroid/os/Message;
@@ -489,20 +543,24 @@
     .parameter "what"
 
     .prologue
+    .line 424
     iget v0, p0, Lcom/android/internal/telephony/CallTracker;->mPendingOperations:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/internal/telephony/CallTracker;->mPendingOperations:I
 
+    .line 425
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/telephony/CallTracker;->mLastRelevantPoll:Landroid/os/Message;
 
+    .line 426
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/CallTracker;->mNeedsPoll:Z
 
+    .line 433
     invoke-virtual {p0, p1}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
@@ -516,20 +574,24 @@
     .parameter "clirMode"
 
     .prologue
+    .line 438
     iget v0, p0, Lcom/android/internal/telephony/CallTracker;->mPendingOperations:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/internal/telephony/CallTracker;->mPendingOperations:I
 
+    .line 439
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/telephony/CallTracker;->mLastRelevantPoll:Landroid/os/Message;
 
+    .line 440
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/CallTracker;->mNeedsPoll:Z
 
+    .line 447
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -545,12 +607,14 @@
     .locals 2
 
     .prologue
+    .line 452
     iget v0, p0, Lcom/android/internal/telephony/CallTracker;->mPendingOperations:I
 
     add-int/lit8 v0, v0, -0x1
 
     iput v0, p0, Lcom/android/internal/telephony/CallTracker;->mPendingOperations:I
 
+    .line 459
     iget v0, p0, Lcom/android/internal/telephony/CallTracker;->mPendingOperations:I
 
     if-nez v0, :cond_1
@@ -559,6 +623,7 @@
 
     if-eqz v0, :cond_1
 
+    .line 460
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
@@ -567,27 +632,32 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/CallTracker;->mLastRelevantPoll:Landroid/os/Message;
 
+    .line 461
     iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     iget-object v1, p0, Lcom/android/internal/telephony/CallTracker;->mLastRelevantPoll:Landroid/os/Message;
 
     invoke-interface {v0, v1}, Lcom/android/internal/telephony/CommandsInterface;->getCurrentCalls(Landroid/os/Message;)V
 
+    .line 467
     :cond_0
     :goto_0
     return-void
 
+    .line 462
     :cond_1
     iget v0, p0, Lcom/android/internal/telephony/CallTracker;->mPendingOperations:I
 
     if-gez v0, :cond_0
 
+    .line 464
     const-string v0, "GsmCallTracker"
 
     const-string v1, "GsmCallTracker.pendingOperations < 0"
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 465
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/telephony/CallTracker;->mPendingOperations:I
@@ -601,8 +671,10 @@
     .prologue
     const/4 v3, 0x0
 
+    .line 471
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mState:Lcom/android/internal/telephony/PhoneConstants$State;
 
+    .line 473
     .local v0, oldState:Lcom/android/internal/telephony/PhoneConstants$State;
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mRingingCall:Lcom/android/internal/telephony/gsm/GsmCall;
 
@@ -612,10 +684,12 @@
 
     if-eqz v1, :cond_2
 
+    .line 474
     sget-object v1, Lcom/android/internal/telephony/PhoneConstants$State;->RINGING:Lcom/android/internal/telephony/PhoneConstants$State;
 
     iput-object v1, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mState:Lcom/android/internal/telephony/PhoneConstants$State;
 
+    .line 482
     :goto_0
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mState:Lcom/android/internal/telephony/PhoneConstants$State;
 
@@ -627,6 +701,7 @@
 
     if-eq v0, v1, :cond_5
 
+    .line 483
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mVoiceCallEndedRegistrants:Landroid/os/RegistrantList;
 
     new-instance v2, Landroid/os/AsyncResult;
@@ -635,19 +710,23 @@
 
     invoke-virtual {v1, v2}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
 
+    .line 490
     :cond_0
     :goto_1
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mState:Lcom/android/internal/telephony/PhoneConstants$State;
 
     if-eq v1, v0, :cond_1
 
+    .line 491
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPhone:Lcom/android/internal/telephony/gsm/GSMPhone;
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/GSMPhone;->notifyPhoneStateChanged()V
 
+    .line 493
     :cond_1
     return-void
 
+    .line 475
     :cond_2
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPendingMO:Lcom/android/internal/telephony/gsm/GsmConnection;
 
@@ -669,6 +748,7 @@
 
     if-nez v1, :cond_4
 
+    .line 477
     :cond_3
     sget-object v1, Lcom/android/internal/telephony/PhoneConstants$State;->OFFHOOK:Lcom/android/internal/telephony/PhoneConstants$State;
 
@@ -676,6 +756,7 @@
 
     goto :goto_0
 
+    .line 479
     :cond_4
     sget-object v1, Lcom/android/internal/telephony/PhoneConstants$State;->IDLE:Lcom/android/internal/telephony/PhoneConstants$State;
 
@@ -683,6 +764,7 @@
 
     goto :goto_0
 
+    .line 485
     :cond_5
     sget-object v1, Lcom/android/internal/telephony/PhoneConstants$State;->IDLE:Lcom/android/internal/telephony/PhoneConstants$State;
 
@@ -692,6 +774,7 @@
 
     if-eq v0, v1, :cond_0
 
+    .line 486
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mVoiceCallStartedRegistrants:Landroid/os/RegistrantList;
 
     new-instance v2, Landroid/os/AsyncResult;
@@ -716,6 +799,7 @@
     .prologue
     const/4 v2, 0x0
 
+    .line 298
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mRingingCall:Lcom/android/internal/telephony/gsm/GsmCall;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/Call;->getState()Lcom/android/internal/telephony/Call$State;
@@ -726,14 +810,17 @@
 
     if-ne v0, v1, :cond_0
 
+    .line 299
     const-string v0, "phone"
 
     const-string v1, "acceptCall: incoming..."
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 301
     invoke-virtual {p0, v2}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->setMute(Z)V
 
+    .line 302
     iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->obtainCompleteMessage()Landroid/os/Message;
@@ -742,9 +829,11 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/telephony/CommandsInterface;->acceptCall(Landroid/os/Message;)V
 
+    .line 309
     :goto_0
     return-void
 
+    .line 303
     :cond_0
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mRingingCall:Lcom/android/internal/telephony/gsm/GsmCall;
 
@@ -756,12 +845,15 @@
 
     if-ne v0, v1, :cond_1
 
+    .line 304
     invoke-virtual {p0, v2}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->setMute(Z)V
 
+    .line 305
     invoke-virtual {p0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->switchWaitingOrHoldingAndActive()V
 
     goto :goto_0
 
+    .line 307
     :cond_1
     new-instance v0, Lcom/android/internal/telephony/CallStateException;
 
@@ -776,6 +868,7 @@
     .locals 2
 
     .prologue
+    .line 369
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mForegroundCall:Lcom/android/internal/telephony/gsm/GsmCall;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/Call;->getState()Lcom/android/internal/telephony/Call$State;
@@ -827,6 +920,7 @@
     .locals 5
 
     .prologue
+    .line 378
     iget-object v3, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPhone:Lcom/android/internal/telephony/gsm/GSMPhone;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/gsm/GSMPhone;->getServiceState()Landroid/telephony/ServiceState;
@@ -837,6 +931,7 @@
 
     move-result v2
 
+    .line 379
     .local v2, serviceState:I
     const-string v3, "ro.telephony.disable-call"
 
@@ -846,6 +941,7 @@
 
     move-result-object v0
 
+    .line 382
     .local v0, disableCall:Ljava/lang/String;
     const/4 v3, 0x3
 
@@ -898,10 +994,12 @@
     :cond_0
     const/4 v1, 0x1
 
+    .line 389
     .local v1, ret:Z
     :goto_0
     return v1
 
+    .line 382
     .end local v1           #ret:Z
     :cond_1
     const/4 v1, 0x0
@@ -913,6 +1011,7 @@
     .locals 2
 
     .prologue
+    .line 394
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mForegroundCall:Lcom/android/internal/telephony/gsm/GsmCall;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/Call;->getState()Lcom/android/internal/telephony/Call$State;
@@ -969,14 +1068,18 @@
     .locals 1
 
     .prologue
+    .line 361
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->internalClearDisconnected()V
 
+    .line 363
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->updatePhoneState()V
 
+    .line 364
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPhone:Lcom/android/internal/telephony/gsm/GSMPhone;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/GSMPhone;->notifyPreciseCallStateChanged()V
 
+    .line 365
     return-void
 .end method
 
@@ -984,6 +1087,7 @@
     .locals 2
 
     .prologue
+    .line 338
     iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     const/16 v1, 0xb
@@ -994,6 +1098,7 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/telephony/CommandsInterface;->conference(Landroid/os/Message;)V
 
+    .line 339
     return-void
 .end method
 
@@ -1007,6 +1112,7 @@
     .end annotation
 
     .prologue
+    .line 259
     const/4 v0, 0x0
 
     const/4 v1, 0x0
@@ -1029,6 +1135,7 @@
     .end annotation
 
     .prologue
+    .line 269
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, v0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->dial(Ljava/lang/String;ILcom/android/internal/telephony/UUSInfo;)Lcom/android/internal/telephony/Connection;
@@ -1050,13 +1157,16 @@
     .end annotation
 
     .prologue
+    .line 194
     monitor-enter p0
 
     :try_start_0
     invoke-virtual {p0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->clearDisconnected()V
 
+    .line 197
     const/4 v0, 0x0
 
+    .line 199
     .local v0, isDialRequestPending:Z
     invoke-virtual {p0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->canDial()Z
 
@@ -1064,6 +1174,7 @@
 
     if-nez v1, :cond_0
 
+    .line 200
     new-instance v1, Lcom/android/internal/telephony/CallStateException;
 
     const-string v2, "cannot dial in current state"
@@ -1074,6 +1185,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 194
     .end local v0           #isDialRequestPending:Z
     :catchall_0
     move-exception v1
@@ -1082,6 +1194,7 @@
 
     throw v1
 
+    .line 206
     .restart local v0       #isDialRequestPending:Z
     :cond_0
     :try_start_1
@@ -1095,12 +1208,16 @@
 
     if-ne v1, v2, :cond_1
 
+    .line 211
     invoke-virtual {p0, p2}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->switchWaitingOrHoldingAndActive(I)V
 
+    .line 217
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->fakeHoldForegroundBeforeDial()V
 
+    .line 218
     const/4 v0, 0x1
 
+    .line 221
     :cond_1
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mForegroundCall:Lcom/android/internal/telephony/gsm/GsmCall;
 
@@ -1112,6 +1229,7 @@
 
     if-eq v1, v2, :cond_2
 
+    .line 223
     new-instance v1, Lcom/android/internal/telephony/CallStateException;
 
     const-string v2, "cannot dial in current state"
@@ -1120,6 +1238,7 @@
 
     throw v1
 
+    .line 226
     :cond_2
     new-instance v1, Lcom/android/internal/telephony/gsm/GsmConnection;
 
@@ -1139,10 +1258,12 @@
 
     iput-object v1, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPendingMO:Lcom/android/internal/telephony/gsm/GsmConnection;
 
+    .line 228
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mHangupPendingMO:Z
 
+    .line 230
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPendingMO:Lcom/android/internal/telephony/gsm/GsmConnection;
 
     iget-object v1, v1, Lcom/android/internal/telephony/gsm/GsmConnection;->mAddress:Ljava/lang/String;
@@ -1171,6 +1292,7 @@
 
     if-ltz v1, :cond_5
 
+    .line 234
     :cond_3
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPendingMO:Lcom/android/internal/telephony/gsm/GsmConnection;
 
@@ -1178,16 +1300,20 @@
 
     iput-object v2, v1, Lcom/android/internal/telephony/gsm/GsmConnection;->mCause:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 238
     invoke-virtual {p0}, Lcom/android/internal/telephony/CallTracker;->pollCallsWhenSafe()V
 
+    .line 251
     :cond_4
     :goto_0
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->updatePhoneState()V
 
+    .line 252
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPhone:Lcom/android/internal/telephony/gsm/GSMPhone;
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/GSMPhone;->notifyPreciseCallStateChanged()V
 
+    .line 254
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPendingMO:Lcom/android/internal/telephony/gsm/GsmConnection;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -1196,14 +1322,17 @@
 
     return-object v1
 
+    .line 243
     :cond_5
     if-nez v0, :cond_4
 
+    .line 245
     const/4 v1, 0x0
 
     :try_start_2
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->setMute(Z)V
 
+    .line 247
     iget-object v1, p0, Lcom/android/internal/telephony/CallTracker;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     iget-object v2, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPendingMO:Lcom/android/internal/telephony/gsm/GsmConnection;
@@ -1232,6 +1361,7 @@
     .end annotation
 
     .prologue
+    .line 264
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0, p2}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->dial(Ljava/lang/String;ILcom/android/internal/telephony/UUSInfo;)Lcom/android/internal/telephony/Connection;
@@ -1246,6 +1376,7 @@
     .parameter "clirMode"
 
     .prologue
+    .line 274
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPendingMO:Lcom/android/internal/telephony/gsm/GsmConnection;
 
     iget-object v0, v0, Lcom/android/internal/telephony/gsm/GsmConnection;->mAddress:Ljava/lang/String;
@@ -1274,6 +1405,7 @@
 
     if-ltz v0, :cond_1
 
+    .line 277
     :cond_0
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPendingMO:Lcom/android/internal/telephony/gsm/GsmConnection;
 
@@ -1281,22 +1413,28 @@
 
     iput-object v1, v0, Lcom/android/internal/telephony/gsm/GsmConnection;->mCause:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 281
     invoke-virtual {p0}, Lcom/android/internal/telephony/CallTracker;->pollCallsWhenSafe()V
 
+    .line 288
     :goto_0
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->updatePhoneState()V
 
+    .line 289
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPhone:Lcom/android/internal/telephony/gsm/GSMPhone;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/GSMPhone;->notifyPreciseCallStateChanged()V
 
+    .line 290
     return-void
 
+    .line 284
     :cond_1
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->setMute(Z)V
 
+    .line 286
     iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPendingMO:Lcom/android/internal/telephony/gsm/GsmConnection;
@@ -1316,18 +1454,22 @@
     .locals 7
 
     .prologue
+    .line 112
     iget-object v5, p0, Lcom/android/internal/telephony/CallTracker;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-interface {v5, p0}, Lcom/android/internal/telephony/CommandsInterface;->unregisterForCallStateChanged(Landroid/os/Handler;)V
 
+    .line 113
     iget-object v5, p0, Lcom/android/internal/telephony/CallTracker;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-interface {v5, p0}, Lcom/android/internal/telephony/CommandsInterface;->unregisterForOn(Landroid/os/Handler;)V
 
+    .line 114
     iget-object v5, p0, Lcom/android/internal/telephony/CallTracker;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-interface {v5, p0}, Lcom/android/internal/telephony/CommandsInterface;->unregisterForNotAvailable(Landroid/os/Handler;)V
 
+    .line 116
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mConnections:[Lcom/android/internal/telephony/gsm/GsmConnection;
 
     .local v0, arr$:[Lcom/android/internal/telephony/gsm/GsmConnection;
@@ -1342,33 +1484,40 @@
 
     aget-object v1, v0, v3
 
+    .line 118
     .local v1, c:Lcom/android/internal/telephony/gsm/GsmConnection;
     if-eqz v1, :cond_0
 
+    .line 119
     :try_start_0
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->hangup(Lcom/android/internal/telephony/gsm/GsmConnection;)V
 
+    .line 122
     const-string v5, "GsmCallTracker"
 
     const-string v6, "dispose: call connnection onDisconnect, cause LOST_SIGNAL"
 
     invoke-static {v5, v6}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 123
     sget-object v5, Lcom/android/internal/telephony/Connection$DisconnectCause;->LOST_SIGNAL:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     invoke-virtual {v1, v5}, Lcom/android/internal/telephony/gsm/GsmConnection;->onDisconnect(Lcom/android/internal/telephony/Connection$DisconnectCause;)Z
     :try_end_0
     .catch Lcom/android/internal/telephony/CallStateException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 116
     :cond_0
     :goto_1
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
+    .line 125
     :catch_0
     move-exception v2
 
+    .line 126
     .local v2, ex:Lcom/android/internal/telephony/CallStateException;
     const-string v5, "GsmCallTracker"
 
@@ -1378,6 +1527,7 @@
 
     goto :goto_1
 
+    .line 131
     .end local v1           #c:Lcom/android/internal/telephony/gsm/GsmConnection;
     .end local v2           #ex:Lcom/android/internal/telephony/CallStateException;
     :cond_1
@@ -1386,16 +1536,19 @@
 
     if-eqz v5, :cond_2
 
+    .line 132
     iget-object v5, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPendingMO:Lcom/android/internal/telephony/gsm/GsmConnection;
 
     invoke-virtual {p0, v5}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->hangup(Lcom/android/internal/telephony/gsm/GsmConnection;)V
 
+    .line 133
     const-string v5, "GsmCallTracker"
 
     const-string v6, "dispose: call mPendingMO.onDsiconnect, cause LOST_SIGNAL"
 
     invoke-static {v5, v6}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 134
     iget-object v5, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPendingMO:Lcom/android/internal/telephony/gsm/GsmConnection;
 
     sget-object v6, Lcom/android/internal/telephony/Connection$DisconnectCause;->LOST_SIGNAL:Lcom/android/internal/telephony/Connection$DisconnectCause;
@@ -1404,15 +1557,19 @@
     :try_end_1
     .catch Lcom/android/internal/telephony/CallStateException; {:try_start_1 .. :try_end_1} :catch_1
 
+    .line 140
     :cond_2
     :goto_2
     invoke-virtual {p0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->clearDisconnected()V
 
+    .line 141
     return-void
 
+    .line 136
     :catch_1
     move-exception v2
 
+    .line 137
     .restart local v2       #ex:Lcom/android/internal/telephony/CallStateException;
     const-string v5, "GsmCallTracker"
 
@@ -1436,12 +1593,15 @@
 
     const/4 v4, 0x0
 
+    .line 1048
     const-string v1, "GsmCallTracker extends:"
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 1049
     invoke-super {p0, p1, p2, p3}, Lcom/android/internal/telephony/CallTracker;->dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 
+    .line 1050
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1466,6 +1626,7 @@
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 1051
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -1476,6 +1637,7 @@
 
     if-ge v0, v1, :cond_0
 
+    .line 1052
     const-string v1, "  mConnections[%d]=%s\n"
 
     new-array v2, v6, [Ljava/lang/Object;
@@ -1494,10 +1656,12 @@
 
     invoke-virtual {p2, v1, v2}, Ljava/io/PrintWriter;->printf(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintWriter;
 
+    .line 1051
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
+    .line 1054
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1521,6 +1685,7 @@
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 1055
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1543,6 +1708,7 @@
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 1056
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1569,6 +1735,7 @@
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 1057
     const/4 v0, 0x0
 
     :goto_1
@@ -1580,6 +1747,7 @@
 
     if-ge v0, v1, :cond_1
 
+    .line 1058
     const-string v1, "  mDroppedDuringPoll[%d]=%s\n"
 
     new-array v2, v6, [Ljava/lang/Object;
@@ -1600,10 +1768,12 @@
 
     invoke-virtual {p2, v1, v2}, Ljava/io/PrintWriter;->printf(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintWriter;
 
+    .line 1057
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
+    .line 1060
     :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1627,6 +1797,7 @@
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 1061
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1649,6 +1820,7 @@
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 1062
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1671,6 +1843,7 @@
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 1063
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1693,6 +1866,7 @@
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 1064
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1715,6 +1889,7 @@
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 1065
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1737,6 +1912,7 @@
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 1066
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1759,6 +1935,7 @@
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 1067
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1781,6 +1958,7 @@
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 1068
     return-void
 .end method
 
@@ -1788,6 +1966,7 @@
     .locals 2
 
     .prologue
+    .line 356
     iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     const/16 v1, 0xd
@@ -1798,6 +1977,7 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/telephony/CommandsInterface;->explicitCallTransfer(Landroid/os/Message;)V
 
+    .line 357
     return-void
 .end method
 
@@ -1805,12 +1985,14 @@
     .locals 2
 
     .prologue
+    .line 145
     const-string v0, "GsmCallTracker"
 
     const-string v1, "GsmCallTracker finalized"
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 146
     return-void
 .end method
 
@@ -1825,12 +2007,14 @@
     .end annotation
 
     .prologue
+    .line 899
     iget-object v3, p1, Lcom/android/internal/telephony/Call;->mConnections:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
+    .line 900
     .local v1, count:I
     const/4 v2, 0x0
 
@@ -1838,6 +2022,7 @@
     :goto_0
     if-ge v2, v1, :cond_1
 
+    .line 901
     iget-object v3, p1, Lcom/android/internal/telephony/Call;->mConnections:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1846,6 +2031,7 @@
 
     check-cast v0, Lcom/android/internal/telephony/gsm/GsmConnection;
 
+    .line 902
     .local v0, cn:Lcom/android/internal/telephony/gsm/GsmConnection;
     invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/GsmConnection;->getGSMIndex()I
 
@@ -1853,16 +2039,19 @@
 
     if-ne v3, p2, :cond_0
 
+    .line 907
     .end local v0           #cn:Lcom/android/internal/telephony/gsm/GsmConnection;
     :goto_1
     return-object v0
 
+    .line 900
     .restart local v0       #cn:Lcom/android/internal/telephony/gsm/GsmConnection;
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
+    .line 907
     .end local v0           #cn:Lcom/android/internal/telephony/gsm/GsmConnection;
     :cond_1
     const/4 v0, 0x0
@@ -1874,6 +2063,7 @@
     .locals 1
 
     .prologue
+    .line 808
     iget-boolean v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mDesiredMute:Z
 
     return v0
@@ -1886,12 +2076,14 @@
     .prologue
     const/4 v9, 0x0
 
+    .line 931
     iget-object v6, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPhone:Lcom/android/internal/telephony/gsm/GSMPhone;
 
     iget-boolean v6, v6, Lcom/android/internal/telephony/PhoneBase;->mIsTheCurrentActivePhone:Z
 
     if-nez v6, :cond_1
 
+    .line 932
     const-string v6, "GsmCallTracker"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -1932,10 +2124,12 @@
 
     invoke-static {v6, v7}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1039
     :cond_0
     :goto_0
     return-void
 
+    .line 936
     :cond_1
     iget v6, p1, Landroid/os/Message;->what:I
 
@@ -1944,22 +2138,27 @@
     :pswitch_0
     goto :goto_0
 
+    .line 938
     :pswitch_1
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/AsyncResult;
 
+    .line 940
     .local v0, ar:Landroid/os/AsyncResult;
     iget-object v6, p0, Lcom/android/internal/telephony/CallTracker;->mLastRelevantPoll:Landroid/os/Message;
 
     if-ne p1, v6, :cond_0
 
+    .line 944
     iput-boolean v9, p0, Lcom/android/internal/telephony/CallTracker;->mNeedsPoll:Z
 
+    .line 945
     const/4 v6, 0x0
 
     iput-object v6, p0, Lcom/android/internal/telephony/CallTracker;->mLastRelevantPoll:Landroid/os/Message;
 
+    .line 946
     iget-object v6, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v6, Landroid/os/AsyncResult;
@@ -1968,30 +2167,36 @@
 
     goto :goto_0
 
+    .line 951
     .end local v0           #ar:Landroid/os/AsyncResult;
     :pswitch_2
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/AsyncResult;
 
+    .line 952
     .restart local v0       #ar:Landroid/os/AsyncResult;
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->operationComplete()V
 
     goto :goto_0
 
+    .line 961
     .end local v0           #ar:Landroid/os/AsyncResult;
     :pswitch_3
     iput-boolean v9, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->callSwitchPending:Z
 
+    .line 962
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/AsyncResult;
 
+    .line 963
     .restart local v0       #ar:Landroid/os/AsyncResult;
     iget-object v6, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     if-eqz v6, :cond_3
 
+    .line 964
     iget-object v6, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPhone:Lcom/android/internal/telephony/gsm/GSMPhone;
 
     iget v7, p1, Landroid/os/Message;->what:I
@@ -2002,17 +2207,20 @@
 
     invoke-virtual {v6, v7}, Lcom/android/internal/telephony/gsm/GSMPhone;->notifySuppServiceFailed(Lcom/android/internal/telephony/Phone$SuppService;)V
 
+    .line 970
     :cond_2
     :goto_1
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->operationComplete()V
 
     goto :goto_0
 
+    .line 966
     :cond_3
     iget-object v6, v0, Landroid/os/AsyncResult;->userObj:Ljava/lang/Object;
 
     if-eqz v6, :cond_2
 
+    .line 967
     iget-object v6, v0, Landroid/os/AsyncResult;->userObj:Ljava/lang/Object;
 
     check-cast v6, Ljava/lang/Integer;
@@ -2025,17 +2233,20 @@
 
     goto :goto_1
 
+    .line 976
     .end local v0           #ar:Landroid/os/AsyncResult;
     :pswitch_4
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/AsyncResult;
 
+    .line 977
     .restart local v0       #ar:Landroid/os/AsyncResult;
     iget-object v6, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     if-eqz v6, :cond_4
 
+    .line 978
     iget-object v6, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPhone:Lcom/android/internal/telephony/gsm/GSMPhone;
 
     iget v7, p1, Landroid/os/Message;->what:I
@@ -2046,26 +2257,32 @@
 
     invoke-virtual {v6, v7}, Lcom/android/internal/telephony/gsm/GSMPhone;->notifySuppServiceFailed(Lcom/android/internal/telephony/Phone$SuppService;)V
 
+    .line 980
     :cond_4
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->operationComplete()V
 
     goto :goto_0
 
+    .line 985
     .end local v0           #ar:Landroid/os/AsyncResult;
     :pswitch_5
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/AsyncResult;
 
+    .line 987
     .restart local v0       #ar:Landroid/os/AsyncResult;
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->operationComplete()V
 
+    .line 989
     iget-object v6, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     if-eqz v6, :cond_7
 
+    .line 992
     const/16 v1, 0x10
 
+    .line 993
     .local v1, causeCode:I
     const-string v6, "GsmCallTracker"
 
@@ -2073,6 +2290,7 @@
 
     invoke-static {v6, v7}, Landroid/telephony/Rlog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 999
     :goto_2
     const/16 v6, 0x22
 
@@ -2102,6 +2320,7 @@
 
     if-ne v1, v6, :cond_6
 
+    .line 1006
     :cond_5
     iget-object v6, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPhone:Lcom/android/internal/telephony/gsm/GSMPhone;
 
@@ -2111,6 +2330,7 @@
 
     check-cast v4, Landroid/telephony/gsm/GsmCellLocation;
 
+    .line 1007
     .local v4, loc:Landroid/telephony/gsm/GsmCellLocation;
     const v7, 0xc3ba
 
@@ -2157,6 +2377,7 @@
 
     invoke-static {v7, v8}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 1012
     .end local v4           #loc:Landroid/telephony/gsm/GsmCellLocation;
     :cond_6
     const/4 v3, 0x0
@@ -2168,10 +2389,12 @@
 
     move-result v5
 
+    .line 1013
     .local v5, s:I
     :goto_4
     if-ge v3, v5, :cond_9
 
+    .line 1015
     iget-object v6, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mDroppedDuringPoll:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2180,13 +2403,16 @@
 
     check-cast v2, Lcom/android/internal/telephony/gsm/GsmConnection;
 
+    .line 1017
     .local v2, conn:Lcom/android/internal/telephony/gsm/GsmConnection;
     invoke-virtual {v2, v1}, Lcom/android/internal/telephony/gsm/GsmConnection;->onRemoteDisconnect(I)V
 
+    .line 1013
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_4
 
+    .line 996
     .end local v1           #causeCode:I
     .end local v2           #conn:Lcom/android/internal/telephony/gsm/GsmConnection;
     .end local v3           #i:I
@@ -2203,28 +2429,33 @@
     .restart local v1       #causeCode:I
     goto :goto_2
 
+    .line 1007
     .restart local v4       #loc:Landroid/telephony/gsm/GsmCellLocation;
     :cond_8
     const/4 v6, -0x1
 
     goto :goto_3
 
+    .line 1020
     .end local v4           #loc:Landroid/telephony/gsm/GsmCellLocation;
     .restart local v3       #i:I
     .restart local v5       #s:I
     :cond_9
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->updatePhoneState()V
 
+    .line 1022
     iget-object v6, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPhone:Lcom/android/internal/telephony/gsm/GSMPhone;
 
     invoke-virtual {v6}, Lcom/android/internal/telephony/gsm/GSMPhone;->notifyPreciseCallStateChanged()V
 
+    .line 1023
     iget-object v6, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mDroppedDuringPoll:Ljava/util/ArrayList;
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->clear()V
 
     goto/16 :goto_0
 
+    .line 1028
     .end local v0           #ar:Landroid/os/AsyncResult;
     .end local v1           #causeCode:I
     .end local v3           #i:I
@@ -2234,16 +2465,19 @@
 
     goto/16 :goto_0
 
+    .line 1032
     :pswitch_7
     invoke-virtual {p0}, Lcom/android/internal/telephony/CallTracker;->handleRadioAvailable()V
 
     goto/16 :goto_0
 
+    .line 1036
     :pswitch_8
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->handleRadioNotAvailable()V
 
     goto/16 :goto_0
 
+    .line 936
     nop
 
     :pswitch_data_0
@@ -2269,6 +2503,7 @@
     .parameter "ar"
 
     .prologue
+    .line 500
     monitor-enter p0
 
     :try_start_0
@@ -2280,28 +2515,35 @@
 
     if-nez v17, :cond_2
 
+    .line 501
     move-object/from16 v0, p1
 
     iget-object v15, v0, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
     check-cast v15, Ljava/util/List;
 
+    .line 513
     .local v15, polledCalls:Ljava/util/List;
     :goto_0
     const/4 v14, 0x0
 
+    .line 514
     .local v14, newRinging:Lcom/android/internal/telephony/Connection;
     const/4 v11, 0x0
 
+    .line 516
     .local v11, hasNonHangupStateChanged:Z
     const/4 v10, 0x0
 
+    .line 517
     .local v10, hasAnyCallDisconnected:Z
     const/4 v13, 0x0
 
+    .line 518
     .local v13, needsPollDelay:Z
     const/16 v16, 0x0
 
+    .line 520
     .local v16, unknownConnectionAppeared:Z
     const/4 v12, 0x0
 
@@ -2313,6 +2555,7 @@
 
     move-result v8
 
+    .line 521
     .local v8, dcSize:I
     :goto_1
     move-object/from16 v0, p0
@@ -2331,6 +2574,7 @@
 
     if-ge v12, v0, :cond_10
 
+    .line 522
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mConnections:[Lcom/android/internal/telephony/gsm/GsmConnection;
@@ -2339,12 +2583,15 @@
 
     aget-object v5, v17, v12
 
+    .line 523
     .local v5, conn:Lcom/android/internal/telephony/gsm/GsmConnection;
     const/4 v7, 0x0
 
+    .line 526
     .local v7, dc:Lcom/android/internal/telephony/DriverCall;
     if-ge v6, v8, :cond_0
 
+    .line 527
     invoke-interface {v15, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v7
@@ -2352,6 +2599,7 @@
     .end local v7           #dc:Lcom/android/internal/telephony/DriverCall;
     check-cast v7, Lcom/android/internal/telephony/DriverCall;
 
+    .line 529
     .restart local v7       #dc:Lcom/android/internal/telephony/DriverCall;
     iget v0, v7, Lcom/android/internal/telephony/DriverCall;->index:I
 
@@ -2365,14 +2613,17 @@
 
     if-ne v0, v1, :cond_4
 
+    .line 530
     add-int/lit8 v6, v6, 0x1
 
+    .line 540
     :cond_0
     :goto_2
     if-nez v5, :cond_a
 
     if-eqz v7, :cond_a
 
+    .line 542
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPendingMO:Lcom/android/internal/telephony/gsm/GsmConnection;
@@ -2395,6 +2646,7 @@
 
     if-eqz v17, :cond_5
 
+    .line 547
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mConnections:[Lcom/android/internal/telephony/gsm/GsmConnection;
@@ -2409,6 +2661,7 @@
 
     aput-object v18, v17, v12
 
+    .line 548
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPendingMO:Lcom/android/internal/telephony/gsm/GsmConnection;
@@ -2419,6 +2672,7 @@
 
     iput v12, v0, Lcom/android/internal/telephony/gsm/GsmConnection;->mIndex:I
 
+    .line 549
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPendingMO:Lcom/android/internal/telephony/gsm/GsmConnection;
@@ -2429,6 +2683,7 @@
 
     invoke-virtual {v0, v7}, Lcom/android/internal/telephony/gsm/GsmConnection;->update(Lcom/android/internal/telephony/DriverCall;)Z
 
+    .line 550
     const/16 v17, 0x0
 
     move-object/from16 v0, v17
@@ -2437,6 +2692,7 @@
 
     iput-object v0, v1, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPendingMO:Lcom/android/internal/telephony/gsm/GsmConnection;
 
+    .line 553
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mHangupPendingMO:Z
@@ -2445,6 +2701,7 @@
 
     if-eqz v17, :cond_6
 
+    .line 554
     const/16 v17, 0x0
 
     move/from16 v0, v17
@@ -2455,6 +2712,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 556
     :try_start_1
     new-instance v17, Ljava/lang/StringBuilder;
 
@@ -2482,6 +2740,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->log(Ljava/lang/String;)V
 
+    .line 558
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mConnections:[Lcom/android/internal/telephony/gsm/GsmConnection;
@@ -2499,6 +2758,7 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Lcom/android/internal/telephony/CallStateException; {:try_start_1 .. :try_end_1} :catch_0
 
+    .line 715
     .end local v5           #conn:Lcom/android/internal/telephony/gsm/GsmConnection;
     .end local v6           #curDC:I
     .end local v7           #dc:Lcom/android/internal/telephony/DriverCall;
@@ -2516,6 +2776,7 @@
 
     return-void
 
+    .line 502
     :cond_2
     :try_start_2
     move-object/from16 v0, p1
@@ -2534,6 +2795,7 @@
 
     if-eqz v17, :cond_3
 
+    .line 505
     new-instance v15, Ljava/util/ArrayList;
 
     invoke-direct {v15}, Ljava/util/ArrayList;-><init>()V
@@ -2541,6 +2803,7 @@
     .restart local v15       #polledCalls:Ljava/util/List;
     goto/16 :goto_0
 
+    .line 509
     .end local v15           #polledCalls:Ljava/util/List;
     :cond_3
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/CallTracker;->pollCallsAfterDelay()V
@@ -2549,6 +2812,7 @@
 
     goto :goto_3
 
+    .line 500
     :catchall_0
     move-exception v17
 
@@ -2556,6 +2820,7 @@
 
     throw v17
 
+    .line 532
     .restart local v5       #conn:Lcom/android/internal/telephony/gsm/GsmConnection;
     .restart local v6       #curDC:I
     .restart local v7       #dc:Lcom/android/internal/telephony/DriverCall;
@@ -2572,9 +2837,11 @@
 
     goto/16 :goto_2
 
+    .line 559
     :catch_0
     move-exception v9
 
+    .line 560
     .local v9, ex:Lcom/android/internal/telephony/CallStateException;
     :try_start_3
     const-string v17, "GsmCallTracker"
@@ -2585,6 +2852,7 @@
 
     goto :goto_3
 
+    .line 568
     .end local v9           #ex:Lcom/android/internal/telephony/CallStateException;
     :cond_5
     move-object/from16 v0, p0
@@ -2615,6 +2883,7 @@
 
     aput-object v18, v17, v12
 
+    .line 571
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mConnections:[Lcom/android/internal/telephony/gsm/GsmConnection;
@@ -2639,6 +2908,7 @@
 
     if-ne v0, v1, :cond_8
 
+    .line 572
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mConnections:[Lcom/android/internal/telephony/gsm/GsmConnection;
@@ -2647,16 +2917,19 @@
 
     aget-object v14, v17, v12
 
+    .line 596
     :cond_6
     :goto_4
     const/4 v11, 0x1
 
+    .line 521
     :cond_7
     :goto_5
     add-int/lit8 v12, v12, 0x1
 
     goto/16 :goto_1
 
+    .line 579
     :cond_8
     const-string v17, "GsmCallTracker"
 
@@ -2682,6 +2955,7 @@
 
     invoke-static/range {v17 .. v18}, Landroid/telephony/Rlog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 584
     iget-object v0, v7, Lcom/android/internal/telephony/DriverCall;->state:Lcom/android/internal/telephony/DriverCall$State;
 
     move-object/from16 v17, v0
@@ -2706,6 +2980,7 @@
 
     if-eq v0, v1, :cond_9
 
+    .line 586
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mConnections:[Lcom/android/internal/telephony/gsm/GsmConnection;
@@ -2716,6 +2991,7 @@
 
     invoke-virtual/range {v17 .. v17}, Lcom/android/internal/telephony/gsm/GsmConnection;->onConnectedInOrOut()V
 
+    .line 587
     iget-object v0, v7, Lcom/android/internal/telephony/DriverCall;->state:Lcom/android/internal/telephony/DriverCall$State;
 
     move-object/from16 v17, v0
@@ -2728,6 +3004,7 @@
 
     if-ne v0, v1, :cond_9
 
+    .line 589
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mConnections:[Lcom/android/internal/telephony/gsm/GsmConnection;
@@ -2738,16 +3015,19 @@
 
     invoke-virtual/range {v17 .. v17}, Lcom/android/internal/telephony/gsm/GsmConnection;->onStartedHolding()V
 
+    .line 593
     :cond_9
     const/16 v16, 0x1
 
     goto :goto_4
 
+    .line 597
     :cond_a
     if-eqz v5, :cond_b
 
     if-nez v7, :cond_b
 
+    .line 600
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mDroppedDuringPoll:Ljava/util/ArrayList;
@@ -2758,6 +3038,7 @@
 
     invoke-virtual {v0, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 603
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mConnections:[Lcom/android/internal/telephony/gsm/GsmConnection;
@@ -2770,6 +3051,7 @@
 
     goto :goto_5
 
+    .line 604
     :cond_b
     if-eqz v5, :cond_d
 
@@ -2781,6 +3063,7 @@
 
     if-nez v17, :cond_d
 
+    .line 608
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mDroppedDuringPoll:Ljava/util/ArrayList;
@@ -2791,6 +3074,7 @@
 
     invoke-virtual {v0, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 609
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mConnections:[Lcom/android/internal/telephony/gsm/GsmConnection;
@@ -2819,6 +3103,7 @@
 
     aput-object v18, v17, v12
 
+    .line 611
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mConnections:[Lcom/android/internal/telephony/gsm/GsmConnection;
@@ -2843,6 +3128,7 @@
 
     if-ne v0, v1, :cond_c
 
+    .line 612
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mConnections:[Lcom/android/internal/telephony/gsm/GsmConnection;
@@ -2851,20 +3137,24 @@
 
     aget-object v14, v17, v12
 
+    .line 614
     :cond_c
     const/4 v11, 0x1
 
     goto/16 :goto_5
 
+    .line 615
     :cond_d
     if-eqz v5, :cond_7
 
     if-eqz v7, :cond_7
 
+    .line 617
     invoke-virtual {v5, v7}, Lcom/android/internal/telephony/gsm/GsmConnection;->update(Lcom/android/internal/telephony/DriverCall;)Z
 
     move-result v4
 
+    .line 618
     .local v4, changed:Z
     if-nez v11, :cond_e
 
@@ -2881,6 +3171,7 @@
 
     goto :goto_6
 
+    .line 644
     .end local v4           #changed:Z
     .end local v5           #conn:Lcom/android/internal/telephony/gsm/GsmConnection;
     .end local v7           #dc:Lcom/android/internal/telephony/DriverCall;
@@ -2893,6 +3184,7 @@
 
     if-eqz v17, :cond_11
 
+    .line 645
     const-string v17, "GsmCallTracker"
 
     new-instance v18, Ljava/lang/StringBuilder;
@@ -2925,6 +3217,7 @@
 
     invoke-static/range {v17 .. v18}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 648
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mDroppedDuringPoll:Ljava/util/ArrayList;
@@ -2939,6 +3232,7 @@
 
     invoke-virtual/range {v17 .. v18}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 649
     const/16 v17, 0x0
 
     move-object/from16 v0, v17
@@ -2947,6 +3241,7 @@
 
     iput-object v0, v1, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPendingMO:Lcom/android/internal/telephony/gsm/GsmConnection;
 
+    .line 650
     const/16 v17, 0x0
 
     move/from16 v0, v17
@@ -2955,9 +3250,11 @@
 
     iput-boolean v0, v1, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mHangupPendingMO:Z
 
+    .line 653
     :cond_11
     if-eqz v14, :cond_12
 
+    .line 654
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPhone:Lcom/android/internal/telephony/gsm/GSMPhone;
@@ -2968,6 +3265,7 @@
 
     invoke-virtual {v0, v14}, Lcom/android/internal/telephony/gsm/GSMPhone;->notifyNewRingingConnection(Lcom/android/internal/telephony/Connection;)V
 
+    .line 660
     :cond_12
     move-object/from16 v0, p0
 
@@ -2984,6 +3282,7 @@
     :goto_7
     if-ltz v12, :cond_17
 
+    .line 661
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mDroppedDuringPoll:Ljava/util/ArrayList;
@@ -2998,6 +3297,7 @@
 
     check-cast v5, Lcom/android/internal/telephony/gsm/GsmConnection;
 
+    .line 663
     .restart local v5       #conn:Lcom/android/internal/telephony/gsm/GsmConnection;
     invoke-virtual {v5}, Lcom/android/internal/telephony/gsm/GsmConnection;->isIncoming()Z
 
@@ -3015,6 +3315,7 @@
 
     if-nez v17, :cond_15
 
+    .line 666
     iget-object v0, v5, Lcom/android/internal/telephony/gsm/GsmConnection;->mCause:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     move-object/from16 v17, v0
@@ -3027,8 +3328,10 @@
 
     if-ne v0, v1, :cond_14
 
+    .line 667
     sget-object v3, Lcom/android/internal/telephony/Connection$DisconnectCause;->INCOMING_REJECTED:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 673
     .local v3, cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
     :goto_8
     new-instance v17, Ljava/lang/StringBuilder;
@@ -3059,6 +3362,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->log(Ljava/lang/String;)V
 
+    .line 674
     new-instance v17, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
@@ -3085,6 +3389,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->log(Ljava/lang/String;)V
 
+    .line 676
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mDroppedDuringPoll:Ljava/util/ArrayList;
@@ -3095,12 +3400,14 @@
 
     invoke-virtual {v0, v12}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
+    .line 677
     invoke-virtual {v5, v3}, Lcom/android/internal/telephony/gsm/GsmConnection;->onDisconnect(Lcom/android/internal/telephony/Connection$DisconnectCause;)Z
 
     move-result v17
 
     or-int v10, v10, v17
 
+    .line 660
     .end local v3           #cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
     :cond_13
     :goto_9
@@ -3108,12 +3415,14 @@
 
     goto :goto_7
 
+    .line 669
     :cond_14
     sget-object v3, Lcom/android/internal/telephony/Connection$DisconnectCause;->INCOMING_MISSED:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     .restart local v3       #cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
     goto :goto_8
 
+    .line 678
     .end local v3           #cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
     :cond_15
     iget-object v0, v5, Lcom/android/internal/telephony/gsm/GsmConnection;->mCause:Lcom/android/internal/telephony/Connection$DisconnectCause;
@@ -3140,6 +3449,7 @@
 
     if-ne v0, v1, :cond_13
 
+    .line 680
     :cond_16
     move-object/from16 v0, p0
 
@@ -3151,6 +3461,7 @@
 
     invoke-virtual {v0, v12}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
+    .line 681
     iget-object v0, v5, Lcom/android/internal/telephony/gsm/GsmConnection;->mCause:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     move-object/from16 v17, v0
@@ -3165,6 +3476,7 @@
 
     goto :goto_9
 
+    .line 686
     .end local v5           #conn:Lcom/android/internal/telephony/gsm/GsmConnection;
     :cond_17
     move-object/from16 v0, p0
@@ -3179,6 +3491,7 @@
 
     if-lez v17, :cond_18
 
+    .line 687
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/CallTracker;->mCi:Lcom/android/internal/telephony/CommandsInterface;
@@ -3197,11 +3510,14 @@
 
     invoke-interface/range {v17 .. v18}, Lcom/android/internal/telephony/CommandsInterface;->getLastCallFailCause(Landroid/os/Message;)V
 
+    .line 691
     :cond_18
     if-eqz v13, :cond_19
 
+    .line 692
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/CallTracker;->pollCallsAfterDelay()V
 
+    .line 700
     :cond_19
     if-nez v14, :cond_1a
 
@@ -3209,14 +3525,18 @@
 
     if-eqz v10, :cond_1b
 
+    .line 701
     :cond_1a
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->internalClearDisconnected()V
 
+    .line 704
     :cond_1b
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->updatePhoneState()V
 
+    .line 706
     if-eqz v16, :cond_1c
 
+    .line 707
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPhone:Lcom/android/internal/telephony/gsm/GSMPhone;
@@ -3225,6 +3545,7 @@
 
     invoke-virtual/range {v17 .. v17}, Lcom/android/internal/telephony/gsm/GSMPhone;->notifyUnknownConnection()V
 
+    .line 710
     :cond_1c
     if-nez v11, :cond_1d
 
@@ -3232,6 +3553,7 @@
 
     if-eqz v10, :cond_1
 
+    .line 711
     :cond_1d
     move-object/from16 v0, p0
 
@@ -3256,6 +3578,7 @@
     .end annotation
 
     .prologue
+    .line 816
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/GsmCall;->getConnections()Ljava/util/List;
 
     move-result-object v0
@@ -3266,6 +3589,7 @@
 
     if-nez v0, :cond_0
 
+    .line 817
     new-instance v0, Lcom/android/internal/telephony/CallStateException;
 
     const-string v1, "no connections in call"
@@ -3274,15 +3598,46 @@
 
     throw v0
 
+    .line 820
     :cond_0
+    invoke-virtual {p1}, Lcom/android/internal/telephony/Call;->getState()Lcom/android/internal/telephony/Call$State;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/android/internal/telephony/Call$State;->IDLE:Lcom/android/internal/telephony/Call$State;
+
+    if-eq v0, v1, :cond_1
+
+    invoke-virtual {p1}, Lcom/android/internal/telephony/Call;->getState()Lcom/android/internal/telephony/Call$State;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/android/internal/telephony/Call$State;->DISCONNECTED:Lcom/android/internal/telephony/Call$State;
+
+    if-ne v0, v1, :cond_2
+
+    .line 821
+    :cond_1
+    new-instance v0, Lcom/android/internal/telephony/CallStateException;
+
+    const-string v1, "xxx no connections in call"
+
+    invoke-direct {v0, v1}, Lcom/android/internal/telephony/CallStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 825
+    :cond_2
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mRingingCall:Lcom/android/internal/telephony/gsm/GsmCall;
 
-    if-ne p1, v0, :cond_1
+    if-ne p1, v0, :cond_4
 
+    .line 826
     const-string v0, "(ringing) hangup waiting or background"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->log(Ljava/lang/String;)V
 
+    .line 827
     iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->obtainCompleteMessage()Landroid/os/Message;
@@ -3291,30 +3646,38 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/telephony/CommandsInterface;->hangupWaitingOrBackground(Landroid/os/Message;)V
 
+    .line 854
+    :cond_3
     :goto_0
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/GsmCall;->onHangupLocal()V
 
+    .line 855
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPhone:Lcom/android/internal/telephony/gsm/GSMPhone;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/GSMPhone;->notifyPreciseCallStateChanged()V
 
+    .line 856
     return-void
 
-    :cond_1
+    .line 828
+    :cond_4
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mForegroundCall:Lcom/android/internal/telephony/gsm/GsmCall;
 
-    if-ne p1, v0, :cond_3
+    if-ne p1, v0, :cond_6
 
+    .line 829
     invoke-virtual {p1}, Lcom/android/internal/telephony/Call;->isDialingOrAlerting()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_5
 
+    .line 831
     const-string v0, "(foregnd) hangup dialing or alerting..."
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->log(Ljava/lang/String;)V
 
+    .line 833
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/GsmCall;->getConnections()Ljava/util/List;
 
     move-result-object v0
@@ -3331,40 +3694,61 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->hangup(Lcom/android/internal/telephony/gsm/GsmConnection;)V
 
+    .line 834
+    iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mBackgroundCall:Lcom/android/internal/telephony/gsm/GsmCall;
+
+    invoke-virtual {v0}, Lcom/android/internal/telephony/Call;->getState()Lcom/android/internal/telephony/Call$State;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/android/internal/telephony/Call$State;->HOLDING:Lcom/android/internal/telephony/Call$State;
+
+    if-ne v0, v1, :cond_3
+
+    .line 835
+    invoke-virtual {p0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->switchWaitingOrHoldingAndActive()V
+
     goto :goto_0
 
-    :cond_2
+    .line 838
+    :cond_5
     invoke-virtual {p0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->hangupForegroundResumeBackground()V
 
     goto :goto_0
 
-    :cond_3
+    .line 840
+    :cond_6
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mBackgroundCall:Lcom/android/internal/telephony/gsm/GsmCall;
 
-    if-ne p1, v0, :cond_5
+    if-ne p1, v0, :cond_8
 
+    .line 841
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mRingingCall:Lcom/android/internal/telephony/gsm/GsmCall;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/Call;->isRinging()Z
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_7
 
+    .line 843
     const-string v0, "hangup all conns in background call"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->log(Ljava/lang/String;)V
 
+    .line 845
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->hangupAllConnections(Lcom/android/internal/telephony/gsm/GsmCall;)V
 
     goto :goto_0
 
-    :cond_4
+    .line 847
+    :cond_7
     invoke-virtual {p0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->hangupWaitingOrBackground()V
 
     goto :goto_0
 
-    :cond_5
+    .line 850
+    :cond_8
     new-instance v0, Ljava/lang/RuntimeException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3410,10 +3794,12 @@
     .end annotation
 
     .prologue
+    .line 758
     iget-object v1, p1, Lcom/android/internal/telephony/gsm/GsmConnection;->mOwner:Lcom/android/internal/telephony/gsm/GsmCallTracker;
 
     if-eq v1, p0, :cond_0
 
+    .line 759
     new-instance v1, Lcom/android/internal/telephony/CallStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -3448,15 +3834,18 @@
 
     throw v1
 
+    .line 763
     :cond_0
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mPendingMO:Lcom/android/internal/telephony/gsm/GsmConnection;
 
     if-ne p1, v1, :cond_1
 
+    .line 765
     const-string v1, "hangup conn with callId \'-1\' as there is no DIAL response yet "
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->log(Ljava/lang/String;)V
 
+    .line 766
     iget-object v1, p0, Lcom/android/internal/telephony/CallTracker;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     const/4 v2, -0x1
@@ -3467,11 +3856,14 @@
 
     invoke-interface {v1, v2, v3}, Lcom/android/internal/telephony/CommandsInterface;->hangupConnection(ILandroid/os/Message;)V
 
+    .line 778
     :goto_0
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/GsmConnection;->onHangupLocal()V
 
+    .line 779
     return-void
 
+    .line 769
     :cond_1
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/telephony/CallTracker;->mCi:Lcom/android/internal/telephony/CommandsInterface;
@@ -3490,9 +3882,11 @@
 
     goto :goto_0
 
+    .line 770
     :catch_0
     move-exception v0
 
+    .line 773
     .local v0, ex:Lcom/android/internal/telephony/CallStateException;
     const-string v1, "GsmCallTracker"
 
@@ -3524,6 +3918,7 @@
     .parameter "call"
 
     .prologue
+    .line 886
     :try_start_0
     iget-object v4, p1, Lcom/android/internal/telephony/Call;->mConnections:Ljava/util/ArrayList;
 
@@ -3531,6 +3926,7 @@
 
     move-result v1
 
+    .line 887
     .local v1, count:I
     const/4 v3, 0x0
 
@@ -3538,6 +3934,7 @@
     :goto_0
     if-ge v3, v1, :cond_0
 
+    .line 888
     iget-object v4, p1, Lcom/android/internal/telephony/Call;->mConnections:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3546,6 +3943,7 @@
 
     check-cast v0, Lcom/android/internal/telephony/gsm/GsmConnection;
 
+    .line 889
     .local v0, cn:Lcom/android/internal/telephony/gsm/GsmConnection;
     iget-object v4, p0, Lcom/android/internal/telephony/CallTracker;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
@@ -3561,16 +3959,19 @@
     :try_end_0
     .catch Lcom/android/internal/telephony/CallStateException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 887
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
+    .line 891
     .end local v0           #cn:Lcom/android/internal/telephony/gsm/GsmConnection;
     .end local v1           #count:I
     .end local v3           #i:I
     :catch_0
     move-exception v2
 
+    .line 892
     .local v2, ex:Lcom/android/internal/telephony/CallStateException;
     const-string v4, "GsmCallTracker"
 
@@ -3594,6 +3995,7 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 894
     .end local v2           #ex:Lcom/android/internal/telephony/CallStateException;
     :cond_0
     return-void
@@ -3610,12 +4012,14 @@
     .end annotation
 
     .prologue
+    .line 872
     iget-object v3, p1, Lcom/android/internal/telephony/Call;->mConnections:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
+    .line 873
     .local v1, count:I
     const/4 v2, 0x0
 
@@ -3623,6 +4027,7 @@
     :goto_0
     if-ge v2, v1, :cond_1
 
+    .line 874
     iget-object v3, p1, Lcom/android/internal/telephony/Call;->mConnections:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3631,6 +4036,7 @@
 
     check-cast v0, Lcom/android/internal/telephony/gsm/GsmConnection;
 
+    .line 875
     .local v0, cn:Lcom/android/internal/telephony/gsm/GsmConnection;
     invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/GsmConnection;->getGSMIndex()I
 
@@ -3638,6 +4044,7 @@
 
     if-ne v3, p2, :cond_0
 
+    .line 876
     iget-object v3, p0, Lcom/android/internal/telephony/CallTracker;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->obtainCompleteMessage()Landroid/os/Message;
@@ -3646,13 +4053,16 @@
 
     invoke-interface {v3, p2, v4}, Lcom/android/internal/telephony/CommandsInterface;->hangupConnection(ILandroid/os/Message;)V
 
+    .line 877
     return-void
 
+    .line 873
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
+    .line 881
     .end local v0           #cn:Lcom/android/internal/telephony/gsm/GsmConnection;
     :cond_1
     new-instance v3, Lcom/android/internal/telephony/CallStateException;
@@ -3668,10 +4078,12 @@
     .locals 2
 
     .prologue
+    .line 866
     const-string v0, "hangupForegroundResumeBackground"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->log(Ljava/lang/String;)V
 
+    .line 867
     iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->obtainCompleteMessage()Landroid/os/Message;
@@ -3680,6 +4092,7 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/telephony/CommandsInterface;->hangupForegroundResumeBackground(Landroid/os/Message;)V
 
+    .line 868
     return-void
 .end method
 
@@ -3687,10 +4100,12 @@
     .locals 2
 
     .prologue
+    .line 860
     const-string v0, "hangupWaitingOrBackground"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->log(Ljava/lang/String;)V
 
+    .line 861
     iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->obtainCompleteMessage()Landroid/os/Message;
@@ -3699,6 +4114,7 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/telephony/CommandsInterface;->hangupWaitingOrBackground(Landroid/os/Message;)V
 
+    .line 862
     return-void
 .end method
 
@@ -3707,6 +4123,7 @@
     .parameter "msg"
 
     .prologue
+    .line 1043
     const-string v0, "GsmCallTracker"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3729,6 +4146,7 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1044
     return-void
 .end method
 
@@ -3739,15 +4157,18 @@
     .parameter "obj"
 
     .prologue
+    .line 164
     new-instance v0, Landroid/os/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/os/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
+    .line 165
     .local v0, r:Landroid/os/Registrant;
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mVoiceCallEndedRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
 
+    .line 166
     return-void
 .end method
 
@@ -3758,15 +4179,18 @@
     .parameter "obj"
 
     .prologue
+    .line 153
     new-instance v0, Landroid/os/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/os/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
+    .line 154
     .local v0, r:Landroid/os/Registrant;
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mVoiceCallStartedRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
 
+    .line 155
     return-void
 .end method
 
@@ -3779,6 +4203,7 @@
     .end annotation
 
     .prologue
+    .line 315
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mRingingCall:Lcom/android/internal/telephony/gsm/GsmCall;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/Call;->getState()Lcom/android/internal/telephony/Call$State;
@@ -3791,6 +4216,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 316
     iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->obtainCompleteMessage()Landroid/os/Message;
@@ -3799,8 +4225,10 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/telephony/CommandsInterface;->rejectCall(Landroid/os/Message;)V
 
+    .line 320
     return-void
 
+    .line 318
     :cond_0
     new-instance v0, Lcom/android/internal/telephony/CallStateException;
 
@@ -3821,10 +4249,12 @@
     .end annotation
 
     .prologue
+    .line 783
     iget-object v1, p1, Lcom/android/internal/telephony/gsm/GsmConnection;->mOwner:Lcom/android/internal/telephony/gsm/GsmCallTracker;
 
     if-eq v1, p0, :cond_0
 
+    .line 784
     new-instance v1, Lcom/android/internal/telephony/CallStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -3859,6 +4289,7 @@
 
     throw v1
 
+    .line 788
     :cond_0
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/telephony/CallTracker;->mCi:Lcom/android/internal/telephony/CommandsInterface;
@@ -3877,12 +4308,15 @@
     :try_end_0
     .catch Lcom/android/internal/telephony/CallStateException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 796
     :goto_0
     return-void
 
+    .line 790
     :catch_0
     move-exception v0
 
+    .line 793
     .local v0, ex:Lcom/android/internal/telephony/CallStateException;
     const-string v1, "GsmCallTracker"
 
@@ -3914,8 +4348,10 @@
     .parameter "mute"
 
     .prologue
+    .line 802
     iput-boolean p1, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mDesiredMute:Z
 
+    .line 803
     iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     iget-boolean v1, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mDesiredMute:Z
@@ -3924,6 +4360,7 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/internal/telephony/CommandsInterface;->setMute(ZLandroid/os/Message;)V
 
+    .line 804
     return-void
 .end method
 
@@ -3936,6 +4373,7 @@
     .end annotation
 
     .prologue
+    .line 325
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mRingingCall:Lcom/android/internal/telephony/gsm/GsmCall;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/Call;->getState()Lcom/android/internal/telephony/Call$State;
@@ -3946,6 +4384,7 @@
 
     if-ne v0, v1, :cond_0
 
+    .line 326
     new-instance v0, Lcom/android/internal/telephony/CallStateException;
 
     const-string v1, "cannot be in the incoming state"
@@ -3954,11 +4393,13 @@
 
     throw v0
 
+    .line 327
     :cond_0
     iget-boolean v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->callSwitchPending:Z
 
     if-nez v0, :cond_1
 
+    .line 328
     iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     const/16 v1, 0x8
@@ -3969,13 +4410,16 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/telephony/CommandsInterface;->switchWaitingOrHoldingAndActive(Landroid/os/Message;)V
 
+    .line 330
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->callSwitchPending:Z
 
+    .line 334
     :goto_0
     return-void
 
+    .line 332
     :cond_1
     const-string v0, "GsmCallTracker"
 
@@ -3996,6 +4440,7 @@
     .end annotation
 
     .prologue
+    .line 343
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mRingingCall:Lcom/android/internal/telephony/gsm/GsmCall;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/Call;->getState()Lcom/android/internal/telephony/Call$State;
@@ -4006,6 +4451,7 @@
 
     if-ne v0, v1, :cond_0
 
+    .line 344
     new-instance v0, Lcom/android/internal/telephony/CallStateException;
 
     const-string v1, "cannot be in the incoming state"
@@ -4014,11 +4460,13 @@
 
     throw v0
 
+    .line 345
     :cond_0
     iget-boolean v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->callSwitchPending:Z
 
     if-nez v0, :cond_1
 
+    .line 346
     iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     const/16 v1, 0x8
@@ -4029,13 +4477,16 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/telephony/CommandsInterface;->switchWaitingOrHoldingAndActive(Landroid/os/Message;)V
 
+    .line 348
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->callSwitchPending:Z
 
+    .line 352
     :goto_0
     return-void
 
+    .line 350
     :cond_1
     const-string v0, "GsmCallTracker"
 
@@ -4051,10 +4502,12 @@
     .parameter "h"
 
     .prologue
+    .line 170
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mVoiceCallEndedRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v0, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
 
+    .line 171
     return-void
 .end method
 
@@ -4063,9 +4516,11 @@
     .parameter "h"
 
     .prologue
+    .line 159
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->mVoiceCallStartedRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v0, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
 
+    .line 160
     return-void
 .end method

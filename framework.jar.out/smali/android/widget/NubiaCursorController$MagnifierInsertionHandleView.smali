@@ -28,13 +28,13 @@
     .parameter "drawable"
 
     .prologue
-    .line 700
+    .line 696
     iput-object p1, p0, Landroid/widget/NubiaCursorController$MagnifierInsertionHandleView;->this$0:Landroid/widget/NubiaCursorController;
 
-    .line 701
+    .line 697
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/NubiaCursorController$InsertionHandleView;-><init>(Landroid/widget/NubiaCursorController;Landroid/widget/Editor;Landroid/graphics/drawable/Drawable;)V
 
-    .line 702
+    .line 698
     return-void
 .end method
 
@@ -44,30 +44,30 @@
     .locals 1
 
     .prologue
-    .line 705
+    .line 701
     iget-boolean v0, p0, Landroid/widget/NubiaCursorController$MagnifierInsertionHandleView;->canHide:Z
 
     if-eqz v0, :cond_0
 
-    .line 706
+    .line 702
     iget-object v0, p0, Landroid/widget/NubiaCursorController$NubiaHandleView;->mEditor:Landroid/widget/Editor;
 
     invoke-virtual {v0, p0}, Landroid/widget/Editor;->removePositionListenerSubscriber(Landroid/widget/Editor$TextViewPositionListener;)V
 
-    .line 712
+    .line 708
     :goto_0
     return-void
 
-    .line 709
+    .line 705
     :cond_0
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/NubiaCursorController$MagnifierInsertionHandleView;->canHide:Z
 
-    .line 710
+    .line 706
     invoke-virtual {p0}, Landroid/widget/NubiaCursorController$NubiaHandleView;->dismiss()V
 
-    .line 711
+    .line 707
     const/16 v0, 0xc8
 
     invoke-virtual {p0, v0}, Landroid/widget/NubiaCursorController$InsertionHandleView;->hideAfterDelay(I)V
@@ -79,7 +79,7 @@
     .locals 1
 
     .prologue
-    .line 715
+    .line 711
     const/4 v0, 0x0
 
     return v0
@@ -89,15 +89,15 @@
     .locals 2
 
     .prologue
-    .line 719
+    .line 715
     invoke-super {p0}, Landroid/widget/NubiaCursorController$InsertionHandleView;->show()V
 
-    .line 720
+    .line 716
     const/16 v0, 0xbb8
 
     invoke-virtual {p0, v0}, Landroid/widget/NubiaCursorController$InsertionHandleView;->hideAfterDelay(I)V
 
-    .line 721
+    .line 717
     invoke-virtual {p0}, Landroid/widget/NubiaCursorController$InsertionHandleView;->getCurrentCursorOffset()I
 
     move-result v0
@@ -106,6 +106,6 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/NubiaCursorController$InsertionHandleView;->updatePositionXY(IZ)V
 
-    .line 722
+    .line 718
     return-void
 .end method

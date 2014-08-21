@@ -15502,19 +15502,6 @@
 
     move-result-object v6
 
-    .line 1598
-    .local v6, r:Landroid/content/res/Resources;
-    if-eqz v6, :cond_0
-
-    move-object v0, v6
-
-    .line 1599
-    check-cast v0, Landroid/content/res/MiuiResources;
-
-    invoke-virtual {v0, p1}, Landroid/content/res/MiuiResources;->init(Ljava/lang/String;)V
-
-    .line 1601
-    :cond_0
     return-object v6
 .end method
 

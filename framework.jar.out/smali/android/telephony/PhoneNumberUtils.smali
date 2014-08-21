@@ -3566,7 +3566,6 @@
 
     move-result v1
 
-    .line 1466
     .local v1, len:I
     const/4 v0, 0x0
 

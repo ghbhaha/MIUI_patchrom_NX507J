@@ -25,13 +25,13 @@
     .parameter "handler"
 
     .prologue
-    .line 116
+    .line 127
     iput-object p1, p0, Landroid/os/nubia/breathlight/BreathinglightService$SettingsObserver;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
 
-    .line 117
+    .line 128
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 118
+    .line 129
     return-void
 .end method
 
@@ -42,13 +42,13 @@
     .parameter "selfChange"
 
     .prologue
-    .line 136
+    .line 147
     iget-object v0, p0, Landroid/os/nubia/breathlight/BreathinglightService$SettingsObserver;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
 
     #calls: Landroid/os/nubia/breathlight/BreathinglightService;->updateSwitchStatus()V
     invoke-static {v0}, Landroid/os/nubia/breathlight/BreathinglightService;->access$100(Landroid/os/nubia/breathlight/BreathinglightService;)V
 
-    .line 137
+    .line 148
     return-void
 .end method
 
@@ -60,7 +60,7 @@
 
     const/4 v2, -0x1
 
-    .line 122
+    .line 133
     iget-object v1, p0, Landroid/os/nubia/breathlight/BreathinglightService$SettingsObserver;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
 
     #getter for: Landroid/os/nubia/breathlight/BreathinglightService;->mContext:Landroid/content/Context;
@@ -72,7 +72,7 @@
 
     move-result-object v0
 
-    .line 123
+    .line 134
     .local v0, resolver:Landroid/content/ContentResolver;
     const-string v1, "led_light_event_miss"
 
@@ -82,7 +82,7 @@
 
     invoke-virtual {v0, v1, v3, p0, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 125
+    .line 136
     const-string v1, "led_light_app_msg"
 
     invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -91,7 +91,7 @@
 
     invoke-virtual {v0, v1, v3, p0, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 127
+    .line 138
     const-string v1, "led_light_charge"
 
     invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -100,7 +100,7 @@
 
     invoke-virtual {v0, v1, v3, p0, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 129
+    .line 140
     const-string v1, "led_light_battery_low"
 
     invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -109,12 +109,12 @@
 
     invoke-virtual {v0, v1, v3, p0, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 131
+    .line 142
     iget-object v1, p0, Landroid/os/nubia/breathlight/BreathinglightService$SettingsObserver;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
 
     #calls: Landroid/os/nubia/breathlight/BreathinglightService;->updateSwitchStatus()V
     invoke-static {v1}, Landroid/os/nubia/breathlight/BreathinglightService;->access$100(Landroid/os/nubia/breathlight/BreathinglightService;)V
 
-    .line 132
+    .line 143
     return-void
 .end method

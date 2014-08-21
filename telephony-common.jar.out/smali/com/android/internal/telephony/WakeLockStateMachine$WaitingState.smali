@@ -24,6 +24,7 @@
     .parameter
 
     .prologue
+    .line 182
     iput-object p1, p0, Lcom/android/internal/telephony/WakeLockStateMachine$WaitingState;->this$0:Lcom/android/internal/telephony/WakeLockStateMachine;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -40,16 +41,19 @@
     .prologue
     const/4 v0, 0x1
 
+    .line 185
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
+    .line 205
     const/4 v0, 0x0
 
     :cond_0
     :goto_0
     return v0
 
+    .line 187
     :pswitch_0
     iget-object v1, p0, Lcom/android/internal/telephony/WakeLockStateMachine$WaitingState;->this$0:Lcom/android/internal/telephony/WakeLockStateMachine;
 
@@ -57,6 +61,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/internal/telephony/WakeLockStateMachine;->log(Ljava/lang/String;)V
 
+    .line 188
     iget-object v1, p0, Lcom/android/internal/telephony/WakeLockStateMachine$WaitingState;->this$0:Lcom/android/internal/telephony/WakeLockStateMachine;
 
     #calls: Lcom/android/internal/util/StateMachine;->deferMessage(Landroid/os/Message;)V
@@ -64,6 +69,7 @@
 
     goto :goto_0
 
+    .line 192
     :pswitch_1
     iget-object v1, p0, Lcom/android/internal/telephony/WakeLockStateMachine$WaitingState;->this$0:Lcom/android/internal/telephony/WakeLockStateMachine;
 
@@ -71,6 +77,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/internal/telephony/WakeLockStateMachine;->log(Ljava/lang/String;)V
 
+    .line 193
     iget-object v1, p0, Lcom/android/internal/telephony/WakeLockStateMachine$WaitingState;->this$0:Lcom/android/internal/telephony/WakeLockStateMachine;
 
     iget-object v2, p0, Lcom/android/internal/telephony/WakeLockStateMachine$WaitingState;->this$0:Lcom/android/internal/telephony/WakeLockStateMachine;
@@ -85,6 +92,7 @@
 
     goto :goto_0
 
+    .line 197
     :pswitch_2
     iget-object v1, p0, Lcom/android/internal/telephony/WakeLockStateMachine$WaitingState;->this$0:Lcom/android/internal/telephony/WakeLockStateMachine;
 
@@ -95,6 +103,7 @@
 
     invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->release()V
 
+    .line 198
     iget-object v1, p0, Lcom/android/internal/telephony/WakeLockStateMachine$WaitingState;->this$0:Lcom/android/internal/telephony/WakeLockStateMachine;
 
     #getter for: Lcom/android/internal/telephony/WakeLockStateMachine;->mWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -108,6 +117,7 @@
 
     if-nez v1, :cond_0
 
+    .line 200
     iget-object v1, p0, Lcom/android/internal/telephony/WakeLockStateMachine$WaitingState;->this$0:Lcom/android/internal/telephony/WakeLockStateMachine;
 
     const-string v2, "mWakeLock released while still in WaitingState!"
@@ -116,6 +126,7 @@
 
     goto :goto_0
 
+    .line 185
     nop
 
     :pswitch_data_0

@@ -38,6 +38,7 @@
     .locals 1
 
     .prologue
+    .line 72
     new-instance v0, Lcom/android/internal/telephony/cat/Duration$1;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/cat/Duration$1;-><init>()V
@@ -53,12 +54,16 @@
     .parameter "timeUnit"
 
     .prologue
+    .line 51
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 52
     iput p1, p0, Lcom/android/internal/telephony/cat/Duration;->timeInterval:I
 
+    .line 53
     iput-object p2, p0, Lcom/android/internal/telephony/cat/Duration;->timeUnit:Lcom/android/internal/telephony/cat/Duration$TimeUnit;
 
+    .line 54
     return-void
 .end method
 
@@ -67,14 +72,17 @@
     .parameter "in"
 
     .prologue
+    .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 57
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/internal/telephony/cat/Duration;->timeInterval:I
 
+    .line 58
     invoke-static {}, Lcom/android/internal/telephony/cat/Duration$TimeUnit;->values()[Lcom/android/internal/telephony/cat/Duration$TimeUnit;
 
     move-result-object v0
@@ -87,6 +95,7 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/cat/Duration;->timeUnit:Lcom/android/internal/telephony/cat/Duration$TimeUnit;
 
+    .line 59
     return-void
 .end method
 
@@ -96,6 +105,7 @@
     .parameter "x1"
 
     .prologue
+    .line 28
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/cat/Duration;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -107,6 +117,7 @@
     .locals 1
 
     .prologue
+    .line 69
     const/4 v0, 0x0
 
     return v0
@@ -118,10 +129,12 @@
     .parameter "flags"
 
     .prologue
+    .line 63
     iget v0, p0, Lcom/android/internal/telephony/cat/Duration;->timeInterval:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 64
     iget-object v0, p0, Lcom/android/internal/telephony/cat/Duration;->timeUnit:Lcom/android/internal/telephony/cat/Duration$TimeUnit;
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
@@ -130,5 +143,6 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 65
     return-void
 .end method

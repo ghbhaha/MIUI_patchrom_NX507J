@@ -1796,7 +1796,7 @@
 
     move-result-object v2
 
-    const v3, 0x10900dd
+    const v3, 0x10900de
 
     const/4 v4, 0x0
 
@@ -1806,7 +1806,7 @@
 
     .line 2156
     .local v1, row:Landroid/view/View;
-    const v2, 0x10203b6
+    const v2, 0x10203bb
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2760,29 +2760,23 @@
 
     if-eqz v1, :cond_0
 
-    .line 2706
     const/4 v0, 0x1
 
-    .line 2707
     iget-object v1, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;->mWifiNative:Landroid/net/wifi/WifiNative;
 
     invoke-virtual {v1}, Landroid/net/wifi/WifiNative;->p2pFlush()Z
 
-    .line 2709
     :cond_0
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 2710
     invoke-direct {p0}, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;->sendPeersChangedBroadcast()V
 
-    .line 2713
     :cond_1
     iget-object v1, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;->mPeersLostDuringConnection:Landroid/net/wifi/p2p/WifiP2pDeviceList;
 
     invoke-virtual {v1}, Landroid/net/wifi/p2p/WifiP2pDeviceList;->clear()Z
 
-    .line 2715
     .end local v0           #peersChanged:Z
     :cond_2
     iget-object v1, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;->this$0:Landroid/net/wifi/p2p/WifiP2pService;
@@ -2801,7 +2795,6 @@
     :cond_3
     const/4 v0, 0x1
 
-    .line 2712
     iget-object v1, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;->mWifiNative:Landroid/net/wifi/WifiNative;
 
     invoke-virtual {v1}, Landroid/net/wifi/WifiNative;->p2pFlush()Z
@@ -3503,7 +3496,7 @@
 
     move-result-object v6
 
-    const v7, 0x10900dc
+    const v7, 0x10900dd
 
     invoke-virtual {v6, v7, v8}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -3534,7 +3527,7 @@
     invoke-direct {p0, v1, v6, v7}, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;->addRowToDialog(Landroid/view/ViewGroup;ILjava/lang/String;)V
 
     .line 2228
-    const v6, 0x10203b5
+    const v6, 0x10203ba
 
     invoke-virtual {v4, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3655,7 +3648,7 @@
 
     .line 2272
     :pswitch_0
-    const v6, 0x10203b4
+    const v6, 0x10203b9
 
     invoke-virtual {v4, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3713,7 +3706,7 @@
 
     move-result-object v4
 
-    const v5, 0x10900dc
+    const v5, 0x10900dd
 
     invoke-virtual {v4, v5, v7}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -3912,7 +3905,7 @@
 
     move-result-object v6
 
-    const v7, 0x10900dc
+    const v7, 0x10900dd
 
     const/4 v8, 0x0
 

@@ -48,12 +48,12 @@
     .parameter
 
     .prologue
-    .line 5688
+    .line 5695
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     invoke-direct {p0}, Lcom/android/server/IntentResolver;-><init>()V
 
-    .line 5887
+    .line 5894
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -68,7 +68,7 @@
     .parameter "x0"
 
     .prologue
-    .line 5688
+    .line 5695
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver;->mActivities:Ljava/util/HashMap;
 
     return-object v0
@@ -82,7 +82,7 @@
     .parameter "type"
 
     .prologue
-    .line 5731
+    .line 5738
     iget-object v4, p1, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
 
     iget-object v4, v4, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
@@ -92,7 +92,7 @@
 
     move-result v3
 
-    .line 5732
+    .line 5739
     .local v3, systemApp:Z
     iget-object v4, p0, Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver;->mActivities:Ljava/util/HashMap;
 
@@ -102,14 +102,14 @@
 
     invoke-virtual {v4, v5, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 5739
+    .line 5746
     iget-object v4, p1, Landroid/content/pm/PackageParser$Component;->intents:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 5740
+    .line 5747
     .local v0, NI:I
     const/4 v2, 0x0
 
@@ -117,7 +117,7 @@
     :goto_0
     if-ge v2, v0, :cond_2
 
-    .line 5741
+    .line 5748
     iget-object v4, p1, Landroid/content/pm/PackageParser$Component;->intents:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -126,7 +126,7 @@
 
     check-cast v1, Landroid/content/pm/PackageParser$ActivityIntentInfo;
 
-    .line 5742
+    .line 5749
     .local v1, intent:Landroid/content/pm/PackageParser$ActivityIntentInfo;
     if-nez v3, :cond_0
 
@@ -144,12 +144,12 @@
 
     if-eqz v4, :cond_0
 
-    .line 5743
+    .line 5750
     const/4 v4, 0x0
 
     invoke-virtual {v1, v4}, Landroid/content/IntentFilter;->setPriority(I)V
 
-    .line 5744
+    .line 5751
     const-string v4, "PackageManager"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -196,7 +196,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5751
+    .line 5758
     :cond_0
     invoke-virtual {v1}, Landroid/content/IntentFilter;->debugCheck()Z
 
@@ -204,7 +204,7 @@
 
     if-nez v4, :cond_1
 
-    .line 5752
+    .line 5759
     const-string v4, "PackageManager"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -231,16 +231,16 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5754
+    .line 5761
     :cond_1
     invoke-virtual {p0, v1}, Lcom/android/server/IntentResolver;->addFilter(Landroid/content/IntentFilter;)V
 
-    .line 5740
+    .line 5747
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 5756
+    .line 5763
     .end local v1           #intent:Landroid/content/pm/PackageParser$ActivityIntentInfo;
     :cond_2
     return-void
@@ -252,7 +252,7 @@
     .parameter "x1"
 
     .prologue
-    .line 5688
+    .line 5695
     check-cast p1, Landroid/content/pm/PackageParser$ActivityIntentInfo;
 
     .end local p1
@@ -279,13 +279,13 @@
     .end annotation
 
     .prologue
-    .line 5780
+    .line 5787
     .local p2, dest:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     iget-object v3, p1, Landroid/content/pm/PackageParser$ActivityIntentInfo;->activity:Landroid/content/pm/PackageParser$Activity;
 
     iget-object v1, v3, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
 
-    .line 5781
+    .line 5788
     .local v1, filterAi:Landroid/content/pm/ActivityInfo;
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -297,7 +297,7 @@
     :goto_0
     if-ltz v2, :cond_1
 
-    .line 5782
+    .line 5789
     invoke-interface {p2, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -306,7 +306,7 @@
 
     iget-object v0, v3, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    .line 5783
+    .line 5790
     .local v0, destAi:Landroid/content/pm/ActivityInfo;
     iget-object v3, v0, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
@@ -320,22 +320,22 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 5785
+    .line 5792
     const/4 v3, 0x0
 
-    .line 5788
+    .line 5795
     .end local v0           #destAi:Landroid/content/pm/ActivityInfo;
     :goto_1
     return v3
 
-    .line 5781
+    .line 5788
     .restart local v0       #destAi:Landroid/content/pm/ActivityInfo;
     :cond_0
     add-int/lit8 v2, v2, -0x1
 
     goto :goto_0
 
-    .line 5788
+    .line 5795
     .end local v0           #destAi:Landroid/content/pm/ActivityInfo;
     :cond_1
     const/4 v3, 0x1
@@ -350,7 +350,7 @@
     .parameter "x2"
 
     .prologue
-    .line 5688
+    .line 5695
     check-cast p3, Landroid/content/pm/PackageParser$ActivityIntentInfo;
 
     .end local p3
@@ -366,7 +366,7 @@
     .parameter "filter"
 
     .prologue
-    .line 5866
+    .line 5873
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     iget-object v0, p3, Landroid/content/pm/PackageParser$ActivityIntentInfo;->activity:Landroid/content/pm/PackageParser$Activity;
@@ -381,22 +381,22 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5868
+    .line 5875
     const/16 v0, 0x20
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 5869
+    .line 5876
     iget-object v0, p3, Landroid/content/pm/PackageParser$ActivityIntentInfo;->activity:Landroid/content/pm/PackageParser$Activity;
 
     invoke-virtual {v0, p1}, Landroid/content/pm/PackageParser$Component;->printComponentShortName(Ljava/io/PrintWriter;)V
 
-    .line 5870
+    .line 5877
     const-string v0, " filter "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 5871
+    .line 5878
     invoke-static {p3}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v0
@@ -407,7 +407,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5872
+    .line 5879
     return-void
 .end method
 
@@ -417,7 +417,7 @@
     .parameter "x1"
 
     .prologue
-    .line 5688
+    .line 5695
     check-cast p1, Landroid/content/pm/PackageParser$ActivityIntentInfo;
 
     .end local p1
@@ -438,7 +438,7 @@
 
     const/4 v3, 0x0
 
-    .line 5798
+    .line 5805
     sget-object v4, Lcom/android/server/pm/PackageManagerService;->sUserManager:Lcom/android/server/pm/UserManagerService;
 
     invoke-virtual {v4, p2}, Lcom/android/server/pm/UserManagerService;->exists(I)Z
@@ -447,31 +447,31 @@
 
     if-nez v4, :cond_1
 
-    .line 5810
+    .line 5817
     :cond_0
     :goto_0
     return v2
 
-    .line 5799
+    .line 5806
     :cond_1
     iget-object v4, p1, Landroid/content/pm/PackageParser$ActivityIntentInfo;->activity:Landroid/content/pm/PackageParser$Activity;
 
     iget-object v0, v4, Landroid/content/pm/PackageParser$Component;->owner:Landroid/content/pm/PackageParser$Package;
 
-    .line 5800
+    .line 5807
     .local v0, p:Landroid/content/pm/PackageParser$Package;
     if-eqz v0, :cond_3
 
-    .line 5801
+    .line 5808
     iget-object v1, v0, Landroid/content/pm/PackageParser$Package;->mExtras:Ljava/lang/Object;
 
     check-cast v1, Lcom/android/server/pm/PackageSetting;
 
-    .line 5802
+    .line 5809
     .local v1, ps:Lcom/android/server/pm/PackageSetting;
     if-eqz v1, :cond_3
 
-    .line 5806
+    .line 5813
     iget v4, v1, Lcom/android/server/pm/GrantedPermissions;->pkgFlags:I
 
     and-int/lit8 v4, v4, 0x1
@@ -493,7 +493,7 @@
     :cond_3
     move v2, v3
 
-    .line 5810
+    .line 5817
     goto :goto_0
 .end method
 
@@ -503,7 +503,7 @@
     .parameter "x1"
 
     .prologue
-    .line 5688
+    .line 5695
     check-cast p2, Landroid/content/pm/PackageParser$ActivityIntentInfo;
 
     .end local p2
@@ -520,7 +520,7 @@
     .parameter "info"
 
     .prologue
-    .line 5816
+    .line 5823
     iget-object v0, p2, Landroid/content/pm/PackageParser$ActivityIntentInfo;->activity:Landroid/content/pm/PackageParser$Activity;
 
     iget-object v0, v0, Landroid/content/pm/PackageParser$Component;->owner:Landroid/content/pm/PackageParser$Package;
@@ -539,7 +539,7 @@
     .parameter "x0"
 
     .prologue
-    .line 5688
+    .line 5695
     invoke-virtual {p0, p1}, Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver;->newArray(I)[Landroid/content/pm/PackageParser$ActivityIntentInfo;
 
     move-result-object v0
@@ -552,7 +552,7 @@
     .parameter "size"
 
     .prologue
-    .line 5793
+    .line 5800
     new-array v0, p1, [Landroid/content/pm/PackageParser$ActivityIntentInfo;
 
     return-object v0
@@ -567,7 +567,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 5822
+    .line 5829
     sget-object v4, Lcom/android/server/pm/PackageManagerService;->sUserManager:Lcom/android/server/pm/UserManagerService;
 
     invoke-virtual {v4, p3}, Lcom/android/server/pm/UserManagerService;->exists(I)Z
@@ -576,12 +576,12 @@
 
     if-nez v4, :cond_1
 
-    .line 5855
+    .line 5862
     :cond_0
     :goto_0
     return-object v3
 
-    .line 5823
+    .line 5830
     :cond_1
     iget-object v4, p0, Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -599,10 +599,10 @@
 
     if-eqz v4, :cond_0
 
-    .line 5826
+    .line 5833
     iget-object v0, p1, Landroid/content/pm/PackageParser$ActivityIntentInfo;->activity:Landroid/content/pm/PackageParser$Activity;
 
-    .line 5827
+    .line 5834
     .local v0, activity:Landroid/content/pm/PackageParser$Activity;
     iget-object v4, p0, Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -620,7 +620,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 5831
+    .line 5838
     :cond_2
     iget-object v4, v0, Landroid/content/pm/PackageParser$Component;->owner:Landroid/content/pm/PackageParser$Package;
 
@@ -628,11 +628,11 @@
 
     check-cast v2, Lcom/android/server/pm/PackageSetting;
 
-    .line 5832
+    .line 5839
     .local v2, ps:Lcom/android/server/pm/PackageSetting;
     if-eqz v2, :cond_0
 
-    .line 5835
+    .line 5842
     iget v4, p0, Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver;->mFlags:I
 
     invoke-virtual {v2, p3}, Lcom/android/server/pm/PackageSettingBase;->readUserState(I)Landroid/content/pm/PackageUserState;
@@ -643,30 +643,30 @@
 
     move-result-object v1
 
-    .line 5837
+    .line 5844
     .local v1, ai:Landroid/content/pm/ActivityInfo;
     if-eqz v1, :cond_0
 
-    .line 5840
+    .line 5847
     new-instance v3, Landroid/content/pm/ResolveInfo;
 
     invoke-direct {v3}, Landroid/content/pm/ResolveInfo;-><init>()V
 
-    .line 5841
+    .line 5848
     .local v3, res:Landroid/content/pm/ResolveInfo;
     iput-object v1, v3, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    .line 5842
+    .line 5849
     iget v4, p0, Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver;->mFlags:I
 
     and-int/lit8 v4, v4, 0x40
 
     if-eqz v4, :cond_3
 
-    .line 5843
+    .line 5850
     iput-object p1, v3, Landroid/content/pm/ResolveInfo;->filter:Landroid/content/IntentFilter;
 
-    .line 5845
+    .line 5852
     :cond_3
     invoke-virtual {p1}, Landroid/content/IntentFilter;->getPriority()I
 
@@ -674,37 +674,37 @@
 
     iput v4, v3, Landroid/content/pm/ResolveInfo;->priority:I
 
-    .line 5846
+    .line 5853
     iget-object v4, v0, Landroid/content/pm/PackageParser$Component;->owner:Landroid/content/pm/PackageParser$Package;
 
     iget v4, v4, Landroid/content/pm/PackageParser$Package;->mPreferredOrder:I
 
     iput v4, v3, Landroid/content/pm/ResolveInfo;->preferredOrder:I
 
-    .line 5849
+    .line 5856
     iput p2, v3, Landroid/content/pm/ResolveInfo;->match:I
 
-    .line 5850
+    .line 5857
     iget-boolean v4, p1, Landroid/content/pm/PackageParser$IntentInfo;->hasDefault:Z
 
     iput-boolean v4, v3, Landroid/content/pm/ResolveInfo;->isDefault:Z
 
-    .line 5851
+    .line 5858
     iget v4, p1, Landroid/content/pm/PackageParser$IntentInfo;->labelRes:I
 
     iput v4, v3, Landroid/content/pm/ResolveInfo;->labelRes:I
 
-    .line 5852
+    .line 5859
     iget-object v4, p1, Landroid/content/pm/PackageParser$IntentInfo;->nonLocalizedLabel:Ljava/lang/CharSequence;
 
     iput-object v4, v3, Landroid/content/pm/ResolveInfo;->nonLocalizedLabel:Ljava/lang/CharSequence;
 
-    .line 5853
+    .line 5860
     iget v4, p1, Landroid/content/pm/PackageParser$IntentInfo;->icon:I
 
     iput v4, v3, Landroid/content/pm/ResolveInfo;->icon:I
 
-    .line 5854
+    .line 5861
     iget-object v4, v3, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v4, v4, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
@@ -726,7 +726,7 @@
     .parameter "x2"
 
     .prologue
-    .line 5688
+    .line 5695
     check-cast p1, Landroid/content/pm/PackageParser$ActivityIntentInfo;
 
     .end local p1
@@ -757,7 +757,7 @@
     .end annotation
 
     .prologue
-    .line 5699
+    .line 5706
     sget-object v0, Lcom/android/server/pm/PackageManagerService;->sUserManager:Lcom/android/server/pm/UserManagerService;
 
     invoke-virtual {v0, p4}, Lcom/android/server/pm/UserManagerService;->exists(I)Z
@@ -768,15 +768,15 @@
 
     const/4 v0, 0x0
 
-    .line 5701
+    .line 5708
     :goto_0
     return-object v0
 
-    .line 5700
+    .line 5707
     :cond_0
     iput p3, p0, Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver;->mFlags:I
 
-    .line 5701
+    .line 5708
     const/high16 v0, 0x1
 
     and-int/2addr v0, p3
@@ -818,7 +818,7 @@
     .end annotation
 
     .prologue
-    .line 5692
+    .line 5699
     sget-object v0, Lcom/android/server/pm/PackageManagerService;->sUserManager:Lcom/android/server/pm/UserManagerService;
 
     invoke-virtual {v0, p4}, Lcom/android/server/pm/UserManagerService;->exists(I)Z
@@ -829,11 +829,11 @@
 
     const/4 v0, 0x0
 
-    .line 5694
+    .line 5701
     :goto_0
     return-object v0
 
-    .line 5693
+    .line 5700
     :cond_0
     if-eqz p3, :cond_1
 
@@ -842,14 +842,14 @@
     :goto_1
     iput v0, p0, Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver;->mFlags:I
 
-    .line 5694
+    .line 5701
     invoke-super {p0, p1, p2, p3, p4}, Lcom/android/server/IntentResolver;->queryIntent(Landroid/content/Intent;Ljava/lang/String;ZI)Ljava/util/List;
 
     move-result-object v0
 
     goto :goto_0
 
-    .line 5693
+    .line 5700
     :cond_1
     const/4 v0, 0x0
 
@@ -884,7 +884,7 @@
     .local p4, packageActivities:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/pm/PackageParser$Activity;>;"
     const/4 v0, 0x0
 
-    .line 5707
+    .line 5714
     sget-object v1, Lcom/android/server/pm/PackageManagerService;->sUserManager:Lcom/android/server/pm/UserManagerService;
 
     invoke-virtual {v1, p5}, Lcom/android/server/pm/UserManagerService;->exists(I)Z
@@ -893,19 +893,19 @@
 
     if-nez v1, :cond_1
 
-    .line 5727
+    .line 5734
     :cond_0
     :goto_0
     return-object v0
 
-    .line 5708
+    .line 5715
     :cond_1
     if-eqz p4, :cond_0
 
-    .line 5711
+    .line 5718
     iput p3, p0, Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver;->mFlags:I
 
-    .line 5712
+    .line 5719
     const/high16 v0, 0x1
 
     and-int/2addr v0, p3
@@ -914,20 +914,20 @@
 
     const/4 v3, 0x1
 
-    .line 5713
+    .line 5720
     .local v3, defaultOnly:Z
     :goto_1
     invoke-virtual {p4}, Ljava/util/ArrayList;->size()I
 
     move-result v6
 
-    .line 5714
+    .line 5721
     .local v6, N:I
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4, v6}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 5718
+    .line 5725
     .local v4, listCut:Ljava/util/ArrayList;,"Ljava/util/ArrayList<[Landroid/content/pm/PackageParser$ActivityIntentInfo;>;"
     const/4 v8, 0x0
 
@@ -935,7 +935,7 @@
     :goto_2
     if-ge v8, v6, :cond_4
 
-    .line 5719
+    .line 5726
     invoke-virtual {p4, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -944,7 +944,7 @@
 
     iget-object v9, v0, Landroid/content/pm/PackageParser$Component;->intents:Ljava/util/ArrayList;
 
-    .line 5720
+    .line 5727
     .local v9, intentFilters:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/pm/PackageParser$ActivityIntentInfo;>;"
     if-eqz v9, :cond_2
 
@@ -954,28 +954,28 @@
 
     if-lez v0, :cond_2
 
-    .line 5721
+    .line 5728
     invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
     new-array v7, v0, [Landroid/content/pm/PackageParser$ActivityIntentInfo;
 
-    .line 5723
+    .line 5730
     .local v7, array:[Landroid/content/pm/PackageParser$ActivityIntentInfo;
     invoke-virtual {v9, v7}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
-    .line 5724
+    .line 5731
     invoke-virtual {v4, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 5718
+    .line 5725
     .end local v7           #array:[Landroid/content/pm/PackageParser$ActivityIntentInfo;
     :cond_2
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_2
 
-    .line 5712
+    .line 5719
     .end local v3           #defaultOnly:Z
     .end local v4           #listCut:Ljava/util/ArrayList;,"Ljava/util/ArrayList<[Landroid/content/pm/PackageParser$ActivityIntentInfo;>;"
     .end local v6           #N:I
@@ -999,7 +999,7 @@
 
     move v5, p5
 
-    .line 5727
+    .line 5734
     invoke-super/range {v0 .. v5}, Lcom/android/server/IntentResolver;->queryIntentFromList(Landroid/content/Intent;Ljava/lang/String;ZLjava/util/ArrayList;I)Ljava/util/List;
 
     move-result-object v0
@@ -1013,7 +1013,7 @@
     .parameter "type"
 
     .prologue
-    .line 5759
+    .line 5766
     iget-object v3, p0, Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver;->mActivities:Ljava/util/HashMap;
 
     invoke-virtual {p1}, Landroid/content/pm/PackageParser$Component;->getComponentName()Landroid/content/ComponentName;
@@ -1022,14 +1022,14 @@
 
     invoke-virtual {v3, v4}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 5766
+    .line 5773
     iget-object v3, p1, Landroid/content/pm/PackageParser$Component;->intents:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 5767
+    .line 5774
     .local v0, NI:I
     const/4 v2, 0x0
 
@@ -1037,7 +1037,7 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 5768
+    .line 5775
     iget-object v3, p1, Landroid/content/pm/PackageParser$Component;->intents:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1046,16 +1046,16 @@
 
     check-cast v1, Landroid/content/pm/PackageParser$ActivityIntentInfo;
 
-    .line 5773
+    .line 5780
     .local v1, intent:Landroid/content/pm/PackageParser$ActivityIntentInfo;
     invoke-virtual {p0, v1}, Lcom/android/server/IntentResolver;->removeFilter(Landroid/content/IntentFilter;)V
 
-    .line 5767
+    .line 5774
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 5775
+    .line 5782
     .end local v1           #intent:Landroid/content/pm/PackageParser$ActivityIntentInfo;
     :cond_0
     return-void
@@ -1075,7 +1075,7 @@
     .end annotation
 
     .prologue
-    .line 5860
+    .line 5867
     .local p1, results:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     invoke-static {}, Lcom/android/server/pm/PackageManagerService;->access$1800()Ljava/util/Comparator;
 
@@ -1083,6 +1083,6 @@
 
     invoke-static {p1, v0}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 5861
+    .line 5868
     return-void
 .end method

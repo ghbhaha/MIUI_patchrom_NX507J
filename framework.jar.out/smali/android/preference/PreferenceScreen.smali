@@ -74,7 +74,7 @@
 
     .line 167
     .local v3, inflater:Landroid/view/LayoutInflater;
-    const v5, 0x109008b
+    const v5, 0x109008c
 
     invoke-virtual {v3, v5, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -172,7 +172,7 @@
     .parameter "listView"
 
     .prologue
-    invoke-virtual {p1, p0}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
+    invoke-virtual {p1, p0}, Landroid/widget/AdapterView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
     invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->getRootAdapter()Landroid/widget/ListAdapter;
 
@@ -188,7 +188,7 @@
 
     invoke-static {p1}, Landroid/preference/Injector$PreferenceScreenHook;->bind(Landroid/widget/ListView;)V
 
-    invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->onAttachedToActivity()V
+    invoke-virtual {p0}, Landroid/preference/PreferenceGroup;->onAttachedToActivity()V
 
     return-void
 .end method

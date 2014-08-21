@@ -54,6 +54,7 @@
 
     const/4 v3, 0x0
 
+    .line 31
     new-instance v0, Lcom/android/internal/telephony/uicc/IccCardApplicationStatus$AppType;
 
     const-string v1, "APPTYPE_UNKNOWN"
@@ -62,6 +63,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/uicc/IccCardApplicationStatus$AppType;->APPTYPE_UNKNOWN:Lcom/android/internal/telephony/uicc/IccCardApplicationStatus$AppType;
 
+    .line 32
     new-instance v0, Lcom/android/internal/telephony/uicc/IccCardApplicationStatus$AppType;
 
     const-string v1, "APPTYPE_SIM"
@@ -70,6 +72,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/uicc/IccCardApplicationStatus$AppType;->APPTYPE_SIM:Lcom/android/internal/telephony/uicc/IccCardApplicationStatus$AppType;
 
+    .line 33
     new-instance v0, Lcom/android/internal/telephony/uicc/IccCardApplicationStatus$AppType;
 
     const-string v1, "APPTYPE_USIM"
@@ -78,6 +81,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/uicc/IccCardApplicationStatus$AppType;->APPTYPE_USIM:Lcom/android/internal/telephony/uicc/IccCardApplicationStatus$AppType;
 
+    .line 34
     new-instance v0, Lcom/android/internal/telephony/uicc/IccCardApplicationStatus$AppType;
 
     const-string v1, "APPTYPE_RUIM"
@@ -86,6 +90,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/uicc/IccCardApplicationStatus$AppType;->APPTYPE_RUIM:Lcom/android/internal/telephony/uicc/IccCardApplicationStatus$AppType;
 
+    .line 35
     new-instance v0, Lcom/android/internal/telephony/uicc/IccCardApplicationStatus$AppType;
 
     const-string v1, "APPTYPE_CSIM"
@@ -94,6 +99,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/uicc/IccCardApplicationStatus$AppType;->APPTYPE_CSIM:Lcom/android/internal/telephony/uicc/IccCardApplicationStatus$AppType;
 
+    .line 36
     new-instance v0, Lcom/android/internal/telephony/uicc/IccCardApplicationStatus$AppType;
 
     const-string v1, "APPTYPE_ISIM"
@@ -104,6 +110,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/uicc/IccCardApplicationStatus$AppType;->APPTYPE_ISIM:Lcom/android/internal/telephony/uicc/IccCardApplicationStatus$AppType;
 
+    .line 30
     const/4 v0, 0x6
 
     new-array v0, v0, [Lcom/android/internal/telephony/uicc/IccCardApplicationStatus$AppType;
@@ -150,6 +157,7 @@
     .end annotation
 
     .prologue
+    .line 30
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -160,6 +168,7 @@
     .parameter "name"
 
     .prologue
+    .line 30
     const-class v0, Lcom/android/internal/telephony/uicc/IccCardApplicationStatus$AppType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -175,6 +184,7 @@
     .locals 1
 
     .prologue
+    .line 30
     sget-object v0, Lcom/android/internal/telephony/uicc/IccCardApplicationStatus$AppType;->$VALUES:[Lcom/android/internal/telephony/uicc/IccCardApplicationStatus$AppType;
 
     invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;

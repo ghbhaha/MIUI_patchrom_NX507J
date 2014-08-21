@@ -183,7 +183,7 @@
     .line 219
     const/16 v1, 0xb
 
-    const v2, 0x10900a7
+    const v2, 0x10900a8
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -2377,22 +2377,22 @@
     iput v0, p0, Lcom/android/internal/app/AlertController;->mAlertDialogLayout:I
 
     .line 244
-    const v0, 0x1090075
+    const v0, 0x1090076
 
     iput v0, p0, Lcom/android/internal/app/AlertController;->mListLayout:I
 
     .line 245
-    const v0, 0x1090077
+    const v0, 0x1090078
 
     iput v0, p0, Lcom/android/internal/app/AlertController;->mMultiChoiceItemLayout:I
 
     .line 246
-    const v0, 0x1090078
+    const v0, 0x1090079
 
     iput v0, p0, Lcom/android/internal/app/AlertController;->mSingleChoiceItemLayout:I
 
     .line 247
-    const v0, 0x1090076
+    const v0, 0x1090077
 
     iput v0, p0, Lcom/android/internal/app/AlertController;->mListItemLayout:I
 

@@ -37,4 +37,14 @@
     <dimen name="text_list_item_min_width">100.0dip</dimen>
     <dimen name="text_list_item_max_width">350.0dip</dimen>
     <dimen name="nubia_blur_arc_height">9.0dip</dimen>
+    <dimen name="nubia_digital_clock_time_size">64.0dip</dimen>
+    <dimen name="nubia_digital_clock_city_size">18.0dip</dimen>
+    <dimen name="nubia_digital_clock_date_size">14.0dip</dimen>
+    <dimen name="nubia_digital_clock_ampm_size">10.0dip</dimen>
+    <dimen name="nubia_digital_clock_margin_top">-20.0dip</dimen>
+    <dimen name="nubia_analog_clock_ampm_size">10.0dip</dimen>
+    <dimen name="nubia_analog_clock_city_size">18.0dip</dimen>
+    <dimen name="nubia_analog_clock_date_size">14.0dip</dimen>
+    <dimen name="nubia_analog_clock_width">140.0dip</dimen>
+    <dimen name="nubia_analog_clock_height">140.0dip</dimen>
 </resources>

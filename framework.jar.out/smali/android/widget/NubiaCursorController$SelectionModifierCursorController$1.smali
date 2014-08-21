@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1132
+    .line 1128
     iput-object p1, p0, Landroid/widget/NubiaCursorController$SelectionModifierCursorController$1;->this$0:Landroid/widget/NubiaCursorController$SelectionModifierCursorController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "v"
 
     .prologue
-    .line 1135
+    .line 1131
     iget-object v0, p0, Landroid/widget/NubiaCursorController$SelectionModifierCursorController$1;->this$0:Landroid/widget/NubiaCursorController$SelectionModifierCursorController;
 
     iget-object v0, v0, Landroid/widget/NubiaCursorController;->mEditor:Landroid/widget/Editor;
@@ -51,7 +51,7 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/widget/Editor;->handleFloatPanelClick(Landroid/view/View;Landroid/widget/NubiaCursorController;)V
 
-    .line 1136
+    .line 1132
     iget-object v0, p0, Landroid/widget/NubiaCursorController$SelectionModifierCursorController$1;->this$0:Landroid/widget/NubiaCursorController$SelectionModifierCursorController;
 
     #getter for: Landroid/widget/NubiaCursorController$SelectionModifierCursorController;->mPanel:Landroid/widget/NubiaCursorController$FloatPanelViewController;
@@ -61,6 +61,6 @@
 
     invoke-virtual {v0}, Landroid/widget/NubiaCursorController$FloatPanelViewController;->hide()V
 
-    .line 1137
+    .line 1133
     return-void
 .end method

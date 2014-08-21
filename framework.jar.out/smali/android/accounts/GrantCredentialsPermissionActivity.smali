@@ -159,7 +159,7 @@
     .line 154
     iget-object v1, p0, Landroid/accounts/GrantCredentialsPermissionActivity;->mInflater:Landroid/view/LayoutInflater;
 
-    const v2, 0x109007d
+    const v2, 0x109007e
 
     const/4 v3, 0x0
 
@@ -169,7 +169,7 @@
 
     .line 155
     .local v0, view:Landroid/view/View;
-    const v1, 0x102031c
+    const v1, 0x1020321
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

@@ -231,6 +231,11 @@
     <item type="id" name="analog_clock">false</item>
     <item type="id" name="city_name">false</item>
     <item type="id" name="city_date">false</item>
+    <item type="id" name="ampm_view">false</item>
+    <item type="id" name="time_view">false</item>
+    <item type="id" name="city_view">false</item>
+    <item type="id" name="date_view">false</item>
+    <item type="id" name="week_view">false</item>
     <item type="id" name="search_bar">false</item>
     <item type="id" name="search_badge">false</item>
     <item type="id" name="search_button">false</item>

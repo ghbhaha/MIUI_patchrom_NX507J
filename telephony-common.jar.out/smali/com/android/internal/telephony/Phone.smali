@@ -117,12 +117,6 @@
 
 .field public static final FEATURE_ENABLE_SUPL:Ljava/lang/String; = "enableSUPL"
 
-.field public static final LTE_ON_CDMA_FALSE:I = 0x0
-
-.field public static final LTE_ON_CDMA_TRUE:I = 0x1
-
-.field public static final LTE_ON_CDMA_UNKNOWN:I = -0x1
-
 .field public static final NT_MODE_CDMA:I = 0x4
 
 .field public static final NT_MODE_CDMA_GSM:I = 0x19
@@ -157,16 +151,6 @@
 
 .field public static final NT_MODE_TD_SCDMA_GSM:I = 0x10
 
-.field public static final PHONE_NAME_KEY:Ljava/lang/String; = "phoneName"
-
-.field public static final PHONE_TYPE_CDMA:I = 0x2
-
-.field public static final PHONE_TYPE_GSM:I = 0x1
-
-.field public static final PHONE_TYPE_NONE:I = 0x0
-
-.field public static final PHONE_TYPE_SIP:I = 0x3
-
 .field public static final NT_MODE_TD_SCDMA_GSM_LTE:I = 0x11
 
 .field public static final NT_MODE_TD_SCDMA_GSM_WCDMA:I = 0x12
@@ -186,6 +170,16 @@
 .field public static final NT_MODE_WCDMA_ONLY:I = 0x2
 
 .field public static final NT_MODE_WCDMA_PREF:I = 0x0
+
+.field public static final PHONE_NAME_KEY:Ljava/lang/String; = "phoneName"
+
+.field public static final PHONE_TYPE_CDMA:I = 0x2
+
+.field public static final PHONE_TYPE_GSM:I = 0x1
+
+.field public static final PHONE_TYPE_NONE:I = 0x0
+
+.field public static final PHONE_TYPE_SIP:I = 0x3
 
 .field public static final PREFERRED_CDMA_SUBSCRIPTION:I = 0x1
 

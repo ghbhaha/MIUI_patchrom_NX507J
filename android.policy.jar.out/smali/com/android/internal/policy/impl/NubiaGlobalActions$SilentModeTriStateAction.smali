@@ -36,10 +36,10 @@
     .parameter "handler"
 
     .prologue
-    .line 1083
+    .line 1069
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1075
+    .line 1061
     const/4 v0, 0x3
 
     new-array v0, v0, [I
@@ -48,19 +48,19 @@
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$SilentModeTriStateAction;->ITEM_IDS:[I
 
-    .line 1084
+    .line 1070
     iput-object p2, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$SilentModeTriStateAction;->mAudioManager:Landroid/media/AudioManager;
 
-    .line 1085
+    .line 1071
     iput-object p3, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$SilentModeTriStateAction;->mHandler:Landroid/os/Handler;
 
-    .line 1086
+    .line 1072
     iput-object p1, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$SilentModeTriStateAction;->mContext:Landroid/content/Context;
 
-    .line 1087
+    .line 1073
     return-void
 
-    .line 1075
+    .line 1061
     :array_0
     .array-data 0x4
         0xb0t 0x2t 0x2t 0x1t
@@ -74,7 +74,7 @@
     .parameter "index"
 
     .prologue
-    .line 1096
+    .line 1082
     return p1
 .end method
 
@@ -83,7 +83,7 @@
     .parameter "ringerMode"
 
     .prologue
-    .line 1091
+    .line 1077
     return p1
 .end method
 
@@ -99,14 +99,14 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 1101
+    .line 1087
     const v4, 0x1090047
 
     invoke-virtual {p4, v4, p3, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v3
 
-    .line 1104
+    .line 1090
     .local v3, v:Landroid/view/View;
     iget-object v4, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$SilentModeTriStateAction;->mAudioManager:Landroid/media/AudioManager;
 
@@ -118,7 +118,7 @@
 
     move-result v2
 
-    .line 1105
+    .line 1091
     .local v2, selectedIndex:I
     const/4 v0, 0x0
 
@@ -128,7 +128,7 @@
 
     if-ge v0, v4, :cond_1
 
-    .line 1106
+    .line 1092
     iget-object v4, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$SilentModeTriStateAction;->ITEM_IDS:[I
 
     aget v4, v4, v0
@@ -137,7 +137,7 @@
 
     move-result-object v1
 
-    .line 1107
+    .line 1093
     .local v1, itemView:Landroid/view/View;
     if-ne v2, v0, :cond_0
 
@@ -146,17 +146,17 @@
     :goto_1
     invoke-virtual {v1, v4}, Landroid/view/View;->setSelected(Z)V
 
-    .line 1109
+    .line 1095
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
 
     invoke-virtual {v1, v4}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 1110
+    .line 1096
     invoke-virtual {v1, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1105
+    .line 1091
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
@@ -164,10 +164,10 @@
     :cond_0
     move v4, v5
 
-    .line 1107
+    .line 1093
     goto :goto_1
 
-    .line 1112
+    .line 1098
     .end local v1           #itemView:Landroid/view/View;
     :cond_1
     return-object v3
@@ -177,7 +177,7 @@
     .locals 1
 
     .prologue
-    .line 1131
+    .line 1117
     const/4 v0, 0x1
 
     return v0
@@ -188,7 +188,7 @@
     .parameter "v"
 
     .prologue
-    .line 1138
+    .line 1124
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v1
@@ -197,11 +197,11 @@
 
     if-nez v1, :cond_0
 
-    .line 1145
+    .line 1131
     :goto_0
     return-void
 
-    .line 1141
+    .line 1127
     :cond_0
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
@@ -213,7 +213,7 @@
 
     move-result v0
 
-    .line 1142
+    .line 1128
     .local v0, index:I
     iget-object v1, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$SilentModeTriStateAction;->mAudioManager:Landroid/media/AudioManager;
 
@@ -223,7 +223,7 @@
 
     invoke-virtual {v1, v2}, Landroid/media/AudioManager;->setRingerMode(I)V
 
-    .line 1143
+    .line 1129
     iget-object v1, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$SilentModeTriStateAction;->mHandler:Landroid/os/Handler;
 
     const/4 v2, 0x0
@@ -239,7 +239,7 @@
     .locals 1
 
     .prologue
-    .line 1119
+    .line 1105
     const/4 v0, 0x0
 
     return v0
@@ -249,7 +249,7 @@
     .locals 0
 
     .prologue
-    .line 1116
+    .line 1102
     return-void
 .end method
 
@@ -257,7 +257,7 @@
     .locals 1
 
     .prologue
-    .line 1127
+    .line 1113
     const/4 v0, 0x0
 
     return v0
@@ -267,7 +267,7 @@
     .locals 1
 
     .prologue
-    .line 1123
+    .line 1109
     const/4 v0, 0x1
 
     return v0
@@ -277,6 +277,6 @@
     .locals 0
 
     .prologue
-    .line 1135
+    .line 1121
     return-void
 .end method

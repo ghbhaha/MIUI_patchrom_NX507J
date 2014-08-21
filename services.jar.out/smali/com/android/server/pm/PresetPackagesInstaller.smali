@@ -6,7 +6,6 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/pm/PresetPackagesInstaller$PackageInstallerMonitor;,
         Lcom/android/server/pm/PresetPackagesInstaller$InstallTask;
     }
 .end annotation
@@ -34,90 +33,89 @@
 
 .field private mInstallTotal:I
 
-.field private mInstalledCount:I
+.field private mInstalledCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
 .field private mInstallerHelper:Lcom/android/server/pm/InstallerHelper;
 
 .field mInstallerMsgDialog:Landroid/app/ProgressDialog;
 
-.field private mMonitor:Lcom/android/server/pm/PresetPackagesInstaller$PackageInstallerMonitor;
-
 .field private mPackageInstallObserver:Landroid/content/pm/IPackageInstallObserver$Stub;
 
-.field private mPackageManagerService:Lcom/android/server/pm/PackageManagerService;
+.field private mPm:Landroid/content/pm/PackageManager;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lcom/android/server/pm/PackageManagerService;Lcom/android/server/pm/PresetPackagesInstaller$PackageInstallerMonitor;)V
+.method public constructor <init>(Landroid/content/Context;)V
     .locals 2
     .parameter "context"
-    .parameter "service"
-    .parameter "monitor"
 
     .prologue
-    .line 44
+    .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 31
+    .line 32
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->DEBUG:Z
 
-    .line 32
+    .line 33
     const-string v0, "PresetAppInstaller"
 
     iput-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->TAG:Ljava/lang/String;
 
-    .line 37
+    .line 36
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstallerMsgDialog:Landroid/app/ProgressDialog;
 
-    .line 177
+    .line 39
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+
+    iput-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstalledCount:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    .line 180
     new-instance v0, Lcom/android/server/pm/PresetPackagesInstaller$3;
 
     invoke-direct {v0, p0}, Lcom/android/server/pm/PresetPackagesInstaller$3;-><init>(Lcom/android/server/pm/PresetPackagesInstaller;)V
 
     iput-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mPackageInstallObserver:Landroid/content/pm/IPackageInstallObserver$Stub;
 
-    .line 45
-    const-string v0, "PresetAppInstaller"
-
-    const-string v1, "PresetPackagesInstaller create"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 46
+    .line 44
     iput-object p1, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mContext:Landroid/content/Context;
 
-    .line 47
+    .line 45
     new-instance v0, Lcom/android/server/pm/InstallerHelper;
 
     invoke-direct {v0, p1}, Lcom/android/server/pm/InstallerHelper;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstallerHelper:Lcom/android/server/pm/InstallerHelper;
 
-    .line 48
-    iput-object p2, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mPackageManagerService:Lcom/android/server/pm/PackageManagerService;
+    .line 46
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    .line 49
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mPm:Landroid/content/pm/PackageManager;
+
+    .line 47
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstallTasks:Ljava/util/List;
 
-    .line 50
-    iput-object p3, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mMonitor:Lcom/android/server/pm/PresetPackagesInstaller$PackageInstallerMonitor;
-
-    .line 51
+    .line 48
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mHandler:Landroid/os/Handler;
 
-    .line 52
+    .line 49
     return-void
 .end method
 
@@ -126,36 +124,21 @@
     .parameter "x0"
 
     .prologue
-    .line 30
+    .line 31
     iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mContext:Landroid/content/Context;
 
     return-object v0
 .end method
 
-.method static synthetic access$200(Lcom/android/server/pm/PresetPackagesInstaller;)I
+.method static synthetic access$200(Lcom/android/server/pm/PresetPackagesInstaller;)Ljava/util/concurrent/atomic/AtomicInteger;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 30
-    iget v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstalledCount:I
+    .line 31
+    iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstalledCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    return v0
-.end method
-
-.method static synthetic access$208(Lcom/android/server/pm/PresetPackagesInstaller;)I
-    .locals 2
-    .parameter "x0"
-
-    .prologue
-    .line 30
-    iget v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstalledCount:I
-
-    add-int/lit8 v1, v0, 0x1
-
-    iput v1, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstalledCount:I
-
-    return v0
+    return-object v0
 .end method
 
 .method static synthetic access$300(Lcom/android/server/pm/PresetPackagesInstaller;)I
@@ -163,21 +146,35 @@
     .parameter "x0"
 
     .prologue
-    .line 30
+    .line 31
     iget v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstallTotal:I
 
     return v0
 .end method
 
-.method static synthetic access$400(Lcom/android/server/pm/PresetPackagesInstaller;)Lcom/android/server/pm/PresetPackagesInstaller$PackageInstallerMonitor;
-    .locals 1
+.method static synthetic access$302(Lcom/android/server/pm/PresetPackagesInstaller;I)I
+    .locals 0
     .parameter "x0"
+    .parameter "x1"
 
     .prologue
-    .line 30
-    iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mMonitor:Lcom/android/server/pm/PresetPackagesInstaller$PackageInstallerMonitor;
+    .line 31
+    iput p1, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstallTotal:I
 
-    return-object v0
+    return p1
+.end method
+
+.method static synthetic access$400(Lcom/android/server/pm/PresetPackagesInstaller;II)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
+
+    .prologue
+    .line 31
+    invoke-direct {p0, p1, p2}, Lcom/android/server/pm/PresetPackagesInstaller;->onProgress(II)V
+
+    return-void
 .end method
 
 .method static synthetic access$500(Lcom/android/server/pm/PresetPackagesInstaller;)Lcom/android/server/pm/InstallerHelper;
@@ -185,19 +182,30 @@
     .parameter "x0"
 
     .prologue
-    .line 30
+    .line 31
     iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstallerHelper:Lcom/android/server/pm/InstallerHelper;
 
     return-object v0
 .end method
 
-.method static synthetic access$600(Lcom/android/server/pm/PresetPackagesInstaller;)Lcom/android/server/pm/PackageManagerService;
+.method static synthetic access$600(Lcom/android/server/pm/PresetPackagesInstaller;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 31
+    invoke-direct {p0}, Lcom/android/server/pm/PresetPackagesInstaller;->onPackageInstallFinish()V
+
+    return-void
+.end method
+
+.method static synthetic access$700(Lcom/android/server/pm/PresetPackagesInstaller;)Landroid/content/pm/PackageManager;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 30
-    iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mPackageManagerService:Lcom/android/server/pm/PackageManagerService;
+    .line 31
+    iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mPm:Landroid/content/pm/PackageManager;
 
     return-object v0
 .end method
@@ -207,27 +215,188 @@
     .parameter "task"
 
     .prologue
-    .line 161
+    .line 74
     iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstallTasks:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 162
+    .line 75
     iget v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstallTotal:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstallTotal:I
 
-    .line 163
+    .line 76
     return-void
 .end method
 
-.method private declared-synchronized excute()V
+.method private hideInstallingMessages()V
+    .locals 4
+
+    .prologue
+    .line 147
+    iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x1040419
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lcom/android/server/pm/PresetPackagesInstaller;->showInstallingMessage(Ljava/lang/CharSequence;)V
+
+    .line 148
+    iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mHandler:Landroid/os/Handler;
+
+    new-instance v1, Lcom/android/server/pm/PresetPackagesInstaller$2;
+
+    invoke-direct {v1, p0}, Lcom/android/server/pm/PresetPackagesInstaller$2;-><init>(Lcom/android/server/pm/PresetPackagesInstaller;)V
+
+    const-wide/16 v2, 0xbb8
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    .line 159
+    return-void
+.end method
+
+.method private onPackageInstallFinish()V
+    .locals 0
+
+    .prologue
+    .line 176
+    invoke-direct {p0}, Lcom/android/server/pm/PresetPackagesInstaller;->hideInstallingMessages()V
+
+    .line 177
+    return-void
+.end method
+
+.method private onPackageInstallStart()V
+    .locals 6
+
+    .prologue
+    const/4 v5, 0x1
+
+    .line 168
+    iget v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstallTotal:I
+
+    if-lez v0, :cond_0
+
+    .line 169
+    iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x1040417
+
+    const/4 v2, 0x2
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    const/4 v3, 0x0
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    aput-object v4, v2, v3
+
+    iget v3, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstallTotal:I
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v2, v5
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lcom/android/server/pm/PresetPackagesInstaller;->showInstallingMessage(Ljava/lang/CharSequence;)V
+
+    .line 173
+    :cond_0
+    return-void
+.end method
+
+.method private onProgress(II)V
+    .locals 5
+    .parameter "installedCount"
+    .parameter "total"
+
+    .prologue
+    .line 162
+    iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x1040417
+
+    const/4 v2, 0x2
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    const/4 v3, 0x0
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    aput-object v4, v2, v3
+
+    const/4 v3, 0x1
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    aput-object v4, v2, v3
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lcom/android/server/pm/PresetPackagesInstaller;->showInstallingMessage(Ljava/lang/CharSequence;)V
+
+    .line 165
+    return-void
+.end method
+
+.method private showInstallingMessage(Ljava/lang/CharSequence;)V
+    .locals 2
+    .parameter "msg"
+
+    .prologue
+    .line 85
+    iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mHandler:Landroid/os/Handler;
+
+    new-instance v1, Lcom/android/server/pm/PresetPackagesInstaller$1;
+
+    invoke-direct {v1, p0, p1}, Lcom/android/server/pm/PresetPackagesInstaller$1;-><init>(Lcom/android/server/pm/PresetPackagesInstaller;Ljava/lang/CharSequence;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 144
+    return-void
+.end method
+
+
+# virtual methods
+.method public declared-synchronized preparePresetPackages()V
     .locals 9
 
     .prologue
-    .line 62
+    .line 52
     monitor-enter p0
 
     :try_start_0
@@ -237,18 +406,20 @@
 
     move-result-object v8
 
-    .line 63
+    .line 53
     .local v8, packages:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/String;>;"
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstallTotal:I
 
-    .line 64
-    const/4 v0, 0x0
+    .line 54
+    iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstalledCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    iput v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstalledCount:I
+    const/4 v1, 0x0
 
-    .line 65
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
+
+    .line 56
     invoke-interface {v8}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v6
@@ -268,8 +439,16 @@
 
     check-cast v7, Ljava/lang/String;
 
-    .line 66
+    .line 57
     .local v7, name:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstallerHelper:Lcom/android/server/pm/InstallerHelper;
+
+    invoke-virtual {v0, v7}, Lcom/android/server/pm/InstallerHelper;->getPackageUri(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v2
+
+    .line 58
+    .local v2, uri:Landroid/net/Uri;
     const-string v0, "PresetAppInstaller"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -286,28 +465,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 67
-    iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstallerHelper:Lcom/android/server/pm/InstallerHelper;
-
-    invoke-virtual {v0, v7}, Lcom/android/server/pm/InstallerHelper;->getPackageUri(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v2
-
-    .line 68
-    .local v2, uri:Landroid/net/Uri;
-    const-string v0, "PresetAppInstaller"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "installAll uri:"
+    const-string v4, " | installAll uri:"
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -323,13 +481,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 69
+    .line 59
     if-eqz v2, :cond_0
 
-    .line 71
+    .line 61
     const/16 v3, 0x40
 
-    .line 72
+    .line 62
     .local v3, flags:I
     iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstallerHelper:Lcom/android/server/pm/InstallerHelper;
 
@@ -339,10 +497,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 73
+    .line 63
     or-int/lit8 v3, v3, 0x2
 
-    .line 75
+    .line 65
     :cond_1
     new-instance v0, Lcom/android/server/pm/PresetPackagesInstaller$InstallTask;
 
@@ -360,7 +518,7 @@
 
     goto :goto_0
 
-    .line 62
+    .line 52
     .end local v2           #uri:Landroid/net/Uri;
     .end local v3           #flags:I
     .end local v6           #i$:Ljava/util/Iterator;
@@ -373,60 +531,40 @@
 
     throw v0
 
-    .line 77
+    .line 67
     .restart local v6       #i$:Ljava/util/Iterator;
     .restart local v8       #packages:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/String;>;"
     :cond_2
     :try_start_1
-    invoke-direct {p0}, Lcom/android/server/pm/PresetPackagesInstaller;->installAll()V
+    invoke-direct {p0}, Lcom/android/server/pm/PresetPackagesInstaller;->onPackageInstallStart()V
 
-    .line 78
+    .line 68
     iget v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstallTotal:I
 
     if-nez v0, :cond_3
 
-    .line 79
+    .line 69
     iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstallerHelper:Lcom/android/server/pm/InstallerHelper;
 
     invoke-virtual {v0}, Lcom/android/server/pm/InstallerHelper;->updateDatabase()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 81
+    .line 71
     :cond_3
     monitor-exit p0
 
     return-void
 .end method
 
-.method private installAll()V
-    .locals 4
+.method public declared-synchronized startInstall()V
+    .locals 3
 
     .prologue
-    .line 166
-    iget v2, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstallTotal:I
+    .line 79
+    monitor-enter p0
 
-    if-gtz v2, :cond_1
-
-    .line 175
-    :cond_0
-    return-void
-
-    .line 169
-    :cond_1
-    iget-object v2, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mMonitor:Lcom/android/server/pm/PresetPackagesInstaller$PackageInstallerMonitor;
-
-    if-eqz v2, :cond_2
-
-    .line 170
-    iget-object v2, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mMonitor:Lcom/android/server/pm/PresetPackagesInstaller$PackageInstallerMonitor;
-
-    iget v3, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstallTotal:I
-
-    invoke-interface {v2, v3}, Lcom/android/server/pm/PresetPackagesInstaller$PackageInstallerMonitor;->onPackageInstallStart(I)V
-
-    .line 172
-    :cond_2
+    :try_start_0
     iget-object v2, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstallTasks:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -447,95 +585,32 @@
 
     check-cast v1, Lcom/android/server/pm/PresetPackagesInstaller$InstallTask;
 
-    .line 173
+    .line 80
     .local v1, task:Lcom/android/server/pm/PresetPackagesInstaller$InstallTask;
     const/4 v2, 0x0
 
     new-array v2, v2, [Ljava/lang/Void;
 
     invoke-virtual {v1, v2}, Landroid/os/AsyncTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
-.end method
 
-.method public static installPresetPackages(Landroid/content/Context;Lcom/android/server/pm/PackageManagerService;)V
-    .locals 2
-    .parameter "context"
-    .parameter "service"
+    .line 79
+    .end local v0           #i$:Ljava/util/Iterator;
+    .end local v1           #task:Lcom/android/server/pm/PresetPackagesInstaller$InstallTask;
+    :catchall_0
+    move-exception v2
 
-    .prologue
-    .line 55
-    new-instance v0, Lcom/android/server/pm/PresetPackageInstallerMonitor;
+    monitor-exit p0
 
-    invoke-direct {v0, p0}, Lcom/android/server/pm/PresetPackageInstallerMonitor;-><init>(Landroid/content/Context;)V
+    throw v2
 
-    .line 56
-    .local v0, monitor:Lcom/android/server/pm/PresetPackageInstallerMonitor;
-    new-instance v1, Lcom/android/server/pm/PresetPackagesInstaller;
+    .line 82
+    .restart local v0       #i$:Ljava/util/Iterator;
+    :cond_0
+    monitor-exit p0
 
-    invoke-direct {v1, p0, p1, v0}, Lcom/android/server/pm/PresetPackagesInstaller;-><init>(Landroid/content/Context;Lcom/android/server/pm/PackageManagerService;Lcom/android/server/pm/PresetPackagesInstaller$PackageInstallerMonitor;)V
-
-    .line 57
-    .local v1, presetInstaller:Lcom/android/server/pm/PresetPackagesInstaller;
-    invoke-virtual {v0, v1}, Lcom/android/server/pm/PresetPackageInstallerMonitor;->setInstaller(Lcom/android/server/pm/PresetPackagesInstaller;)V
-
-    .line 58
-    invoke-direct {v1}, Lcom/android/server/pm/PresetPackagesInstaller;->excute()V
-
-    .line 59
-    return-void
-.end method
-
-
-# virtual methods
-.method public hideInstallingMessages()V
-    .locals 4
-
-    .prologue
-    .line 146
-    iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v1, 0x1040419
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/android/server/pm/PresetPackagesInstaller;->showInstallingMessage(Ljava/lang/CharSequence;)V
-
-    .line 147
-    iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mHandler:Landroid/os/Handler;
-
-    new-instance v1, Lcom/android/server/pm/PresetPackagesInstaller$2;
-
-    invoke-direct {v1, p0}, Lcom/android/server/pm/PresetPackagesInstaller$2;-><init>(Lcom/android/server/pm/PresetPackagesInstaller;)V
-
-    const-wide/16 v2, 0xbb8
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    .line 158
-    return-void
-.end method
-
-.method public showInstallingMessage(Ljava/lang/CharSequence;)V
-    .locals 2
-    .parameter "msg"
-
-    .prologue
-    .line 84
-    iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller;->mHandler:Landroid/os/Handler;
-
-    new-instance v1, Lcom/android/server/pm/PresetPackagesInstaller$1;
-
-    invoke-direct {v1, p0, p1}, Lcom/android/server/pm/PresetPackagesInstaller$1;-><init>(Lcom/android/server/pm/PresetPackagesInstaller;Ljava/lang/CharSequence;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    .line 143
     return-void
 .end method

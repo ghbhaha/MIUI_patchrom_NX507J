@@ -169,77 +169,79 @@
 
 .field public static final nubia_analog_clock_with_city:I = 0x1090073
 
-.field public static final nubia_search_view:I = 0x1090074
+.field public static final nubia_digital_clock_with_city:I = 0x1090074
 
-.field public static final nubia_select_dialog_holo:I = 0x1090075
+.field public static final nubia_search_view:I = 0x1090075
 
-.field public static final nubia_select_dialog_item_holo:I = 0x1090076
+.field public static final nubia_select_dialog_holo:I = 0x1090076
 
-.field public static final nubia_select_dialog_multichoice_holo:I = 0x1090077
+.field public static final nubia_select_dialog_item_holo:I = 0x1090077
 
-.field public static final nubia_select_dialog_singlechoice_holo:I = 0x1090078
+.field public static final nubia_select_dialog_multichoice_holo:I = 0x1090078
 
-.field public static final number_picker:I = 0x1090079
+.field public static final nubia_select_dialog_singlechoice_holo:I = 0x1090079
 
-.field public static final overlay_display_window:I = 0x109007b
+.field public static final number_picker:I = 0x109007a
 
-.field public static final permissions_package_list_item:I = 0x109007d
+.field public static final overlay_display_window:I = 0x109007c
 
-.field public static final popup_menu_item_layout:I = 0x109007e
+.field public static final permissions_package_list_item:I = 0x109007e
 
-.field public static final preference:I = 0x1090080
+.field public static final popup_menu_item_layout:I = 0x109007f
+
+.field public static final preference:I = 0x1090081
 
 .field public static final preference_category:I = 0x1090002
 
-.field public static final preference_header_item:I = 0x1090085
+.field public static final preference_header_item:I = 0x1090086
 
-.field public static final preference_list_content:I = 0x1090089
+.field public static final preference_list_content:I = 0x109008a
 
-.field public static final preference_list_content_single:I = 0x109008a
+.field public static final preference_list_content_single:I = 0x109008b
 
-.field public static final preference_list_fragment:I = 0x109008b
+.field public static final preference_list_fragment:I = 0x109008c
 
-.field public static final preference_widget_seekbar:I = 0x109008d
+.field public static final preference_widget_seekbar:I = 0x109008e
 
-.field public static final progress_dialog:I = 0x1090090
+.field public static final progress_dialog:I = 0x1090091
 
-.field public static final recent_apps_dialog:I = 0x1090092
+.field public static final recent_apps_dialog:I = 0x1090093
 
-.field public static final remote_views_adapter_default_loading_view:I = 0x1090094
+.field public static final remote_views_adapter_default_loading_view:I = 0x1090095
 
-.field public static final resolve_list_item:I = 0x1090095
+.field public static final resolve_list_item:I = 0x1090096
 
-.field public static final resolver_list:I = 0x1090096
+.field public static final resolver_list:I = 0x1090097
 
-.field public static final restrictions_pin_challenge:I = 0x1090097
+.field public static final restrictions_pin_challenge:I = 0x1090098
 
-.field public static final restrictions_pin_setup:I = 0x1090098
+.field public static final restrictions_pin_setup:I = 0x1090099
 
-.field public static final safe_mode:I = 0x1090099
+.field public static final safe_mode:I = 0x109009a
 
-.field public static final screen_action_bar:I = 0x109009b
+.field public static final screen_action_bar:I = 0x109009c
 
-.field public static final screen_custom_title:I = 0x109009c
+.field public static final screen_custom_title:I = 0x109009d
 
-.field public static final screen_progress:I = 0x109009d
+.field public static final screen_progress:I = 0x109009e
 
-.field public static final screen_simple:I = 0x109009e
+.field public static final screen_simple:I = 0x109009f
 
-.field public static final screen_simple_overlay_action_mode:I = 0x109009f
+.field public static final screen_simple_overlay_action_mode:I = 0x10900a0
 
-.field public static final screen_title:I = 0x10900a0
+.field public static final screen_title:I = 0x10900a1
 
-.field public static final screen_title_icons:I = 0x10900a1
+.field public static final screen_title_icons:I = 0x10900a2
 
-.field public static final search_bar:I = 0x10900a2
+.field public static final search_bar:I = 0x10900a3
 
-.field public static final search_dropdown_item_icons_2line:I = 0x10900a4
+.field public static final search_dropdown_item_icons_2line:I = 0x10900a5
 
-.field public static final search_view:I = 0x10900a5
+.field public static final search_view:I = 0x10900a6
 
-.field public static final seekbar_dialog:I = 0x10900a6
+.field public static final seekbar_dialog:I = 0x10900a7
 
-.field public static final select_dialog:I = 0x10900a7
+.field public static final select_dialog:I = 0x10900a8
 
 .field public static final select_dialog_item:I = 0x1090011
 
@@ -247,11 +249,11 @@
 
 .field public static final select_dialog_singlechoice:I = 0x1090012
 
-.field public static final select_dialog_singlechoice_holo:I = 0x10900ab
+.field public static final select_dialog_singlechoice_holo:I = 0x10900ac
 
-.field public static final shutdown_dialog_layout:I = 0x10900ac
+.field public static final shutdown_dialog_layout:I = 0x10900ad
 
-.field public static final simple_dropdown_hint:I = 0x10900ad
+.field public static final simple_dropdown_hint:I = 0x10900ae
 
 .field public static final simple_dropdown_item_1line:I = 0x109000a
 
@@ -265,7 +267,7 @@
 
 .field public static final simple_list_item_2:I = 0x1090004
 
-.field public static final simple_list_item_2_single_choice:I = 0x10900af
+.field public static final simple_list_item_2_single_choice:I = 0x10900b0
 
 .field public static final simple_list_item_activated_1:I = 0x1090016
 
@@ -283,87 +285,87 @@
 
 .field public static final simple_spinner_item:I = 0x1090008
 
-.field public static final single_hand_ui_display_1:I = 0x10900b0
+.field public static final single_hand_ui_display_1:I = 0x10900b1
 
-.field public static final single_hand_ui_display_2:I = 0x10900b1
+.field public static final single_hand_ui_display_2:I = 0x10900b2
 
-.field public static final sms_short_code_confirmation_dialog:I = 0x10900b2
+.field public static final sms_short_code_confirmation_dialog:I = 0x10900b3
 
-.field public static final ssl_certificate:I = 0x10900b3
+.field public static final ssl_certificate:I = 0x10900b4
 
-.field public static final status_bar_latest_event_content:I = 0x10900b4
+.field public static final status_bar_latest_event_content:I = 0x10900b5
 
-.field public static final status_bar_latest_event_ticker:I = 0x10900b5
+.field public static final status_bar_latest_event_ticker:I = 0x10900b6
 
-.field public static final status_bar_latest_event_ticker_large_icon:I = 0x10900b6
+.field public static final status_bar_latest_event_ticker_large_icon:I = 0x10900b7
 
-.field public static final tab_content:I = 0x10900b7
+.field public static final tab_content:I = 0x10900b8
 
-.field public static final tab_indicator_holo:I = 0x10900b9
+.field public static final tab_indicator_holo:I = 0x10900ba
 
 .field public static final test_list_item:I = 0x109000c
 
-.field public static final text_drag_thumbnail:I = 0x10900ba
+.field public static final text_drag_thumbnail:I = 0x10900bb
 
-.field public static final text_edit_action_popup_text:I = 0x10900bb
+.field public static final text_edit_action_popup_text:I = 0x10900bc
 
-.field public static final text_insertion_float_panel:I = 0x10900c2
+.field public static final text_insertion_float_panel:I = 0x10900c3
 
-.field public static final text_list_float_panel:I = 0x10900c3
+.field public static final text_list_float_panel:I = 0x10900c4
 
-.field public static final text_list_float_panel_item:I = 0x10900c4
+.field public static final text_list_float_panel_item:I = 0x10900c5
 
-.field public static final text_selection_float_panel:I = 0x10900c5
+.field public static final text_selection_float_panel:I = 0x10900c6
 
-.field public static final textview_hint:I = 0x10900c6
+.field public static final textview_hint:I = 0x10900c7
 
-.field public static final time_picker:I = 0x10900c7
+.field public static final time_picker:I = 0x10900c8
 
-.field public static final time_picker_dialog:I = 0x10900c8
+.field public static final time_picker_dialog:I = 0x10900c9
 
-.field public static final transient_notification:I = 0x10900ca
+.field public static final transient_notification:I = 0x10900cb
 
 .field public static final two_line_list_item:I = 0x109000d
 
-.field public static final typing_filter:I = 0x10900cc
+.field public static final typing_filter:I = 0x10900cd
 
-.field public static final usb_storage_activity:I = 0x10900cd
+.field public static final usb_storage_activity:I = 0x10900ce
 
-.field public static final volume_adjust:I = 0x10900ce
+.field public static final volume_adjust:I = 0x10900cf
 
-.field public static final volume_adjust_item:I = 0x10900cf
+.field public static final volume_adjust_item:I = 0x10900d0
 
-.field public static final web_input_text_insertion_float_panel:I = 0x10900d0
+.field public static final web_input_text_insertion_float_panel:I = 0x10900d1
 
-.field public static final web_input_text_selection_float_panel:I = 0x10900d1
+.field public static final web_input_text_selection_float_panel:I = 0x10900d2
 
-.field public static final web_text_view_dropdown:I = 0x10900d3
+.field public static final web_text_view_dropdown:I = 0x10900d4
 
-.field public static final webview_find:I = 0x10900d4
+.field public static final webview_find:I = 0x10900d5
 
-.field public static final webview_select_singlechoice:I = 0x10900d5
+.field public static final webview_select_singlechoice:I = 0x10900d6
 
-.field public static final webviewchromium_autofill_text:I = 0x10900d6
+.field public static final webviewchromium_autofill_text:I = 0x10900d7
 
-.field public static final webviewchromium_color_picker_advanced_component:I = 0x10900d7
+.field public static final webviewchromium_color_picker_advanced_component:I = 0x10900d8
 
-.field public static final webviewchromium_color_picker_dialog_content:I = 0x10900d8
+.field public static final webviewchromium_color_picker_dialog_content:I = 0x10900d9
 
-.field public static final webviewchromium_color_picker_dialog_title:I = 0x10900d9
+.field public static final webviewchromium_color_picker_dialog_title:I = 0x10900da
 
-.field public static final webviewchromium_date_time_picker_dialog:I = 0x10900da
+.field public static final webviewchromium_date_time_picker_dialog:I = 0x10900db
 
-.field public static final webviewchromium_two_field_date_picker:I = 0x10900db
+.field public static final webviewchromium_two_field_date_picker:I = 0x10900dc
 
-.field public static final wifi_p2p_dialog:I = 0x10900dc
+.field public static final wifi_p2p_dialog:I = 0x10900dd
 
-.field public static final wifi_p2p_dialog_row:I = 0x10900dd
+.field public static final wifi_p2p_dialog_row:I = 0x10900de
 
-.field public static final zoom_container:I = 0x10900df
+.field public static final zoom_container:I = 0x10900e0
 
-.field public static final zoom_controls:I = 0x10900e0
+.field public static final zoom_controls:I = 0x10900e1
 
-.field public static final zoom_magnify:I = 0x10900e1
+.field public static final zoom_magnify:I = 0x10900e2
 
 
 # direct methods
@@ -371,7 +373,7 @@
     .locals 0
 
     .prologue
-    .line 13834
+    .line 13923
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

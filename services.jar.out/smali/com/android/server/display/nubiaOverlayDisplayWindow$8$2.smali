@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 888
+    .line 891
     iput-object p1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$8$2;->this$1:Lcom/android/server/display/nubiaOverlayDisplayWindow$8;
 
     invoke-direct {p0}, Landroid/view/GestureDetector$SimpleOnGestureListener;-><init>()V
@@ -41,12 +41,12 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 891
+    .line 894
     new-instance v0, Landroid/os/Message;
 
     invoke-direct {v0}, Landroid/os/Message;-><init>()V
 
-    .line 892
+    .line 895
     .local v0, doubleTap:Landroid/os/Message;
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$8$2;->this$1:Lcom/android/server/display/nubiaOverlayDisplayWindow$8;
 
@@ -57,12 +57,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 893
+    .line 896
     const/4 v1, 0x2
 
     iput v1, v0, Landroid/os/Message;->what:I
 
-    .line 894
+    .line 897
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$8$2;->this$1:Lcom/android/server/display/nubiaOverlayDisplayWindow$8;
 
     #getter for: Lcom/android/server/display/nubiaOverlayDisplayWindow$8;->handler:Landroid/os/Handler;
@@ -72,7 +72,7 @@
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 895
+    .line 898
     return v2
 .end method
 
@@ -83,16 +83,16 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 900
+    .line 903
     new-instance v0, Landroid/os/Message;
 
     invoke-direct {v0}, Landroid/os/Message;-><init>()V
 
-    .line 901
+    .line 904
     .local v0, singleTap:Landroid/os/Message;
     iput v4, v0, Landroid/os/Message;->what:I
 
-    .line 902
+    .line 905
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$8$2;->this$1:Lcom/android/server/display/nubiaOverlayDisplayWindow$8;
 
     #getter for: Lcom/android/server/display/nubiaOverlayDisplayWindow$8;->handler:Landroid/os/Handler;
@@ -104,6 +104,6 @@
 
     invoke-virtual {v1, v0, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 903
+    .line 906
     return v4
 .end method

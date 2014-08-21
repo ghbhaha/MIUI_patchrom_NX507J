@@ -161,12 +161,10 @@
 
     iput-object v1, p0, Lcom/android/internal/view/menu/ListMenuItemView;->mCheckBox:Landroid/widget/CheckBox;
 
-    .line 256
     iget-object v1, p0, Lcom/android/internal/view/menu/ListMenuItemView;->mCheckBox:Landroid/widget/CheckBox;
 
     invoke-static {p0, v1}, Lcom/android/internal/view/menu/Injector$ListMenuItemViewHook;->addCheckBox(Lcom/android/internal/view/menu/ListMenuItemView;Landroid/widget/CheckBox;)V
 
-    .line 257
     return-void
 .end method
 
@@ -225,12 +223,10 @@
 
     iput-object v1, p0, Lcom/android/internal/view/menu/ListMenuItemView;->mRadioButton:Landroid/widget/RadioButton;
 
-    .line 248
     iget-object v1, p0, Lcom/android/internal/view/menu/ListMenuItemView;->mRadioButton:Landroid/widget/RadioButton;
 
     invoke-static {p0, v1}, Lcom/android/internal/view/menu/Injector$ListMenuItemViewHook;->addRadioButton(Lcom/android/internal/view/menu/ListMenuItemView;Landroid/widget/RadioButton;)V
 
-    .line 249
     return-void
 .end method
 

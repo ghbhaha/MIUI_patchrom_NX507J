@@ -651,7 +651,7 @@
 
     .line 3364
     :cond_1
-    const v0, 0x102033e
+    const v0, 0x1020343
 
     invoke-virtual {p0, v0}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
 
@@ -805,7 +805,7 @@
 
     .line 3378
     :cond_1
-    const v0, 0x102033f
+    const v0, 0x1020344
 
     invoke-virtual {p0, v0}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
 
@@ -1371,7 +1371,7 @@
 
     .line 3109
     :cond_4
-    const v7, 0x1020342
+    const v7, 0x1020347
 
     invoke-virtual {p0, v7}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
 
@@ -1444,8 +1444,8 @@
     iget-object v7, p0, Lcom/android/internal/policy/impl/PhoneWindow;->mActionBar:Lcom/android/internal/widget/ActionBarView;
 
     invoke-static {p0, v7}, Lcom/android/internal/policy/impl/Injector$PhoneWindowHook;->handleStartingWindow(Lcom/android/internal/policy/impl/PhoneWindow;Lcom/android/internal/widget/ActionBarView;)V
-
-    const v7, 0x1020340
+   
+    const v7, 0x1020345
 
     invoke-virtual {p0, v7}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
 
@@ -1503,7 +1503,7 @@
 
     .line 3140
     :goto_4
-    const v7, 0x1020344
+    const v7, 0x1020349
 
     invoke-virtual {p0, v7}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
 
@@ -1531,7 +1531,7 @@
     invoke-virtual {v7, v5}, Lcom/android/internal/widget/AbsActionBarView;->setSplitWhenNarrow(Z)V
 
     .line 3147
-    const v7, 0x1020343
+    const v7, 0x1020348
 
     invoke-virtual {p0, v7}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
 
@@ -5050,7 +5050,7 @@
 
     move/from16 v1, v19
 
-    invoke-virtual {v0, v1}, Landroid/view/Window;->addFlags(I)V
+    invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/PhoneWindow;->addFlags(I)V
 
     goto/16 :goto_6
 
@@ -5058,7 +5058,7 @@
     .restart local v7       #features:I
     .restart local v12       #params:Landroid/view/WindowManager$LayoutParams;
     :cond_23
-    const v10, 0x10900a1
+    const v10, 0x10900a2
 
     .restart local v10       #layoutResource:I
     goto/16 :goto_7
@@ -5077,7 +5077,7 @@
     if-nez v19, :cond_25
 
     .line 2985
-    const v10, 0x109009d
+    const v10, 0x109009e
 
     .restart local v10       #layoutResource:I
     goto/16 :goto_8
@@ -5147,7 +5147,7 @@
     .line 2996
     .end local v10           #layoutResource:I
     :cond_26
-    const v10, 0x109009c
+    const v10, 0x109009d
 
     .restart local v10       #layoutResource:I
     goto :goto_9
@@ -5211,6 +5211,7 @@
 
     if-eqz v19, :cond_29
 
+    .line 3009
     sget v19, Lcom/android/internal/R$layout;->screen_action_bar:I
 
     move/from16 v0, v19
@@ -5225,7 +5226,7 @@
     .line 3011
     .end local v10           #layoutResource:I
     :cond_29
-    const v10, 0x10900a0
+    const v10, 0x10900a1
 
     .restart local v10       #layoutResource:I
     goto/16 :goto_8
@@ -5240,7 +5241,7 @@
     if-eqz v19, :cond_2b
 
     .line 3015
-    const v10, 0x109009f
+    const v10, 0x10900a0
 
     .restart local v10       #layoutResource:I
     goto/16 :goto_8
@@ -5248,7 +5249,7 @@
     .line 3018
     .end local v10           #layoutResource:I
     :cond_2b
-    const v10, 0x109009e
+    const v10, 0x109009f
 
     .restart local v10       #layoutResource:I
     goto/16 :goto_8

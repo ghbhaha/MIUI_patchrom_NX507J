@@ -10,6 +10,8 @@
 
 .field public static final BROWSER_ZOOM_LEVEL_CHANGE:I = 0x111d5
 
+.field public static final EXP_DET_ATTEMPT_TO_CALL_OBJECT_GETCLASS:I = 0x11207
+
 
 # direct methods
 .method private constructor <init>()V
@@ -28,7 +30,7 @@
     .parameter "time"
 
     .prologue
-    .line 27
+    .line 30
     const v0, 0x111d6
 
     const/4 v1, 0x2
@@ -53,7 +55,7 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 28
+    .line 31
     return-void
 .end method
 
@@ -61,7 +63,7 @@
     .locals 2
 
     .prologue
-    .line 31
+    .line 34
     const v0, 0x11206
 
     const/4 v1, 0x0
@@ -70,7 +72,7 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 32
+    .line 35
     return-void
 .end method
 
@@ -81,7 +83,7 @@
     .parameter "time"
 
     .prologue
-    .line 23
+    .line 26
     const v0, 0x111d5
 
     const/4 v1, 0x3
@@ -114,6 +116,20 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 24
+    .line 27
+    return-void
+.end method
+
+.method public static writeExpDetAttemptToCallObjectGetclass(Ljava/lang/String;)V
+    .locals 1
+    .parameter "appSignature"
+
+    .prologue
+    .line 38
+    const v0, 0x11207
+
+    invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(ILjava/lang/String;)I
+
+    .line 39
     return-void
 .end method

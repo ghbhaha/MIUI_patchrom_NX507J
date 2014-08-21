@@ -56,47 +56,47 @@
     .parameter "rate"
 
     .prologue
-    .line 381
+    .line 383
     iput-object p1, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->this$0:Lcom/android/server/display/nubiaOverlayDisplayAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 445
+    .line 446
     new-instance v0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle$1;
 
     invoke-direct {v0, p0}, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle$1;-><init>(Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;)V
 
     iput-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->mShowRunnable:Ljava/lang/Runnable;
 
-    .line 459
+    .line 460
     new-instance v0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle$2;
 
     invoke-direct {v0, p0}, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle$2;-><init>(Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;)V
 
     iput-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->mDismissRunnable:Ljava/lang/Runnable;
 
-    .line 382
+    .line 384
     iput-object p2, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->mName:Ljava/lang/String;
 
-    .line 383
+    .line 385
     iput p3, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->mWidth:I
 
-    .line 384
+    .line 386
     iput p4, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->mHeight:I
 
-    .line 385
+    .line 387
     iput p5, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->mDensityDpi:I
 
-    .line 386
+    .line 388
     iput p6, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->mGravity:I
 
-    .line 387
+    .line 389
     iput-object p7, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->mLeftOrRight:Ljava/lang/String;
 
-    .line 388
+    .line 390
     iput-wide p8, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->rate:D
 
-    .line 390
+    .line 392
     #getter for: Lcom/android/server/display/nubiaOverlayDisplayAdapter;->mUiHandler:Landroid/os/Handler;
     invoke-static {p1}, Lcom/android/server/display/nubiaOverlayDisplayAdapter;->access$200(Lcom/android/server/display/nubiaOverlayDisplayAdapter;)Landroid/os/Handler;
 
@@ -106,7 +106,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 391
+    .line 393
     return-void
 .end method
 
@@ -115,7 +115,7 @@
     .parameter "x0"
 
     .prologue
-    .line 368
+    .line 370
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->mWindow:Lcom/android/server/display/nubiaOverlayDisplayWindow;
 
     return-object v0
@@ -127,7 +127,7 @@
     .parameter "x1"
 
     .prologue
-    .line 368
+    .line 370
     iput-object p1, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->mWindow:Lcom/android/server/display/nubiaOverlayDisplayWindow;
 
     return-object p1
@@ -138,7 +138,7 @@
     .parameter "x0"
 
     .prologue
-    .line 368
+    .line 370
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->mName:Ljava/lang/String;
 
     return-object v0
@@ -149,7 +149,7 @@
     .parameter "x0"
 
     .prologue
-    .line 368
+    .line 370
     iget v0, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->mWidth:I
 
     return v0
@@ -160,7 +160,7 @@
     .parameter "x0"
 
     .prologue
-    .line 368
+    .line 370
     iget v0, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->mHeight:I
 
     return v0
@@ -171,7 +171,7 @@
     .parameter "x0"
 
     .prologue
-    .line 368
+    .line 370
     iget v0, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->mDensityDpi:I
 
     return v0
@@ -182,7 +182,7 @@
     .parameter "x0"
 
     .prologue
-    .line 368
+    .line 370
     iget v0, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->mGravity:I
 
     return v0
@@ -193,7 +193,7 @@
     .parameter "x0"
 
     .prologue
-    .line 368
+    .line 370
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->mLeftOrRight:Ljava/lang/String;
 
     return-object v0
@@ -204,7 +204,7 @@
     .parameter "x0"
 
     .prologue
-    .line 368
+    .line 370
     iget-wide v0, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->rate:D
 
     return-wide v0
@@ -216,7 +216,7 @@
     .locals 2
 
     .prologue
-    .line 394
+    .line 396
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->this$0:Lcom/android/server/display/nubiaOverlayDisplayAdapter;
 
     #getter for: Lcom/android/server/display/nubiaOverlayDisplayAdapter;->mUiHandler:Landroid/os/Handler;
@@ -228,7 +228,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 395
+    .line 397
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->this$0:Lcom/android/server/display/nubiaOverlayDisplayAdapter;
 
     #getter for: Lcom/android/server/display/nubiaOverlayDisplayAdapter;->mUiHandler:Landroid/os/Handler;
@@ -240,7 +240,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 396
+    .line 398
     return-void
 .end method
 
@@ -249,7 +249,7 @@
     .parameter "pw"
 
     .prologue
-    .line 430
+    .line 431
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -278,7 +278,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 431
+    .line 432
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -301,7 +301,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 432
+    .line 433
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -324,7 +324,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 433
+    .line 434
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -347,7 +347,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 434
+    .line 435
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -370,23 +370,23 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 437
+    .line 438
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->mWindow:Lcom/android/server/display/nubiaOverlayDisplayWindow;
 
     if-eqz v1, :cond_0
 
-    .line 438
+    .line 439
     new-instance v0, Lcom/android/internal/util/IndentingPrintWriter;
 
     const-string v1, "    "
 
     invoke-direct {v0, p1, v1}, Lcom/android/internal/util/IndentingPrintWriter;-><init>(Ljava/io/Writer;Ljava/lang/String;)V
 
-    .line 439
+    .line 440
     .local v0, ipw:Lcom/android/internal/util/IndentingPrintWriter;
     invoke-virtual {v0}, Lcom/android/internal/util/IndentingPrintWriter;->increaseIndent()V
 
-    .line 440
+    .line 441
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->this$0:Lcom/android/server/display/nubiaOverlayDisplayAdapter;
 
     #getter for: Lcom/android/server/display/nubiaOverlayDisplayAdapter;->mUiHandler:Landroid/os/Handler;
@@ -400,7 +400,7 @@
 
     invoke-static {v1, v2, v0, v3, v4}, Lcom/android/internal/util/DumpUtils;->dumpAsync(Landroid/os/Handler;Lcom/android/internal/util/DumpUtils$Dump;Ljava/io/PrintWriter;J)V
 
-    .line 442
+    .line 443
     .end local v0           #ipw:Lcom/android/internal/util/IndentingPrintWriter;
     :cond_0
     return-void
@@ -410,7 +410,7 @@
     .locals 0
 
     .prologue
-    .line 423
+    .line 424
     return-void
 .end method
 
@@ -419,13 +419,13 @@
     .parameter "b"
 
     .prologue
-    .line 426
+    .line 427
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->this$0:Lcom/android/server/display/nubiaOverlayDisplayAdapter;
 
     #setter for: Lcom/android/server/display/nubiaOverlayDisplayAdapter;->rotated:Z
     invoke-static {v0, p1}, Lcom/android/server/display/nubiaOverlayDisplayAdapter;->access$102(Lcom/android/server/display/nubiaOverlayDisplayAdapter;Z)Z
 
-    .line 427
+    .line 428
     return-void
 .end method
 
@@ -435,7 +435,7 @@
     .parameter "refreshRate"
 
     .prologue
-    .line 401
+    .line 403
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->this$0:Lcom/android/server/display/nubiaOverlayDisplayAdapter;
 
     invoke-virtual {v0}, Lcom/android/server/display/DisplayAdapter;->getSyncRoot()Lcom/android/server/display/DisplayManagerService$SyncRoot;
@@ -444,7 +444,7 @@
 
     monitor-enter v9
 
-    .line 402
+    .line 404
     :try_start_0
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->mName:Ljava/lang/String;
 
@@ -454,7 +454,7 @@
 
     move-result-object v2
 
-    .line 403
+    .line 405
     .local v2, displayToken:Landroid/os/IBinder;
     new-instance v0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayDevice;
 
@@ -476,7 +476,7 @@
 
     iput-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->mDevice:Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayDevice;
 
-    .line 405
+    .line 407
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->this$0:Lcom/android/server/display/nubiaOverlayDisplayAdapter;
 
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->mDevice:Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayDevice;
@@ -485,13 +485,13 @@
 
     invoke-virtual {v0, v1, v3}, Lcom/android/server/display/DisplayAdapter;->sendDisplayDeviceEventLocked(Lcom/android/server/display/DisplayDevice;I)V
 
-    .line 406
+    .line 408
     monitor-exit v9
 
-    .line 407
+    .line 409
     return-void
 
-    .line 406
+    .line 408
     .end local v2           #displayToken:Landroid/os/IBinder;
     :catchall_0
     move-exception v0
@@ -507,7 +507,7 @@
     .locals 4
 
     .prologue
-    .line 412
+    .line 414
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->this$0:Lcom/android/server/display/nubiaOverlayDisplayAdapter;
 
     invoke-virtual {v0}, Lcom/android/server/display/DisplayAdapter;->getSyncRoot()Lcom/android/server/display/DisplayManagerService$SyncRoot;
@@ -516,25 +516,18 @@
 
     monitor-enter v1
 
-    .line 413
+    .line 415
     :try_start_0
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->mDevice:Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayDevice;
 
     if-eqz v0, :cond_0
 
-    .line 414
-    const-string v0, "OverlayDisplayAdapter"
-
-    const-string v2, "update onWindowDestroyed()"
-
-    invoke-static {v0, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 415
+    .line 416
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->mDevice:Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayDevice;
 
-    invoke-virtual {v0}, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayDevice;->clearSurfaceTextureLocked()V
+    invoke-virtual {v0}, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayDevice;->destroyLocked()V
 
-    .line 416
+    .line 417
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->this$0:Lcom/android/server/display/nubiaOverlayDisplayAdapter;
 
     iget-object v2, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->mDevice:Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayDevice;
@@ -543,14 +536,14 @@
 
     invoke-virtual {v0, v2, v3}, Lcom/android/server/display/DisplayAdapter;->sendDisplayDeviceEventLocked(Lcom/android/server/display/DisplayDevice;I)V
 
-    .line 418
+    .line 419
     :cond_0
     monitor-exit v1
 
-    .line 419
+    .line 420
     return-void
 
-    .line 418
+    .line 419
     :catchall_0
     move-exception v0
 

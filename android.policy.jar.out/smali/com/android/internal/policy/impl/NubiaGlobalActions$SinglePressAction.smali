@@ -36,22 +36,22 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 856
+    .line 842
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 857
+    .line 843
     iput p1, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$SinglePressAction;->mIconResId:I
 
-    .line 858
+    .line 844
     iput p2, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$SinglePressAction;->mMessageResId:I
 
-    .line 859
+    .line 845
     iput-object v0, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$SinglePressAction;->mMessage:Ljava/lang/CharSequence;
 
-    .line 860
+    .line 846
     iput-object v0, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$SinglePressAction;->mIcon:Landroid/graphics/drawable/Drawable;
 
-    .line 861
+    .line 847
     return-void
 .end method
 
@@ -62,24 +62,24 @@
     .parameter "message"
 
     .prologue
-    .line 864
+    .line 850
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 865
+    .line 851
     iput p1, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$SinglePressAction;->mIconResId:I
 
-    .line 866
+    .line 852
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$SinglePressAction;->mMessageResId:I
 
-    .line 867
+    .line 853
     iput-object p3, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$SinglePressAction;->mMessage:Ljava/lang/CharSequence;
 
-    .line 868
+    .line 854
     iput-object p2, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$SinglePressAction;->mIcon:Landroid/graphics/drawable/Drawable;
 
-    .line 869
+    .line 855
     return-void
 .end method
 
@@ -89,26 +89,26 @@
     .parameter "message"
 
     .prologue
-    .line 871
+    .line 857
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 872
+    .line 858
     iput p1, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$SinglePressAction;->mIconResId:I
 
-    .line 873
+    .line 859
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$SinglePressAction;->mMessageResId:I
 
-    .line 874
+    .line 860
     iput-object p2, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$SinglePressAction;->mMessage:Ljava/lang/CharSequence;
 
-    .line 875
+    .line 861
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$SinglePressAction;->mIcon:Landroid/graphics/drawable/Drawable;
 
-    .line 876
+    .line 862
     return-void
 .end method
 
@@ -122,7 +122,7 @@
     .parameter "inflater"
 
     .prologue
-    .line 890
+    .line 876
     const v3, 0x1090045
 
     const/4 v4, 0x0
@@ -131,7 +131,7 @@
 
     move-result-object v2
 
-    .line 893
+    .line 879
     .local v2, v:Landroid/view/View;
     const v3, 0x1020006
 
@@ -141,7 +141,7 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    .line 894
+    .line 880
     .local v0, icon:Landroid/widget/ImageView;
     const v3, 0x102000b
 
@@ -151,7 +151,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 896
+    .line 882
     .local v1, messageView:Landroid/widget/TextView;
     const v3, 0x102029c
 
@@ -163,44 +163,44 @@
 
     invoke-virtual {v3, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 897
+    .line 883
     iget-object v3, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$SinglePressAction;->mIcon:Landroid/graphics/drawable/Drawable;
 
     if-eqz v3, :cond_1
 
-    .line 898
+    .line 884
     iget-object v3, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$SinglePressAction;->mIcon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 899
+    .line 885
     sget-object v3, Landroid/widget/ImageView$ScaleType;->CENTER_CROP:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 904
+    .line 890
     :cond_0
     :goto_0
     iget-object v3, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$SinglePressAction;->mMessage:Ljava/lang/CharSequence;
 
     if-eqz v3, :cond_2
 
-    .line 905
+    .line 891
     iget-object v3, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$SinglePressAction;->mMessage:Ljava/lang/CharSequence;
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 910
+    .line 896
     :goto_1
     return-object v2
 
-    .line 900
+    .line 886
     :cond_1
     iget v3, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$SinglePressAction;->mIconResId:I
 
     if-eqz v3, :cond_0
 
-    .line 901
+    .line 887
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
@@ -215,7 +215,7 @@
 
     goto :goto_0
 
-    .line 907
+    .line 893
     :cond_2
     iget v3, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$SinglePressAction;->mMessageResId:I
 
@@ -228,7 +228,7 @@
     .locals 1
 
     .prologue
-    .line 879
+    .line 865
     const/4 v0, 0x1
 
     return v0
@@ -238,7 +238,7 @@
     .locals 1
 
     .prologue
-    .line 885
+    .line 871
     const/4 v0, 0x0
 
     return v0

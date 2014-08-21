@@ -34445,7 +34445,7 @@
     .line 6546
     if-eqz p1, :cond_0
 
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     invoke-virtual {p0, v0, v1}, Landroid/view/View;->setFlags(II)V
@@ -34453,10 +34453,10 @@
     .line 6548
     return-void
 
-    :cond_0
-    move v0, v1
-
     .line 6546
+    :cond_0
+    const/4 v0, 0x0
+
     goto :goto_0
 .end method
 

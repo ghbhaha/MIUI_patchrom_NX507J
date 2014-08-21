@@ -118,7 +118,7 @@
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
     .line 40
-    const v11, 0x1020382
+    const v11, 0x1020387
 
     invoke-virtual {p0, v11}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -126,7 +126,7 @@
 
     .line 41
     .local v5, arrowUpView:Landroid/view/View;
-    const v11, 0x1020383
+    const v11, 0x1020388
 
     invoke-virtual {p0, v11}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -134,7 +134,7 @@
 
     .line 42
     .local v1, arrowDownView:Landroid/view/View;
-    const v11, 0x102037a
+    const v11, 0x102037f
 
     invoke-virtual {p0, v11}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

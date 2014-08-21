@@ -603,28 +603,22 @@
     .parameter "edit"
 
     .prologue
-    .line 826
     invoke-virtual {p1, p2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/android/server/AppOpsService$Op;
 
-    .line 827
     .local v1, op:Lcom/android/server/AppOpsService$Op;
     if-nez v1, :cond_2
 
-    .line 828
     if-nez p3, :cond_0
 
-    .line 829
     const/4 v2, 0x0
 
-    .line 838
     :goto_0
     return-object v2
 
-    .line 831
     :cond_0
     iget v2, p1, Lcom/android/server/AppOpsService$Ops;->uid:I
 
@@ -645,10 +639,8 @@
 
     invoke-direct {v1, v2, v3, p2, v0}, Lcom/android/server/AppOpsService$Op;-><init>(ILjava/lang/String;II)V
 
-    .line 833
     .restart local v1       #op:Lcom/android/server/AppOpsService$Op;
 
-    .line 835
     const/16 v2, 0x18
 
     if-ne p2, v2, :cond_1
@@ -672,13 +664,11 @@
     :cond_2
     if-eqz p3, :cond_3
 
-    .line 836
     invoke-direct {p0}, Lcom/android/server/AppOpsService;->scheduleWriteLocked()V
 
     :cond_3
     move-object v2, v1
 
-    .line 838
     goto :goto_0
 .end method
 

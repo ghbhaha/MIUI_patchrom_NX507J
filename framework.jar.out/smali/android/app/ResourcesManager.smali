@@ -230,38 +230,29 @@
 
     if-nez v10, :cond_3
 
-    .line 262
     :cond_2
     iput-object p2, p0, Landroid/app/ResourcesManager;->mResCompatibilityInfo:Landroid/content/res/CompatibilityInfo;
 
-    .line 263
     or-int/lit16 v0, v0, 0xd00
 
-    .line 270
     :cond_3
     invoke-static {v0, p1}, Landroid/app/Injector$ActivityThreadHook;->handleExtraConfigurationChanges(ILandroid/content/res/Configuration;)V
 
-    .line 275
     iget-object v10, p1, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
 
     if-eqz v10, :cond_4
 
-    .line 276
     iget-object v10, p1, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
 
     invoke-static {v10}, Ljava/util/Locale;->setDefault(Ljava/util/Locale;)V
 
-    .line 279
     :cond_4
     invoke-static {p1, v1, p2}, Landroid/content/res/Resources;->updateSystemConfiguration(Landroid/content/res/Configuration;Landroid/util/DisplayMetrics;Landroid/content/res/CompatibilityInfo;)V
 
-    .line 281
     invoke-static {}, Landroid/app/ApplicationPackageManager;->configurationChanged()V
 
-    .line 284
     const/4 v9, 0x0
 
-    .line 286
     .local v9, tmpConfig:Landroid/content/res/Configuration;
     iget-object v10, p0, Landroid/app/ResourcesManager;->mActiveResources:Landroid/util/ArrayMap;
 
@@ -1040,18 +1031,5 @@
 
     move-result-object v6
 
-    .line 237
-    .local v6, r:Landroid/content/res/Resources;
-    if-eqz v6, :cond_0
-
-    move-object v0, v6
-
-    .line 238
-    check-cast v0, Landroid/content/res/MiuiResources;
-
-    invoke-virtual {v0, p1}, Landroid/content/res/MiuiResources;->init(Ljava/lang/String;)V
-
-    .line 240
-    :cond_0
     return-object v6
 .end method

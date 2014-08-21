@@ -121,17 +121,17 @@
     .parameter "index"
 
     .prologue
-    .line 166
+    .line 168
     iget v0, p0, Landroid/media/NubiaVolume;->mVolumeChangedWhenSilent:I
 
     if-nez v0, :cond_0
 
     if-eqz p1, :cond_0
 
-    .line 167
+    .line 169
     const/4 p2, 0x0
 
-    .line 169
+    .line 171
     :cond_0
     add-int/lit8 v0, p2, 0x5
 
@@ -245,10 +245,10 @@
 
     const/4 v5, -0x1
 
-    .line 123
+    .line 125
     const/4 v0, 0x1
 
-    .line 124
+    .line 126
     .local v0, adjustVolumeIndex:Z
     iget-object v4, p0, Landroid/media/NubiaVolume;->mAudioService:Landroid/media/AudioService;
 
@@ -256,11 +256,11 @@
 
     move-result v1
 
-    .line 126
+    .line 128
     .local v1, ringerMode:I
     packed-switch v1, :pswitch_data_0
 
-    .line 156
+    .line 158
     const-string v3, "NubiaVolume"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -283,24 +283,24 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 159
+    .line 161
     :cond_0
     :goto_0
     iget-object v3, p0, Landroid/media/NubiaVolume;->mAudioService:Landroid/media/AudioService;
 
     invoke-virtual {v3, v1}, Landroid/media/AudioService;->setRingerMode(I)V
 
-    .line 160
+    .line 162
     iput p2, p0, Landroid/media/NubiaVolume;->mPrevVolDirection:I
 
-    .line 162
+    .line 164
     return v0
 
-    .line 128
+    .line 130
     :pswitch_0
     if-ne p2, v5, :cond_0
 
-    .line 129
+    .line 131
     iget-object v4, p0, Landroid/media/NubiaVolume;->mContentResolver:Landroid/content/ContentResolver;
 
     const-string/jumbo v5, "nb_vibrate_when_silent"
@@ -311,7 +311,7 @@
 
     if-ne v4, v2, :cond_1
 
-    .line 130
+    .line 132
     .local v2, vibrateInSilent:Z
     :goto_1
     if-gt p3, p1, :cond_2
@@ -330,7 +330,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 131
+    .line 133
     const/4 v1, 0x1
 
     goto :goto_0
@@ -339,64 +339,64 @@
     :cond_1
     move v2, v3
 
-    .line 129
+    .line 131
     goto :goto_1
 
-    .line 132
+    .line 134
     .restart local v2       #vibrateInSilent:Z
     :cond_2
     if-ge p1, p3, :cond_0
 
-    .line 133
+    .line 135
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 138
+    .line 140
     .end local v2           #vibrateInSilent:Z
     :pswitch_1
     iget v3, p0, Landroid/media/NubiaVolume;->mLastSilentMode:I
 
     if-eqz v3, :cond_3
 
-    .line 139
+    .line 141
     if-ge p1, p3, :cond_0
 
     if-ne p2, v5, :cond_0
 
-    .line 140
+    .line 142
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 143
+    .line 145
     :cond_3
     if-ne p2, v2, :cond_4
 
-    .line 144
+    .line 146
     const/4 v1, 0x2
 
     goto :goto_0
 
-    .line 146
+    .line 148
     :cond_4
     const/4 v0, 0x0
 
-    .line 149
+    .line 151
     goto :goto_0
 
-    .line 151
+    .line 153
     :pswitch_2
     if-ge p1, p3, :cond_0
 
     if-ne p2, v5, :cond_0
 
-    .line 152
+    .line 154
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 126
+    .line 128
     nop
 
     :pswitch_data_0
@@ -418,7 +418,7 @@
 
     const/4 v5, 0x1
 
-    .line 98
+    .line 100
     iget-object v2, p0, Landroid/media/NubiaVolume;->mContentResolver:Landroid/content/ContentResolver;
 
     iget-object v3, p0, Landroid/media/NubiaVolume;->VOLUME_CHANGED_WHEN_SILENT:Ljava/lang/String;
@@ -427,7 +427,7 @@
 
     invoke-static {v2, v3, v4, v7}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 99
+    .line 101
     iget-object v2, p0, Landroid/media/NubiaVolume;->mContentResolver:Landroid/content/ContentResolver;
 
     iget-object v3, p0, Landroid/media/NubiaVolume;->LAST_RINGER_MODE:Ljava/lang/String;
@@ -436,7 +436,7 @@
 
     invoke-static {v2, v3, v4, v7}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 100
+    .line 102
     iget-object v2, p0, Landroid/media/NubiaVolume;->mContentResolver:Landroid/content/ContentResolver;
 
     const-string/jumbo v3, "nb_silent_mode"
@@ -445,7 +445,7 @@
 
     move-result v1
 
-    .line 101
+    .line 103
     .local v1, silentMode:I
     if-eqz p1, :cond_0
 
@@ -453,25 +453,25 @@
 
     if-ne p1, v5, :cond_3
 
-    .line 102
+    .line 104
     :cond_0
     if-nez p1, :cond_2
 
-    .line 103
+    .line 105
     iget-object v2, p0, Landroid/media/NubiaVolume;->mContentResolver:Landroid/content/ContentResolver;
 
     const-string/jumbo v3, "nb_silent_mode"
 
     invoke-static {v2, v3, v5}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 104
+    .line 106
     iget-object v2, p0, Landroid/media/NubiaVolume;->mContentResolver:Landroid/content/ContentResolver;
 
     const-string/jumbo v3, "nb_vibrate_when_silent"
 
     invoke-static {v2, v3, v6}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 108
+    .line 110
     :cond_1
     :goto_0
     const/4 v0, 0x0
@@ -484,7 +484,7 @@
 
     if-ge v0, v2, :cond_4
 
-    .line 109
+    .line 111
     iget-object v2, p0, Landroid/media/NubiaVolume;->mContentResolver:Landroid/content/ContentResolver;
 
     iget-object v3, p0, Landroid/media/NubiaVolume;->mLastPersistMusicVolumeName:[Ljava/lang/String;
@@ -497,17 +497,17 @@
 
     invoke-static {v2, v3, v4, v7}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 108
+    .line 110
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 105
+    .line 107
     .end local v0           #i:I
     :cond_2
     if-ne p1, v5, :cond_1
 
-    .line 106
+    .line 108
     iget-object v2, p0, Landroid/media/NubiaVolume;->mContentResolver:Landroid/content/ContentResolver;
 
     const-string/jumbo v3, "nb_vibrate_when_silent"
@@ -516,20 +516,20 @@
 
     goto :goto_0
 
-    .line 111
+    .line 113
     :cond_3
     const/4 v2, 0x2
 
     if-ne p1, v2, :cond_5
 
-    .line 112
+    .line 114
     iget-object v2, p0, Landroid/media/NubiaVolume;->mContentResolver:Landroid/content/ContentResolver;
 
     const-string/jumbo v3, "nb_silent_mode"
 
     invoke-static {v2, v3, v6}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 116
+    .line 118
     :cond_4
     :goto_2
     iget-object v2, p0, Landroid/media/NubiaVolume;->mContentResolver:Landroid/content/ContentResolver;
@@ -542,10 +542,10 @@
 
     iput v2, p0, Landroid/media/NubiaVolume;->mLastSilentMode:I
 
-    .line 117
+    .line 119
     return-void
 
-    .line 114
+    .line 116
     :cond_5
     iget-object v2, p0, Landroid/media/NubiaVolume;->mContentResolver:Landroid/content/ContentResolver;
 
@@ -630,15 +630,15 @@
     .parameter "streamType"
 
     .prologue
-    .line 173
+    .line 175
     const/4 v0, 0x2
 
     if-ne p2, v0, :cond_0
 
-    .line 174
+    .line 176
     iput p1, p0, Landroid/media/NubiaVolume;->mVolumeChangedWhenSilent:I
 
-    .line 176
+    .line 178
     :cond_0
     return-void
 .end method
@@ -701,19 +701,19 @@
     .prologue
     const/4 v7, 0x2
 
-    const/4 v3, 0x1
-
     const/4 v4, 0x0
 
+    const/4 v3, 0x1
+
     .line 74
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_4
 
     .line 75
     const/4 v5, 0x3
 
     if-eq p2, v5, :cond_0
 
-    if-ne p2, v3, :cond_3
+    if-ne p2, v3, :cond_4
 
     .line 76
     :cond_0
@@ -744,24 +744,37 @@
 
     move-result v5
 
-    if-ne v5, v3, :cond_4
+    if-ne v5, v3, :cond_5
 
     move v2, v3
 
     .line 82
     .local v2, silentMode:Z
     :goto_0
-    if-eq p3, v7, :cond_2
+    iget v5, p0, Landroid/media/NubiaVolume;->mLastRingerMode:I
 
-    if-nez v2, :cond_5
+    if-eqz v5, :cond_2
 
-    if-ne p3, v3, :cond_5
+    iget v5, p0, Landroid/media/NubiaVolume;->mLastSilentMode:I
 
-    .line 84
+    if-ne v5, v3, :cond_6
+
+    iget v5, p0, Landroid/media/NubiaVolume;->mLastRingerMode:I
+
+    if-ne v5, v3, :cond_6
+
     :cond_2
-    if-nez v0, :cond_3
+    if-eq p3, v7, :cond_3
 
-    .line 85
+    if-nez v2, :cond_6
+
+    if-ne p3, v3, :cond_6
+
+    .line 86
+    :cond_3
+    if-nez v0, :cond_4
+
+    .line 87
     iget-object v3, p0, Landroid/media/NubiaVolume;->mAudioService:Landroid/media/AudioService;
 
     iget-object v5, p0, Landroid/media/NubiaVolume;->mLastPersistMusicVolume:[I
@@ -770,45 +783,45 @@
 
     invoke-virtual {v3, p2, v7, v5, v4}, Landroid/media/AudioService;->setStreamVolumeForDevice(IIII)V
 
-    .line 95
+    .line 97
     .end local v0           #currentIndex:I
     .end local v1           #i:I
     .end local v2           #silentMode:Z
-    :cond_3
+    :cond_4
     :goto_1
     return-void
 
     .restart local v0       #currentIndex:I
     .restart local v1       #i:I
-    :cond_4
+    :cond_5
     move v2, v4
 
     .line 81
     goto :goto_0
 
-    .line 87
+    .line 89
     .restart local v2       #silentMode:Z
-    :cond_5
-    if-nez v2, :cond_6
-
-    if-nez p3, :cond_3
-
-    .line 88
     :cond_6
+    if-nez v2, :cond_7
+
+    if-nez p3, :cond_4
+
+    .line 90
+    :cond_7
     iget v3, p0, Landroid/media/NubiaVolume;->mLastRingerMode:I
 
-    if-eq v3, v7, :cond_7
+    if-eq v3, v7, :cond_8
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_9
 
-    .line 89
-    :cond_7
+    .line 91
+    :cond_8
     iget-object v3, p0, Landroid/media/NubiaVolume;->mLastPersistMusicVolume:[I
 
     aput v0, v3, v1
 
-    .line 91
-    :cond_8
+    .line 93
+    :cond_9
     iget-object v3, p0, Landroid/media/NubiaVolume;->mAudioService:Landroid/media/AudioService;
 
     invoke-virtual {v3, p2, v7, v4, v4}, Landroid/media/AudioService;->setStreamVolumeForDevice(IIII)V

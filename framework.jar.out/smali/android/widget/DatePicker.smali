@@ -359,7 +359,7 @@
 
     iget-object v13, v0, Landroid/widget/DatePicker;->mDaySpinner:Landroid/widget/NumberPicker;
 
-    const v14, 0x1020317
+    const v14, 0x102031c
 
     invoke-virtual {v13, v14}, Landroid/widget/NumberPicker;->findViewById(I)Landroid/view/View;
 
@@ -440,7 +440,7 @@
 
     iget-object v13, v0, Landroid/widget/DatePicker;->mMonthSpinner:Landroid/widget/NumberPicker;
 
-    const v14, 0x1020317
+    const v14, 0x102031c
 
     invoke-virtual {v13, v14}, Landroid/widget/NumberPicker;->findViewById(I)Landroid/view/View;
 
@@ -488,7 +488,7 @@
 
     iget-object v13, v0, Landroid/widget/DatePicker;->mYearSpinner:Landroid/widget/NumberPicker;
 
-    const v14, 0x1020317
+    const v14, 0x102031c
 
     invoke-virtual {v13, v14}, Landroid/widget/NumberPicker;->findViewById(I)Landroid/view/View;
 
@@ -1178,9 +1178,9 @@
     .locals 4
 
     .prologue
-    const v3, 0x1020318
+    const v3, 0x102031d
 
-    const v2, 0x1020316
+    const v2, 0x102031b
 
     .line 747
     iget-object v0, p0, Landroid/widget/DatePicker;->mDaySpinner:Landroid/widget/NumberPicker;
@@ -1452,7 +1452,7 @@
     .line 741
     .local v0, imeOptions:I
     :goto_0
-    const v2, 0x1020317
+    const v2, 0x102031c
 
     invoke-virtual {p1, v2}, Landroid/widget/NumberPicker;->findViewById(I)Landroid/view/View;
 

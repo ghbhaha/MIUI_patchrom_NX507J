@@ -496,7 +496,7 @@
 
     .line 183
     .local v0, inflater:Landroid/view/LayoutInflater;
-    const v1, 0x109007b
+    const v1, 0x109007c
 
     const/4 v3, 0x0
 
@@ -516,7 +516,7 @@
     .line 187
     iget-object v1, p0, Lcom/android/server/display/OverlayDisplayWindow;->mWindowContent:Landroid/view/View;
 
-    const v3, 0x1020319
+    const v3, 0x102031e
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -573,7 +573,7 @@
     .line 196
     iget-object v1, p0, Lcom/android/server/display/OverlayDisplayWindow;->mWindowContent:Landroid/view/View;
 
-    const v3, 0x102031a
+    const v3, 0x102031f
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

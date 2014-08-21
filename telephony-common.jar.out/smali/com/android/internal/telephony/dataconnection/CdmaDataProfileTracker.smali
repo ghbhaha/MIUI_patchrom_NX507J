@@ -96,6 +96,7 @@
 
     const/4 v3, 0x0
 
+    .line 75
     const/16 v0, 0x8
 
     new-array v0, v0, [Ljava/lang/String;
@@ -140,6 +141,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mSupportedApnTypes:[Ljava/lang/String;
 
+    .line 85
     const/4 v0, 0x7
 
     new-array v0, v0, [Ljava/lang/String;
@@ -178,6 +180,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mDefaultApnTypes:[Ljava/lang/String;
 
+    .line 107
     const-string v0, "persist.omh.enabled"
 
     invoke-static {v0, v3}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
@@ -198,42 +201,52 @@
 
     const/4 v1, 0x0
 
+    .line 128
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
+    .line 60
     const-string v0, "CDMA"
 
     iput-object v0, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->LOG_TAG:Ljava/lang/String;
 
+    .line 73
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mDataProfilesList:Ljava/util/ArrayList;
 
+    .line 100
     iput v1, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mOmhReadProfileContext:I
 
+    .line 105
     iput v1, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mOmhReadProfileCount:I
 
+    .line 111
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mOmhDataProfilesList:Ljava/util/ArrayList;
 
+    .line 114
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mTempOmhDataProfilesList:Ljava/util/ArrayList;
 
+    .line 120
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mModemDataProfileRegistrants:Landroid/os/RegistrantList;
 
+    .line 129
     iput-object p1, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mPhone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
+    .line 130
     invoke-virtual {p1}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -248,18 +261,21 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mCdmaSsm:Lcom/android/internal/telephony/cdma/CdmaSubscriptionSourceManager;
 
+    .line 133
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mOmhServicePriorityMap:Ljava/util/HashMap;
 
+    .line 135
     invoke-virtual {p0, v3}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
+    .line 137
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -282,6 +298,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->log(Ljava/lang/String;)V
 
+    .line 138
     return-void
 .end method
 
@@ -289,6 +306,7 @@
     .locals 8
 
     .prologue
+    .line 375
     sget-object v1, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mSupportedApnTypes:[Ljava/lang/String;
 
     .local v1, arr$:[Ljava/lang/String;
@@ -307,6 +325,7 @@
 
     aget-object v0, v1, v4
 
+    .line 376
     .local v0, apntype:Ljava/lang/String;
     iget-object v6, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mOmhServicePriorityMap:Ljava/util/HashMap;
 
@@ -316,6 +335,7 @@
 
     if-nez v6, :cond_1
 
+    .line 381
     iget-object v6, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mTempOmhDataProfilesList:Ljava/util/ArrayList;
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -340,6 +360,7 @@
     .local v2, dp:Lcom/android/internal/telephony/dataconnection/DataProfile;
     move-object v6, v2
 
+    .line 382
     check-cast v6, Lcom/android/internal/telephony/dataconnection/DataProfileOmh;
 
     invoke-virtual {v6}, Lcom/android/internal/telephony/dataconnection/DataProfileOmh;->getDataProfileTypeModem()Lcom/android/internal/telephony/dataconnection/DataProfileOmh$DataProfileTypeModem;
@@ -350,6 +371,7 @@
 
     if-ne v6, v7, :cond_0
 
+    .line 384
     check-cast v2, Lcom/android/internal/telephony/dataconnection/DataProfileOmh;
 
     .end local v2           #dp:Lcom/android/internal/telephony/dataconnection/DataProfile;
@@ -359,6 +381,7 @@
 
     invoke-virtual {v2, v6}, Lcom/android/internal/telephony/dataconnection/DataProfileOmh;->addServiceType(Lcom/android/internal/telephony/dataconnection/DataProfileOmh$DataProfileTypeModem;)V
 
+    .line 386
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -383,6 +406,7 @@
 
     invoke-virtual {p0, v6}, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->log(Ljava/lang/String;)V
 
+    .line 375
     .end local v3           #i$:Ljava/util/Iterator;
     :cond_1
     add-int/lit8 v3, v4, 0x1
@@ -394,6 +418,7 @@
     .restart local v4       #i$:I
     goto :goto_0
 
+    .line 393
     .end local v0           #apntype:Ljava/lang/String;
     :cond_2
     return-void
@@ -404,6 +429,7 @@
     .parameter "dp"
 
     .prologue
+    .line 327
     iget-object v2, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mTempOmhDataProfilesList:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -427,6 +453,7 @@
     .local v0, dataProfile:Lcom/android/internal/telephony/dataconnection/DataProfile;
     move-object v2, p1
 
+    .line 328
     check-cast v2, Lcom/android/internal/telephony/dataconnection/DataProfileOmh;
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/dataconnection/DataProfileOmh;->getProfileId()I
@@ -443,8 +470,10 @@
 
     if-ne v3, v2, :cond_0
 
+    .line 330
     check-cast v0, Lcom/android/internal/telephony/dataconnection/DataProfileOmh;
 
+    .line 333
     .end local v0           #dataProfile:Lcom/android/internal/telephony/dataconnection/DataProfile;
     :goto_0
     return-object v0
@@ -472,9 +501,11 @@
     .end annotation
 
     .prologue
+    .line 402
     .local p1, dataProfileListModem:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/dataconnection/DataProfile;>;"
     const/4 v2, 0x0
 
+    .line 404
     .local v2, profile:Lcom/android/internal/telephony/dataconnection/DataProfile;
     invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -497,6 +528,7 @@
     .local v0, dp:Lcom/android/internal/telephony/dataconnection/DataProfile;
     move-object v3, v0
 
+    .line 405
     check-cast v3, Lcom/android/internal/telephony/dataconnection/DataProfileOmh;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/dataconnection/DataProfileOmh;->isValidPriority()Z
@@ -505,19 +537,23 @@
 
     if-nez v3, :cond_0
 
+    .line 406
     const-string v3, "[OMH] Invalid priority... skipping"
 
     invoke-virtual {p0, v3}, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->log(Ljava/lang/String;)V
 
     goto :goto_0
 
+    .line 410
     :cond_0
     if-nez v2, :cond_1
 
+    .line 411
     move-object v2, v0
 
     goto :goto_0
 
+    .line 413
     :cond_1
     const-string v3, "supl"
 
@@ -525,6 +561,7 @@
 
     move-object v3, v0
 
+    .line 415
     check-cast v3, Lcom/android/internal/telephony/dataconnection/DataProfileOmh;
 
     move-object v4, v2
@@ -549,6 +586,7 @@
     :cond_3
     move-object v3, v0
 
+    .line 419
     check-cast v3, Lcom/android/internal/telephony/dataconnection/DataProfileOmh;
 
     move-object v4, v2
@@ -570,6 +608,7 @@
     :cond_4
     goto :goto_0
 
+    .line 424
     .end local v0           #dp:Lcom/android/internal/telephony/dataconnection/DataProfile;
     :cond_5
     check-cast v2, Lcom/android/internal/telephony/dataconnection/DataProfileOmh;
@@ -588,19 +627,23 @@
     .parameter "context"
 
     .prologue
+    .line 251
     iget v6, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mOmhReadProfileContext:I
 
     if-eq p2, v6, :cond_1
 
+    .line 319
     :cond_0
     :goto_0
     return-void
 
+    .line 256
     :cond_1
     iget-object v6, p1, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     if-eqz v6, :cond_2
 
+    .line 257
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -623,6 +666,7 @@
 
     invoke-virtual {p0, v6}, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->log(Ljava/lang/String;)V
 
+    .line 258
     iget v6, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mOmhReadProfileCount:I
 
     add-int/lit8 v6, v6, -0x1
@@ -631,22 +675,26 @@
 
     goto :goto_0
 
+    .line 264
     :cond_2
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
+    .line 265
     .local v0, dataProfileListModem:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/dataconnection/DataProfile;>;"
     iget-object v0, p1, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
     .end local v0           #dataProfileListModem:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/dataconnection/DataProfile;>;"
     check-cast v0, Ljava/util/ArrayList;
 
+    .line 267
     .restart local v0       #dataProfileListModem:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/dataconnection/DataProfile;>;"
     iget-object v3, p1, Landroid/os/AsyncResult;->userObj:Ljava/lang/Object;
 
     check-cast v3, Lcom/android/internal/telephony/dataconnection/DataProfileOmh$DataProfileTypeModem;
 
+    .line 269
     .local v3, modemProfile:Lcom/android/internal/telephony/dataconnection/DataProfileOmh$DataProfileTypeModem;
     iget v6, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mOmhReadProfileCount:I
 
@@ -654,6 +702,7 @@
 
     iput v6, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mOmhReadProfileCount:I
 
+    .line 271
     if-eqz v0, :cond_4
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -662,10 +711,12 @@
 
     if-lez v6, :cond_4
 
+    .line 275
     invoke-virtual {v3}, Lcom/android/internal/telephony/dataconnection/DataProfileOmh$DataProfileTypeModem;->getDataServiceType()Ljava/lang/String;
 
     move-result-object v5
 
+    .line 277
     .local v5, serviceType:Ljava/lang/String;
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -701,6 +752,7 @@
 
     invoke-virtual {p0, v6}, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->log(Ljava/lang/String;)V
 
+    .line 280
     iget-object v6, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mOmhServicePriorityMap:Ljava/util/HashMap;
 
     invoke-direct {p0, v0, v5}, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->omhListGetArbitratedPriority(Ljava/util/ArrayList;Ljava/lang/String;)I
@@ -713,6 +765,7 @@
 
     invoke-virtual {v6, v5, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 283
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -734,21 +787,26 @@
     .local v1, dp:Lcom/android/internal/telephony/dataconnection/DataProfile;
     move-object v6, v1
 
+    .line 286
     check-cast v6, Lcom/android/internal/telephony/dataconnection/DataProfileOmh;
 
     invoke-virtual {v6, v3}, Lcom/android/internal/telephony/dataconnection/DataProfileOmh;->setDataProfileTypeModem(Lcom/android/internal/telephony/dataconnection/DataProfileOmh$DataProfileTypeModem;)V
 
+    .line 292
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->getDuplicateProfile(Lcom/android/internal/telephony/dataconnection/DataProfile;)Lcom/android/internal/telephony/dataconnection/DataProfileOmh;
 
     move-result-object v4
 
+    .line 293
     .local v4, omhDuplicateDp:Lcom/android/internal/telephony/dataconnection/DataProfileOmh;
     if-nez v4, :cond_3
 
+    .line 294
     iget-object v6, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mTempOmhDataProfilesList:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 295
     check-cast v1, Lcom/android/internal/telephony/dataconnection/DataProfileOmh;
 
     .end local v1           #dp:Lcom/android/internal/telephony/dataconnection/DataProfile;
@@ -760,6 +818,7 @@
 
     goto :goto_1
 
+    .line 304
     .restart local v1       #dp:Lcom/android/internal/telephony/dataconnection/DataProfile;
     :cond_3
     new-instance v6, Ljava/lang/StringBuilder;
@@ -782,6 +841,7 @@
 
     invoke-virtual {p0, v6}, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->log(Ljava/lang/String;)V
 
+    .line 305
     invoke-static {v5}, Lcom/android/internal/telephony/dataconnection/DataProfileOmh$DataProfileTypeModem;->getDataProfileTypeModem(Ljava/lang/String;)Lcom/android/internal/telephony/dataconnection/DataProfileOmh$DataProfileTypeModem;
 
     move-result-object v6
@@ -790,6 +850,7 @@
 
     goto :goto_1
 
+    .line 312
     .end local v1           #dp:Lcom/android/internal/telephony/dataconnection/DataProfile;
     .end local v2           #i$:Ljava/util/Iterator;
     .end local v4           #omhDuplicateDp:Lcom/android/internal/telephony/dataconnection/DataProfileOmh;
@@ -799,18 +860,22 @@
 
     if-nez v6, :cond_0
 
+    .line 313
     const-string v6, "OMH: Modem omh profile read complete."
 
     invoke-virtual {p0, v6}, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->log(Ljava/lang/String;)V
 
+    .line 314
     invoke-direct {p0}, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->addServiceTypeToUnSpecified()V
 
+    .line 315
     iget-object v6, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mDataProfilesList:Ljava/util/ArrayList;
 
     iget-object v7, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mTempOmhDataProfilesList:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v7}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
+    .line 316
     iget-object v6, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mModemDataProfileRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v6}, Landroid/os/RegistrantList;->notifyRegistrants()V
@@ -824,30 +889,37 @@
     .prologue
     const/4 v8, 0x0
 
+    .line 224
     const-string v4, "OMH: onReadDataProfilesFromModem()"
 
     invoke-virtual {p0, v4}, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->log(Ljava/lang/String;)V
 
+    .line 225
     iget v4, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mOmhReadProfileContext:I
 
     add-int/lit8 v4, v4, 0x1
 
     iput v4, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mOmhReadProfileContext:I
 
+    .line 227
     iput v8, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mOmhReadProfileCount:I
 
+    .line 229
     iget-object v4, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mOmhDataProfilesList:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
+    .line 230
     iget-object v4, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mTempOmhDataProfilesList:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
+    .line 231
     iget-object v4, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mOmhServicePriorityMap:Ljava/util/HashMap;
 
     invoke-virtual {v4}, Ljava/util/HashMap;->clear()V
 
+    .line 234
     invoke-static {}, Lcom/android/internal/telephony/dataconnection/DataProfileOmh$DataProfileTypeModem;->values()[Lcom/android/internal/telephony/dataconnection/DataProfileOmh$DataProfileTypeModem;
 
     move-result-object v0
@@ -864,6 +936,7 @@
 
     aget-object v3, v0, v1
 
+    .line 235
     .local v3, p:Lcom/android/internal/telephony/dataconnection/DataProfileOmh$DataProfileTypeModem;
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -889,12 +962,14 @@
 
     invoke-virtual {p0, v4}, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->log(Ljava/lang/String;)V
 
+    .line 236
     iget v4, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mOmhReadProfileCount:I
 
     add-int/lit8 v4, v4, 0x1
 
     iput v4, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mOmhReadProfileCount:I
 
+    .line 237
     iget-object v4, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mPhone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     iget-object v4, v4, Lcom/android/internal/telephony/PhoneBase;->mCi:Lcom/android/internal/telephony/CommandsInterface;
@@ -913,10 +988,12 @@
 
     invoke-interface {v4, v5, v6}, Lcom/android/internal/telephony/CommandsInterface;->getDataCallProfile(ILandroid/os/Message;)V
 
+    .line 234
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 244
     .end local v3           #p:Lcom/android/internal/telephony/dataconnection/DataProfileOmh$DataProfileTypeModem;
     :cond_0
     return-void
@@ -927,6 +1004,7 @@
     .parameter "types"
 
     .prologue
+    .line 158
     if-eqz p1, :cond_0
 
     const-string v1, ""
@@ -937,11 +1015,13 @@
 
     if-eqz v1, :cond_1
 
+    .line 159
     :cond_0
     const/4 v1, 0x1
 
     new-array v0, v1, [Ljava/lang/String;
 
+    .line 160
     .local v0, result:[Ljava/lang/String;
     const/4 v1, 0x0
 
@@ -949,9 +1029,11 @@
 
     aput-object v2, v0, v1
 
+    .line 164
     :goto_0
     return-object v0
 
+    .line 162
     .end local v0           #result:[Ljava/lang/String;
     :cond_1
     const-string v1, ","
@@ -968,10 +1050,12 @@
     .locals 1
 
     .prologue
+    .line 213
     sget-boolean v0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->OMH_ENABLED:Z
 
     if-eqz v0, :cond_0
 
+    .line 214
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
@@ -980,9 +1064,11 @@
 
     invoke-virtual {p0, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
+    .line 218
     :goto_0
     return-void
 
+    .line 216
     :cond_0
     const-string v0, "OMH is disabled, ignoring request!"
 
@@ -997,10 +1083,12 @@
     .locals 1
 
     .prologue
+    .line 428
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mActiveDp:Lcom/android/internal/telephony/dataconnection/DataProfile;
 
+    .line 429
     return-void
 .end method
 
@@ -1008,6 +1096,7 @@
     .locals 0
 
     .prologue
+    .line 168
     return-void
 .end method
 
@@ -1015,12 +1104,14 @@
     .locals 2
 
     .prologue
+    .line 171
     const-string v0, "CDMA"
 
     const-string v1, "CdmaDataProfileTracker finalized"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 172
     return-void
 .end method
 
@@ -1029,6 +1120,7 @@
     .parameter "serviceType"
 
     .prologue
+    .line 337
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1049,8 +1141,10 @@
 
     invoke-virtual {p0, v3}, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->log(Ljava/lang/String;)V
 
+    .line 338
     const/4 v2, 0x0
 
+    .line 341
     .local v2, profile:Lcom/android/internal/telephony/dataconnection/DataProfile;
     iget-object v3, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mDataProfilesList:Ljava/util/ArrayList;
 
@@ -1072,6 +1166,7 @@
 
     check-cast v0, Lcom/android/internal/telephony/dataconnection/DataProfile;
 
+    .line 342
     .local v0, dp:Lcom/android/internal/telephony/dataconnection/DataProfile;
     invoke-virtual {v0, p1}, Lcom/android/internal/telephony/dataconnection/DataProfile;->canHandleType(Ljava/lang/String;)Z
 
@@ -1079,6 +1174,7 @@
 
     if-eqz v3, :cond_0
 
+    .line 343
     sget-boolean v3, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->OMH_ENABLED:Z
 
     if-eqz v3, :cond_1
@@ -1091,13 +1187,16 @@
 
     if-ne v3, v4, :cond_0
 
+    .line 348
     :cond_1
     move-object v2, v0
 
+    .line 353
     .end local v0           #dp:Lcom/android/internal/telephony/dataconnection/DataProfile;
     :cond_2
     if-nez v2, :cond_5
 
+    .line 354
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1118,6 +1217,7 @@
 
     invoke-virtual {p0, v3}, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->log(Ljava/lang/String;)V
 
+    .line 356
     iget-object v3, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mDataProfilesList:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -1137,6 +1237,7 @@
 
     check-cast v0, Lcom/android/internal/telephony/dataconnection/DataProfile;
 
+    .line 357
     .restart local v0       #dp:Lcom/android/internal/telephony/dataconnection/DataProfile;
     invoke-virtual {v0, p1}, Lcom/android/internal/telephony/dataconnection/DataProfile;->canHandleType(Ljava/lang/String;)Z
 
@@ -1144,8 +1245,10 @@
 
     if-eqz v3, :cond_3
 
+    .line 358
     move-object v2, v0
 
+    .line 363
     .end local v0           #dp:Lcom/android/internal/telephony/dataconnection/DataProfile;
     :cond_4
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1168,6 +1271,7 @@
 
     invoke-virtual {p0, v3}, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->log(Ljava/lang/String;)V
 
+    .line 367
     :cond_5
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -1189,6 +1293,7 @@
 
     invoke-virtual {p0, v3}, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->log(Ljava/lang/String;)V
 
+    .line 368
     return-object v2
 .end method
 
@@ -1197,40 +1302,48 @@
     .parameter "msg"
 
     .prologue
+    .line 185
     iget-object v0, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mPhone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     iget-boolean v0, v0, Lcom/android/internal/telephony/PhoneBase;->mIsTheCurrentActivePhone:Z
 
     if-nez v0, :cond_0
 
+    .line 186
     const-string v0, "CDMA"
 
     const-string v1, "Ignore CDMA msgs since CDMA phone is inactive"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 207
     :goto_0
     return-void
 
+    .line 190
     :cond_0
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
+    .line 204
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
     goto :goto_0
 
+    .line 192
     :pswitch_0
     invoke-virtual {p0}, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->loadProfiles()V
 
     goto :goto_0
 
+    .line 195
     :pswitch_1
     invoke-direct {p0}, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->onReadDataProfilesFromModem()V
 
     goto :goto_0
 
+    .line 199
     :pswitch_2
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -1242,6 +1355,7 @@
 
     goto :goto_0
 
+    .line 190
     nop
 
     :pswitch_data_0
@@ -1257,6 +1371,7 @@
     .parameter "type"
 
     .prologue
+    .line 432
     iget-object v0, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mActiveDp:Lcom/android/internal/telephony/dataconnection/DataProfile;
 
     if-eqz v0, :cond_0
@@ -1285,6 +1400,7 @@
     .parameter "type"
 
     .prologue
+    .line 440
     sget-object v0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mSupportedApnTypes:[Ljava/lang/String;
 
     .local v0, arr$:[Ljava/lang/String;
@@ -1299,6 +1415,7 @@
 
     aget-object v3, v0, v1
 
+    .line 441
     .local v3, s:Ljava/lang/String;
     invoke-static {p1, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -1306,18 +1423,22 @@
 
     if-eqz v4, :cond_0
 
+    .line 442
     const/4 v4, 0x1
 
+    .line 445
     .end local v3           #s:Ljava/lang/String;
     :goto_1
     return v4
 
+    .line 440
     .restart local v3       #s:Ljava/lang/String;
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 445
     .end local v3           #s:Ljava/lang/String;
     :cond_1
     const/4 v4, 0x0
@@ -1329,6 +1450,7 @@
     .locals 1
 
     .prologue
+    .line 436
     sget-boolean v0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->OMH_ENABLED:Z
 
     return v0
@@ -1338,16 +1460,20 @@
     .locals 1
 
     .prologue
+    .line 144
     const-string v0, "loadProfiles..."
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->log(Ljava/lang/String;)V
 
+    .line 145
     iget-object v0, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mDataProfilesList:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
+    .line 147
     invoke-direct {p0}, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->readDataProfilesFromModem()V
 
+    .line 148
     return-void
 .end method
 
@@ -1356,6 +1482,7 @@
     .parameter "s"
 
     .prologue
+    .line 449
     const-string v0, "CDMA"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1378,6 +1505,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 450
     return-void
 .end method
 
@@ -1386,6 +1514,7 @@
     .parameter "s"
 
     .prologue
+    .line 453
     const-string v0, "CDMA"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1408,6 +1537,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 454
     return-void
 .end method
 
@@ -1418,15 +1548,18 @@
     .parameter "obj"
 
     .prologue
+    .line 175
     new-instance v0, Landroid/os/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/os/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
+    .line 176
     .local v0, r:Landroid/os/Registrant;
     iget-object v1, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mModemDataProfileRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
 
+    .line 177
     return-void
 .end method
 
@@ -1435,9 +1568,11 @@
     .parameter "h"
 
     .prologue
+    .line 180
     iget-object v0, p0, Lcom/android/internal/telephony/dataconnection/CdmaDataProfileTracker;->mModemDataProfileRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v0, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
 
+    .line 181
     return-void
 .end method

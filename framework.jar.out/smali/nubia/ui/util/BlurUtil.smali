@@ -57,14 +57,14 @@
     .parameter "h"
 
     .prologue
-    .line 88
+    .line 95
     if-nez p1, :cond_0
 
-    .line 101
+    .line 108
     :goto_0
     return-void
 
-    .line 89
+    .line 96
     :cond_0
     const-string v1, "android.permission.WRITE_SETTINGS"
 
@@ -74,7 +74,7 @@
 
     if-nez v1, :cond_1
 
-    .line 90
+    .line 97
     const-string v1, "BlurUtil"
 
     const-string/jumbo v2, "no permission: android.permission.WRITE_SETTINGS"
@@ -83,13 +83,13 @@
 
     goto :goto_0
 
-    .line 93
+    .line 100
     :cond_1
     new-instance v0, Lnubia/ui/util/BlurUtil$1;
 
     invoke-direct {v0, p0, p2, p3, p1}, Lnubia/ui/util/BlurUtil$1;-><init>(Landroid/content/Context;IILandroid/graphics/Bitmap;)V
 
-    .line 100
+    .line 107
     .local v0, r:Ljava/lang/Runnable;
     new-instance v1, Ljava/lang/Thread;
 
@@ -106,12 +106,12 @@
     .parameter "name"
 
     .prologue
-    .line 185
+    .line 192
     invoke-virtual {p0, p1}, Landroid/content/Context;->checkCallingOrSelfPermission(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 186
+    .line 193
     .local v0, permission:I
     if-nez v0, :cond_0
 
@@ -132,9 +132,7 @@
     .parameter "rect"
 
     .prologue
-    const/4 v9, 0x0
-
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
     .line 40
     invoke-static {p0}, Lnubia/ui/util/BlurUtil;->isStaticWallpaper(Landroid/content/Context;)Z
@@ -143,21 +141,19 @@
 
     if-nez v6, :cond_0
 
-    move-object v2, v5
-
-    .line 54
+    .line 61
     :goto_0
-    return-object v2
+    return-object v3
 
     .line 41
     :cond_0
     invoke-static {}, Lnubia/ui/util/BlurUtil;->getBlurWallpaper()Landroid/graphics/Bitmap;
 
-    move-result-object v4
+    move-result-object v5
 
     .line 42
-    .local v4, wallpaperDB:Landroid/graphics/Bitmap;
-    if-nez v4, :cond_1
+    .local v5, wallpaperDB:Landroid/graphics/Bitmap;
+    if-nez v5, :cond_1
 
     .line 43
     const-string v6, "BlurUtil"
@@ -166,29 +162,31 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-object v2, v5
-
-    .line 44
     goto :goto_0
 
     .line 46
     :cond_1
     invoke-static {p0, p1}, Lnubia/ui/util/BlurUtil;->getScrollClipRect(Landroid/content/Context;Landroid/graphics/Rect;)Landroid/graphics/Rect;
 
-    move-result-object v3
+    move-result-object v4
 
     .line 47
-    .local v3, scaleRect:Landroid/graphics/Rect;
+    .local v4, scaleRect:Landroid/graphics/Rect;
     const/high16 v6, 0x3e80
 
-    invoke-virtual {v3, v6}, Landroid/graphics/Rect;->scale(F)V
+    invoke-virtual {v4, v6}, Landroid/graphics/Rect;->scale(F)V
 
     .line 48
-    invoke-virtual {v3}, Landroid/graphics/Rect;->width()I
+    const/4 v3, 0x0
+
+    .line 50
+    .local v3, newBm:Landroid/graphics/Bitmap;
+    :try_start_0
+    invoke-virtual {v4}, Landroid/graphics/Rect;->width()I
 
     move-result v6
 
-    invoke-virtual {v3}, Landroid/graphics/Rect;->height()I
+    invoke-virtual {v4}, Landroid/graphics/Rect;->height()I
 
     move-result v7
 
@@ -196,37 +194,71 @@
 
     invoke-static {v6, v7, v8}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
-    move-result-object v2
+    move-result-object v3
 
-    .line 49
-    .local v2, newBm:Landroid/graphics/Bitmap;
+    .line 51
     new-instance v1, Landroid/graphics/Rect;
 
-    invoke-virtual {v3}, Landroid/graphics/Rect;->width()I
+    const/4 v6, 0x0
 
-    move-result v6
+    const/4 v7, 0x0
 
-    invoke-virtual {v3}, Landroid/graphics/Rect;->height()I
+    invoke-virtual {v4}, Landroid/graphics/Rect;->width()I
 
-    move-result v7
+    move-result v8
 
-    invoke-direct {v1, v9, v9, v6, v7}, Landroid/graphics/Rect;-><init>(IIII)V
+    invoke-virtual {v4}, Landroid/graphics/Rect;->height()I
 
-    .line 50
+    move-result v9
+
+    invoke-direct {v1, v6, v7, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    .line 52
     .local v1, dst:Landroid/graphics/Rect;
     new-instance v0, Landroid/graphics/Canvas;
 
-    invoke-direct {v0, v2}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
-
-    .line 51
-    .local v0, canvas:Landroid/graphics/Canvas;
-    invoke-virtual {v0, v4, v3, v1, v5}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
-
-    .line 52
-    invoke-virtual {v4}, Landroid/graphics/Bitmap;->recycle()V
+    invoke-direct {v0, v3}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
     .line 53
-    invoke-virtual {v0, v5}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
+    .local v0, canvas:Landroid/graphics/Canvas;
+    const/4 v6, 0x0
+
+    invoke-virtual {v0, v5, v4, v1, v6}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
+
+    .line 54
+    invoke-virtual {v5}, Landroid/graphics/Bitmap;->recycle()V
+
+    .line 55
+    const/4 v6, 0x0
+
+    invoke-virtual {v0, v6}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    .line 56
+    .end local v0           #canvas:Landroid/graphics/Canvas;
+    .end local v1           #dst:Landroid/graphics/Rect;
+    :catch_0
+    move-exception v2
+
+    .line 57
+    .local v2, e:Ljava/lang/Exception;
+    invoke-virtual {v2}, Ljava/lang/Throwable;->printStackTrace()V
+
+    .line 58
+    invoke-virtual {v5}, Landroid/graphics/Bitmap;->isRecycled()Z
+
+    move-result v6
+
+    if-nez v6, :cond_2
+
+    invoke-virtual {v5}, Landroid/graphics/Bitmap;->recycle()V
+
+    .line 59
+    :cond_2
+    const/4 v3, 0x0
 
     goto :goto_0
 .end method
@@ -239,51 +271,51 @@
     .prologue
     const/4 v10, 0x1
 
-    .line 145
+    .line 152
     new-instance v7, Landroid/graphics/Paint;
 
     invoke-direct {v7}, Landroid/graphics/Paint;-><init>()V
 
-    .line 146
+    .line 153
     .local v7, paint:Landroid/graphics/Paint;
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v2
 
-    .line 147
+    .line 154
     .local v2, bmpWidth:I
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v1
 
-    .line 148
+    .line 155
     .local v1, bmpHeight:I
     new-instance v3, Landroid/graphics/Canvas;
 
     invoke-direct {v3, p1}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 149
+    .line 156
     .local v3, canvas:Landroid/graphics/Canvas;
     const/4 v9, 0x0
 
     invoke-virtual {v3, v9}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 150
+    .line 157
     const v4, 0x424242
 
-    .line 151
+    .line 158
     .local v4, color:I
     const v9, 0x424242
 
     invoke-virtual {v7, v9}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 152
+    .line 159
     invoke-virtual {v7, v10}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    .line 153
+    .line 160
     invoke-virtual {v7, v10}, Landroid/graphics/Paint;->setDither(Z)V
 
-    .line 154
+    .line 161
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v9
@@ -294,7 +326,7 @@
 
     move-result v0
 
-    .line 155
+    .line 162
     .local v0, arcHeight:F
     mul-int v9, v2, v2
 
@@ -308,7 +340,7 @@
 
     add-float v8, v9, v0
 
-    .line 156
+    .line 163
     .local v8, radius:F
     int-to-float v9, v2
 
@@ -316,7 +348,7 @@
 
     mul-float v5, v9, v10
 
-    .line 157
+    .line 164
     .local v5, cx:F
     int-to-float v9, v1
 
@@ -324,7 +356,7 @@
 
     sub-float v6, v9, v0
 
-    .line 158
+    .line 165
     .local v6, cy:F
     new-instance v9, Landroid/graphics/PorterDuffXfermode;
 
@@ -334,15 +366,15 @@
 
     invoke-virtual {v7, v9}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 159
+    .line 166
     invoke-virtual {v3, v5, v6, v8, v7}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 160
+    .line 167
     const/4 v9, 0x0
 
     invoke-virtual {v3, v9}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 161
+    .line 168
     return-object p1
 .end method
 
@@ -358,18 +390,18 @@
 
     const/4 v9, 0x0
 
-    .line 104
+    .line 111
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v7
 
-    .line 105
+    .line 112
     .local v7, w:I
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v2
 
-    .line 106
+    .line 113
     .local v2, h:I
     int-to-float v8, v7
 
@@ -377,7 +409,7 @@
 
     float-to-int v5, v8
 
-    .line 107
+    .line 114
     .local v5, scaleWidth:I
     int-to-float v8, v2
 
@@ -385,7 +417,7 @@
 
     float-to-int v4, v8
 
-    .line 108
+    .line 115
     .local v4, scaleHeight:I
     sget-object v8, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
@@ -393,45 +425,45 @@
 
     move-result-object v3
 
-    .line 109
+    .line 116
     .local v3, newBm:Landroid/graphics/Bitmap;
     new-instance v0, Landroid/graphics/Canvas;
 
     invoke-direct {v0, v3}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 110
+    .line 117
     .local v0, canvas:Landroid/graphics/Canvas;
     new-instance v6, Landroid/graphics/Rect;
 
     invoke-direct {v6, v9, v9, v7, v2}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 111
+    .line 118
     .local v6, srcRect:Landroid/graphics/Rect;
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1, v9, v9, v5, v4}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 112
+    .line 119
     .local v1, dstRect:Landroid/graphics/Rect;
     invoke-virtual {v0, p1, v6, v1, v11}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
-    .line 113
+    .line 120
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 114
+    .line 121
     invoke-virtual {v0, v11}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 115
+    .line 122
     const/4 v8, 0x1
 
     invoke-static {v3, v8}, Lnubia/ui/util/FastBlur;->doBlur(Landroid/graphics/Bitmap;Z)Landroid/graphics/Bitmap;
 
     move-result-object v3
 
-    .line 116
+    .line 123
     invoke-static {v3}, Lnubia/ui/util/BlurUtil;->saveBlurWallpaper(Landroid/graphics/Bitmap;)V
 
-    .line 117
+    .line 124
     return-void
 .end method
 
@@ -439,10 +471,10 @@
     .locals 4
 
     .prologue
-    .line 128
+    .line 135
     const/4 v0, 0x0
 
-    .line 130
+    .line 137
     .local v0, bitmap:Landroid/graphics/Bitmap;
     :try_start_0
     const-string/jumbo v2, "window"
@@ -461,15 +493,15 @@
 
     move-result-object v0
 
-    .line 134
+    .line 141
     :goto_0
     return-object v0
 
-    .line 131
+    .line 138
     :catch_0
     move-exception v1
 
-    .line 132
+    .line 139
     .local v1, e:Landroid/os/RemoteException;
     const-string v2, "BlurUtil"
 
@@ -490,30 +522,30 @@
 
     const/4 v12, 0x0
 
-    .line 58
+    .line 65
     new-instance v2, Landroid/graphics/Rect;
 
     invoke-direct {v2, p1}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
 
-    .line 59
+    .line 66
     .local v2, rect:Landroid/graphics/Rect;
     invoke-static {p0}, Landroid/app/WallpaperManager;->getInstance(Landroid/content/Context;)Landroid/app/WallpaperManager;
 
     move-result-object v9
 
-    .line 60
+    .line 67
     .local v9, wallpaperMgr:Landroid/app/WallpaperManager;
     invoke-virtual {v9}, Landroid/app/WallpaperManager;->getWallpaperXOffset()F
 
     move-result v0
 
-    .line 61
+    .line 68
     .local v0, offsetX:F
     invoke-virtual {v9}, Landroid/app/WallpaperManager;->getWallpaperYOffset()F
 
     move-result v1
 
-    .line 62
+    .line 69
     .local v1, offsetY:F
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -525,7 +557,7 @@
 
     iget v4, v11, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    .line 63
+    .line 70
     .local v4, screenWidth:I
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -537,27 +569,27 @@
 
     iget v3, v11, Landroid/util/DisplayMetrics;->heightPixels:I
 
-    .line 64
+    .line 71
     .local v3, screenHeight:I
     invoke-virtual {v9}, Landroid/app/WallpaperManager;->getDesiredMinimumWidth()I
 
     move-result v8
 
-    .line 65
+    .line 72
     .local v8, wallpaperDesiredWidth:I
     invoke-virtual {v9}, Landroid/app/WallpaperManager;->getDesiredMinimumHeight()I
 
     move-result v7
 
-    .line 66
+    .line 73
     .local v7, wallpaperDesiredHeight:I
     const/4 v5, 0x0
 
-    .line 67
+    .line 74
     .local v5, scrollX:I
     const/4 v6, 0x0
 
-    .line 68
+    .line 75
     .local v6, scrollY:I
     const/4 v11, 0x0
 
@@ -565,53 +597,53 @@
 
     if-gez v11, :cond_2
 
-    .line 69
+    .line 76
     sub-int v11, v8, v4
 
     div-int/lit8 v5, v11, 0x2
 
-    .line 70
+    .line 77
     sub-int v11, v7, v3
 
     div-int/lit8 v6, v11, 0x2
 
-    .line 79
+    .line 86
     :goto_0
     if-gez v5, :cond_0
 
     const/4 v5, 0x0
 
-    .line 80
+    .line 87
     :cond_0
     if-gez v6, :cond_1
 
     const/4 v6, 0x0
 
-    .line 82
+    .line 89
     :cond_1
     invoke-virtual {v2, v5, v6}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 83
+    .line 90
     return-object v2
 
-    .line 72
+    .line 79
     :cond_2
     const/4 v11, 0x2
 
     new-array v10, v11, [I
 
-    .line 73
+    .line 80
     .local v10, wallpaperParam:[I
     invoke-static {p0, v10}, Lnubia/ui/util/BlurUtil;->getWallpaperParam(Landroid/content/Context;[I)V
 
-    .line 74
+    .line 81
     aget v11, v10, v12
 
     if-eqz v11, :cond_3
 
     aget v8, v10, v12
 
-    .line 75
+    .line 82
     :cond_3
     aget v11, v10, v13
 
@@ -619,7 +651,7 @@
 
     aget v7, v10, v13
 
-    .line 76
+    .line 83
     :cond_4
     sub-int v11, v8, v4
 
@@ -631,7 +663,7 @@
 
     move-result v5
 
-    .line 77
+    .line 84
     sub-int v11, v7, v3
 
     int-to-float v11, v11
@@ -655,7 +687,7 @@
 
     const/4 v4, 0x0
 
-    .line 172
+    .line 179
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v2
@@ -666,7 +698,7 @@
 
     move-result-object v1
 
-    .line 173
+    .line 180
     .local v1, value:Ljava/lang/String;
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -674,14 +706,14 @@
 
     if-nez v2, :cond_0
 
-    .line 174
+    .line 181
     const-string v2, ":"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 175
+    .line 182
     .local v0, str:[Ljava/lang/String;
     aget-object v2, v0, v4
 
@@ -695,7 +727,7 @@
 
     aput v2, p1, v4
 
-    .line 176
+    .line 183
     aget-object v2, v0, v5
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
@@ -708,7 +740,7 @@
 
     aput v2, p1, v5
 
-    .line 178
+    .line 185
     .end local v0           #str:[Ljava/lang/String;
     :cond_0
     return-void
@@ -719,7 +751,7 @@
     .parameter "context"
 
     .prologue
-    .line 165
+    .line 172
     invoke-static {p0}, Landroid/app/WallpaperManager;->getInstance(Landroid/content/Context;)Landroid/app/WallpaperManager;
 
     move-result-object v0
@@ -730,10 +762,10 @@
 
     if-nez v0, :cond_0
 
-    .line 166
+    .line 173
     const/4 v0, 0x1
 
-    .line 168
+    .line 175
     :goto_0
     return v0
 
@@ -748,7 +780,7 @@
     .parameter "blurBitmap"
 
     .prologue
-    .line 121
+    .line 128
     :try_start_0
     const-string/jumbo v1, "window"
 
@@ -764,15 +796,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 125
+    .line 132
     :goto_0
     return-void
 
-    .line 122
+    .line 129
     :catch_0
     move-exception v0
 
-    .line 123
+    .line 130
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "BlurUtil"
 
@@ -790,7 +822,7 @@
     .parameter "h"
 
     .prologue
-    .line 181
+    .line 188
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -821,6 +853,6 @@
 
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 182
+    .line 189
     return-void
 .end method

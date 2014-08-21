@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 842
+    .line 845
     iput-object p1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$7;->this$0:Lcom/android/server/display/nubiaOverlayDisplayWindow;
 
     invoke-direct {p0}, Landroid/view/GestureDetector$SimpleOnGestureListener;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "distanceY"
 
     .prologue
-    .line 846
+    .line 849
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$7;->this$0:Lcom/android/server/display/nubiaOverlayDisplayWindow;
 
     #getter for: Lcom/android/server/display/nubiaOverlayDisplayWindow;->mRotated:I
@@ -63,25 +63,25 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 847
+    .line 850
     :cond_0
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$7;->this$0:Lcom/android/server/display/nubiaOverlayDisplayWindow;
 
     invoke-static {v0, p3}, Lcom/android/server/display/nubiaOverlayDisplayWindow;->access$1824(Lcom/android/server/display/nubiaOverlayDisplayWindow;F)F
 
-    .line 851
+    .line 854
     :goto_0
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$7;->this$0:Lcom/android/server/display/nubiaOverlayDisplayWindow;
 
     #calls: Lcom/android/server/display/nubiaOverlayDisplayWindow;->relayout()V
     invoke-static {v0}, Lcom/android/server/display/nubiaOverlayDisplayWindow;->access$1400(Lcom/android/server/display/nubiaOverlayDisplayWindow;)V
 
-    .line 852
+    .line 855
     const/4 v0, 0x1
 
     return v0
 
-    .line 849
+    .line 852
     :cond_1
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$7;->this$0:Lcom/android/server/display/nubiaOverlayDisplayWindow;
 

@@ -23,6 +23,7 @@
     .locals 3
 
     .prologue
+    .line 514
     invoke-static {}, Lcom/android/internal/telephony/SmsConstants$MessageClass;->values()[Lcom/android/internal/telephony/SmsConstants$MessageClass;
 
     move-result-object v0

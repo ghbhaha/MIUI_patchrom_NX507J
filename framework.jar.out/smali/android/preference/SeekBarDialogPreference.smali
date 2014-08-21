@@ -22,7 +22,7 @@
     invoke-direct {p0, p1, p2}, Landroid/preference/DialogPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 38
-    const v0, 0x10900a6
+    const v0, 0x10900a7
 
     invoke-virtual {p0, v0}, Landroid/preference/DialogPreference;->setDialogLayoutResource(I)V
 

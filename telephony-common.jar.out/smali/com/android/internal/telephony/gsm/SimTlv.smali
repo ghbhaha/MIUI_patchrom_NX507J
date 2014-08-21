@@ -27,22 +27,29 @@
     .parameter "length"
 
     .prologue
+    .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 39
     iput-object p1, p0, Lcom/android/internal/telephony/gsm/SimTlv;->mRecord:[B
 
+    .line 41
     iput p2, p0, Lcom/android/internal/telephony/gsm/SimTlv;->mTlvOffset:I
 
+    .line 42
     iput p3, p0, Lcom/android/internal/telephony/gsm/SimTlv;->mTlvLength:I
 
+    .line 43
     iput p2, p0, Lcom/android/internal/telephony/gsm/SimTlv;->mCurOffset:I
 
+    .line 45
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/SimTlv;->parseCurrentTlvObject()Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/gsm/SimTlv;->mHasValidTlvObject:Z
 
+    .line 46
     return-void
 .end method
 
@@ -52,6 +59,7 @@
     .prologue
     const/4 v1, 0x0
 
+    .line 92
     :try_start_0
     iget-object v2, p0, Lcom/android/internal/telephony/gsm/SimTlv;->mRecord:[B
 
@@ -73,10 +81,12 @@
 
     if-ne v2, v3, :cond_1
 
+    .line 115
     :cond_0
     :goto_0
     return v1
 
+    .line 96
     :cond_1
     iget-object v2, p0, Lcom/android/internal/telephony/gsm/SimTlv;->mRecord:[B
 
@@ -92,6 +102,7 @@
 
     if-ge v2, v3, :cond_2
 
+    .line 98
     iget-object v2, p0, Lcom/android/internal/telephony/gsm/SimTlv;->mRecord:[B
 
     iget v3, p0, Lcom/android/internal/telephony/gsm/SimTlv;->mCurOffset:I
@@ -104,6 +115,7 @@
 
     iput v2, p0, Lcom/android/internal/telephony/gsm/SimTlv;->mCurDataLength:I
 
+    .line 99
     iget v2, p0, Lcom/android/internal/telephony/gsm/SimTlv;->mCurOffset:I
 
     add-int/lit8 v2, v2, 0x2
@@ -112,6 +124,7 @@
     :try_end_0
     .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 111
     :goto_1
     iget v2, p0, Lcom/android/internal/telephony/gsm/SimTlv;->mCurDataLength:I
 
@@ -127,10 +140,12 @@
 
     if-gt v2, v3, :cond_0
 
+    .line 115
     const/4 v1, 0x1
 
     goto :goto_0
 
+    .line 100
     :cond_2
     :try_start_1
     iget-object v2, p0, Lcom/android/internal/telephony/gsm/SimTlv;->mRecord:[B
@@ -147,6 +162,7 @@
 
     if-ne v2, v3, :cond_0
 
+    .line 102
     iget-object v2, p0, Lcom/android/internal/telephony/gsm/SimTlv;->mRecord:[B
 
     iget v3, p0, Lcom/android/internal/telephony/gsm/SimTlv;->mCurOffset:I
@@ -159,6 +175,7 @@
 
     iput v2, p0, Lcom/android/internal/telephony/gsm/SimTlv;->mCurDataLength:I
 
+    .line 103
     iget v2, p0, Lcom/android/internal/telephony/gsm/SimTlv;->mCurOffset:I
 
     add-int/lit8 v2, v2, 0x3
@@ -169,9 +186,11 @@
 
     goto :goto_1
 
+    .line 107
     :catch_0
     move-exception v0
 
+    .line 108
     .local v0, ex:Ljava/lang/ArrayIndexOutOfBoundsException;
     goto :goto_0
 .end method
@@ -182,20 +201,24 @@
     .locals 5
 
     .prologue
+    .line 76
     iget-boolean v1, p0, Lcom/android/internal/telephony/gsm/SimTlv;->mHasValidTlvObject:Z
 
     if-nez v1, :cond_0
 
     const/4 v0, 0x0
 
+    .line 80
     :goto_0
     return-object v0
 
+    .line 78
     :cond_0
     iget v1, p0, Lcom/android/internal/telephony/gsm/SimTlv;->mCurDataLength:I
 
     new-array v0, v1, [B
 
+    .line 79
     .local v0, ret:[B
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/SimTlv;->mRecord:[B
 
@@ -214,12 +237,14 @@
     .locals 2
 
     .prologue
+    .line 66
     iget-boolean v0, p0, Lcom/android/internal/telephony/gsm/SimTlv;->mHasValidTlvObject:Z
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
+    .line 67
     :goto_0
     return v0
 
@@ -239,6 +264,7 @@
     .locals 1
 
     .prologue
+    .line 56
     iget-boolean v0, p0, Lcom/android/internal/telephony/gsm/SimTlv;->mHasValidTlvObject:Z
 
     return v0
@@ -248,15 +274,18 @@
     .locals 2
 
     .prologue
+    .line 49
     iget-boolean v0, p0, Lcom/android/internal/telephony/gsm/SimTlv;->mHasValidTlvObject:Z
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
+    .line 52
     :goto_0
     return v0
 
+    .line 50
     :cond_0
     iget v0, p0, Lcom/android/internal/telephony/gsm/SimTlv;->mCurDataOffset:I
 
@@ -266,12 +295,14 @@
 
     iput v0, p0, Lcom/android/internal/telephony/gsm/SimTlv;->mCurOffset:I
 
+    .line 51
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/SimTlv;->parseCurrentTlvObject()Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/gsm/SimTlv;->mHasValidTlvObject:Z
 
+    .line 52
     iget-boolean v0, p0, Lcom/android/internal/telephony/gsm/SimTlv;->mHasValidTlvObject:Z
 
     goto :goto_0

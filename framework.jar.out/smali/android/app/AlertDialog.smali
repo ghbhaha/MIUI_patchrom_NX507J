@@ -149,24 +149,7 @@
 
     invoke-virtual {v0}, Landroid/view/Window;->alwaysReadCloseOnTouchAttr()V
 
-    .line 136
-    invoke-virtual {p0, p2}, Landroid/app/AlertDialog;->setCancelable(Z)V
-
     .line 137
-    invoke-virtual {p0, p3}, Landroid/app/AlertDialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
-
-    .line 138
-    new-instance v0, Lcom/android/internal/app/AlertController;
-
-    invoke-virtual {p0}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
-
-    move-result-object v1
-
-    invoke-direct {v0, p1, p0, v1}, Lcom/android/internal/app/AlertController;-><init>(Landroid/content/Context;Landroid/content/DialogInterface;Landroid/view/Window;)V
-
-    iput-object v0, p0, Landroid/app/AlertDialog;->mAlert:Lcom/android/internal/app/AlertController;
-
-    .line 140
     invoke-static {p1}, Lnubia/ui/util/UiUtils;->isNubiaUi(Landroid/content/Context;)Z
 
     move-result v0
@@ -180,10 +163,27 @@
     :goto_0
     iput-object v0, p0, Landroid/app/AlertDialog;->mNubiaDialog:Lnubia/ui/IDialog;
 
+    .line 139
+    invoke-virtual {p0, p2}, Landroid/app/AlertDialog;->setCancelable(Z)V
+
+    .line 140
+    invoke-virtual {p0, p3}, Landroid/app/AlertDialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
+
+    .line 141
+    new-instance v0, Lcom/android/internal/app/AlertController;
+
+    invoke-virtual {p0}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
+
+    move-result-object v1
+
+    invoke-direct {v0, p1, p0, v1}, Lcom/android/internal/app/AlertController;-><init>(Landroid/content/Context;Landroid/content/DialogInterface;Landroid/view/Window;)V
+
+    iput-object v0, p0, Landroid/app/AlertDialog;->mAlert:Lcom/android/internal/app/AlertController;
+
     .line 142
     return-void
 
-    .line 140
+    .line 137
     :cond_0
     new-instance v0, Lnubia/ui/ProtoDialog;
 

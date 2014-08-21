@@ -47,30 +47,30 @@
     .parameter "disabledStatusMessageResId"
 
     .prologue
-    .line 957
+    .line 943
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 934
+    .line 920
     sget-object v0, Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction$State;->Off:Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction$State;
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction;->mState:Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction$State;
 
-    .line 958
+    .line 944
     iput p1, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction;->mEnabledIconResId:I
 
-    .line 959
+    .line 945
     iput p2, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction;->mDisabledIconResid:I
 
-    .line 960
+    .line 946
     iput p3, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction;->mMessageResId:I
 
-    .line 961
+    .line 947
     iput p4, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction;->mEnabledStatusMessageResId:I
 
-    .line 962
+    .line 948
     iput p5, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction;->mDisabledStatusMessageResId:I
 
-    .line 963
+    .line 949
     return-void
 .end method
 
@@ -81,7 +81,7 @@
     .parameter "buttonOn"
 
     .prologue
-    .line 1037
+    .line 1023
     if-eqz p1, :cond_0
 
     sget-object v0, Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction$State;->On:Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction$State;
@@ -89,10 +89,10 @@
     :goto_0
     iput-object v0, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction;->mState:Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction$State;
 
-    .line 1038
+    .line 1024
     return-void
 
-    .line 1037
+    .line 1023
     :cond_0
     sget-object v0, Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction$State;->Off:Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction$State;
 
@@ -109,17 +109,17 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 975
+    .line 961
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction;->willCreate()V
 
-    .line 977
+    .line 963
     const v6, 0x1090045
 
     invoke-virtual {p4, v6, p3, v7}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v5
 
-    .line 980
+    .line 966
     .local v5, v:Landroid/view/View;
     const v6, 0x1020006
 
@@ -129,7 +129,7 @@
 
     check-cast v1, Landroid/widget/ImageView;
 
-    .line 981
+    .line 967
     .local v1, icon:Landroid/widget/ImageView;
     const v6, 0x102000b
 
@@ -139,7 +139,7 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 982
+    .line 968
     .local v2, messageView:Landroid/widget/TextView;
     const v6, 0x102029c
 
@@ -149,25 +149,25 @@
 
     check-cast v4, Landroid/widget/TextView;
 
-    .line 983
+    .line 969
     .local v4, statusView:Landroid/widget/TextView;
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction;->isEnabled()Z
 
     move-result v0
 
-    .line 985
+    .line 971
     .local v0, enabled:Z
     if-eqz v2, :cond_0
 
-    .line 986
+    .line 972
     iget v6, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction;->mMessageResId:I
 
     invoke-virtual {v2, v6}, Landroid/widget/TextView;->setText(I)V
 
-    .line 987
+    .line 973
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setEnabled(Z)V
 
-    .line 990
+    .line 976
     :cond_0
     iget-object v6, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction;->mState:Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction$State;
 
@@ -184,12 +184,12 @@
     :cond_1
     const/4 v3, 0x1
 
-    .line 991
+    .line 977
     .local v3, on:Z
     :goto_0
     if-eqz v1, :cond_2
 
-    .line 992
+    .line 978
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v8
@@ -205,14 +205,14 @@
 
     invoke-virtual {v1, v6}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 994
+    .line 980
     invoke-virtual {v1, v0}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 997
+    .line 983
     :cond_2
     if-eqz v4, :cond_3
 
-    .line 998
+    .line 984
     if-eqz v3, :cond_6
 
     iget v6, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction;->mEnabledStatusMessageResId:I
@@ -220,34 +220,34 @@
     :goto_2
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setText(I)V
 
-    .line 1000
+    .line 986
     invoke-virtual {v4, v7}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1001
+    .line 987
     invoke-virtual {v4, v0}, Landroid/widget/TextView;->setEnabled(Z)V
 
-    .line 1003
+    .line 989
     :cond_3
     invoke-virtual {v5, v0}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 1005
+    .line 991
     return-object v5
 
     .end local v3           #on:Z
     :cond_4
     move v3, v7
 
-    .line 990
+    .line 976
     goto :goto_0
 
-    .line 992
+    .line 978
     .restart local v3       #on:Z
     :cond_5
     iget v6, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction;->mDisabledIconResid:I
 
     goto :goto_1
 
-    .line 998
+    .line 984
     :cond_6
     iget v6, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction;->mDisabledStatusMessageResId:I
 
@@ -258,7 +258,7 @@
     .locals 1
 
     .prologue
-    .line 1024
+    .line 1010
     iget-object v0, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction;->mState:Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction$State;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction$State;->inTransition()Z
@@ -282,7 +282,7 @@
     .locals 1
 
     .prologue
-    .line 1020
+    .line 1006
     const/4 v0, 0x0
 
     return v0
@@ -292,7 +292,7 @@
     .locals 3
 
     .prologue
-    .line 1009
+    .line 995
     iget-object v1, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction;->mState:Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction$State;
 
     invoke-virtual {v1}, Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction$State;->inTransition()Z
@@ -301,18 +301,18 @@
 
     if-eqz v1, :cond_0
 
-    .line 1010
+    .line 996
     const-string v1, "GlobalActions"
 
     const-string v2, "shouldn\'t be able to toggle when in transition"
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1017
+    .line 1003
     :goto_0
     return-void
 
-    .line 1014
+    .line 1000
     :cond_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction;->mState:Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction$State;
 
@@ -322,17 +322,17 @@
 
     const/4 v0, 0x1
 
-    .line 1015
+    .line 1001
     .local v0, nowOn:Z
     :goto_1
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction;->onToggle(Z)V
 
-    .line 1016
+    .line 1002
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction;->changeStateFromPress(Z)V
 
     goto :goto_0
 
-    .line 1014
+    .line 1000
     .end local v0           #nowOn:Z
     :cond_1
     const/4 v0, 0x0
@@ -348,10 +348,10 @@
     .parameter "state"
 
     .prologue
-    .line 1043
+    .line 1029
     iput-object p1, p0, Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction;->mState:Lcom/android/internal/policy/impl/NubiaGlobalActions$ToggleAction$State;
 
-    .line 1044
+    .line 1030
     return-void
 .end method
 
@@ -359,6 +359,6 @@
     .locals 0
 
     .prologue
-    .line 971
+    .line 957
     return-void
 .end method

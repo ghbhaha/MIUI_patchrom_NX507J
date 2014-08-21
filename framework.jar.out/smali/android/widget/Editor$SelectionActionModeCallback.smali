@@ -149,12 +149,10 @@
 
     invoke-virtual {p1, v3}, Landroid/view/ActionMode;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 2828
     const/4 v3, 0x0
 
     invoke-virtual {p1, v3}, Landroid/view/ActionMode;->setSubtitle(Ljava/lang/CharSequence;)V
 
-    .line 2829
     invoke-virtual {p1, v2}, Landroid/view/ActionMode;->setTitleOptionalHint(Z)V
 
     sget v3, Lcom/android/internal/R$id;->selectAll:I

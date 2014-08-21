@@ -58,6 +58,7 @@
     .locals 4
 
     .prologue
+    .line 133
     const/16 v1, 0xc
 
     new-array v1, v1, [C
@@ -66,6 +67,7 @@
 
     sput-object v1, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->numericCharsDialable:[C
 
+    .line 137
     const/16 v1, 0x8
 
     new-array v1, v1, [C
@@ -74,6 +76,7 @@
 
     sput-object v1, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->numericCharsSugar:[C
 
+    .line 141
     new-instance v1, Landroid/util/SparseBooleanArray;
 
     sget-object v2, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->numericCharsDialable:[C
@@ -90,6 +93,7 @@
 
     sput-object v1, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->numericCharDialableMap:Landroid/util/SparseBooleanArray;
 
+    .line 144
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -100,6 +104,7 @@
 
     if-ge v0, v1, :cond_0
 
+    .line 145
     sget-object v1, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->numericCharDialableMap:Landroid/util/SparseBooleanArray;
 
     sget-object v2, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->numericCharsDialable:[C
@@ -110,10 +115,12 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/util/SparseBooleanArray;->put(IZ)V
 
+    .line 144
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
+    .line 147
     :cond_0
     const/4 v0, 0x0
 
@@ -124,6 +131,7 @@
 
     if-ge v0, v1, :cond_1
 
+    .line 148
     sget-object v1, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->numericCharDialableMap:Landroid/util/SparseBooleanArray;
 
     sget-object v2, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->numericCharsSugar:[C
@@ -134,13 +142,16 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/util/SparseBooleanArray;->put(IZ)V
 
+    .line 147
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
+    .line 150
     :cond_1
     return-void
 
+    .line 133
     nop
 
     :array_0
@@ -159,6 +170,7 @@
         0x23t 0x0t
     .end array-data
 
+    .line 137
     :array_1
     .array-data 0x2
         0x28t 0x0t
@@ -176,8 +188,10 @@
     .locals 0
 
     .prologue
+    .line 93
     invoke-direct {p0}, Lcom/android/internal/telephony/SmsAddress;-><init>()V
 
+    .line 94
     return-void
 .end method
 
@@ -186,15 +200,18 @@
     .parameter "address"
 
     .prologue
+    .line 159
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
+    .line 160
     .local v0, builder:Ljava/lang/StringBuilder;
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v3
 
+    .line 161
     .local v3, len:I
     const/4 v2, 0x0
 
@@ -202,10 +219,12 @@
     :goto_0
     if-ge v2, v3, :cond_2
 
+    .line 162
     invoke-virtual {p0, v2}, Ljava/lang/String;->charAt(I)C
 
     move-result v1
 
+    .line 163
     .local v1, c:C
     sget-object v5, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->numericCharDialableMap:Landroid/util/SparseBooleanArray;
 
@@ -213,16 +232,19 @@
 
     move-result v4
 
+    .line 164
     .local v4, mapIndex:I
     if-gez v4, :cond_0
 
     const/4 v5, 0x0
 
+    .line 168
     .end local v1           #c:C
     .end local v4           #mapIndex:I
     :goto_1
     return-object v5
 
+    .line 165
     .restart local v1       #c:C
     .restart local v4       #mapIndex:I
     :cond_0
@@ -234,16 +256,19 @@
 
     if-nez v5, :cond_1
 
+    .line 161
     :goto_2
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
+    .line 166
     :cond_1
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_2
 
+    .line 168
     .end local v1           #c:C
     .end local v4           #mapIndex:I
     :cond_2
@@ -259,15 +284,18 @@
     .parameter "address"
 
     .prologue
+    .line 176
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
+    .line 177
     .local v0, builder:Ljava/lang/StringBuilder;
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v3
 
+    .line 178
     .local v3, len:I
     const/4 v2, 0x0
 
@@ -275,10 +303,12 @@
     :goto_0
     if-ge v2, v3, :cond_2
 
+    .line 179
     invoke-virtual {p0, v2}, Ljava/lang/String;->charAt(I)C
 
     move-result v1
 
+    .line 180
     .local v1, c:C
     const/16 v4, 0x20
 
@@ -296,17 +326,20 @@
 
     if-ne v1, v4, :cond_1
 
+    .line 178
     :cond_0
     :goto_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
+    .line 181
     :cond_1
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_1
 
+    .line 183
     .end local v1           #c:C
     :cond_2
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -327,23 +360,31 @@
 
     const/4 v4, 0x1
 
+    .line 197
     new-instance v0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;-><init>()V
 
+    .line 198
     .local v0, addr:Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;
     iput-object p0, v0, Lcom/android/internal/telephony/SmsAddress;->address:Ljava/lang/String;
 
+    .line 199
     iput v5, v0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->digitMode:I
 
+    .line 200
     iput v5, v0, Lcom/android/internal/telephony/SmsAddress;->ton:I
 
+    .line 201
     iput v5, v0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->numberMode:I
 
+    .line 202
     iput v5, v0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->numberPlan:I
 
+    .line 203
     const/4 v2, 0x0
 
+    .line 205
     .local v2, origBytes:[B
     const/16 v3, 0x2b
 
@@ -353,14 +394,19 @@
 
     if-eq v3, v6, :cond_0
 
+    .line 207
     iput v4, v0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->digitMode:I
 
+    .line 208
     iput v4, v0, Lcom/android/internal/telephony/SmsAddress;->ton:I
 
+    .line 209
     iput v5, v0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->numberMode:I
 
+    .line 210
     iput v4, v0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->numberPlan:I
 
+    .line 212
     :cond_0
     const/16 v3, 0x40
 
@@ -370,63 +416,81 @@
 
     if-eq v3, v6, :cond_1
 
+    .line 214
     iput v4, v0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->digitMode:I
 
+    .line 215
     const/4 v3, 0x2
 
     iput v3, v0, Lcom/android/internal/telephony/SmsAddress;->ton:I
 
+    .line 216
     iput v4, v0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->numberMode:I
 
+    .line 220
     :cond_1
     invoke-static {p0}, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->filterNumericSugar(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
+    .line 221
     .local v1, filteredAddr:Ljava/lang/String;
     iget v3, v0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->digitMode:I
 
     if-nez v3, :cond_3
 
+    .line 222
     if-eqz v1, :cond_2
 
+    .line 223
     invoke-static {v1}, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->parseToDtmf(Ljava/lang/String;)[B
 
     move-result-object v2
 
+    .line 225
     :cond_2
     if-nez v2, :cond_3
 
+    .line 227
     iput v4, v0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->digitMode:I
 
+    .line 231
     :cond_3
     iget v3, v0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->digitMode:I
 
     if-ne v3, v4, :cond_5
 
+    .line 232
     if-nez v1, :cond_4
 
+    .line 233
     invoke-static {p0}, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->filterWhitespace(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
+    .line 235
     :cond_4
     invoke-static {v1}, Lcom/android/internal/telephony/cdma/sms/UserData;->stringToAscii(Ljava/lang/String;)[B
 
     move-result-object v2
 
+    .line 236
     if-nez v2, :cond_5
 
+    .line 237
     const/4 v0, 0x0
 
+    .line 242
     .end local v0           #addr:Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;
     :goto_0
     return-object v0
 
+    .line 240
     .restart local v0       #addr:Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;
     :cond_5
     iput-object v2, v0, Lcom/android/internal/telephony/SmsAddress;->origBytes:[B
 
+    .line 241
     array-length v3, v2
 
     iput v3, v0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->numberOfDigits:I
@@ -439,13 +503,16 @@
     .parameter "address"
 
     .prologue
+    .line 118
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v1
 
+    .line 119
     .local v1, digits:I
     new-array v3, v1, [B
 
+    .line 120
     .local v3, result:[B
     const/4 v2, 0x0
 
@@ -453,13 +520,16 @@
     :goto_0
     if-ge v2, v1, :cond_4
 
+    .line 121
     invoke-virtual {p0, v2}, Ljava/lang/String;->charAt(I)C
 
     move-result v0
 
+    .line 122
     .local v0, c:C
     const/4 v4, 0x0
 
+    .line 123
     .local v4, val:I
     const/16 v5, 0x31
 
@@ -471,15 +541,18 @@
 
     add-int/lit8 v4, v0, -0x30
 
+    .line 128
     :goto_1
     int-to-byte v5, v4
 
     aput-byte v5, v3, v2
 
+    .line 120
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
+    .line 124
     :cond_0
     const/16 v5, 0x30
 
@@ -489,6 +562,7 @@
 
     goto :goto_1
 
+    .line 125
     :cond_1
     const/16 v5, 0x2a
 
@@ -498,6 +572,7 @@
 
     goto :goto_1
 
+    .line 126
     :cond_2
     const/16 v5, 0x23
 
@@ -507,9 +582,11 @@
 
     goto :goto_1
 
+    .line 127
     :cond_3
     const/4 v3, 0x0
 
+    .line 130
     .end local v0           #c:C
     .end local v3           #result:[B
     .end local v4           #val:I
@@ -523,15 +600,18 @@
     .locals 3
 
     .prologue
+    .line 98
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
+    .line 99
     .local v0, builder:Ljava/lang/StringBuilder;
     const-string v1, "CdmaSmsAddress "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 100
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -554,6 +634,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 101
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -576,6 +657,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 102
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -598,6 +680,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 103
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -620,6 +703,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 104
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -642,6 +726,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 105
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -670,6 +755,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 106
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -696,10 +782,12 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 107
     const-string v1, " }"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 108
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

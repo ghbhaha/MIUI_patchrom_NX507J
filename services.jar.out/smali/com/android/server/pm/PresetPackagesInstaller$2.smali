@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 147
+    .line 148
     iput-object p1, p0, Lcom/android/server/pm/PresetPackagesInstaller$2;->this$0:Lcom/android/server/pm/PresetPackagesInstaller;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,14 +41,14 @@
     .locals 2
 
     .prologue
-    .line 151
+    .line 152
     iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller$2;->this$0:Lcom/android/server/pm/PresetPackagesInstaller;
 
     iget-object v0, v0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstallerMsgDialog:Landroid/app/ProgressDialog;
 
     if-eqz v0, :cond_0
 
-    .line 152
+    .line 153
     iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller$2;->this$0:Lcom/android/server/pm/PresetPackagesInstaller;
 
     iget-object v0, v0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstallerMsgDialog:Landroid/app/ProgressDialog;
@@ -61,21 +61,21 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->clearFlags(I)V
 
-    .line 153
+    .line 154
     iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller$2;->this$0:Lcom/android/server/pm/PresetPackagesInstaller;
 
     iget-object v0, v0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstallerMsgDialog:Landroid/app/ProgressDialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 154
+    .line 155
     iget-object v0, p0, Lcom/android/server/pm/PresetPackagesInstaller$2;->this$0:Lcom/android/server/pm/PresetPackagesInstaller;
 
     const/4 v1, 0x0
 
     iput-object v1, v0, Lcom/android/server/pm/PresetPackagesInstaller;->mInstallerMsgDialog:Landroid/app/ProgressDialog;
 
-    .line 156
+    .line 157
     :cond_0
     return-void
 .end method

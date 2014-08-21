@@ -1,14 +1,11 @@
 .class Landroid/os/nubia/breathlight/BreathinglightService$4;
-.super Ljava/lang/Object;
+.super Landroid/content/BroadcastReceiver;
 .source "BreathinglightService.java"
-
-# interfaces
-.implements Landroid/hardware/SensorEventListener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/os/nubia/breathlight/BreathinglightService;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Landroid/os/nubia/breathlight/BreathinglightService;->notificationReceiver()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,170 +24,158 @@
     .parameter
 
     .prologue
-    .line 621
+    .line 555
     iput-object p1, p0, Landroid/os/nubia/breathlight/BreathinglightService$4;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAccuracyChanged(Landroid/hardware/Sensor;I)V
-    .locals 0
-    .parameter "sensor"
-    .parameter "accuracy"
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 9
+    .parameter "context"
+    .parameter "intent"
 
     .prologue
-    .line 624
-    return-void
-.end method
+    const/4 v8, 0x0
 
-.method public onSensorChanged(Landroid/hardware/SensorEvent;)V
-    .locals 8
-    .parameter "event"
+    .line 558
+    const/4 v3, 0x0
 
-    .prologue
-    const/16 v7, 0x38
+    .line 559
+    .local v3, notiDeleteFlag:Z
+    const/4 v4, 0x0
 
-    .line 628
-    iget-object v3, p0, Landroid/os/nubia/breathlight/BreathinglightService$4;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
-
-    iget-object v4, p0, Landroid/os/nubia/breathlight/BreathinglightService$4;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
-
-    #getter for: Landroid/os/nubia/breathlight/BreathinglightService;->mAverageValue:F
-    invoke-static {v4}, Landroid/os/nubia/breathlight/BreathinglightService;->access$1200(Landroid/os/nubia/breathlight/BreathinglightService;)F
-
-    move-result v4
-
-    iget-object v5, p1, Landroid/hardware/SensorEvent;->values:[F
+    .line 561
+    .local v4, pkg:Ljava/lang/String;
+    :try_start_0
+    const-string v5, "Keyguard_delete"
 
     const/4 v6, 0x0
 
-    aget v5, v5, v6
+    invoke-virtual {p2, v5, v6}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
-    add-float/2addr v4, v5
+    move-result v3
 
-    const/high16 v5, 0x4000
+    .line 562
+    const-string v5, "pkg"
 
-    div-float/2addr v4, v5
+    invoke-virtual {p2, v5}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    #setter for: Landroid/os/nubia/breathlight/BreathinglightService;->mAverageValue:F
-    invoke-static {v3, v4}, Landroid/os/nubia/breathlight/BreathinglightService;->access$1202(Landroid/os/nubia/breathlight/BreathinglightService;F)F
+    move-result-object v4
 
-    .line 629
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    .line 567
+    :goto_0
+    const-string v5, "BreathinglightService"
 
-    move-result-wide v3
+    new-instance v6, Ljava/lang/StringBuilder;
 
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "notificationReceiver pkg:"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string v7, " notiDeleteFlag:"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 568
+    if-nez v4, :cond_0
+
+    .line 578
+    :goto_1
+    return-void
+
+    .line 563
+    :catch_0
+    move-exception v2
+
+    .line 564
+    .local v2, e:Ljava/lang/Exception;
+    invoke-virtual {v2}, Ljava/lang/Throwable;->printStackTrace()V
+
+    goto :goto_0
+
+    .line 571
+    .end local v2           #e:Ljava/lang/Exception;
+    :cond_0
+    if-eqz v3, :cond_1
+
+    .line 572
     iget-object v5, p0, Landroid/os/nubia/breathlight/BreathinglightService$4;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
 
-    #getter for: Landroid/os/nubia/breathlight/BreathinglightService;->mLastAutoChangeTime:J
-    invoke-static {v5}, Landroid/os/nubia/breathlight/BreathinglightService;->access$1300(Landroid/os/nubia/breathlight/BreathinglightService;)J
+    #getter for: Landroid/os/nubia/breathlight/BreathinglightService;->mHandler:Landroid/os/Handler;
+    invoke-static {v5}, Landroid/os/nubia/breathlight/BreathinglightService;->access$1100(Landroid/os/nubia/breathlight/BreathinglightService;)Landroid/os/Handler;
 
-    move-result-wide v5
+    move-result-object v5
 
-    sub-long v0, v3, v5
+    const/4 v6, 0x1
 
-    .line 630
-    .local v0, intervalTime:J
-    const-wide/16 v3, 0xbb8
+    invoke-virtual {v5, v6, v4}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
-    cmp-long v3, v0, v3
+    move-result-object v1
 
-    if-lez v3, :cond_0
+    .line 573
+    .local v1, deleteMsg:Landroid/os/Message;
+    iget-object v5, p0, Landroid/os/nubia/breathlight/BreathinglightService$4;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
 
-    .line 632
-    iget-object v3, p0, Landroid/os/nubia/breathlight/BreathinglightService$4;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
+    #getter for: Landroid/os/nubia/breathlight/BreathinglightService;->mHandler:Landroid/os/Handler;
+    invoke-static {v5}, Landroid/os/nubia/breathlight/BreathinglightService;->access$1100(Landroid/os/nubia/breathlight/BreathinglightService;)Landroid/os/Handler;
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    move-result-object v5
 
-    move-result-wide v4
+    invoke-virtual {v5, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    #setter for: Landroid/os/nubia/breathlight/BreathinglightService;->mLastAutoChangeTime:J
-    invoke-static {v3, v4, v5}, Landroid/os/nubia/breathlight/BreathinglightService;->access$1302(Landroid/os/nubia/breathlight/BreathinglightService;J)J
+    goto :goto_1
 
-    .line 633
-    iget-object v3, p0, Landroid/os/nubia/breathlight/BreathinglightService$4;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
+    .line 575
+    .end local v1           #deleteMsg:Landroid/os/Message;
+    :cond_1
+    iget-object v5, p0, Landroid/os/nubia/breathlight/BreathinglightService$4;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
 
-    iget-object v4, p0, Landroid/os/nubia/breathlight/BreathinglightService$4;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
+    #getter for: Landroid/os/nubia/breathlight/BreathinglightService;->mHandler:Landroid/os/Handler;
+    invoke-static {v5}, Landroid/os/nubia/breathlight/BreathinglightService;->access$1100(Landroid/os/nubia/breathlight/BreathinglightService;)Landroid/os/Handler;
 
-    #getter for: Landroid/os/nubia/breathlight/BreathinglightService;->mAverageValue:F
-    invoke-static {v4}, Landroid/os/nubia/breathlight/BreathinglightService;->access$1200(Landroid/os/nubia/breathlight/BreathinglightService;)F
+    move-result-object v5
 
-    move-result v4
+    invoke-virtual {v5, v8, v4}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
-    #calls: Landroid/os/nubia/breathlight/BreathinglightService;->getBreathLightLevel(F)I
-    invoke-static {v3, v4}, Landroid/os/nubia/breathlight/BreathinglightService;->access$1400(Landroid/os/nubia/breathlight/BreathinglightService;F)I
+    move-result-object v0
 
-    move-result v3
+    .line 576
+    .local v0, addMsg:Landroid/os/Message;
+    iget-object v5, p0, Landroid/os/nubia/breathlight/BreathinglightService$4;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
 
-    add-int/lit8 v3, v3, 0x1
+    #getter for: Landroid/os/nubia/breathlight/BreathinglightService;->mHandler:Landroid/os/Handler;
+    invoke-static {v5}, Landroid/os/nubia/breathlight/BreathinglightService;->access$1100(Landroid/os/nubia/breathlight/BreathinglightService;)Landroid/os/Handler;
 
-    mul-int/lit8 v2, v3, 0xa
+    move-result-object v5
 
-    .line 635
-    .local v2, min_grade:I
-    iget-object v3, p0, Landroid/os/nubia/breathlight/BreathinglightService$4;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
+    invoke-virtual {v5, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    invoke-virtual {v3}, Landroid/os/nubia/breathlight/BreathinglightService;->getMinGrade()I
-
-    move-result v3
-
-    if-eq v3, v2, :cond_0
-
-    iget-object v3, p0, Landroid/os/nubia/breathlight/BreathinglightService$4;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
-
-    iget-object v3, v3, Landroid/os/nubia/breathlight/BreathinglightService;->pm:Landroid/os/PowerManager;
-
-    invoke-virtual {v3}, Landroid/os/PowerManager;->isScreenOn()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    iget-object v3, p0, Landroid/os/nubia/breathlight/BreathinglightService$4;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
-
-    invoke-virtual {v3}, Landroid/os/nubia/breathlight/BreathinglightService;->getBrightness()I
-
-    move-result v3
-
-    const/4 v4, 0x5
-
-    if-eq v3, v4, :cond_0
-
-    iget-object v3, p0, Landroid/os/nubia/breathlight/BreathinglightService$4;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
-
-    invoke-virtual {v3}, Landroid/os/nubia/breathlight/BreathinglightService;->getBrightness()I
-
-    move-result v3
-
-    const/4 v4, 0x6
-
-    if-eq v3, v4, :cond_0
-
-    .line 637
-    iget-object v3, p0, Landroid/os/nubia/breathlight/BreathinglightService$4;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
-
-    invoke-virtual {v3, v2}, Landroid/os/nubia/breathlight/BreathinglightService;->setMinGrade(I)V
-
-    .line 638
-    iget-object v3, p0, Landroid/os/nubia/breathlight/BreathinglightService$4;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
-
-    const/16 v4, 0x8
-
-    invoke-virtual {v3, v4, v7}, Landroid/os/nubia/breathlight/BreathinglightService;->setKeycodeBrightness(II)V
-
-    .line 639
-    iget-object v3, p0, Landroid/os/nubia/breathlight/BreathinglightService$4;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
-
-    const/4 v4, 0x1
-
-    invoke-virtual {v3, v4, v7}, Landroid/os/nubia/breathlight/BreathinglightService;->setKeycodeBrightness(II)V
-
-    .line 642
-    .end local v2           #min_grade:I
-    :cond_0
-    return-void
+    goto :goto_1
 .end method

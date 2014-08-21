@@ -1031,16 +1031,13 @@
     .locals 3
 
     .prologue
-    .line 215
     sget-object v2, Landroid/content/res/Resources;->sSync:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 216
     :try_start_0
     sget-object v0, Landroid/content/res/Resources;->mSystem:Landroid/content/res/Resources;
 
-    .line 217
     .local v0, ret:Landroid/content/res/Resources;
     if-nez v0, :cond_0
 
@@ -1048,7 +1045,6 @@
 
     move-result-object v0
 
-    .line 225
     sput-object v0, Landroid/content/res/Resources;->mSystem:Landroid/content/res/Resources;
 
     invoke-static {v0}, Landroid/content/res/Injector$ResourcesHook;->initResources(Landroid/content/res/Resources;)V
@@ -1058,7 +1054,6 @@
 
     return-object v0
 
-    .line 229
     :catchall_0
     move-exception v1
 
@@ -5075,6 +5070,7 @@
     .parameter "id"
 
     .prologue
+    .line 2464
     const/4 v0, 0x0
 
     return-object v0
@@ -5528,10 +5524,8 @@
 
     invoke-virtual {v3, v4, p2, v5, v6}, Landroid/content/res/AssetManager;->retrieveAttributes(I[I[I[I)Z
 
-    .line 1523
     iput-object p2, v0, Landroid/content/res/TypedArray;->mRsrcs:[I
 
-    .line 1524
     iput-object v2, v0, Landroid/content/res/TypedArray;->mXml:Landroid/content/res/XmlBlock$Parser;
 
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->loadOverlayTypedArray(Landroid/content/res/TypedArray;)Landroid/content/res/TypedArray;
@@ -5611,7 +5605,6 @@
 
     iput v2, v0, Landroid/content/res/TypedArray;->mLength:I
 
-    .line 526
     iget-object v2, v0, Landroid/content/res/TypedArray;->mIndices:[I
 
     aput v4, v2, v4

@@ -625,15 +625,14 @@
     .parameter "clip"
 
     .prologue
+    :try_start_0
+    invoke-direct {p0, p1}, Landroid/content/ClipboardManager;->addClipDataExtra(Landroid/content/ClipData;)V
     invoke-static {p0, p1}, Landroid/content/Injector$ClipboardManagerHook;->before_setPrimaryClip(Landroid/content/ClipboardManager;Landroid/content/ClipData;)V
 
-    .line 125
     if-eqz p1, :cond_0
 
-    :try_start_0
     invoke-virtual {p1}, Landroid/content/ClipData;->prepareToLeaveProcess()V
 
-    .line 128
     :cond_0
     invoke-static {}, Landroid/content/ClipboardManager;->getService()Landroid/content/IClipboard;
 

@@ -154,7 +154,6 @@
 
     if-eqz v4, :cond_2
 
-    .line 3999
     const/4 v4, 0x1
 
     iput v4, v2, Landroid/os/Message;->arg2:I

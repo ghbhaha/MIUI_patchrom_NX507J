@@ -21,6 +21,10 @@
 
 .field private mHandler:Landroid/os/Handler;
 
+.field mLastVolumeDownKeyTime:J
+
+.field mLastVolumeUpKeyTime:J
+
 .field private mPhoneWindowManager:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
 .field private mPowerKeyTime:J
@@ -48,11 +52,13 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;Landroid/content/Context;)V
-    .locals 1
+    .locals 3
     .parameter "manager"
     .parameter "context"
 
     .prologue
+    const-wide/16 v1, 0x0
+
     .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -69,6 +75,12 @@
     invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl$2;-><init>(Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;)V
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mScreenshotForLog:Ljava/lang/Runnable;
+
+    .line 166
+    iput-wide v1, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mLastVolumeDownKeyTime:J
+
+    .line 167
+    iput-wide v1, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mLastVolumeUpKeyTime:J
 
     .line 57
     iput-object p2, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mContext:Landroid/content/Context;
@@ -311,176 +323,236 @@
 
 # virtual methods
 .method public interceptKeyBeforeDispatching(Landroid/view/WindowManagerPolicy$WindowState;Landroid/view/KeyEvent;I)J
-    .locals 11
+    .locals 13
     .parameter "win"
     .parameter "event"
     .parameter "policyFlags"
 
     .prologue
-    .line 169
+    .line 172
     invoke-virtual {p2}, Landroid/view/KeyEvent;->getKeyCode()I
 
     move-result v2
 
-    .line 170
+    .line 173
     .local v2, keyCode:I
     invoke-virtual {p2}, Landroid/view/KeyEvent;->getFlags()I
 
     move-result v1
 
-    .line 171
+    .line 174
     .local v1, flags:I
     invoke-virtual {p2}, Landroid/view/KeyEvent;->getAction()I
 
-    move-result v7
+    move-result v9
 
-    if-nez v7, :cond_0
+    if-nez v9, :cond_0
 
     const/4 v0, 0x1
 
-    .line 175
+    .line 178
     .local v0, down:Z
     :goto_0
-    iget-boolean v7, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mScreenshotEnable:Z
+    iget-boolean v9, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mScreenshotEnable:Z
 
-    if-eqz v7, :cond_6
+    if-eqz v9, :cond_8
 
-    and-int/lit16 v7, v1, 0x400
+    and-int/lit16 v9, v1, 0x400
 
-    if-nez v7, :cond_6
+    if-nez v9, :cond_8
 
-    .line 176
-    iget-boolean v7, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mVolumeDownKeyTriggered:Z
+    .line 179
+    iget-boolean v9, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mVolumeDownKeyTriggered:Z
 
-    if-eqz v7, :cond_1
+    if-eqz v9, :cond_2
 
-    iget-boolean v7, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mPowerKeyTriggered:Z
+    iget-boolean v9, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mPowerKeyTriggered:Z
 
-    if-nez v7, :cond_1
+    if-nez v9, :cond_2
 
-    .line 177
+    .line 180
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v3
 
-    .line 178
-    .local v3, now:J
-    iget-wide v7, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mVolumeDownKeyTime:J
-
-    const-wide/16 v9, 0x12c
-
-    add-long v5, v7, v9
-
-    .line 180
-    .local v5, timeoutTime:J
-    cmp-long v7, v3, v5
-
-    if-gez v7, :cond_1
-
     .line 181
-    sub-long v7, v5, v3
+    .local v3, now:J
+    iget-wide v9, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mVolumeDownKeyTime:J
 
-    .line 207
+    const-wide/16 v11, 0x12c
+
+    add-long v7, v9, v11
+
+    .line 184
+    .local v7, timeoutTime:J
+    iget-wide v9, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mVolumeDownKeyTime:J
+
+    iget-wide v11, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mLastVolumeDownKeyTime:J
+
+    sub-long v5, v9, v11
+
+    .line 185
+    .local v5, time:J
+    iget-wide v9, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mVolumeDownKeyTime:J
+
+    iput-wide v9, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mLastVolumeDownKeyTime:J
+
+    .line 186
+    const-wide/16 v9, 0x384
+
+    cmp-long v9, v5, v9
+
+    if-gez v9, :cond_1
+
+    .line 187
+    const-wide/16 v9, 0x0
+
+    .line 224
     .end local v3           #now:J
-    .end local v5           #timeoutTime:J
+    .end local v5           #time:J
+    .end local v7           #timeoutTime:J
     :goto_1
-    return-wide v7
+    return-wide v9
 
-    .line 171
+    .line 174
     .end local v0           #down:Z
     :cond_0
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 184
+    .line 190
     .restart local v0       #down:Z
+    .restart local v3       #now:J
+    .restart local v5       #time:J
+    .restart local v7       #timeoutTime:J
     :cond_1
-    const/16 v7, 0x19
+    cmp-long v9, v3, v7
 
-    if-ne v2, v7, :cond_3
+    if-gez v9, :cond_2
 
-    iget-boolean v7, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mVolumeDownKeyConsumedByScreenshotChord:Z
-
-    if-eqz v7, :cond_3
-
-    .line 186
-    if-nez v0, :cond_2
-
-    .line 187
-    const/4 v7, 0x0
-
-    iput-boolean v7, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mVolumeDownKeyConsumedByScreenshotChord:Z
-
-    .line 189
-    :cond_2
-    const-wide/16 v7, -0x1
+    .line 191
+    sub-long v9, v7, v3
 
     goto :goto_1
 
-    .line 191
+    .line 194
+    .end local v3           #now:J
+    .end local v5           #time:J
+    .end local v7           #timeoutTime:J
+    :cond_2
+    const/16 v9, 0x19
+
+    if-ne v2, v9, :cond_4
+
+    iget-boolean v9, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mVolumeDownKeyConsumedByScreenshotChord:Z
+
+    if-eqz v9, :cond_4
+
+    .line 196
+    if-nez v0, :cond_3
+
+    .line 197
+    const/4 v9, 0x0
+
+    iput-boolean v9, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mVolumeDownKeyConsumedByScreenshotChord:Z
+
+    .line 199
     :cond_3
-    iget-boolean v7, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mVolumeUpKeyTriggered:Z
+    const-wide/16 v9, -0x1
 
-    if-eqz v7, :cond_4
+    goto :goto_1
 
-    iget-boolean v7, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mPowerKeyTriggered:Z
+    .line 201
+    :cond_4
+    iget-boolean v9, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mVolumeUpKeyTriggered:Z
 
-    if-nez v7, :cond_4
+    if-eqz v9, :cond_6
 
-    .line 192
+    iget-boolean v9, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mPowerKeyTriggered:Z
+
+    if-nez v9, :cond_6
+
+    .line 202
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v3
 
-    .line 193
+    .line 203
     .restart local v3       #now:J
-    iget-wide v7, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mVolumeUpKeyTime:J
+    iget-wide v9, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mVolumeUpKeyTime:J
 
-    const-wide/16 v9, 0x12c
+    const-wide/16 v11, 0x12c
 
-    add-long v5, v7, v9
+    add-long v7, v9, v11
 
-    .line 195
-    .restart local v5       #timeoutTime:J
-    cmp-long v7, v3, v5
+    .line 206
+    .restart local v7       #timeoutTime:J
+    iget-wide v9, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mVolumeUpKeyTime:J
 
-    if-gez v7, :cond_4
+    iget-wide v11, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mLastVolumeUpKeyTime:J
 
-    .line 196
-    sub-long v7, v5, v3
-
-    goto :goto_1
-
-    .line 199
-    .end local v3           #now:J
-    .end local v5           #timeoutTime:J
-    :cond_4
-    const/16 v7, 0x18
-
-    if-ne v2, v7, :cond_6
-
-    iget-boolean v7, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mVolumeUpKeyConsumedByScreenshotChord:Z
-
-    if-eqz v7, :cond_6
-
-    .line 201
-    if-nez v0, :cond_5
-
-    .line 202
-    const/4 v7, 0x0
-
-    iput-boolean v7, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mVolumeUpKeyConsumedByScreenshotChord:Z
-
-    .line 204
-    :cond_5
-    const-wide/16 v7, -0x1
-
-    goto :goto_1
+    sub-long v5, v9, v11
 
     .line 207
+    .restart local v5       #time:J
+    iget-wide v9, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mVolumeUpKeyTime:J
+
+    iput-wide v9, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mLastVolumeUpKeyTime:J
+
+    .line 208
+    const-wide/16 v9, 0x384
+
+    cmp-long v9, v5, v9
+
+    if-gez v9, :cond_5
+
+    .line 209
+    const-wide/16 v9, 0x0
+
+    goto :goto_1
+
+    .line 212
+    :cond_5
+    cmp-long v9, v3, v7
+
+    if-gez v9, :cond_6
+
+    .line 213
+    sub-long v9, v7, v3
+
+    goto :goto_1
+
+    .line 216
+    .end local v3           #now:J
+    .end local v5           #time:J
+    .end local v7           #timeoutTime:J
     :cond_6
-    const-wide/high16 v7, -0x8000
+    const/16 v9, 0x18
+
+    if-ne v2, v9, :cond_8
+
+    iget-boolean v9, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mVolumeUpKeyConsumedByScreenshotChord:Z
+
+    if-eqz v9, :cond_8
+
+    .line 218
+    if-nez v0, :cond_7
+
+    .line 219
+    const/4 v9, 0x0
+
+    iput-boolean v9, p0, Lcom/android/internal/policy/impl/PowerAndVolumeScreenshotCtrl;->mVolumeUpKeyConsumedByScreenshotChord:Z
+
+    .line 221
+    :cond_7
+    const-wide/16 v9, -0x1
+
+    goto :goto_1
+
+    .line 224
+    :cond_8
+    const-wide/high16 v9, -0x8000
 
     goto :goto_1
 .end method

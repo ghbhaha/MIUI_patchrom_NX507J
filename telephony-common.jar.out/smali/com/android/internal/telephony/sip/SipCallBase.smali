@@ -8,6 +8,7 @@
     .locals 0
 
     .prologue
+    .line 24
     invoke-direct {p0}, Lcom/android/internal/telephony/Call;-><init>()V
 
     return-void
@@ -19,6 +20,7 @@
     .locals 4
 
     .prologue
+    .line 45
     iget-object v2, p0, Lcom/android/internal/telephony/Call;->mConnections:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -34,12 +36,14 @@
 
     if-eqz v2, :cond_1
 
+    .line 46
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/internal/telephony/Connection;
 
+    .line 47
     .local v0, c:Lcom/android/internal/telephony/Connection;
     invoke-virtual {v0}, Lcom/android/internal/telephony/Connection;->getState()Lcom/android/internal/telephony/Call$State;
 
@@ -53,6 +57,7 @@
 
     goto :goto_0
 
+    .line 50
     .end local v0           #c:Lcom/android/internal/telephony/Connection;
     :cond_1
     iget-object v2, p0, Lcom/android/internal/telephony/Call;->mConnections:Ljava/util/ArrayList;
@@ -67,6 +72,7 @@
 
     invoke-virtual {p0, v2}, Lcom/android/internal/telephony/sip/SipCallBase;->setState(Lcom/android/internal/telephony/Call$State;)V
 
+    .line 51
     :cond_2
     return-void
 .end method
@@ -84,6 +90,7 @@
     .end annotation
 
     .prologue
+    .line 31
     iget-object v0, p0, Lcom/android/internal/telephony/Call;->mConnections:Ljava/util/ArrayList;
 
     return-object v0
@@ -95,6 +102,7 @@
     .prologue
     const/4 v0, 0x1
 
+    .line 36
     iget-object v1, p0, Lcom/android/internal/telephony/Call;->mConnections:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -119,6 +127,7 @@
     .locals 2
 
     .prologue
+    .line 41
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -2510,7 +2510,7 @@
 
     move/from16 v1, p2
 
-    move/from16 v2, v17
+    move/from16 v2, v31
 
     move/from16 v3, p4
 

@@ -32,6 +32,7 @@
     .locals 1
 
     .prologue
+    .line 60
     new-instance v0, Lcom/android/internal/telephony/cat/Item$1;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/cat/Item$1;-><init>()V
@@ -47,16 +48,21 @@
     .parameter "text"
 
     .prologue
+    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 37
     iput p1, p0, Lcom/android/internal/telephony/cat/Item;->id:I
 
+    .line 38
     iput-object p2, p0, Lcom/android/internal/telephony/cat/Item;->text:Ljava/lang/String;
 
+    .line 39
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/telephony/cat/Item;->icon:Landroid/graphics/Bitmap;
 
+    .line 40
     return-void
 .end method
 
@@ -65,20 +71,24 @@
     .parameter "in"
 
     .prologue
+    .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 43
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/internal/telephony/cat/Item;->id:I
 
+    .line 44
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/telephony/cat/Item;->text:Ljava/lang/String;
 
+    .line 45
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
@@ -89,6 +99,7 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/cat/Item;->icon:Landroid/graphics/Bitmap;
 
+    .line 46
     return-void
 .end method
 
@@ -98,6 +109,7 @@
     .locals 1
 
     .prologue
+    .line 50
     const/4 v0, 0x0
 
     return v0
@@ -107,6 +119,7 @@
     .locals 1
 
     .prologue
+    .line 74
     iget-object v0, p0, Lcom/android/internal/telephony/cat/Item;->text:Ljava/lang/String;
 
     return-object v0
@@ -118,17 +131,21 @@
     .parameter "flags"
 
     .prologue
+    .line 55
     iget v0, p0, Lcom/android/internal/telephony/cat/Item;->id:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 56
     iget-object v0, p0, Lcom/android/internal/telephony/cat/Item;->text:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 57
     iget-object v0, p0, Lcom/android/internal/telephony/cat/Item;->icon:Landroid/graphics/Bitmap;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
+    .line 58
     return-void
 .end method

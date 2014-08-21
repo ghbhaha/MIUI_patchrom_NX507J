@@ -186,15 +186,12 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 2454
     :cond_1
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setBackgroundColor(I)V
 
-    .line 2459
     :goto_0
     return-object v1
 
-    .line 2456
     :cond_2
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setBackgroundColor(I)V
 

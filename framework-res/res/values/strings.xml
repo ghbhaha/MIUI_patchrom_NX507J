@@ -1615,6 +1615,10 @@ Listening at high volume for long periods may damage your hearing."</string>
     <string name="text_pastelist">clipboard</string>
     <string name="select">select</string>
     <string name="nubia_widget_time_format">MM-dd</string>
+    <string name="digital_clock_date_format">MM/dd</string>
+    <string name="digital_clock_hour_format_12">hh:mm</string>
+    <string name="digital_clock_hour_format_24">kk:mm</string>
+    <string name="digital_clock_week_format">E</string>
     <string name="dual_card_prompt_title">Set Default Voice Card</string>
     <string name="dual_card_prompt_content">detected dual card , please set default voice card in contacts app or settings app</string>
     <string name="nubia_service_name">Nubia customer service</string>
@@ -1722,10 +1726,6 @@ Listening at high volume for long periods may damage your hearing."</string>
     <item type="string" name="APKTOOL_DUMMY_0645">false</item>
     <item type="string" name="APKTOOL_DUMMY_0646">false</item>
     <item type="string" name="APKTOOL_DUMMY_0647">false</item>
-    <item type="string" name="APKTOOL_DUMMY_067b">false</item>
-    <item type="string" name="APKTOOL_DUMMY_067c">false</item>
-    <item type="string" name="APKTOOL_DUMMY_067d">false</item>
-    <item type="string" name="APKTOOL_DUMMY_067e">false</item>
     <item type="string" name="APKTOOL_DUMMY_067f">false</item>
     <item type="string" name="APKTOOL_DUMMY_0680">false</item>
     <item type="string" name="APKTOOL_DUMMY_0681">false</item>
@@ -1736,4 +1736,8 @@ Listening at high volume for long periods may damage your hearing."</string>
     <item type="string" name="APKTOOL_DUMMY_0686">false</item>
     <item type="string" name="APKTOOL_DUMMY_0687">false</item>
     <item type="string" name="APKTOOL_DUMMY_0688">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0689">false</item>
+    <item type="string" name="APKTOOL_DUMMY_068a">false</item>
+    <item type="string" name="APKTOOL_DUMMY_068b">false</item>
+    <item type="string" name="APKTOOL_DUMMY_068c">false</item>
 </resources>

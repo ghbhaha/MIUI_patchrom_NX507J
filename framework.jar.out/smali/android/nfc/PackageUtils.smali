@@ -23,14 +23,14 @@
     .parameter "pkgName"
 
     .prologue
-    .line 29
+    .line 32
     const-string v1, "/sys/bus/spmi/devices/qpnp-ztemt_hw_version/ztemt_hw_sc"
 
     invoke-static {v1}, Landroid/nfc/PackageUtils;->readNodeInfo(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 30
+    .line 33
     .local v0, pcbVer:Ljava/lang/String;
     const-string v1, "JD"
 
@@ -64,7 +64,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 33
+    .line 36
     :cond_0
     const-string v1, "PackageUtils"
 
@@ -88,10 +88,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 34
+    .line 37
     const/4 v1, 0x1
 
-    .line 36
+    .line 39
     :goto_0
     return v1
 
@@ -108,6 +108,25 @@
     .prologue
     .line 19
     :try_start_0
+    new-instance v2, Ljava/io/File;
+
+    invoke-direct {v2, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2}, Ljava/io/File;->exists()Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    .line 20
+    const-string v2, ""
+
+    .line 26
+    :goto_0
+    return-object v2
+
+    .line 22
+    :cond_0
     new-instance v0, Ljava/io/BufferedReader;
 
     new-instance v2, Ljava/io/FileReader;
@@ -116,7 +135,7 @@
 
     invoke-direct {v0, v2}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
 
-    .line 20
+    .line 23
     .local v0, br:Ljava/io/BufferedReader;
     invoke-virtual {v0}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
     :try_end_0
@@ -124,20 +143,18 @@
 
     move-result-object v2
 
-    .line 23
-    .end local v0           #br:Ljava/io/BufferedReader;
-    :goto_0
-    return-object v2
+    goto :goto_0
 
-    .line 21
+    .line 24
+    .end local v0           #br:Ljava/io/BufferedReader;
     :catch_0
     move-exception v1
 
-    .line 22
+    .line 25
     .local v1, e:Ljava/lang/Exception;
     invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
-    .line 23
+    .line 26
     const-string v2, ""
 
     goto :goto_0

@@ -106,7 +106,7 @@
 .method public abstract shouldUpdateConfigurationLocked(Lcom/android/server/am/ProcessRecord;Landroid/content/res/Configuration;Landroid/content/res/Configuration;)Z
 .end method
 
-.method public abstract showHomeBehindStackLocked(I)Z
+.method public abstract showHomeBehindStackLocked(IZ)Z
 .end method
 
 .method public abstract stackCreated(II)V

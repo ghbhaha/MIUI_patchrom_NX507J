@@ -645,7 +645,6 @@
 
     const/high16 v11, 0x4000
 
-    .line 282
     invoke-static {p0, p1, p2}, Lcom/android/internal/view/menu/Injector$ActionMenuItemViewHook;->before_onMeasure(Lcom/android/internal/view/menu/ActionMenuItemView;II)Z
 
     move-result v7

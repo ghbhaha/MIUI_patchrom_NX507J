@@ -46,6 +46,7 @@
     .locals 1
 
     .prologue
+    .line 197
     new-instance v0, Landroid/telephony/SmsCbEtwsInfo$1;
 
     invoke-direct {v0}, Landroid/telephony/SmsCbEtwsInfo$1;-><init>()V
@@ -63,16 +64,22 @@
     .parameter "warningSecurityInformation"
 
     .prologue
+    .line 73
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 74
     iput p1, p0, Landroid/telephony/SmsCbEtwsInfo;->mWarningType:I
 
+    .line 75
     iput-boolean p2, p0, Landroid/telephony/SmsCbEtwsInfo;->mEmergencyUserAlert:Z
 
+    .line 76
     iput-boolean p3, p0, Landroid/telephony/SmsCbEtwsInfo;->mActivatePopup:Z
 
+    .line 77
     iput-object p4, p0, Landroid/telephony/SmsCbEtwsInfo;->mWarningSecurityInformation:[B
 
+    .line 78
     return-void
 .end method
 
@@ -85,14 +92,17 @@
 
     const/4 v2, 0x0
 
+    .line 81
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 82
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/SmsCbEtwsInfo;->mWarningType:I
 
+    .line 83
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -104,6 +114,7 @@
     :goto_0
     iput-boolean v0, p0, Landroid/telephony/SmsCbEtwsInfo;->mEmergencyUserAlert:Z
 
+    .line 84
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -113,22 +124,26 @@
     :goto_1
     iput-boolean v1, p0, Landroid/telephony/SmsCbEtwsInfo;->mActivatePopup:Z
 
+    .line 85
     invoke-virtual {p1}, Landroid/os/Parcel;->createByteArray()[B
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/telephony/SmsCbEtwsInfo;->mWarningSecurityInformation:[B
 
+    .line 86
     return-void
 
     :cond_0
     move v0, v2
 
+    .line 83
     goto :goto_0
 
     :cond_1
     move v1, v2
 
+    .line 84
     goto :goto_1
 .end method
 
@@ -138,6 +153,7 @@
     .locals 1
 
     .prologue
+    .line 193
     const/4 v0, 0x0
 
     return v0
@@ -149,6 +165,7 @@
     .prologue
     const/16 v2, 0x32
 
+    .line 175
     iget-object v0, p0, Landroid/telephony/SmsCbEtwsInfo;->mWarningSecurityInformation:[B
 
     if-eqz v0, :cond_0
@@ -159,9 +176,11 @@
 
     if-ge v0, v2, :cond_1
 
+    .line 176
     :cond_0
     const/4 v0, 0x0
 
+    .line 178
     :goto_0
     return-object v0
 
@@ -183,6 +202,7 @@
     .prologue
     const/4 v11, 0x1
 
+    .line 132
     iget-object v9, p0, Landroid/telephony/SmsCbEtwsInfo;->mWarningSecurityInformation:[B
 
     if-eqz v9, :cond_0
@@ -195,12 +215,15 @@
 
     if-ge v9, v10, :cond_1
 
+    .line 133
     :cond_0
     const-wide/16 v9, 0x0
 
+    .line 166
     :goto_0
     return-wide v9
 
+    .line 136
     :cond_1
     iget-object v9, p0, Landroid/telephony/SmsCbEtwsInfo;->mWarningSecurityInformation:[B
 
@@ -212,6 +235,7 @@
 
     move-result v8
 
+    .line 137
     .local v8, year:I
     iget-object v9, p0, Landroid/telephony/SmsCbEtwsInfo;->mWarningSecurityInformation:[B
 
@@ -221,6 +245,7 @@
 
     move-result v3
 
+    .line 138
     .local v3, month:I
     iget-object v9, p0, Landroid/telephony/SmsCbEtwsInfo;->mWarningSecurityInformation:[B
 
@@ -232,6 +257,7 @@
 
     move-result v0
 
+    .line 139
     .local v0, day:I
     iget-object v9, p0, Landroid/telephony/SmsCbEtwsInfo;->mWarningSecurityInformation:[B
 
@@ -243,6 +269,7 @@
 
     move-result v1
 
+    .line 140
     .local v1, hour:I
     iget-object v9, p0, Landroid/telephony/SmsCbEtwsInfo;->mWarningSecurityInformation:[B
 
@@ -254,6 +281,7 @@
 
     move-result v2
 
+    .line 141
     .local v2, minute:I
     iget-object v9, p0, Landroid/telephony/SmsCbEtwsInfo;->mWarningSecurityInformation:[B
 
@@ -265,6 +293,7 @@
 
     move-result v4
 
+    .line 148
     .local v4, second:I
     iget-object v9, p0, Landroid/telephony/SmsCbEtwsInfo;->mWarningSecurityInformation:[B
 
@@ -272,6 +301,7 @@
 
     aget-byte v7, v9, v10
 
+    .line 151
     .local v7, tzByte:B
     and-int/lit8 v9, v7, -0x9
 
@@ -281,11 +311,13 @@
 
     move-result v6
 
+    .line 153
     .local v6, timezoneOffset:I
     and-int/lit8 v9, v7, 0x8
 
     if-nez v9, :cond_2
 
+    .line 155
     :goto_1
     new-instance v5, Landroid/text/format/Time;
 
@@ -293,23 +325,30 @@
 
     invoke-direct {v5, v9}, Landroid/text/format/Time;-><init>(Ljava/lang/String;)V
 
+    .line 158
     .local v5, time:Landroid/text/format/Time;
     add-int/lit16 v9, v8, 0x7d0
 
     iput v9, v5, Landroid/text/format/Time;->year:I
 
+    .line 159
     add-int/lit8 v9, v3, -0x1
 
     iput v9, v5, Landroid/text/format/Time;->month:I
 
+    .line 160
     iput v0, v5, Landroid/text/format/Time;->monthDay:I
 
+    .line 161
     iput v1, v5, Landroid/text/format/Time;->hour:I
 
+    .line 162
     iput v2, v5, Landroid/text/format/Time;->minute:I
 
+    .line 163
     iput v4, v5, Landroid/text/format/Time;->second:I
 
+    .line 166
     invoke-virtual {v5, v11}, Landroid/text/format/Time;->toMillis(Z)J
 
     move-result-wide v9
@@ -326,6 +365,7 @@
 
     goto :goto_0
 
+    .line 153
     .end local v5           #time:Landroid/text/format/Time;
     :cond_2
     neg-int v6, v6
@@ -337,6 +377,7 @@
     .locals 1
 
     .prologue
+    .line 107
     iget v0, p0, Landroid/telephony/SmsCbEtwsInfo;->mWarningType:I
 
     return v0
@@ -346,6 +387,7 @@
     .locals 1
 
     .prologue
+    .line 115
     iget-boolean v0, p0, Landroid/telephony/SmsCbEtwsInfo;->mEmergencyUserAlert:Z
 
     return v0
@@ -355,6 +397,7 @@
     .locals 1
 
     .prologue
+    .line 123
     iget-boolean v0, p0, Landroid/telephony/SmsCbEtwsInfo;->mActivatePopup:Z
 
     return v0
@@ -364,6 +407,7 @@
     .locals 2
 
     .prologue
+    .line 183
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -427,10 +471,12 @@
 
     const/4 v2, 0x0
 
+    .line 96
     iget v0, p0, Landroid/telephony/SmsCbEtwsInfo;->mWarningType:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 97
     iget-boolean v0, p0, Landroid/telephony/SmsCbEtwsInfo;->mEmergencyUserAlert:Z
 
     if-eqz v0, :cond_0
@@ -440,6 +486,7 @@
     :goto_0
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 98
     iget-boolean v0, p0, Landroid/telephony/SmsCbEtwsInfo;->mActivatePopup:Z
 
     if-eqz v0, :cond_1
@@ -447,19 +494,23 @@
     :goto_1
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 99
     iget-object v0, p0, Landroid/telephony/SmsCbEtwsInfo;->mWarningSecurityInformation:[B
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByteArray([B)V
 
+    .line 100
     return-void
 
     :cond_0
     move v0, v2
 
+    .line 97
     goto :goto_0
 
     :cond_1
     move v1, v2
 
+    .line 98
     goto :goto_1
 .end method

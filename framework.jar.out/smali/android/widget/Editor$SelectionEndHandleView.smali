@@ -96,7 +96,6 @@
     .prologue
     iput-object p1, p0, Landroid/widget/Editor$SelectionEndHandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
 
-    .line 3539
     return-void
 .end method
 
@@ -157,13 +156,11 @@
 
     move-result v0
 
-    .line 3534
     :cond_0
     const/4 v2, 0x0
 
     invoke-virtual {p0, v0, v2}, Landroid/widget/Editor$SelectionEndHandleView;->positionAtCursorOffset(IZ)V
 
-    .line 3535
     return-void
 .end method
 
@@ -201,6 +198,5 @@
 
     invoke-virtual {p0}, Landroid/widget/Editor$SelectionEndHandleView;->updateDrawable()V
 
-    .line 3522
     return-void
 .end method

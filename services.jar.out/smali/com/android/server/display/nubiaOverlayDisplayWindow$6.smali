@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 815
+    .line 818
     iput-object p1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$6;->this$0:Lcom/android/server/display/nubiaOverlayDisplayWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
     .parameter "height"
 
     .prologue
-    .line 819
+    .line 822
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$6;->this$0:Lcom/android/server/display/nubiaOverlayDisplayWindow;
 
     #getter for: Lcom/android/server/display/nubiaOverlayDisplayWindow;->mListener:Lcom/android/server/display/nubiaOverlayDisplayWindow$Listener;
@@ -63,7 +63,7 @@
 
     invoke-interface {v0, p1, v1}, Lcom/android/server/display/nubiaOverlayDisplayWindow$Listener;->onWindowCreated(Landroid/graphics/SurfaceTexture;F)V
 
-    .line 820
+    .line 823
     return-void
 .end method
 
@@ -72,7 +72,7 @@
     .parameter "surfaceTexture"
 
     .prologue
-    .line 824
+    .line 827
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$6;->this$0:Lcom/android/server/display/nubiaOverlayDisplayWindow;
 
     #getter for: Lcom/android/server/display/nubiaOverlayDisplayWindow;->mListener:Lcom/android/server/display/nubiaOverlayDisplayWindow$Listener;
@@ -82,7 +82,7 @@
 
     invoke-interface {v0}, Lcom/android/server/display/nubiaOverlayDisplayWindow$Listener;->onWindowDestroyed()V
 
-    .line 825
+    .line 828
     const/4 v0, 0x1
 
     return v0
@@ -95,7 +95,7 @@
     .parameter "height"
 
     .prologue
-    .line 831
+    .line 834
     return-void
 .end method
 
@@ -104,6 +104,6 @@
     .parameter "surfaceTexture"
 
     .prologue
-    .line 835
+    .line 838
     return-void
 .end method

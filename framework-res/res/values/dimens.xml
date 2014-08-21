@@ -161,6 +161,16 @@
     <dimen name="text_list_item_min_width">100.0dip</dimen>
     <dimen name="text_list_item_max_width">230.0dip</dimen>
     <dimen name="nubia_blur_arc_height">8.0dip</dimen>
+    <dimen name="nubia_digital_clock_time_size">44.0dip</dimen>
+    <dimen name="nubia_digital_clock_city_size">14.0dip</dimen>
+    <dimen name="nubia_digital_clock_date_size">8.0dip</dimen>
+    <dimen name="nubia_digital_clock_ampm_size">8.0dip</dimen>
+    <dimen name="nubia_digital_clock_margin_top">-10.0dip</dimen>
+    <dimen name="nubia_analog_clock_ampm_size">8.0dip</dimen>
+    <dimen name="nubia_analog_clock_city_size">14.0dip</dimen>
+    <dimen name="nubia_analog_clock_date_size">8.0dip</dimen>
+    <dimen name="nubia_analog_clock_width">120.0dip</dimen>
+    <dimen name="nubia_analog_clock_height">120.0dip</dimen>
     <dimen name="webviewchromium_link_preview_overlay_radius">7.0dip</dimen>
     <dimen name="webviewchromium_color_picker_gradient_margin">14.5dip</dimen>
     <item type="dimen" name="APKTOOL_DUMMY_007f">false</item>

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 120
+    .line 128
     iput-object p1, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl$3;->this$0:Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "accuracy"
 
     .prologue
-    .line 123
+    .line 131
     return-void
 .end method
 
@@ -54,10 +54,10 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 127
+    .line 135
     const/high16 v0, 0x40a0
 
-    .line 128
+    .line 136
     .local v0, TYPICAL_PROXIMITY_THRESHOLD:F
     iget-object v3, p1, Landroid/hardware/SensorEvent;->sensor:Landroid/hardware/Sensor;
 
@@ -71,7 +71,7 @@
 
     move-result v2
 
-    .line 130
+    .line 138
     .local v2, proximityThreshold:F
     iget-object v3, p1, Landroid/hardware/SensorEvent;->values:[F
 
@@ -93,18 +93,18 @@
 
     const/4 v1, 0x1
 
-    .line 132
+    .line 140
     .local v1, near:Z
     :cond_0
     if-nez v1, :cond_1
 
-    .line 133
+    .line 141
     iget-object v3, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl$3;->this$0:Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;
 
     #calls: Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->turnScreenOn()V
     invoke-static {v3}, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->access$000(Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;)V
 
-    .line 135
+    .line 143
     :cond_1
     iget-object v3, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl$3;->this$0:Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;
 
@@ -116,7 +116,7 @@
 
     invoke-virtual {v3, v4}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 136
+    .line 144
     iget-object v3, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl$3;->this$0:Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;
 
     iget-object v4, p0, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl$3;->this$0:Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;
@@ -133,6 +133,6 @@
     #calls: Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->disableProximity(Landroid/hardware/SensorManager;Landroid/hardware/SensorEventListener;Z)V
     invoke-static {v3, v4, v5, v1}, Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;->access$200(Lcom/android/internal/policy/impl/DoubleClickScreenOnCtrl;Landroid/hardware/SensorManager;Landroid/hardware/SensorEventListener;Z)V
 
-    .line 137
+    .line 145
     return-void
 .end method

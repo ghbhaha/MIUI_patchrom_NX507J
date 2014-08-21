@@ -23,6 +23,7 @@
     .locals 3
 
     .prologue
+    .line 36
     invoke-static {}, Lcom/android/internal/telephony/cat/ResultCode;->values()[Lcom/android/internal/telephony/cat/ResultCode;
 
     move-result-object v0

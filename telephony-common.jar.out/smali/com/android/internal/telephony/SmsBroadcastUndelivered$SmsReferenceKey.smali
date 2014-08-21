@@ -28,26 +28,31 @@
     .parameter "tracker"
 
     .prologue
+    .line 195
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 196
     invoke-virtual {p1}, Lcom/android/internal/telephony/InboundSmsTracker;->getAddress()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/telephony/SmsBroadcastUndelivered$SmsReferenceKey;->mAddress:Ljava/lang/String;
 
+    .line 197
     invoke-virtual {p1}, Lcom/android/internal/telephony/InboundSmsTracker;->getReferenceNumber()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/internal/telephony/SmsBroadcastUndelivered$SmsReferenceKey;->mReferenceNumber:I
 
+    .line 198
     invoke-virtual {p1}, Lcom/android/internal/telephony/InboundSmsTracker;->getMessageCount()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/internal/telephony/SmsBroadcastUndelivered$SmsReferenceKey;->mMessageCount:I
 
+    .line 199
     return-void
 .end method
 
@@ -60,14 +65,17 @@
     .prologue
     const/4 v1, 0x0
 
+    .line 213
     instance-of v2, p1, Lcom/android/internal/telephony/SmsBroadcastUndelivered$SmsReferenceKey;
 
     if-eqz v2, :cond_0
 
     move-object v0, p1
 
+    .line 214
     check-cast v0, Lcom/android/internal/telephony/SmsBroadcastUndelivered$SmsReferenceKey;
 
+    .line 215
     .local v0, other:Lcom/android/internal/telephony/SmsBroadcastUndelivered$SmsReferenceKey;
     iget-object v2, v0, Lcom/android/internal/telephony/SmsBroadcastUndelivered$SmsReferenceKey;->mAddress:Ljava/lang/String;
 
@@ -93,6 +101,7 @@
 
     const/4 v1, 0x1
 
+    .line 219
     .end local v0           #other:Lcom/android/internal/telephony/SmsBroadcastUndelivered$SmsReferenceKey;
     :cond_0
     return v1
@@ -102,6 +111,7 @@
     .locals 3
 
     .prologue
+    .line 202
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/String;
@@ -139,6 +149,7 @@
     .locals 2
 
     .prologue
+    .line 208
     iget v0, p0, Lcom/android/internal/telephony/SmsBroadcastUndelivered$SmsReferenceKey;->mReferenceNumber:I
 
     mul-int/lit8 v0, v0, 0x1f

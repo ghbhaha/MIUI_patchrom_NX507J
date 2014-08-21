@@ -115,7 +115,7 @@
 
     iput-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter;->mPreOverlaySetting:Ljava/lang/String;
 
-    .line 476
+    .line 477
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/display/nubiaOverlayDisplayAdapter;->rotated:Z
@@ -177,34 +177,34 @@
     .parameter "overlayNumber"
 
     .prologue
-    .line 270
+    .line 276
     packed-switch p0, :pswitch_data_0
 
-    .line 279
+    .line 285
     const/16 v0, 0x53
 
     :goto_0
     return v0
 
-    .line 272
+    .line 278
     :pswitch_0
     const/16 v0, 0x33
 
     goto :goto_0
 
-    .line 274
+    .line 280
     :pswitch_1
     const/16 v0, 0x55
 
     goto :goto_0
 
-    .line 276
+    .line 282
     :pswitch_2
     const/16 v0, 0x35
 
     goto :goto_0
 
-    .line 270
+    .line 276
     nop
 
     :pswitch_data_0
@@ -216,13 +216,15 @@
 .end method
 
 .method private handleBigScreenLandscape(Landroid/content/Context;)Z
-    .locals 10
+    .locals 12
     .parameter "context"
 
     .prologue
-    const/4 v6, 0x0
+    const/4 v8, 0x1
 
-    const/4 v9, -0x2
+    const/4 v7, 0x0
+
+    const/4 v11, -0x2
 
     .line 137
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -231,9 +233,9 @@
 
     .line 138
     .local v0, cr:Landroid/content/ContentResolver;
-    const-string v7, "nubia_overlay_display_devices"
+    const-string v9, "nubia_overlay_display_devices"
 
-    invoke-static {v0, v7, v9}, Landroid/provider/Settings$Global;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v0, v9, v11}, Landroid/provider/Settings$Global;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -241,28 +243,28 @@
     .local v1, device:Ljava/lang/String;
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v7
+    move-result v9
 
-    if-eqz v7, :cond_1
+    if-eqz v9, :cond_1
 
-    .line 158
+    .line 164
     :cond_0
     :goto_0
-    return v6
+    return v7
 
     .line 141
     :cond_1
-    const-string v7, "window"
+    const-string v9, "window"
 
-    invoke-virtual {p1, v7}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, v9}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v6
 
-    check-cast v5, Landroid/view/WindowManager;
+    check-cast v6, Landroid/view/WindowManager;
 
     .line 142
-    .local v5, windowManager:Landroid/view/WindowManager;
-    invoke-interface {v5}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+    .local v6, windowManager:Landroid/view/WindowManager;
+    invoke-interface {v6}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
     move-result-object v2
 
@@ -277,53 +279,82 @@
     invoke-virtual {v2, v3}, Landroid/view/Display;->getSize(Landroid/graphics/Point;)V
 
     .line 145
-    iget v7, v3, Landroid/graphics/Point;->x:I
+    iget v9, v3, Landroid/graphics/Point;->x:I
 
-    iget v8, v3, Landroid/graphics/Point;->y:I
+    iget v10, v3, Landroid/graphics/Point;->y:I
 
-    if-le v7, v8, :cond_0
+    if-le v9, v10, :cond_0
 
     .line 146
-    const-string v7, "single_ui_mode"
+    const-string v9, "single_ui_mode"
 
-    invoke-static {v0, v7, v6, v9}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+    invoke-static {v0, v9, v7, v11}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v4
 
     .line 148
     .local v4, singleMode:I
-    const-string v6, "zhanjin"
+    const-string v9, "single_ui_mode_sensor_switch"
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    invoke-static {v0, v9, v7, v11}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    move-result v5
 
-    const-string v8, "adpter:handleBigScreenLandscape,singleMode="
+    .line 149
+    .local v5, singleModeSensor:I
+    const-string v7, "SingleUICtrl"
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v9, Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v7, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v10, "adpter:handleBigScreenLandscape,singleMode="
 
-    move-result-object v7
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v9
 
-    move-result-object v7
+    invoke-virtual {v9, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-static {v6, v7}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
+    move-result-object v9
 
-    .line 154
-    const-string v6, "nubia_overlay_display_devices"
+    const-string v10, " ,singleModeSensor="
 
-    const-string v7, ""
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, v6, v7, v9}, Landroid/provider/Settings$Global;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
+    move-result-object v9
+
+    invoke-virtual {v9, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v7, v9}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 155
+    if-ne v8, v4, :cond_2
+
+    if-nez v5, :cond_2
 
     .line 156
-    const/4 v6, 0x1
+    const-string v7, "single_ui_mode_sensor_switch"
 
+    invoke-static {v0, v7, v8, v11}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
+
+    .line 160
+    :cond_2
+    const-string v7, "nubia_overlay_display_devices"
+
+    const-string v9, ""
+
+    invoke-static {v0, v7, v9, v11}, Landroid/provider/Settings$Global;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
+
+    move v7, v8
+
+    .line 162
     goto :goto_0
 .end method
 
@@ -377,7 +408,7 @@
     .locals 25
 
     .prologue
-    .line 163
+    .line 169
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/display/DisplayAdapter;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -392,7 +423,7 @@
 
     move-result-object v21
 
-    .line 165
+    .line 171
     .local v21, value:Ljava/lang/String;
     const-string v2, "nubiaOverlayDisplayAdapter"
 
@@ -420,7 +451,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 166
+    .line 172
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/display/DisplayAdapter;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -435,21 +466,21 @@
 
     move-result-object v9
 
-    .line 168
+    .line 174
     .local v9, leftOrRight:Ljava/lang/String;
     if-nez v21, :cond_0
 
-    .line 169
+    .line 175
     const-string v21, ""
 
-    .line 173
+    .line 179
     :cond_0
     if-nez v9, :cond_1
 
-    .line 174
+    .line 180
     const-string v9, "right"
 
-    .line 177
+    .line 183
     :cond_1
     move-object/from16 v0, p0
 
@@ -463,12 +494,12 @@
 
     if-eqz v2, :cond_3
 
-    .line 266
+    .line 272
     :cond_2
     :goto_0
     return-void
 
-    .line 180
+    .line 186
     :cond_3
     move-object/from16 v0, v21
 
@@ -476,7 +507,7 @@
 
     iput-object v0, v1, Lcom/android/server/display/nubiaOverlayDisplayAdapter;->mCurrentOverlaySetting:Ljava/lang/String;
 
-    .line 206
+    .line 212
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/display/nubiaOverlayDisplayAdapter;->mOverlays:Ljava/util/ArrayList;
@@ -487,14 +518,14 @@
 
     if-nez v2, :cond_5
 
-    .line 207
+    .line 213
     const-string v2, "OverlayDisplayAdapter"
 
     const-string v3, "Dismissing all overlay display devices."
 
     invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 208
+    .line 214
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/display/nubiaOverlayDisplayAdapter;->mOverlays:Ljava/util/ArrayList;
@@ -517,13 +548,13 @@
 
     check-cast v19, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;
 
-    .line 209
+    .line 215
     .local v19, overlay:Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;
     invoke-virtual/range {v19 .. v19}, Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;->dismissLocked()V
 
     goto :goto_1
 
-    .line 211
+    .line 217
     .end local v19           #overlay:Lcom/android/server/display/nubiaOverlayDisplayAdapter$OverlayDisplayHandle;
     :cond_4
     move-object/from16 v0, p0
@@ -532,12 +563,12 @@
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
-    .line 214
+    .line 220
     .end local v15           #i$:Ljava/util/Iterator;
     :cond_5
     const/4 v13, 0x0
 
-    .line 215
+    .line 221
     .local v13, count:I
     const-string v2, ";"
 
@@ -563,7 +594,7 @@
 
     aget-object v20, v12, v15
 
-    .line 216
+    .line 222
     .local v20, part:Ljava/lang/String;
     sget-object v2, Lcom/android/server/display/nubiaOverlayDisplayAdapter;->SETTING_PATTERN:Ljava/util/regex/Pattern;
 
@@ -573,7 +604,7 @@
 
     move-result-object v17
 
-    .line 217
+    .line 223
     .local v17, matcher:Ljava/util/regex/Matcher;
     invoke-virtual/range {v17 .. v17}, Ljava/util/regex/Matcher;->matches()Z
 
@@ -581,12 +612,12 @@
 
     if-eqz v2, :cond_9
 
-    .line 218
+    .line 224
     const/4 v2, 0x2
 
     if-lt v13, v2, :cond_6
 
-    .line 219
+    .line 225
     const-string v2, "OverlayDisplayAdapter"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -615,7 +646,7 @@
 
     goto :goto_0
 
-    .line 223
+    .line 229
     :cond_6
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/display/DisplayAdapter;->getContext()Landroid/content/Context;
 
@@ -631,7 +662,7 @@
 
     move-result-object v14
 
-    .line 225
+    .line 231
     .local v14, defaultValue:Ljava/lang/String;
     if-eqz v14, :cond_7
 
@@ -643,7 +674,7 @@
 
     if-nez v2, :cond_7
 
-    .line 226
+    .line 232
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/display/DisplayAdapter;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -658,7 +689,7 @@
 
     invoke-static {v2, v3, v0}, Landroid/provider/Settings$Global;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 229
+    .line 235
     :cond_7
     move-object/from16 v0, v20
 
@@ -666,7 +697,7 @@
 
     iput-object v0, v1, Lcom/android/server/display/nubiaOverlayDisplayAdapter;->mPreOverlaySetting:Ljava/lang/String;
 
-    .line 231
+    .line 237
     const/4 v2, 0x1
 
     :try_start_0
@@ -682,7 +713,7 @@
 
     move-result v5
 
-    .line 232
+    .line 238
     .local v5, width:I
     const/4 v2, 0x2
 
@@ -698,7 +729,7 @@
 
     move-result v6
 
-    .line 233
+    .line 239
     .local v6, height:I
     const/4 v2, 0x3
 
@@ -714,7 +745,7 @@
 
     move-result v7
 
-    .line 234
+    .line 240
     .local v7, densityDpi:I
     const-wide/high16 v2, 0x3ff0
 
@@ -730,7 +761,7 @@
 
     div-double v10, v2, v22
 
-    .line 235
+    .line 241
     .local v10, rate:D
     int-to-double v2, v5
 
@@ -738,24 +769,24 @@
 
     double-to-int v5, v2
 
-    .line 236
+    .line 242
     int-to-double v2, v6
 
     mul-double/2addr v2, v10
 
     double-to-int v6, v2
 
-    .line 237
+    .line 243
     const/4 v2, 0x0
 
     move-object/from16 v0, p0
 
     iput-boolean v2, v0, Lcom/android/server/display/nubiaOverlayDisplayAdapter;->rotated:Z
 
-    .line 238
+    .line 244
     const/16 v7, 0x1e0
 
-    .line 239
+    .line 245
     const-string v2, "OverlayDisplayAdapter"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -792,7 +823,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 241
+    .line 247
     const/16 v2, 0x64
 
     if-lt v5, v2, :cond_a
@@ -817,12 +848,12 @@
 
     if-gt v7, v2, :cond_a
 
-    .line 245
+    .line 251
     add-int/lit8 v13, v13, 0x1
 
     move/from16 v18, v13
 
-    .line 246
+    .line 252
     .local v18, number:I
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/display/DisplayAdapter;->getContext()Landroid/content/Context;
 
@@ -856,16 +887,16 @@
 
     move-result-object v4
 
-    .line 248
+    .line 254
     .local v4, name:Ljava/lang/String;
     const-string v4, "singleUI_view"
 
-    .line 249
+    .line 255
     invoke-static/range {v18 .. v18}, Lcom/android/server/display/nubiaOverlayDisplayAdapter;->chooseOverlayGravity(I)I
 
     move-result v8
 
-    .line 251
+    .line 257
     .local v8, gravity:I
     const-string v2, "OverlayDisplayAdapter"
 
@@ -941,7 +972,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 255
+    .line 261
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/display/nubiaOverlayDisplayAdapter;->mOverlays:Ljava/util/ArrayList;
@@ -960,7 +991,7 @@
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 215
+    .line 221
     .end local v4           #name:Ljava/lang/String;
     .end local v5           #width:I
     .end local v6           #height:I
@@ -975,7 +1006,7 @@
 
     goto/16 :goto_2
 
-    .line 261
+    .line 267
     :cond_9
     invoke-virtual/range {v20 .. v20}, Ljava/lang/String;->isEmpty()Z
 
@@ -983,7 +1014,7 @@
 
     if-nez v2, :cond_8
 
-    .line 264
+    .line 270
     :cond_a
     :goto_4
     const-string v2, "OverlayDisplayAdapter"
@@ -1014,7 +1045,7 @@
 
     goto :goto_3
 
-    .line 259
+    .line 265
     .restart local v14       #defaultValue:Ljava/lang/String;
     :catch_0
     move-exception v2

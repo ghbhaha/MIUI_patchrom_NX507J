@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 779
+    .line 782
     iput-object p1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$5;->this$0:Lcom/android/server/display/nubiaOverlayDisplayWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "displayId"
 
     .prologue
-    .line 782
+    .line 785
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .parameter "displayId"
 
     .prologue
-    .line 786
+    .line 789
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$5;->this$0:Lcom/android/server/display/nubiaOverlayDisplayWindow;
 
     #getter for: Lcom/android/server/display/nubiaOverlayDisplayWindow;->mDefaultDisplay:Landroid/view/Display;
@@ -65,7 +65,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 787
+    .line 790
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$5;->this$0:Lcom/android/server/display/nubiaOverlayDisplayWindow;
 
     #calls: Lcom/android/server/display/nubiaOverlayDisplayWindow;->updateDefaultDisplayInfo()Z
@@ -75,25 +75,25 @@
 
     if-eqz v0, :cond_1
 
-    .line 788
+    .line 791
     const-string v0, "NubiaOverlayDisplayWindow"
 
     const-string v1, "update  onDisplayChanged"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 789
+    .line 792
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$5;->this$0:Lcom/android/server/display/nubiaOverlayDisplayWindow;
 
     #calls: Lcom/android/server/display/nubiaOverlayDisplayWindow;->relayout()V
     invoke-static {v0}, Lcom/android/server/display/nubiaOverlayDisplayWindow;->access$1400(Lcom/android/server/display/nubiaOverlayDisplayWindow;)V
 
-    .line 794
+    .line 797
     :cond_0
     :goto_0
     return-void
 
-    .line 791
+    .line 794
     :cond_1
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$5;->this$0:Lcom/android/server/display/nubiaOverlayDisplayWindow;
 
@@ -107,7 +107,7 @@
     .parameter "displayId"
 
     .prologue
-    .line 798
+    .line 801
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$5;->this$0:Lcom/android/server/display/nubiaOverlayDisplayWindow;
 
     #getter for: Lcom/android/server/display/nubiaOverlayDisplayWindow;->mDefaultDisplay:Landroid/view/Display;
@@ -121,12 +121,12 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 799
+    .line 802
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow$5;->this$0:Lcom/android/server/display/nubiaOverlayDisplayWindow;
 
     invoke-virtual {v0}, Lcom/android/server/display/nubiaOverlayDisplayWindow;->dismiss()V
 
-    .line 801
+    .line 804
     :cond_0
     return-void
 .end method

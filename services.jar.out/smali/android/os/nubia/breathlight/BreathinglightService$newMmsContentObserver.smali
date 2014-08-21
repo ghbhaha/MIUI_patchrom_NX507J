@@ -28,16 +28,16 @@
     .parameter "handler"
 
     .prologue
-    .line 373
+    .line 388
     iput-object p1, p0, Landroid/os/nubia/breathlight/BreathinglightService$newMmsContentObserver;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
 
-    .line 374
+    .line 389
     invoke-direct {p0, p3}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 375
+    .line 390
     iput-object p2, p0, Landroid/os/nubia/breathlight/BreathinglightService$newMmsContentObserver;->ctx:Landroid/content/Context;
 
-    .line 376
+    .line 391
     return-void
 .end method
 
@@ -48,14 +48,14 @@
     .parameter "selfChange"
 
     .prologue
-    .line 380
+    .line 395
     iget-object v1, p0, Landroid/os/nubia/breathlight/BreathinglightService$newMmsContentObserver;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
 
     invoke-virtual {v1}, Landroid/os/nubia/breathlight/BreathinglightService;->getUnreadMmsNum()I
 
     move-result v0
 
-    .line 381
+    .line 396
     .local v0, missMmsCount:I
     const-string v1, "BreathinglightService"
 
@@ -96,7 +96,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 382
+    .line 397
     iget-object v1, p0, Landroid/os/nubia/breathlight/BreathinglightService$newMmsContentObserver;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
 
     #getter for: Landroid/os/nubia/breathlight/BreathinglightService;->oldMmsSMS:I
@@ -106,7 +106,7 @@
 
     if-ge v1, v0, :cond_0
 
-    .line 383
+    .line 398
     iget-object v1, p0, Landroid/os/nubia/breathlight/BreathinglightService$newMmsContentObserver;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
 
     const/4 v2, 0x1
@@ -114,14 +114,14 @@
     #setter for: Landroid/os/nubia/breathlight/BreathinglightService;->mMissMsg:Z
     invoke-static {v1, v2}, Landroid/os/nubia/breathlight/BreathinglightService;->access$302(Landroid/os/nubia/breathlight/BreathinglightService;Z)Z
 
-    .line 387
+    .line 402
     :goto_0
     iget-object v1, p0, Landroid/os/nubia/breathlight/BreathinglightService$newMmsContentObserver;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
 
     #setter for: Landroid/os/nubia/breathlight/BreathinglightService;->oldMmsSMS:I
     invoke-static {v1, v0}, Landroid/os/nubia/breathlight/BreathinglightService;->access$202(Landroid/os/nubia/breathlight/BreathinglightService;I)I
 
-    .line 389
+    .line 404
     iget-object v1, p0, Landroid/os/nubia/breathlight/BreathinglightService$newMmsContentObserver;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
 
     iget-object v2, p0, Landroid/os/nubia/breathlight/BreathinglightService$newMmsContentObserver;->ctx:Landroid/content/Context;
@@ -129,10 +129,10 @@
     #calls: Landroid/os/nubia/breathlight/BreathinglightService;->updateMissEvent(Landroid/content/Context;)V
     invoke-static {v1, v2}, Landroid/os/nubia/breathlight/BreathinglightService;->access$400(Landroid/os/nubia/breathlight/BreathinglightService;Landroid/content/Context;)V
 
-    .line 390
+    .line 405
     return-void
 
-    .line 385
+    .line 400
     :cond_0
     iget-object v1, p0, Landroid/os/nubia/breathlight/BreathinglightService$newMmsContentObserver;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
 

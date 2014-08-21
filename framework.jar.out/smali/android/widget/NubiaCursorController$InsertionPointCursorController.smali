@@ -53,7 +53,7 @@
     iput-boolean v2, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mShowOnOneShot:Z
 
     .line 503
-    const v1, 0x10900c3
+    const v1, 0x10900c4
 
     invoke-virtual {p0, v1}, Landroid/widget/NubiaCursorController;->createFloatPanelViewController(I)Landroid/widget/NubiaCursorController$FloatPanelViewController;
 
@@ -62,7 +62,7 @@
     iput-object v1, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mClipboardPanel:Landroid/widget/NubiaCursorController$FloatPanelViewController;
 
     .line 504
-    const v1, 0x10900c2
+    const v1, 0x10900c3
 
     invoke-virtual {p0, v1}, Landroid/widget/NubiaCursorController;->createFloatPanelViewController(I)Landroid/widget/NubiaCursorController$FloatPanelViewController;
 
@@ -88,28 +88,28 @@
     .local v0, onClickListener:Landroid/view/View$OnClickListener;
     iget-object v1, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mPanel:Landroid/widget/NubiaCursorController$FloatPanelViewController;
 
-    const v2, 0x102037b
+    const v2, 0x1020380
 
     invoke-virtual {v1, v2, v0}, Landroid/widget/NubiaCursorController$FloatPanelViewController;->setButtonOnClickListener(ILandroid/view/View$OnClickListener;)V
 
     .line 514
     iget-object v1, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mPanel:Landroid/widget/NubiaCursorController$FloatPanelViewController;
 
-    const v2, 0x102037d
+    const v2, 0x1020382
 
     invoke-virtual {v1, v2, v0}, Landroid/widget/NubiaCursorController$FloatPanelViewController;->setButtonOnClickListener(ILandroid/view/View$OnClickListener;)V
 
     .line 515
     iget-object v1, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mPanel:Landroid/widget/NubiaCursorController$FloatPanelViewController;
 
-    const v2, 0x102037f
+    const v2, 0x1020384
 
     invoke-virtual {v1, v2, v0}, Landroid/widget/NubiaCursorController$FloatPanelViewController;->setButtonOnClickListener(ILandroid/view/View$OnClickListener;)V
 
     .line 516
     iget-object v1, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mPanel:Landroid/widget/NubiaCursorController$FloatPanelViewController;
 
-    const v2, 0x1020381
+    const v2, 0x1020386
 
     invoke-virtual {v1, v2, v0}, Landroid/widget/NubiaCursorController$FloatPanelViewController;->setButtonOnClickListener(ILandroid/view/View$OnClickListener;)V
 
@@ -478,7 +478,7 @@
     .line 603
     iget-object v7, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mClipboardPanel:Landroid/widget/NubiaCursorController$FloatPanelViewController;
 
-    const v8, 0x102037a
+    const v8, 0x102037f
 
     invoke-virtual {v7, v8}, Landroid/widget/NubiaCursorController$FloatPanelViewController;->getElement(I)Landroid/view/View;
 
@@ -528,7 +528,7 @@
     if-ne v5, v7, :cond_1
 
     .line 609
-    const v7, 0x10900c4
+    const v7, 0x10900c5
 
     const/4 v8, 0x0
 
@@ -593,7 +593,7 @@
     if-ge v1, v5, :cond_0
 
     .line 617
-    const v7, 0x10900c4
+    const v7, 0x10900c5
 
     const/4 v8, 0x0
 
@@ -873,18 +873,18 @@
     .line 643
     :array_0
     .array-data 0x4
-        0x7bt 0x3t 0x2t 0x1t
-        0x7dt 0x3t 0x2t 0x1t
-        0x7ft 0x3t 0x2t 0x1t
-        0x81t 0x3t 0x2t 0x1t
+        0x80t 0x3t 0x2t 0x1t
+        0x82t 0x3t 0x2t 0x1t
+        0x84t 0x3t 0x2t 0x1t
+        0x86t 0x3t 0x2t 0x1t
     .end array-data
 
     .line 645
     :array_1
     .array-data 0x4
-        0x7ct 0x3t 0x2t 0x1t
-        0x7et 0x3t 0x2t 0x1t
-        0x80t 0x3t 0x2t 0x1t
+        0x81t 0x3t 0x2t 0x1t
+        0x83t 0x3t 0x2t 0x1t
+        0x85t 0x3t 0x2t 0x1t
     .end array-data
 .end method
 
@@ -904,7 +904,7 @@
     .line 673
     iget v0, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mTextOffset:I
 
-    if-gez v0, :cond_1
+    if-gez v0, :cond_0
 
     .line 674
     const-string v0, "NubiaCursorController"
@@ -916,22 +916,19 @@
     .line 675
     invoke-virtual {p0}, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->hide()V
 
-    .line 693
-    :cond_0
+    .line 689
     :goto_0
     return-void
 
     .line 678
-    :cond_1
-    iget-object v0, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mHandleView:Landroid/widget/NubiaCursorController$NubiaHandleView;
+    :cond_0
+    iget-object v0, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mClipboardPanel:Landroid/widget/NubiaCursorController$FloatPanelViewController;
 
-    iget v1, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mTextOffset:I
-
-    invoke-virtual {v0, v1}, Landroid/widget/NubiaCursorController$NubiaHandleView;->isOffsetVisible(I)Z
+    invoke-virtual {v0}, Landroid/widget/NubiaCursorController$FloatPanelViewController;->isShowing()Z
 
     move-result v0
 
-    if-nez v0, :cond_2
+    if-eqz v0, :cond_1
 
     .line 679
     iget-object v0, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mPanel:Landroid/widget/NubiaCursorController$FloatPanelViewController;
@@ -941,29 +938,34 @@
     .line 680
     iget-object v0, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mClipboardPanel:Landroid/widget/NubiaCursorController$FloatPanelViewController;
 
-    invoke-virtual {v0}, Landroid/widget/NubiaCursorController$FloatPanelViewController;->hide()V
+    invoke-virtual {v0}, Landroid/widget/NubiaCursorController$FloatPanelViewController;->showAndUpdatePositionAsync()V
 
     goto :goto_0
 
     .line 683
-    :cond_2
+    :cond_1
     iget-object v0, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mPanel:Landroid/widget/NubiaCursorController$FloatPanelViewController;
 
     invoke-virtual {v0}, Landroid/widget/NubiaCursorController$FloatPanelViewController;->isShowing()Z
 
     move-result v0
 
-    if-nez v0, :cond_3
-
-    iget-object v0, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mClipboardPanel:Landroid/widget/NubiaCursorController$FloatPanelViewController;
-
-    invoke-virtual {v0}, Landroid/widget/NubiaCursorController$FloatPanelViewController;->isShowing()Z
-
-    move-result v0
-
-    if-nez v0, :cond_3
+    if-eqz v0, :cond_2
 
     .line 684
+    iget-object v0, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mClipboardPanel:Landroid/widget/NubiaCursorController$FloatPanelViewController;
+
+    invoke-virtual {v0}, Landroid/widget/NubiaCursorController$FloatPanelViewController;->hide()V
+
+    .line 685
+    iget-object v0, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mPanel:Landroid/widget/NubiaCursorController$FloatPanelViewController;
+
+    invoke-virtual {v0}, Landroid/widget/NubiaCursorController$FloatPanelViewController;->showAndUpdatePositionAsync()V
+
+    goto :goto_0
+
+    .line 687
+    :cond_2
     iget-object v0, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mHandleView:Landroid/widget/NubiaCursorController$NubiaHandleView;
 
     iget v1, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mTextOffset:I
@@ -971,46 +973,6 @@
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/NubiaCursorController$NubiaHandleView;->positionAtCursorOffset(IZ)V
-
-    .line 685
-    :cond_3
-    iget-object v0, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mPanel:Landroid/widget/NubiaCursorController$FloatPanelViewController;
-
-    invoke-virtual {v0}, Landroid/widget/NubiaCursorController$FloatPanelViewController;->isShowing()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    .line 686
-    iget-object v0, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mClipboardPanel:Landroid/widget/NubiaCursorController$FloatPanelViewController;
-
-    invoke-virtual {v0}, Landroid/widget/NubiaCursorController$FloatPanelViewController;->hide()V
-
-    .line 687
-    iget-object v0, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mPanel:Landroid/widget/NubiaCursorController$FloatPanelViewController;
-
-    invoke-virtual {v0}, Landroid/widget/NubiaCursorController$FloatPanelViewController;->showAndUpdatePositionAsync()V
-
-    .line 689
-    :cond_4
-    iget-object v0, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mClipboardPanel:Landroid/widget/NubiaCursorController$FloatPanelViewController;
-
-    invoke-virtual {v0}, Landroid/widget/NubiaCursorController$FloatPanelViewController;->isShowing()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 690
-    iget-object v0, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mPanel:Landroid/widget/NubiaCursorController$FloatPanelViewController;
-
-    invoke-virtual {v0}, Landroid/widget/NubiaCursorController$FloatPanelViewController;->hide()V
-
-    .line 691
-    iget-object v0, p0, Landroid/widget/NubiaCursorController$InsertionPointCursorController;->mClipboardPanel:Landroid/widget/NubiaCursorController$FloatPanelViewController;
-
-    invoke-virtual {v0}, Landroid/widget/NubiaCursorController$FloatPanelViewController;->showAndUpdatePositionAsync()V
 
     goto :goto_0
 .end method

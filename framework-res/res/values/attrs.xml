@@ -1933,6 +1933,14 @@
     <attr name="nubia_city_text_color" format="color" />
     <attr name="nubia_date_text_size" format="dimension" />
     <attr name="nubia_date_text_color" format="color" />
+    <attr name="digital_city_text_size" format="dimension" />
+    <attr name="digital_date_text_size" format="dimension" />
+    <attr name="digital_ampm_text_size" format="dimension" />
+    <attr name="digital_time_text_size" format="dimension" />
+    <attr name="digital_city_text_color" format="color" />
+    <attr name="digital_date_text_color" format="color" />
+    <attr name="digital_ampm_text_color" format="color" />
+    <attr name="digital_time_text_color" format="color" />
     <attr name="neverEncrypt" format="boolean" />
     <attr name="cantSaveState" format="boolean" />
     <attr name="primaryUserOnly" format="boolean" />

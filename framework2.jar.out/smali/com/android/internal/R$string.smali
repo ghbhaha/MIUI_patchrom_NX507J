@@ -457,6 +457,14 @@
 
 .field public static final dialog_alert_title:I = 0x1040014
 
+.field public static final digital_clock_date_format:I = 0x1040678
+
+.field public static final digital_clock_hour_format_12:I = 0x1040679
+
+.field public static final digital_clock_hour_format_24:I = 0x104067a
+
+.field public static final digital_clock_week_format:I = 0x104067b
+
 .field public static final display_manager_built_in_display_name:I = 0x1040558
 
 .field public static final display_manager_hdmi_display_name:I = 0x1040559
@@ -477,9 +485,9 @@
 
 .field public static final double_tap_toast:I = 0x1040371
 
-.field public static final dual_card_prompt_content:I = 0x1040679
+.field public static final dual_card_prompt_content:I = 0x104067d
 
-.field public static final dual_card_prompt_title:I = 0x1040678
+.field public static final dual_card_prompt_title:I = 0x104067c
 
 .field public static final elapsed_time_short_format_h_mm_ss:I = 0x10403ec
 
@@ -1061,7 +1069,7 @@
 
 .field public static final notification_title:I = 0x10400ae
 
-.field public static final nubia_service_name:I = 0x104067a
+.field public static final nubia_service_name:I = 0x104067e
 
 .field public static final nubia_widget_time_format:I = 0x1040677
 
@@ -1621,63 +1629,63 @@
 
 .field public static final websearch:I = 0x10404e0
 
-.field public static final webviewchromium_accessibility_content_view:I = 0x104068b
+.field public static final webviewchromium_accessibility_content_view:I = 0x104068f
 
-.field public static final webviewchromium_accessibility_date_picker_month:I = 0x1040694
+.field public static final webviewchromium_accessibility_date_picker_month:I = 0x1040698
 
-.field public static final webviewchromium_accessibility_date_picker_week:I = 0x1040695
+.field public static final webviewchromium_accessibility_date_picker_week:I = 0x1040699
 
-.field public static final webviewchromium_accessibility_date_picker_year:I = 0x1040696
+.field public static final webviewchromium_accessibility_date_picker_year:I = 0x104069a
 
-.field public static final webviewchromium_accessibility_datetime_picker_date:I = 0x1040692
+.field public static final webviewchromium_accessibility_datetime_picker_date:I = 0x1040696
 
-.field public static final webviewchromium_accessibility_datetime_picker_time:I = 0x1040693
+.field public static final webviewchromium_accessibility_datetime_picker_time:I = 0x1040697
 
-.field public static final webviewchromium_actionbar_share:I = 0x1040689
+.field public static final webviewchromium_actionbar_share:I = 0x104068d
 
-.field public static final webviewchromium_actionbar_web_search:I = 0x104068a
+.field public static final webviewchromium_actionbar_web_search:I = 0x104068e
 
-.field public static final webviewchromium_color_picker_button_cancel:I = 0x10406a1
+.field public static final webviewchromium_color_picker_button_cancel:I = 0x10406a5
 
-.field public static final webviewchromium_color_picker_button_more:I = 0x104069c
+.field public static final webviewchromium_color_picker_button_more:I = 0x10406a0
 
-.field public static final webviewchromium_color_picker_button_set:I = 0x10406a0
+.field public static final webviewchromium_color_picker_button_set:I = 0x10406a4
 
-.field public static final webviewchromium_color_picker_dialog_title:I = 0x10406a2
+.field public static final webviewchromium_color_picker_dialog_title:I = 0x10406a6
 
-.field public static final webviewchromium_color_picker_hue:I = 0x104069d
+.field public static final webviewchromium_color_picker_hue:I = 0x10406a1
 
-.field public static final webviewchromium_color_picker_saturation:I = 0x104069e
+.field public static final webviewchromium_color_picker_saturation:I = 0x10406a2
 
-.field public static final webviewchromium_color_picker_value:I = 0x104069f
+.field public static final webviewchromium_color_picker_value:I = 0x10406a3
 
-.field public static final webviewchromium_date_picker_dialog_clear:I = 0x104068d
+.field public static final webviewchromium_date_picker_dialog_clear:I = 0x1040691
 
-.field public static final webviewchromium_date_picker_dialog_set:I = 0x104068c
+.field public static final webviewchromium_date_picker_dialog_set:I = 0x1040690
 
-.field public static final webviewchromium_date_picker_dialog_title:I = 0x104068e
+.field public static final webviewchromium_date_picker_dialog_title:I = 0x1040692
 
-.field public static final webviewchromium_date_time_picker_dialog_title:I = 0x104068f
+.field public static final webviewchromium_date_time_picker_dialog_title:I = 0x1040693
 
-.field public static final webviewchromium_low_memory_error:I = 0x10406a3
+.field public static final webviewchromium_low_memory_error:I = 0x10406a7
 
-.field public static final webviewchromium_media_player_error_button:I = 0x104069a
+.field public static final webviewchromium_media_player_error_button:I = 0x104069e
 
-.field public static final webviewchromium_media_player_error_text_invalid_progressive_playback:I = 0x1040698
+.field public static final webviewchromium_media_player_error_text_invalid_progressive_playback:I = 0x104069c
 
-.field public static final webviewchromium_media_player_error_text_unknown:I = 0x1040699
+.field public static final webviewchromium_media_player_error_text_unknown:I = 0x104069d
 
-.field public static final webviewchromium_media_player_error_title:I = 0x1040697
+.field public static final webviewchromium_media_player_error_title:I = 0x104069b
 
-.field public static final webviewchromium_media_player_loading_video:I = 0x104069b
+.field public static final webviewchromium_media_player_loading_video:I = 0x104069f
 
-.field public static final webviewchromium_month_picker_dialog_title:I = 0x1040690
+.field public static final webviewchromium_month_picker_dialog_title:I = 0x1040694
 
-.field public static final webviewchromium_opening_file_error:I = 0x10406a4
+.field public static final webviewchromium_opening_file_error:I = 0x10406a8
 
-.field public static final webviewchromium_private_browsing_warning:I = 0x10406a5
+.field public static final webviewchromium_private_browsing_warning:I = 0x10406a9
 
-.field public static final webviewchromium_week_picker_dialog_title:I = 0x1040691
+.field public static final webviewchromium_week_picker_dialog_title:I = 0x1040695
 
 .field public static final whichApplication:I = 0x10403fb
 
@@ -1741,7 +1749,7 @@
     .locals 0
 
     .prologue
-    .line 14123
+    .line 14213
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

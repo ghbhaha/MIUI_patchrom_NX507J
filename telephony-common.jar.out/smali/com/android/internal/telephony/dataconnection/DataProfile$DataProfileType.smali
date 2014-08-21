@@ -48,6 +48,7 @@
 
     const/4 v2, 0x0
 
+    .line 58
     new-instance v0, Lcom/android/internal/telephony/dataconnection/DataProfile$DataProfileType;
 
     const-string v1, "PROFILE_TYPE_APN"
@@ -56,6 +57,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/dataconnection/DataProfile$DataProfileType;->PROFILE_TYPE_APN:Lcom/android/internal/telephony/dataconnection/DataProfile$DataProfileType;
 
+    .line 59
     new-instance v0, Lcom/android/internal/telephony/dataconnection/DataProfile$DataProfileType;
 
     const-string v1, "PROFILE_TYPE_CDMA"
@@ -64,6 +66,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/dataconnection/DataProfile$DataProfileType;->PROFILE_TYPE_CDMA:Lcom/android/internal/telephony/dataconnection/DataProfile$DataProfileType;
 
+    .line 60
     new-instance v0, Lcom/android/internal/telephony/dataconnection/DataProfile$DataProfileType;
 
     const-string v1, "PROFILE_TYPE_OMH"
@@ -72,6 +75,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/dataconnection/DataProfile$DataProfileType;->PROFILE_TYPE_OMH:Lcom/android/internal/telephony/dataconnection/DataProfile$DataProfileType;
 
+    .line 57
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/android/internal/telephony/dataconnection/DataProfile$DataProfileType;
@@ -105,10 +109,13 @@
     .end annotation
 
     .prologue
+    .line 64
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 65
     iput p3, p0, Lcom/android/internal/telephony/dataconnection/DataProfile$DataProfileType;->id:I
 
+    .line 66
     return-void
 .end method
 
@@ -117,6 +124,7 @@
     .parameter "name"
 
     .prologue
+    .line 57
     const-class v0, Lcom/android/internal/telephony/dataconnection/DataProfile$DataProfileType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -132,6 +140,7 @@
     .locals 1
 
     .prologue
+    .line 57
     sget-object v0, Lcom/android/internal/telephony/dataconnection/DataProfile$DataProfileType;->$VALUES:[Lcom/android/internal/telephony/dataconnection/DataProfile$DataProfileType;
 
     invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
@@ -149,6 +158,7 @@
     .locals 1
 
     .prologue
+    .line 69
     iget v0, p0, Lcom/android/internal/telephony/dataconnection/DataProfile$DataProfileType;->id:I
 
     return v0

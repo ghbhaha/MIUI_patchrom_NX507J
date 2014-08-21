@@ -70,6 +70,8 @@
 
 .field private mBreathLightLevels:[F
 
+.field private final mCallJNIHandler:Landroid/os/Handler;
+
 .field private final mContext:Landroid/content/Context;
 
 .field private final mHandler:Landroid/os/Handler;
@@ -175,31 +177,42 @@
     .line 92
     iput v1, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mBreathLightFlag:I
 
-    .line 492
+    .line 115
+    new-instance v0, Landroid/os/nubia/breathlight/BreathinglightService$1;
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    invoke-direct {v0, p0, v1}, Landroid/os/nubia/breathlight/BreathinglightService$1;-><init>(Landroid/os/nubia/breathlight/BreathinglightService;Landroid/os/Looper;)V
+
+    iput-object v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mCallJNIHandler:Landroid/os/Handler;
+
+    .line 507
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mNotificationsPkg:Ljava/util/ArrayList;
 
-    .line 494
-    new-instance v0, Landroid/os/nubia/breathlight/BreathinglightService$2;
+    .line 509
+    new-instance v0, Landroid/os/nubia/breathlight/BreathinglightService$3;
 
-    invoke-direct {v0, p0}, Landroid/os/nubia/breathlight/BreathinglightService$2;-><init>(Landroid/os/nubia/breathlight/BreathinglightService;)V
+    invoke-direct {v0, p0}, Landroid/os/nubia/breathlight/BreathinglightService$3;-><init>(Landroid/os/nubia/breathlight/BreathinglightService;)V
 
     iput-object v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mHandler:Landroid/os/Handler;
 
-    .line 621
-    new-instance v0, Landroid/os/nubia/breathlight/BreathinglightService$4;
-
-    invoke-direct {v0, p0}, Landroid/os/nubia/breathlight/BreathinglightService$4;-><init>(Landroid/os/nubia/breathlight/BreathinglightService;)V
-
-    iput-object v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mLightSensorEventListener:Landroid/hardware/SensorEventListener;
-
-    .line 671
+    .line 636
     new-instance v0, Landroid/os/nubia/breathlight/BreathinglightService$5;
 
     invoke-direct {v0, p0}, Landroid/os/nubia/breathlight/BreathinglightService$5;-><init>(Landroid/os/nubia/breathlight/BreathinglightService;)V
+
+    iput-object v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mLightSensorEventListener:Landroid/hardware/SensorEventListener;
+
+    .line 686
+    new-instance v0, Landroid/os/nubia/breathlight/BreathinglightService$6;
+
+    invoke-direct {v0, p0}, Landroid/os/nubia/breathlight/BreathinglightService$6;-><init>(Landroid/os/nubia/breathlight/BreathinglightService;)V
 
     iput-object v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mScreenOnOffReceiver:Landroid/content/BroadcastReceiver;
 
@@ -271,8 +284,6 @@
     return-void
 
     .line 69
-    nop
-
     :array_0
     .array-data 0x4
         0x0t 0x0t 0xf0t 0x41t
@@ -530,41 +541,53 @@
     .locals 3
 
     .prologue
-    .line 425
+    .line 440
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 426
+    .line 441
     .local v0, filter:Landroid/content/IntentFilter;
     const-string v1, "android.intent.action.BATTERY_CHANGED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 427
+    .line 442
     iget-object v1, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mContext:Landroid/content/Context;
 
-    new-instance v2, Landroid/os/nubia/breathlight/BreathinglightService$1;
+    new-instance v2, Landroid/os/nubia/breathlight/BreathinglightService$2;
 
-    invoke-direct {v2, p0}, Landroid/os/nubia/breathlight/BreathinglightService$1;-><init>(Landroid/os/nubia/breathlight/BreathinglightService;)V
+    invoke-direct {v2, p0}, Landroid/os/nubia/breathlight/BreathinglightService$2;-><init>(Landroid/os/nubia/breathlight/BreathinglightService;)V
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 458
+    .line 473
     return-void
 .end method
 
 .method private doSetBrightness(I)V
-    .locals 1
+    .locals 4
     .parameter "bcase"
 
     .prologue
-    .line 237
-    const/16 v0, 0x10
+    .line 250
+    iget-object v1, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mHandler:Landroid/os/Handler;
 
-    invoke-virtual {p0, p1, v0}, Landroid/os/nubia/breathlight/BreathinglightService;->setBrightnessJNI(II)V
+    const/4 v2, 0x0
 
-    .line 239
+    const/16 v3, 0x10
+
+    invoke-virtual {v1, v2, p1, v3}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
+
+    move-result-object v0
+
+    .line 251
+    .local v0, msg:Landroid/os/Message;
+    iget-object v1, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mCallJNIHandler:Landroid/os/Handler;
+
+    invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+
+    .line 252
     return-void
 .end method
 
@@ -573,10 +596,10 @@
     .parameter "value"
 
     .prologue
-    .line 610
+    .line 625
     const/4 v0, 0x0
 
-    .line 612
+    .line 627
     .local v0, i:I
     :goto_0
     iget-object v1, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mBreathLightLevels:[F
@@ -585,7 +608,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 613
+    .line 628
     iget-object v1, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mBreathLightLevels:[F
 
     aget v1, v1, v0
@@ -594,11 +617,11 @@
 
     if-gez v1, :cond_1
 
-    .line 618
+    .line 633
     :cond_0
     return v0
 
-    .line 612
+    .line 627
     :cond_1
     add-int/lit8 v0, v0, 0x1
 
@@ -610,7 +633,7 @@
     .parameter "newPkg"
 
     .prologue
-    .line 510
+    .line 525
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -623,7 +646,7 @@
 
     if-ge v0, v2, :cond_1
 
-    .line 511
+    .line 526
     iget-object v2, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mNotificationsPkg:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -632,7 +655,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 512
+    .line 527
     .local v1, tempPkg:Ljava/lang/String;
     invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -640,33 +663,33 @@
 
     if-eqz v2, :cond_0
 
-    .line 519
+    .line 534
     .end local v1           #tempPkg:Ljava/lang/String;
     :goto_1
     return-void
 
-    .line 510
+    .line 525
     .restart local v1       #tempPkg:Ljava/lang/String;
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 516
+    .line 531
     .end local v1           #tempPkg:Ljava/lang/String;
     :cond_1
     iget-object v2, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mNotificationsPkg:Ljava/util/ArrayList;
 
     invoke-virtual {v2, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 517
+    .line 532
     const/16 v2, 0x10
 
     const/4 v3, 0x1
 
     invoke-direct {p0, v2, v3}, Landroid/os/nubia/breathlight/BreathinglightService;->setBreathLightFlag(IZ)V
 
-    .line 518
+    .line 533
     const-string v2, "BreathinglightService"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -703,7 +726,7 @@
     .parameter "newPkg"
 
     .prologue
-    .line 523
+    .line 538
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -716,7 +739,7 @@
 
     if-ge v0, v2, :cond_1
 
-    .line 524
+    .line 539
     iget-object v2, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mNotificationsPkg:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -725,7 +748,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 525
+    .line 540
     .local v1, tempPkg:Ljava/lang/String;
     invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -733,24 +756,24 @@
 
     if-eqz v2, :cond_0
 
-    .line 526
+    .line 541
     iget-object v2, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mNotificationsPkg:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 535
+    .line 550
     .end local v1           #tempPkg:Ljava/lang/String;
     :goto_1
     return-void
 
-    .line 523
+    .line 538
     .restart local v1       #tempPkg:Ljava/lang/String;
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 530
+    .line 545
     .end local v1           #tempPkg:Ljava/lang/String;
     :cond_1
     iget-object v2, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mNotificationsPkg:Ljava/util/ArrayList;
@@ -761,14 +784,14 @@
 
     if-gtz v2, :cond_2
 
-    .line 531
+    .line 546
     const/16 v2, 0x10
 
     const/4 v3, 0x0
 
     invoke-direct {p0, v2, v3}, Landroid/os/nubia/breathlight/BreathinglightService;->setBreathLightFlag(IZ)V
 
-    .line 534
+    .line 549
     :cond_2
     const-string v2, "BreathinglightService"
 
@@ -807,10 +830,10 @@
     .prologue
     const/4 v6, 0x1
 
-    .line 646
+    .line 661
     const/4 v0, 0x0
 
-    .line 648
+    .line 663
     .local v0, brightnessMode:I
     :try_start_0
     iget-object v3, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mContext:Landroid/content/Context;
@@ -829,29 +852,29 @@
 
     move-result v0
 
-    .line 653
+    .line 668
     :goto_0
     if-ne v0, v6, :cond_0
 
-    .line 654
+    .line 669
     const-string v3, "BreathinglightService"
 
     const-string v4, "initBreathLightLevel auto mode"
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 655
+    .line 670
     invoke-virtual {p0, v6}, Landroid/os/nubia/breathlight/BreathinglightService;->setBreathLightAuto(Z)V
 
-    .line 662
+    .line 677
     :goto_1
     return-void
 
-    .line 649
+    .line 664
     :catch_0
     move-exception v1
 
-    .line 650
+    .line 665
     .local v1, e:Ljava/lang/Exception;
     const-string v3, "BreathinglightService"
 
@@ -861,7 +884,7 @@
 
     goto :goto_0
 
-    .line 659
+    .line 674
     .end local v1           #e:Ljava/lang/Exception;
     :cond_0
     iget-object v3, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mContext:Landroid/content/Context;
@@ -878,7 +901,7 @@
 
     move-result v2
 
-    .line 660
+    .line 675
     .local v2, level:I
     const-string v3, "BreathinglightService"
 
@@ -902,7 +925,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 661
+    .line 676
     invoke-direct {p0, v2}, Landroid/os/nubia/breathlight/BreathinglightService;->initMinGrade(I)V
 
     goto :goto_1
@@ -913,16 +936,16 @@
     .parameter "level"
 
     .prologue
-    .line 597
+    .line 612
     add-int/lit8 v1, p1, 0x1
 
     mul-int/lit8 v0, v1, 0x2
 
-    .line 598
+    .line 613
     .local v0, min_grade:I
     invoke-virtual {p0, v0}, Landroid/os/nubia/breathlight/BreathinglightService;->setMinGrade(I)V
 
-    .line 599
+    .line 614
     return-void
 .end method
 
@@ -930,27 +953,27 @@
     .locals 3
 
     .prologue
-    .line 538
+    .line 553
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 539
+    .line 554
     .local v0, filter:Landroid/content/IntentFilter;
     const-string v1, "cn.nubia.notifications.tips"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 540
+    .line 555
     iget-object v1, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mContext:Landroid/content/Context;
 
-    new-instance v2, Landroid/os/nubia/breathlight/BreathinglightService$3;
+    new-instance v2, Landroid/os/nubia/breathlight/BreathinglightService$4;
 
-    invoke-direct {v2, p0}, Landroid/os/nubia/breathlight/BreathinglightService$3;-><init>(Landroid/os/nubia/breathlight/BreathinglightService;)V
+    invoke-direct {v2, p0}, Landroid/os/nubia/breathlight/BreathinglightService$4;-><init>(Landroid/os/nubia/breathlight/BreathinglightService;)V
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 565
+    .line 580
     return-void
 .end method
 
@@ -962,7 +985,7 @@
 
     const/4 v4, 0x1
 
-    .line 306
+    .line 321
     iget-object v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -979,7 +1002,7 @@
 
     invoke-virtual {v0, v1, v4, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 308
+    .line 323
     iget-object v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -996,7 +1019,7 @@
 
     invoke-virtual {v0, v1, v4, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 310
+    .line 325
     iget-object v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1013,7 +1036,7 @@
 
     invoke-virtual {v0, v1, v4, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 313
+    .line 328
     return-void
 .end method
 
@@ -1021,30 +1044,30 @@
     .locals 3
 
     .prologue
-    .line 665
+    .line 680
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 666
+    .line 681
     .local v0, filter:Landroid/content/IntentFilter;
     const-string v1, "android.intent.action.SCREEN_OFF"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 667
+    .line 682
     const-string v1, "android.intent.action.SCREEN_ON"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 668
+    .line 683
     iget-object v1, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mScreenOnOffReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 669
+    .line 684
     return-void
 .end method
 
@@ -1054,24 +1077,24 @@
     .parameter "value"
 
     .prologue
-    .line 157
+    .line 168
     if-eqz p2, :cond_0
 
-    .line 158
+    .line 169
     iget v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mBreathLightFlag:I
 
     or-int/2addr v0, p1
 
     iput v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mBreathLightFlag:I
 
-    .line 162
+    .line 173
     :goto_0
     invoke-direct {p0}, Landroid/os/nubia/breathlight/BreathinglightService;->setLightStatus()V
 
-    .line 163
+    .line 174
     return-void
 
-    .line 160
+    .line 171
     :cond_0
     iget v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mBreathLightFlag:I
 
@@ -1092,7 +1115,7 @@
 
     const/4 v1, 0x0
 
-    .line 141
+    .line 152
     iget v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mSwitchStatus:I
 
     and-int/lit8 v0, v0, 0x8
@@ -1105,14 +1128,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 142
+    .line 153
     invoke-virtual {p0, v2, v1}, Landroid/os/nubia/breathlight/BreathinglightService;->setBrightness2(IZ)V
 
-    .line 154
+    .line 165
     :goto_0
     return-void
 
-    .line 143
+    .line 154
     :cond_0
     iget v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mSwitchStatus:I
 
@@ -1126,12 +1149,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 144
+    .line 155
     invoke-virtual {p0, v2, v1}, Landroid/os/nubia/breathlight/BreathinglightService;->setBrightness2(IZ)V
 
     goto :goto_0
 
-    .line 145
+    .line 156
     :cond_1
     iget v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mSwitchStatus:I
 
@@ -1145,14 +1168,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 146
+    .line 157
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0, v1}, Landroid/os/nubia/breathlight/BreathinglightService;->setBrightness2(IZ)V
 
     goto :goto_0
 
-    .line 147
+    .line 158
     :cond_2
     iget v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mSwitchStatus:I
 
@@ -1166,14 +1189,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 148
+    .line 159
     const/4 v0, 0x3
 
     invoke-virtual {p0, v0, v1}, Landroid/os/nubia/breathlight/BreathinglightService;->setBrightness2(IZ)V
 
     goto :goto_0
 
-    .line 149
+    .line 160
     :cond_3
     iget v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mSwitchStatus:I
 
@@ -1187,14 +1210,14 @@
 
     if-eqz v0, :cond_4
 
-    .line 150
+    .line 161
     const/4 v0, 0x2
 
     invoke-virtual {p0, v0, v1}, Landroid/os/nubia/breathlight/BreathinglightService;->setBrightness2(IZ)V
 
     goto :goto_0
 
-    .line 152
+    .line 163
     :cond_4
     invoke-virtual {p0, v1, v1}, Landroid/os/nubia/breathlight/BreathinglightService;->setBrightness2(IZ)V
 
@@ -1205,21 +1228,21 @@
     .locals 1
 
     .prologue
-    .line 166
+    .line 177
     invoke-virtual {p0}, Landroid/os/nubia/breathlight/BreathinglightService;->hasMissEvent()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 167
+    .line 178
     iget v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mBreathLightFlag:I
 
     or-int/lit8 v0, v0, 0x8
 
     iput v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mBreathLightFlag:I
 
-    .line 172
+    .line 183
     :goto_0
     invoke-virtual {p0}, Landroid/os/nubia/breathlight/BreathinglightService;->hasMissNotification()Z
 
@@ -1227,14 +1250,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 173
+    .line 184
     iget v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mBreathLightFlag:I
 
     or-int/lit8 v0, v0, 0x10
 
     iput v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mBreathLightFlag:I
 
-    .line 178
+    .line 189
     :goto_1
     iget v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mBatteryStatus:I
 
@@ -1242,14 +1265,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 179
+    .line 190
     iget v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mBreathLightFlag:I
 
     or-int/lit8 v0, v0, 0x4
 
     iput v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mBreathLightFlag:I
 
-    .line 184
+    .line 195
     :goto_2
     iget v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mBatteryStatus:I
 
@@ -1257,14 +1280,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 185
+    .line 196
     iget v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mBreathLightFlag:I
 
     or-int/lit8 v0, v0, 0x2
 
     iput v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mBreathLightFlag:I
 
-    .line 190
+    .line 201
     :goto_3
     iget v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mBatteryStatus:I
 
@@ -1272,18 +1295,18 @@
 
     if-eqz v0, :cond_4
 
-    .line 191
+    .line 202
     iget v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mBreathLightFlag:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mBreathLightFlag:I
 
-    .line 195
+    .line 206
     :goto_4
     return-void
 
-    .line 169
+    .line 180
     :cond_0
     iget v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mBreathLightFlag:I
 
@@ -1293,7 +1316,7 @@
 
     goto :goto_0
 
-    .line 175
+    .line 186
     :cond_1
     iget v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mBreathLightFlag:I
 
@@ -1303,7 +1326,7 @@
 
     goto :goto_1
 
-    .line 181
+    .line 192
     :cond_2
     iget v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mBreathLightFlag:I
 
@@ -1313,7 +1336,7 @@
 
     goto :goto_2
 
-    .line 187
+    .line 198
     :cond_3
     iget v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mBreathLightFlag:I
 
@@ -1323,7 +1346,7 @@
 
     goto :goto_3
 
-    .line 193
+    .line 204
     :cond_4
     iget v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mBreathLightFlag:I
 
@@ -1341,7 +1364,7 @@
     .prologue
     const/16 v1, 0x8
 
-    .line 417
+    .line 432
     iget-boolean v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mMissCall:Z
 
     if-nez v0, :cond_0
@@ -1350,17 +1373,17 @@
 
     if-eqz v0, :cond_1
 
-    .line 418
+    .line 433
     :cond_0
     const/4 v0, 0x1
 
     invoke-direct {p0, v1, v0}, Landroid/os/nubia/breathlight/BreathinglightService;->setBreathLightFlag(IZ)V
 
-    .line 423
+    .line 438
     :goto_0
     return-void
 
-    .line 420
+    .line 435
     :cond_1
     const/4 v0, 0x0
 
@@ -1375,7 +1398,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 198
+    .line 209
     iget-object v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1390,14 +1413,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 200
+    .line 211
     iget v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mSwitchStatus:I
 
     or-int/lit8 v0, v0, 0x8
 
     iput v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mSwitchStatus:I
 
-    .line 204
+    .line 215
     :goto_0
     iget-object v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mContext:Landroid/content/Context;
 
@@ -1413,14 +1436,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 206
+    .line 217
     iget v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mSwitchStatus:I
 
     or-int/lit8 v0, v0, 0x10
 
     iput v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mSwitchStatus:I
 
-    .line 210
+    .line 221
     :goto_1
     iget-object v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mContext:Landroid/content/Context;
 
@@ -1436,14 +1459,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 212
+    .line 223
     iget v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mSwitchStatus:I
 
     or-int/lit8 v0, v0, 0x2
 
     iput v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mSwitchStatus:I
 
-    .line 216
+    .line 227
     :goto_2
     iget-object v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mContext:Landroid/content/Context;
 
@@ -1459,18 +1482,18 @@
 
     if-eqz v0, :cond_3
 
-    .line 218
+    .line 229
     iget v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mSwitchStatus:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mSwitchStatus:I
 
-    .line 223
+    .line 234
     :goto_3
     return-void
 
-    .line 202
+    .line 213
     :cond_0
     iget v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mSwitchStatus:I
 
@@ -1480,7 +1503,7 @@
 
     goto :goto_0
 
-    .line 208
+    .line 219
     :cond_1
     iget v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mSwitchStatus:I
 
@@ -1490,7 +1513,7 @@
 
     goto :goto_1
 
-    .line 214
+    .line 225
     :cond_2
     iget v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mSwitchStatus:I
 
@@ -1500,7 +1523,7 @@
 
     goto :goto_2
 
-    .line 220
+    .line 231
     :cond_3
     iget v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mSwitchStatus:I
 
@@ -1519,25 +1542,25 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 476
+    .line 491
     iput-boolean v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mMissMsg:Z
 
-    .line 477
+    .line 492
     iput-boolean v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mMissCall:Z
 
-    .line 478
+    .line 493
     iget-object v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mNotificationsPkg:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 479
+    .line 494
     const-string v0, "BreathinglightService"
 
     const-string v1, "clearUnreadEvent"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 480
+    .line 495
     return-void
 .end method
 
@@ -1545,13 +1568,13 @@
     .locals 0
 
     .prologue
-    .line 226
+    .line 237
     invoke-direct {p0}, Landroid/os/nubia/breathlight/BreathinglightService;->updateBreathLightFlag()V
 
-    .line 227
+    .line 238
     invoke-direct {p0}, Landroid/os/nubia/breathlight/BreathinglightService;->setLightStatus()V
 
-    .line 228
+    .line 239
     return-void
 .end method
 
@@ -1559,7 +1582,7 @@
     .locals 1
 
     .prologue
-    .line 468
+    .line 483
     iget v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mBatteryStatus:I
 
     return v0
@@ -1569,12 +1592,12 @@
     .locals 1
 
     .prologue
-    .line 231
+    .line 242
     invoke-virtual {p0}, Landroid/os/nubia/breathlight/BreathinglightService;->getBrightnessJNI()I
 
     move-result v0
 
-    .line 232
+    .line 243
     .local v0, tmp:I
     return v0
 .end method
@@ -1586,7 +1609,7 @@
     .locals 1
 
     .prologue
-    .line 487
+    .line 502
     invoke-virtual {p0}, Landroid/os/nubia/breathlight/BreathinglightService;->getMinGradeJNI()I
 
     move-result v0
@@ -1603,10 +1626,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 318
+    .line 333
     const/4 v7, 0x0
 
-    .line 319
+    .line 334
     .local v7, count:I
     iget-object v1, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mContext:Landroid/content/Context;
 
@@ -1614,25 +1637,21 @@
 
     move-result-object v0
 
-    .line 320
     .local v0, cr:Landroid/content/ContentResolver;
     if-nez v0, :cond_0
 
     move v8, v7
 
-    .line 335
     .end local v7           #count:I
     .local v8, count:I
     :goto_0
     return v8
 
-    .line 322
     .end local v8           #count:I
     .restart local v7       #count:I
     :cond_0
-    const-string v3, "type = 3 and new = 1 and INCOMING_CALL_TIME > 0"
+    const-string v3, "type = 3 and new = 1"
 
-    .line 323
     .local v3, selection:Ljava/lang/String;
     sget-object v1, Landroid/provider/CallLog$Calls;->CONTENT_URI:Landroid/net/Uri;
 
@@ -1644,11 +1663,11 @@
 
     move-result-object v6
 
-    .line 325
+    .line 340
     .local v6, callerCursor:Landroid/database/Cursor;
     if-eqz v6, :cond_1
 
-    .line 327
+    .line 342
     :try_start_0
     invoke-interface {v6}, Landroid/database/Cursor;->getCount()I
     :try_end_0
@@ -1657,30 +1676,30 @@
 
     move-result v7
 
-    .line 332
+    .line 347
     :goto_1
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_1
     move v8, v7
 
-    .line 335
+    .line 350
     .end local v7           #count:I
     .restart local v8       #count:I
     goto :goto_0
 
-    .line 328
+    .line 343
     .end local v8           #count:I
     .restart local v7       #count:I
     :catch_0
     move-exception v9
 
-    .line 329
+    .line 344
     .local v9, e:Ljava/lang/Exception;
     :try_start_1
     invoke-virtual {v9}, Ljava/lang/Throwable;->printStackTrace()V
 
-    .line 330
+    .line 345
     const-string v1, "BreathinglightService"
 
     const-string v2, "getMissedCallerNum fail"
@@ -1691,7 +1710,7 @@
 
     goto :goto_1
 
-    .line 332
+    .line 347
     .end local v9           #e:Ljava/lang/Exception;
     :catchall_0
     move-exception v1
@@ -1705,10 +1724,10 @@
     .locals 1
 
     .prologue
-    .line 471
+    .line 486
     invoke-direct {p0}, Landroid/os/nubia/breathlight/BreathinglightService;->updateSwitchStatus()V
 
-    .line 472
+    .line 487
     iget v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mSwitchStatus:I
 
     return v0
@@ -1720,14 +1739,14 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 339
+    .line 354
     const/4 v12, 0x0
 
-    .line 340
+    .line 355
     .local v12, smsCount:I
     const/4 v10, 0x0
 
-    .line 342
+    .line 357
     .local v10, mmsCount:I
     iget-object v1, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mContext:Landroid/content/Context;
 
@@ -1735,21 +1754,21 @@
 
     move-result-object v0
 
-    .line 343
+    .line 358
     .local v0, cr:Landroid/content/ContentResolver;
     if-nez v0, :cond_0
 
     move v1, v12
 
-    .line 366
+    .line 381
     :goto_0
     return v1
 
-    .line 345
+    .line 360
     :cond_0
     const-string v3, "read=0"
 
-    .line 346
+    .line 361
     .local v3, selection:Ljava/lang/String;
     iget-object v1, p0, Landroid/os/nubia/breathlight/BreathinglightService;->SMS_URI:Landroid/net/Uri;
 
@@ -1761,11 +1780,11 @@
 
     move-result-object v13
 
-    .line 348
+    .line 363
     .local v13, smsCursor:Landroid/database/Cursor;
     if-eqz v13, :cond_1
 
-    .line 350
+    .line 365
     :try_start_0
     invoke-interface {v13}, Landroid/database/Cursor;->getCount()I
     :try_end_0
@@ -1773,14 +1792,14 @@
 
     move-result v12
 
-    .line 352
+    .line 367
     invoke-interface {v13}, Landroid/database/Cursor;->close()V
 
-    .line 356
+    .line 371
     :cond_1
     const-string v7, "read=0 and (m_type=130 or m_type=132) and (thread_id is not null and thread_id in (select _id from threads))"
 
-    .line 357
+    .line 372
     .local v7, mmSelection:Ljava/lang/String;
     iget-object v5, p0, Landroid/os/nubia/breathlight/BreathinglightService;->MMS_URI:Landroid/net/Uri;
 
@@ -1796,11 +1815,11 @@
 
     move-result-object v11
 
-    .line 359
+    .line 374
     .local v11, mmsCursor:Landroid/database/Cursor;
     if-eqz v11, :cond_2
 
-    .line 361
+    .line 376
     :try_start_1
     invoke-interface {v11}, Landroid/database/Cursor;->getCount()I
     :try_end_1
@@ -1808,16 +1827,16 @@
 
     move-result v10
 
-    .line 363
+    .line 378
     invoke-interface {v11}, Landroid/database/Cursor;->close()V
 
-    .line 366
+    .line 381
     :cond_2
     add-int v1, v12, v10
 
     goto :goto_0
 
-    .line 352
+    .line 367
     .end local v7           #mmSelection:Ljava/lang/String;
     .end local v11           #mmsCursor:Landroid/database/Cursor;
     :catchall_0
@@ -1827,7 +1846,7 @@
 
     throw v1
 
-    .line 363
+    .line 378
     .restart local v7       #mmSelection:Ljava/lang/String;
     .restart local v11       #mmsCursor:Landroid/database/Cursor;
     :catchall_1
@@ -1844,17 +1863,17 @@
     .parameter "flag"
 
     .prologue
-    .line 568
+    .line 583
     if-eqz p2, :cond_0
 
-    .line 569
+    .line 584
     invoke-direct {p0, p1}, Landroid/os/nubia/breathlight/BreathinglightService;->handleNotificationDel(Ljava/lang/String;)V
 
-    .line 573
+    .line 588
     :goto_0
     return-void
 
-    .line 571
+    .line 586
     :cond_0
     invoke-direct {p0, p1}, Landroid/os/nubia/breathlight/BreathinglightService;->handleNotificationAdd(Ljava/lang/String;)V
 
@@ -1865,7 +1884,7 @@
     .locals 3
 
     .prologue
-    .line 460
+    .line 475
     const-string v0, "BreathinglightService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1902,7 +1921,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 461
+    .line 476
     iget-boolean v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mMissMsg:Z
 
     if-nez v0, :cond_0
@@ -1911,11 +1930,11 @@
 
     if-eqz v0, :cond_1
 
-    .line 462
+    .line 477
     :cond_0
     const/4 v0, 0x1
 
-    .line 464
+    .line 479
     :goto_0
     return v0
 
@@ -1929,7 +1948,7 @@
     .locals 3
 
     .prologue
-    .line 576
+    .line 591
     const-string v0, "BreathinglightService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1958,7 +1977,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 577
+    .line 592
     iget-object v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mNotificationsPkg:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1967,10 +1986,10 @@
 
     if-lez v0, :cond_0
 
-    .line 578
+    .line 593
     const/4 v0, 0x1
 
-    .line 580
+    .line 595
     :goto_0
     return v0
 
@@ -1985,10 +2004,10 @@
     .parameter "flag"
 
     .prologue
-    .line 602
+    .line 617
     if-eqz p1, :cond_0
 
-    .line 603
+    .line 618
     iget-object v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mSensorManager:Landroid/hardware/SensorManager;
 
     iget-object v1, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mLightSensorEventListener:Landroid/hardware/SensorEventListener;
@@ -1999,11 +2018,11 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
 
-    .line 607
+    .line 622
     :goto_0
     return-void
 
-    .line 605
+    .line 620
     :cond_0
     iget-object v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mSensorManager:Landroid/hardware/SensorManager;
 
@@ -2021,12 +2040,12 @@
     .prologue
     const/16 v4, 0x38
 
-    .line 585
+    .line 600
     mul-int/lit8 v1, p1, 0x2
 
     add-int/lit8 v0, v1, 0xa
 
-    .line 587
+    .line 602
     .local v0, min_grade:I
     const-string v1, "BreathinglightService"
 
@@ -2060,27 +2079,27 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 589
+    .line 604
     invoke-virtual {p0}, Landroid/os/nubia/breathlight/BreathinglightService;->getMinGrade()I
 
     move-result v1
 
     if-eq v1, v0, :cond_0
 
-    .line 590
+    .line 605
     invoke-virtual {p0, v0}, Landroid/os/nubia/breathlight/BreathinglightService;->setMinGrade(I)V
 
-    .line 591
+    .line 606
     const/16 v1, 0x8
 
     invoke-virtual {p0, v1, v4}, Landroid/os/nubia/breathlight/BreathinglightService;->setKeycodeBrightness(II)V
 
-    .line 592
+    .line 607
     const/4 v1, 0x1
 
     invoke-virtual {p0, v1, v4}, Landroid/os/nubia/breathlight/BreathinglightService;->setKeycodeBrightness(II)V
 
-    .line 594
+    .line 609
     :cond_0
     return-void
 .end method
@@ -2090,7 +2109,7 @@
     .parameter "value"
 
     .prologue
-    .line 246
+    .line 259
     invoke-virtual {p0}, Landroid/os/nubia/breathlight/BreathinglightService;->getBrightness()I
 
     move-result v0
@@ -2105,11 +2124,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 247
+    .line 260
     :cond_0
     invoke-direct {p0, p1}, Landroid/os/nubia/breathlight/BreathinglightService;->doSetBrightness(I)V
 
-    .line 252
+    .line 265
     :cond_1
     return-void
 .end method
@@ -2120,7 +2139,7 @@
     .parameter "isKeyEvent"
 
     .prologue
-    .line 278
+    .line 293
     invoke-virtual {p0}, Landroid/os/nubia/breathlight/BreathinglightService;->getBrightness()I
 
     move-result v0
@@ -2129,28 +2148,28 @@
 
     if-eqz p1, :cond_1
 
-    .line 292
+    .line 307
     :cond_0
     :goto_0
     return-void
 
-    .line 283
+    .line 298
     :cond_1
     if-eqz p2, :cond_2
 
-    .line 284
+    .line 299
     invoke-virtual {p0}, Landroid/os/nubia/breathlight/BreathinglightService;->getBrightness()I
 
     move-result v0
 
     if-eq v0, p1, :cond_0
 
-    .line 285
+    .line 300
     invoke-direct {p0, p1}, Landroid/os/nubia/breathlight/BreathinglightService;->doSetBrightness(I)V
 
     goto :goto_0
 
-    .line 289
+    .line 304
     :cond_2
     iget-object v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->pm:Landroid/os/PowerManager;
 
@@ -2160,7 +2179,7 @@
 
     if-nez v0, :cond_0
 
-    .line 290
+    .line 305
     invoke-direct {p0, p1}, Landroid/os/nubia/breathlight/BreathinglightService;->doSetBrightness(I)V
 
     goto :goto_0
@@ -2170,109 +2189,121 @@
 .end method
 
 .method public setKeycodeBrightness(II)V
-    .locals 4
+    .locals 5
     .parameter "value"
     .parameter "outn"
 
     .prologue
-    const/4 v3, 0x6
+    const/4 v4, 0x6
 
-    const/4 v2, 0x5
+    const/4 v3, 0x5
 
-    const/4 v1, 0x7
+    const/4 v2, 0x7
 
-    .line 256
-    iget-object v0, p0, Landroid/os/nubia/breathlight/BreathinglightService;->pm:Landroid/os/PowerManager;
+    .line 269
+    iget-object v1, p0, Landroid/os/nubia/breathlight/BreathinglightService;->pm:Landroid/os/PowerManager;
 
-    invoke-virtual {v0}, Landroid/os/PowerManager;->isScreenOn()Z
+    invoke-virtual {v1}, Landroid/os/PowerManager;->isScreenOn()Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_2
-
-    if-eq p1, v2, :cond_0
+    if-nez v1, :cond_2
 
     if-eq p1, v3, :cond_0
 
-    if-eq p1, v1, :cond_0
+    if-eq p1, v4, :cond_0
 
-    const/4 v0, 0x1
+    if-eq p1, v2, :cond_0
 
-    if-ne p1, v0, :cond_2
+    const/4 v1, 0x1
 
-    .line 261
-    :cond_0
-    const-string v0, "BreathinglightService"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "error status setKeycodeBrightness  value = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " outn = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    if-ne p1, v1, :cond_2
 
     .line 274
+    :cond_0
+    const-string v1, "BreathinglightService"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "error status setKeycodeBrightness  value = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " outn = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 289
     :cond_1
     :goto_0
     return-void
 
-    .line 265
+    .line 278
     :cond_2
     invoke-virtual {p0}, Landroid/os/nubia/breathlight/BreathinglightService;->getBrightness()I
 
-    move-result v0
+    move-result v1
 
-    if-eq v0, v2, :cond_3
+    if-eq v1, v3, :cond_3
 
     invoke-virtual {p0}, Landroid/os/nubia/breathlight/BreathinglightService;->getBrightness()I
 
-    move-result v0
+    move-result v1
 
-    if-ne v0, v3, :cond_4
+    if-ne v1, v4, :cond_4
 
     :cond_3
-    if-eq p1, v1, :cond_1
+    if-eq p1, v2, :cond_1
 
-    .line 270
+    .line 283
     :cond_4
     invoke-virtual {p0}, Landroid/os/nubia/breathlight/BreathinglightService;->getBrightness()I
 
-    move-result v0
+    move-result v1
 
-    if-ne v0, p1, :cond_5
+    if-ne v1, p1, :cond_5
 
     invoke-virtual {p0}, Landroid/os/nubia/breathlight/BreathinglightService;->getBrightness()I
 
-    move-result v0
+    move-result v1
 
-    if-ne v0, v1, :cond_1
+    if-ne v1, v2, :cond_1
 
-    .line 272
+    .line 286
     :cond_5
-    invoke-virtual {p0, p1, p2}, Landroid/os/nubia/breathlight/BreathinglightService;->setBrightnessJNI(II)V
+    iget-object v1, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mHandler:Landroid/os/Handler;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2, p1, p2}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
+
+    move-result-object v0
+
+    .line 287
+    .local v0, msg:Landroid/os/Message;
+    iget-object v1, p0, Landroid/os/nubia/breathlight/BreathinglightService;->mCallJNIHandler:Landroid/os/Handler;
+
+    invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     goto :goto_0
 .end method
@@ -2282,10 +2313,10 @@
     .parameter "value"
 
     .prologue
-    .line 483
+    .line 498
     invoke-virtual {p0, p1}, Landroid/os/nubia/breathlight/BreathinglightService;->setMinGradeJNI(I)V
 
-    .line 484
+    .line 499
     return-void
 .end method
 

@@ -36,12 +36,10 @@
     .parameter "max"
 
     .prologue
-    .line 4365
     iput-object p1, p0, Landroid/widget/Editor$PastePanelOnClickListener;->this$0:Landroid/widget/Editor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4366
     iput-object p2, p0, Landroid/widget/Editor$PastePanelOnClickListener;->mController:Landroid/widget/MiuiCursorController;
 
     iput p3, p0, Landroid/widget/Editor$PastePanelOnClickListener;->mMin:I
@@ -58,12 +56,10 @@
     .parameter "v"
 
     .prologue
-    .line 4373
     move-object v0, p1
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 4374
     .local v0, t:Landroid/widget/TextView;
     iget-object v1, p0, Landroid/widget/Editor$PastePanelOnClickListener;->this$0:Landroid/widget/Editor;
 
@@ -82,18 +78,15 @@
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/widget/TextView;->replaceText_internal(IILjava/lang/CharSequence;)V
 
-    .line 4375
     iget-object v1, p0, Landroid/widget/Editor$PastePanelOnClickListener;->this$0:Landroid/widget/Editor;
 
     invoke-virtual {v1}, Landroid/widget/Editor;->stopTextSelectionMode()V
 
-    .line 4376
     iget-object v1, p0, Landroid/widget/Editor$PastePanelOnClickListener;->mController:Landroid/widget/MiuiCursorController;
 
     check-cast v1, Landroid/widget/MiuiCursorController$InsertionPointCursorController;
 
     invoke-virtual {v1}, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->onClipBoardPancelClick()V
 
-    .line 4377
     return-void
 .end method

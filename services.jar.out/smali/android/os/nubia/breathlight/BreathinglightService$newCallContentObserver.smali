@@ -28,16 +28,16 @@
     .parameter "handler"
 
     .prologue
-    .line 396
+    .line 411
     iput-object p1, p0, Landroid/os/nubia/breathlight/BreathinglightService$newCallContentObserver;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
 
-    .line 397
+    .line 412
     invoke-direct {p0, p3}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 398
+    .line 413
     iput-object p2, p0, Landroid/os/nubia/breathlight/BreathinglightService$newCallContentObserver;->ctx:Landroid/content/Context;
 
-    .line 399
+    .line 414
     return-void
 .end method
 
@@ -48,14 +48,14 @@
     .parameter "selfChange"
 
     .prologue
-    .line 403
+    .line 418
     iget-object v1, p0, Landroid/os/nubia/breathlight/BreathinglightService$newCallContentObserver;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
 
     invoke-virtual {v1}, Landroid/os/nubia/breathlight/BreathinglightService;->getMissedCallerNum()I
 
     move-result v0
 
-    .line 404
+    .line 419
     .local v0, missCallCount:I
     const-string v1, "BreathinglightService"
 
@@ -96,7 +96,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 405
+    .line 420
     iget-object v1, p0, Landroid/os/nubia/breathlight/BreathinglightService$newCallContentObserver;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
 
     #getter for: Landroid/os/nubia/breathlight/BreathinglightService;->oldCall:I
@@ -106,7 +106,7 @@
 
     if-ge v1, v0, :cond_1
 
-    .line 406
+    .line 421
     iget-object v1, p0, Landroid/os/nubia/breathlight/BreathinglightService$newCallContentObserver;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
 
     const/4 v2, 0x1
@@ -114,14 +114,14 @@
     #setter for: Landroid/os/nubia/breathlight/BreathinglightService;->mMissCall:Z
     invoke-static {v1, v2}, Landroid/os/nubia/breathlight/BreathinglightService;->access$602(Landroid/os/nubia/breathlight/BreathinglightService;Z)Z
 
-    .line 412
+    .line 427
     :goto_0
     iget-object v1, p0, Landroid/os/nubia/breathlight/BreathinglightService$newCallContentObserver;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
 
     #setter for: Landroid/os/nubia/breathlight/BreathinglightService;->oldCall:I
     invoke-static {v1, v0}, Landroid/os/nubia/breathlight/BreathinglightService;->access$502(Landroid/os/nubia/breathlight/BreathinglightService;I)I
 
-    .line 413
+    .line 428
     iget-object v1, p0, Landroid/os/nubia/breathlight/BreathinglightService$newCallContentObserver;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
 
     iget-object v2, p0, Landroid/os/nubia/breathlight/BreathinglightService$newCallContentObserver;->ctx:Landroid/content/Context;
@@ -129,11 +129,11 @@
     #calls: Landroid/os/nubia/breathlight/BreathinglightService;->updateMissEvent(Landroid/content/Context;)V
     invoke-static {v1, v2}, Landroid/os/nubia/breathlight/BreathinglightService;->access$400(Landroid/os/nubia/breathlight/BreathinglightService;Landroid/content/Context;)V
 
-    .line 414
+    .line 429
     :cond_0
     return-void
 
-    .line 407
+    .line 422
     :cond_1
     iget-object v1, p0, Landroid/os/nubia/breathlight/BreathinglightService$newCallContentObserver;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
 
@@ -144,7 +144,7 @@
 
     if-eq v1, v0, :cond_0
 
-    .line 410
+    .line 425
     iget-object v1, p0, Landroid/os/nubia/breathlight/BreathinglightService$newCallContentObserver;->this$0:Landroid/os/nubia/breathlight/BreathinglightService;
 
     const/4 v2, 0x0

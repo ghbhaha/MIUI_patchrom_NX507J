@@ -361,21 +361,21 @@
 
     iput-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mOnBackKeyTouchListener:Landroid/view/View$OnTouchListener;
 
-    .line 778
+    .line 781
     new-instance v0, Lcom/android/server/display/nubiaOverlayDisplayWindow$5;
 
     invoke-direct {v0, p0}, Lcom/android/server/display/nubiaOverlayDisplayWindow$5;-><init>(Lcom/android/server/display/nubiaOverlayDisplayWindow;)V
 
     iput-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mDisplayListener:Landroid/hardware/display/DisplayManager$DisplayListener;
 
-    .line 814
+    .line 817
     new-instance v0, Lcom/android/server/display/nubiaOverlayDisplayWindow$6;
 
     invoke-direct {v0, p0}, Lcom/android/server/display/nubiaOverlayDisplayWindow$6;-><init>(Lcom/android/server/display/nubiaOverlayDisplayWindow;)V
 
     iput-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mSurfaceTextureListener:Landroid/view/TextureView$SurfaceTextureListener;
 
-    .line 841
+    .line 844
     new-instance v0, Lcom/android/server/display/nubiaOverlayDisplayWindow$7;
 
     invoke-direct {v0, p0}, Lcom/android/server/display/nubiaOverlayDisplayWindow$7;-><init>(Lcom/android/server/display/nubiaOverlayDisplayWindow;)V
@@ -955,7 +955,7 @@
 
     .line 348
     .local v0, inflater:Landroid/view/LayoutInflater;
-    const v1, 0x10900b0
+    const v1, 0x10900b1
 
     const/4 v3, 0x0
 
@@ -968,7 +968,7 @@
     iput-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowContent:Landroid/widget/RelativeLayout;
 
     .line 349
-    const v1, 0x10900b1
+    const v1, 0x10900b2
 
     const/4 v3, 0x0
 
@@ -986,7 +986,7 @@
     .line 351
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowContent:Landroid/widget/RelativeLayout;
 
-    const v3, 0x102034d
+    const v3, 0x1020352
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1002,7 +1002,7 @@
     .line 353
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowContent:Landroid/widget/RelativeLayout;
 
-    const v3, 0x102034c
+    const v3, 0x1020351
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1015,7 +1015,7 @@
     .line 355
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowContent:Landroid/widget/RelativeLayout;
 
-    const v3, 0x102034f
+    const v3, 0x1020354
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1035,7 +1035,7 @@
     .line 357
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowContent:Landroid/widget/RelativeLayout;
 
-    const v3, 0x1020350
+    const v3, 0x1020355
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1053,7 +1053,7 @@
     .line 359
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowContent:Landroid/widget/RelativeLayout;
 
-    const v3, 0x1020352
+    const v3, 0x1020357
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1082,7 +1082,7 @@
     .line 362
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowContent:Landroid/widget/RelativeLayout;
 
-    const v3, 0x1020354
+    const v3, 0x1020359
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1103,7 +1103,7 @@
     .line 364
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowContent:Landroid/widget/RelativeLayout;
 
-    const v3, 0x1020351
+    const v3, 0x1020356
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1116,7 +1116,7 @@
     .line 365
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowContent:Landroid/widget/RelativeLayout;
 
-    const v3, 0x1020355
+    const v3, 0x102035a
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1136,7 +1136,7 @@
     .line 367
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowContent:Landroid/widget/RelativeLayout;
 
-    const v3, 0x1020356
+    const v3, 0x102035b
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1156,7 +1156,7 @@
     .line 369
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowContent:Landroid/widget/RelativeLayout;
 
-    const v3, 0x1020357
+    const v3, 0x102035c
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1176,7 +1176,7 @@
     .line 372
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowContent:Landroid/widget/RelativeLayout;
 
-    const v3, 0x102034e
+    const v3, 0x1020353
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1187,7 +1187,7 @@
     .line 373
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowContent:Landroid/widget/RelativeLayout;
 
-    const v3, 0x1020353
+    const v3, 0x1020358
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1447,14 +1447,14 @@
     .parameter "listener"
 
     .prologue
-    .line 872
+    .line 875
     new-instance v0, Lcom/android/server/display/nubiaOverlayDisplayWindow$8;
 
     invoke-direct {v0, p0, p2}, Lcom/android/server/display/nubiaOverlayDisplayWindow$8;-><init>(Lcom/android/server/display/nubiaOverlayDisplayWindow;Lcom/android/server/display/OnDoubleTouchListener;)V
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 924
+    .line 927
     return-void
 .end method
 
@@ -1462,7 +1462,7 @@
     .locals 3
 
     .prologue
-    .line 804
+    .line 807
     const/4 v0, 0x0
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -1471,24 +1471,24 @@
 
     iput-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->isMoveing:Ljava/lang/Boolean;
 
-    .line 805
+    .line 808
     sget-boolean v0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowVisible:Z
 
     if-eqz v0, :cond_0
 
-    .line 806
+    .line 809
     invoke-direct {p0}, Lcom/android/server/display/nubiaOverlayDisplayWindow;->updateWindowParams()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 807
+    .line 810
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowManager:Landroid/view/WindowManager;
 
     if-eqz v0, :cond_0
 
-    .line 808
+    .line 811
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowManager:Landroid/view/WindowManager;
 
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowContent:Landroid/widget/RelativeLayout;
@@ -1497,7 +1497,7 @@
 
     invoke-interface {v0, v1, v2}, Landroid/view/WindowManager;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 812
+    .line 815
     :cond_0
     return-void
 .end method
@@ -1506,7 +1506,7 @@
     .locals 2
 
     .prologue
-    .line 769
+    .line 772
     iget v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mRotated:I
 
     if-eqz v0, :cond_0
@@ -1517,7 +1517,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 770
+    .line 773
     :cond_0
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
@@ -1525,14 +1525,14 @@
 
     iput v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowX:I
 
-    .line 771
+    .line 774
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
     iget v0, v0, Landroid/view/WindowManager$LayoutParams;->y:I
 
     iput v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowY:I
 
-    .line 776
+    .line 779
     :goto_0
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mTextureView:Landroid/view/TextureView;
 
@@ -1542,10 +1542,10 @@
 
     iput v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowScale:F
 
-    .line 777
+    .line 780
     return-void
 
-    .line 773
+    .line 776
     :cond_1
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
@@ -1553,7 +1553,7 @@
 
     iput v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowY:I
 
-    .line 774
+    .line 777
     iget-object v0, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
     iget v0, v0, Landroid/view/WindowManager$LayoutParams;->y:I
@@ -1573,7 +1573,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 731
+    .line 734
     new-instance v2, Landroid/graphics/Rect;
 
     iget-object v3, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mDefaultDisplayInfo:Landroid/view/DisplayInfo;
@@ -1586,13 +1586,13 @@
 
     invoke-direct {v2, v5, v5, v3, v4}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 732
+    .line 735
     .local v2, mRect3:Landroid/graphics/Rect;
     iget v3, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mRotated:I
 
     packed-switch v3, :pswitch_data_0
 
-    .line 736
+    .line 739
     :pswitch_0
     iget-object v3, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->isRight:Ljava/lang/Boolean;
 
@@ -1602,7 +1602,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 737
+    .line 740
     new-instance v0, Landroid/graphics/Rect;
 
     add-int v3, p1, p3
@@ -1611,7 +1611,7 @@
 
     invoke-direct {v0, p1, p2, v3, v4}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 738
+    .line 741
     .local v0, mRect:Landroid/graphics/Rect;
     new-instance v1, Landroid/graphics/Rect;
 
@@ -1623,15 +1623,15 @@
 
     invoke-direct {v1, p1, v3, v4, v5}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 764
+    .line 767
     .local v1, mRect2:Landroid/graphics/Rect;
     :goto_0
     invoke-static {v0, v1, v2}, Lcom/android/server/display/SingleUIRectNotifyer;->notifyInputDispatcherSingleUIRect(Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;)V
 
-    .line 765
+    .line 768
     return-void
 
-    .line 740
+    .line 743
     .end local v0           #mRect:Landroid/graphics/Rect;
     .end local v1           #mRect2:Landroid/graphics/Rect;
     :cond_0
@@ -1643,7 +1643,7 @@
 
     invoke-direct {v0, p1, p2, v3, v4}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 741
+    .line 744
     .restart local v0       #mRect:Landroid/graphics/Rect;
     new-instance v1, Landroid/graphics/Rect;
 
@@ -1655,11 +1655,11 @@
 
     invoke-direct {v1, p1, v3, v4, v5}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 743
+    .line 746
     .restart local v1       #mRect2:Landroid/graphics/Rect;
     goto :goto_0
 
-    .line 745
+    .line 748
     .end local v0           #mRect:Landroid/graphics/Rect;
     .end local v1           #mRect2:Landroid/graphics/Rect;
     :pswitch_1
@@ -1671,7 +1671,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 746
+    .line 749
     new-instance v0, Landroid/graphics/Rect;
 
     add-int v3, p1, p4
@@ -1680,7 +1680,7 @@
 
     invoke-direct {v0, p1, p2, v3, v4}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 747
+    .line 750
     .restart local v0       #mRect:Landroid/graphics/Rect;
     new-instance v1, Landroid/graphics/Rect;
 
@@ -1701,7 +1701,7 @@
     .restart local v1       #mRect2:Landroid/graphics/Rect;
     goto :goto_0
 
-    .line 749
+    .line 752
     .end local v0           #mRect:Landroid/graphics/Rect;
     .end local v1           #mRect2:Landroid/graphics/Rect;
     :cond_1
@@ -1717,7 +1717,7 @@
 
     invoke-direct {v0, p1, v3, v4, v5}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 750
+    .line 753
     .restart local v0       #mRect:Landroid/graphics/Rect;
     new-instance v1, Landroid/graphics/Rect;
 
@@ -1739,11 +1739,11 @@
 
     invoke-direct {v1, v3, v4, v5, v6}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 752
+    .line 755
     .restart local v1       #mRect2:Landroid/graphics/Rect;
     goto :goto_0
 
-    .line 754
+    .line 757
     .end local v0           #mRect:Landroid/graphics/Rect;
     .end local v1           #mRect2:Landroid/graphics/Rect;
     :pswitch_2
@@ -1755,7 +1755,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 755
+    .line 758
     new-instance v0, Landroid/graphics/Rect;
 
     add-int/lit8 v3, p2, -0x64
@@ -1768,7 +1768,7 @@
 
     invoke-direct {v0, p1, v3, v4, v5}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 756
+    .line 759
     .restart local v0       #mRect:Landroid/graphics/Rect;
     new-instance v1, Landroid/graphics/Rect;
 
@@ -1793,7 +1793,7 @@
     .restart local v1       #mRect2:Landroid/graphics/Rect;
     goto/16 :goto_0
 
-    .line 758
+    .line 761
     .end local v0           #mRect:Landroid/graphics/Rect;
     .end local v1           #mRect2:Landroid/graphics/Rect;
     :cond_2
@@ -1805,7 +1805,7 @@
 
     invoke-direct {v0, p1, p2, v3, v4}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 759
+    .line 762
     .restart local v0       #mRect:Landroid/graphics/Rect;
     new-instance v1, Landroid/graphics/Rect;
 
@@ -1826,7 +1826,7 @@
     .restart local v1       #mRect2:Landroid/graphics/Rect;
     goto/16 :goto_0
 
-    .line 732
+    .line 735
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1
@@ -1923,19 +1923,21 @@
 .end method
 
 .method private updateWindowParams()Z
-    .locals 11
+    .locals 14
 
     .prologue
-    const/4 v10, 0x1
+    const/high16 v13, 0x3f80
 
-    const/high16 v9, 0x3f80
+    const/4 v12, 0x1
 
-    const/4 v8, 0x0
+    const/4 v11, -0x2
+
+    const/4 v10, 0x0
 
     .line 634
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mDefaultDisplay:Landroid/view/Display;
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mDefaultDisplay:Landroid/view/Display;
 
-    invoke-virtual {v5}, Landroid/view/Display;->getRotation()I
+    invoke-virtual {v7}, Landroid/view/Display;->getRotation()I
 
     move-result v3
 
@@ -1951,15 +1953,15 @@
 
     .line 640
     :pswitch_0
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mContext:Landroid/content/Context;
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v5}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {v7}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    move-result-object v5
+    move-result-object v7
 
-    const-string v6, "nubia_overlay_display_devices_mermory"
+    const-string v8, "nubia_overlay_display_devices_mermory"
 
-    invoke-static {v5, v6}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v7, v8}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1967,456 +1969,525 @@
     .local v1, deviceMemory:Ljava/lang/String;
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v5
+    move-result v7
 
-    if-nez v5, :cond_0
+    if-nez v7, :cond_0
 
     .line 644
-    const-string v5, ","
+    const-string v7, ","
 
-    invoke-virtual {v1, v5}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    invoke-virtual {v1, v7}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
     .line 645
     .local v0, deviceData:[Ljava/lang/String;
-    aget-object v5, v0, v8
+    aget-object v7, v0, v10
 
-    invoke-static {v5}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static {v7}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v5
+    move-result v7
 
-    iput v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mRecordX:I
+    iput v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mRecordX:I
 
     .line 646
-    aget-object v5, v0, v10
+    aget-object v7, v0, v12
 
-    invoke-static {v5}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static {v7}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v5
+    move-result v7
 
-    iput v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mRecordY:I
+    iput v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mRecordY:I
 
     .line 647
-    const/4 v5, 0x2
+    const/4 v7, 0x2
 
-    aget-object v5, v0, v5
+    aget-object v7, v0, v7
 
-    invoke-static {v5}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static {v7}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v5
+    move-result v7
 
-    iput v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mRecordW:I
+    iput v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mRecordW:I
 
     .line 648
-    const/4 v5, 0x3
+    const/4 v7, 0x3
 
-    aget-object v5, v0, v5
+    aget-object v7, v0, v7
 
-    invoke-static {v5}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static {v7}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v5
+    move-result v7
 
-    iput v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mRecordH:I
+    iput v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mRecordH:I
 
     .line 650
     .end local v0           #deviceData:[Ljava/lang/String;
     :cond_0
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowContentUI:Landroid/view/View;
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowContentUI:Landroid/view/View;
 
-    invoke-virtual {v5, v8, v8, v8, v8}, Landroid/view/View;->setPadding(IIII)V
+    invoke-virtual {v7, v10, v10, v10, v10}, Landroid/view/View;->setPadding(IIII)V
 
     .line 652
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowContentUI:Landroid/view/View;
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowContentUI:Landroid/view/View;
 
-    invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v7}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v5
+    move-result-object v7
 
-    check-cast v5, Landroid/widget/AbsoluteLayout$LayoutParams;
+    check-cast v7, Landroid/widget/AbsoluteLayout$LayoutParams;
 
-    iput-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mSingleParams:Landroid/widget/AbsoluteLayout$LayoutParams;
+    iput-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mSingleParams:Landroid/widget/AbsoluteLayout$LayoutParams;
 
     .line 653
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v5
+    move-result v7
 
-    if-eqz v5, :cond_1
+    if-eqz v7, :cond_1
 
     .line 654
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
-    iget v6, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mLogicalWidth:I
+    iget v8, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mLogicalWidth:I
 
-    iget v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mHeight:I
+    iget v9, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mHeight:I
 
-    sub-int/2addr v6, v7
+    sub-int/2addr v8, v9
 
-    iput v6, v5, Landroid/view/WindowManager$LayoutParams;->x:I
+    iput v8, v7, Landroid/view/WindowManager$LayoutParams;->x:I
 
     .line 655
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
-    iget v6, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mLogicalHeight:I
+    iget v8, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mLogicalHeight:I
 
-    iget v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWidth:I
+    iget v9, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWidth:I
 
-    sub-int/2addr v6, v7
+    sub-int/2addr v8, v9
 
-    iget v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->MH:I
+    iget v9, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->MH:I
 
-    sub-int/2addr v6, v7
+    sub-int/2addr v8, v9
 
-    iget v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->KH:I
+    iget v9, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->KH:I
 
-    sub-int/2addr v6, v7
+    sub-int/2addr v8, v9
 
-    add-int/lit8 v6, v6, -0x1
+    add-int/lit8 v8, v8, -0x1
 
-    iput v6, v5, Landroid/view/WindowManager$LayoutParams;->y:I
+    iput v8, v7, Landroid/view/WindowManager$LayoutParams;->y:I
 
     .line 656
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
-    iget v6, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mHeight:I
+    iget v8, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mHeight:I
 
-    iput v6, v5, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v8, v7, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 657
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
-
-    iget v6, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWidth:I
-
-    iget v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->MH:I
-
-    add-int/2addr v6, v7
-
-    iget v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->KH:I
-
-    add-int/2addr v6, v7
-
-    iput v6, v5, Landroid/view/ViewGroup$LayoutParams;->height:I
-
-    .line 696
-    :goto_0
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mSingleParams:Landroid/widget/AbsoluteLayout$LayoutParams;
-
-    iput v8, v5, Landroid/widget/AbsoluteLayout$LayoutParams;->x:I
-
-    .line 697
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mSingleParams:Landroid/widget/AbsoluteLayout$LayoutParams;
-
-    iput v8, v5, Landroid/widget/AbsoluteLayout$LayoutParams;->y:I
-
-    .line 698
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowContentUI:Landroid/view/View;
-
-    iget-object v6, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mSingleParams:Landroid/widget/AbsoluteLayout$LayoutParams;
-
-    invoke-virtual {v5, v6}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 701
-    iget-wide v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->rate:D
-
-    iget v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWidth:I
-
-    int-to-double v7, v7
-
-    mul-double/2addr v5, v7
-
-    double-to-float v5, v5
-
-    iget v6, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mHeight:I
-
-    int-to-float v6, v6
-
-    sub-float/2addr v5, v6
-
-    const/high16 v6, 0x4000
-
-    div-float v4, v5, v6
-
-    .line 702
-    .local v4, tran_x:F
-    neg-float v5, v4
-
-    const/4 v6, 0x0
-
-    invoke-virtual {v2, v5, v6}, Landroid/graphics/Matrix;->setTranslate(FF)V
-
-    .line 703
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mTextureView:Landroid/view/TextureView;
-
-    invoke-virtual {v5, v2}, Landroid/view/TextureView;->setTransform(Landroid/graphics/Matrix;)V
-
-    .line 704
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mTextureView:Landroid/view/TextureView;
-
-    invoke-virtual {v5, v9}, Landroid/view/View;->setScaleX(F)V
-
-    .line 705
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mTextureView:Landroid/view/TextureView;
-
-    invoke-virtual {v5, v9}, Landroid/view/View;->setScaleY(F)V
-
-    .line 706
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
-
-    iget v5, v5, Landroid/view/WindowManager$LayoutParams;->x:I
-
-    iget-object v6, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
-
-    iget v6, v6, Landroid/view/WindowManager$LayoutParams;->y:I
-
-    iget v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->MH:I
-
-    add-int/2addr v6, v7
-
-    iget v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mHeight:I
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
     iget v8, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWidth:I
 
-    invoke-direct {p0, v5, v6, v7, v8}, Lcom/android/server/display/nubiaOverlayDisplayWindow;->setInputRect(IIII)V
+    iget v9, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->MH:I
 
-    .line 726
+    add-int/2addr v8, v9
+
+    iget v9, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->KH:I
+
+    add-int/2addr v8, v9
+
+    iput v8, v7, Landroid/view/ViewGroup$LayoutParams;->height:I
+
+    .line 696
+    :goto_0
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mSingleParams:Landroid/widget/AbsoluteLayout$LayoutParams;
+
+    iput v10, v7, Landroid/widget/AbsoluteLayout$LayoutParams;->x:I
+
+    .line 697
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mSingleParams:Landroid/widget/AbsoluteLayout$LayoutParams;
+
+    iput v10, v7, Landroid/widget/AbsoluteLayout$LayoutParams;->y:I
+
+    .line 698
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowContentUI:Landroid/view/View;
+
+    iget-object v8, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mSingleParams:Landroid/widget/AbsoluteLayout$LayoutParams;
+
+    invoke-virtual {v7, v8}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 701
+    iget-wide v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->rate:D
+
+    iget v9, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWidth:I
+
+    int-to-double v9, v9
+
+    mul-double/2addr v7, v9
+
+    double-to-float v7, v7
+
+    iget v8, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mHeight:I
+
+    int-to-float v8, v8
+
+    sub-float/2addr v7, v8
+
+    const/high16 v8, 0x4000
+
+    div-float v6, v7, v8
+
+    .line 702
+    .local v6, tran_x:F
+    neg-float v7, v6
+
+    const/4 v8, 0x0
+
+    invoke-virtual {v2, v7, v8}, Landroid/graphics/Matrix;->setTranslate(FF)V
+
+    .line 703
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mTextureView:Landroid/view/TextureView;
+
+    invoke-virtual {v7, v2}, Landroid/view/TextureView;->setTransform(Landroid/graphics/Matrix;)V
+
+    .line 704
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mTextureView:Landroid/view/TextureView;
+
+    invoke-virtual {v7, v13}, Landroid/view/View;->setScaleX(F)V
+
+    .line 705
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mTextureView:Landroid/view/TextureView;
+
+    invoke-virtual {v7, v13}, Landroid/view/View;->setScaleY(F)V
+
+    .line 706
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
+
+    iget v7, v7, Landroid/view/WindowManager$LayoutParams;->x:I
+
+    iget-object v8, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
+
+    iget v8, v8, Landroid/view/WindowManager$LayoutParams;->y:I
+
+    iget v9, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->MH:I
+
+    add-int/2addr v8, v9
+
+    iget v9, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mHeight:I
+
+    iget v10, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWidth:I
+
+    invoke-direct {p0, v7, v8, v9, v10}, Lcom/android/server/display/nubiaOverlayDisplayWindow;->setInputRect(IIII)V
+
+    .line 729
     .end local v1           #deviceMemory:Ljava/lang/String;
-    .end local v4           #tran_x:F
+    .end local v6           #tran_x:F
     :goto_1
-    return v10
+    return v12
 
     .line 659
     .restart local v1       #deviceMemory:Ljava/lang/String;
     :cond_1
-    iget v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mRecordW:I
+    iget v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mRecordW:I
 
-    iget v6, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mHeight:I
+    iget v8, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mHeight:I
 
-    if-ne v5, v6, :cond_2
+    if-ne v7, v8, :cond_2
 
-    iget v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mRecordH:I
+    iget v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mRecordH:I
 
-    iget v6, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWidth:I
+    iget v8, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWidth:I
 
-    if-ne v5, v6, :cond_2
+    if-ne v7, v8, :cond_2
 
     .line 660
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
-    iget v6, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mRecordX:I
+    iget v8, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mRecordX:I
 
-    iput v6, v5, Landroid/view/WindowManager$LayoutParams;->x:I
+    iput v8, v7, Landroid/view/WindowManager$LayoutParams;->x:I
 
     .line 661
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
-    iget v6, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mRecordY:I
+    iget v8, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mRecordY:I
 
-    iput v6, v5, Landroid/view/WindowManager$LayoutParams;->y:I
+    iput v8, v7, Landroid/view/WindowManager$LayoutParams;->y:I
 
     .line 662
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
-    iget v6, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mRecordW:I
+    iget v8, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mRecordW:I
 
-    iput v6, v5, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v8, v7, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 663
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
-    iget v6, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mRecordH:I
+    iget v8, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mRecordH:I
 
-    iget v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->MH:I
+    iget v9, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->MH:I
 
-    add-int/2addr v6, v7
+    add-int/2addr v8, v9
 
-    iget v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->KH:I
+    iget v9, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->KH:I
 
-    add-int/2addr v6, v7
+    add-int/2addr v8, v9
 
-    iput v6, v5, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iput v8, v7, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 679
     :goto_2
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->isRight:Ljava/lang/Boolean;
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->isRight:Ljava/lang/Boolean;
 
-    invoke-virtual {v5}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {v7}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result v5
+    move-result v7
 
-    if-eqz v5, :cond_4
+    if-eqz v7, :cond_4
 
     .line 680
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
-    iget v6, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mLogicalWidth:I
+    iget v8, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mLogicalWidth:I
 
-    iget v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mHeight:I
+    iget v9, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mHeight:I
 
-    sub-int/2addr v6, v7
+    sub-int/2addr v8, v9
 
-    iput v6, v5, Landroid/view/WindowManager$LayoutParams;->x:I
+    iput v8, v7, Landroid/view/WindowManager$LayoutParams;->x:I
 
     goto :goto_0
 
     .line 665
     :cond_2
-    iget v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mRecordX:I
-
-    iget v6, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mLogicalWidth:I
-
     iget v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mRecordX:I
 
-    sub-int/2addr v6, v7
+    iget v8, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mLogicalWidth:I
 
-    iget v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mRecordW:I
+    iget v9, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mRecordX:I
 
-    sub-int/2addr v6, v7
+    sub-int/2addr v8, v9
 
-    if-ge v5, v6, :cond_3
+    iget v9, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mRecordW:I
+
+    sub-int/2addr v8, v9
+
+    if-ge v7, v8, :cond_3
 
     .line 666
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
-    iput v8, v5, Landroid/view/WindowManager$LayoutParams;->x:I
+    iput v10, v7, Landroid/view/WindowManager$LayoutParams;->x:I
 
     .line 667
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
-    iget v6, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mLogicalHeight:I
+    iget v8, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mLogicalHeight:I
 
-    iget v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWidth:I
+    iget v9, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWidth:I
 
-    sub-int/2addr v6, v7
+    sub-int/2addr v8, v9
 
-    iget v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->MH:I
+    iget v9, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->MH:I
 
-    sub-int/2addr v6, v7
+    sub-int/2addr v8, v9
 
-    iget v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->KH:I
+    iget v9, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->KH:I
 
-    sub-int/2addr v6, v7
+    sub-int/2addr v8, v9
 
-    add-int/lit8 v6, v6, -0x1
+    add-int/lit8 v8, v8, -0x1
 
-    iput v6, v5, Landroid/view/WindowManager$LayoutParams;->y:I
+    iput v8, v7, Landroid/view/WindowManager$LayoutParams;->y:I
 
     .line 668
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
-    iget v6, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mHeight:I
+    iget v8, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mHeight:I
 
-    iput v6, v5, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v8, v7, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 669
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
-    iget v6, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWidth:I
+    iget v8, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWidth:I
 
-    iget v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->MH:I
+    iget v9, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->MH:I
 
-    add-int/2addr v6, v7
+    add-int/2addr v8, v9
 
-    iget v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->KH:I
+    iget v9, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->KH:I
 
-    add-int/2addr v6, v7
+    add-int/2addr v8, v9
 
-    iput v6, v5, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iput v8, v7, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     goto :goto_2
 
     .line 671
     :cond_3
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
-    iget v6, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mLogicalWidth:I
+    iget v8, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mLogicalWidth:I
 
-    iget v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mHeight:I
+    iget v9, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mHeight:I
 
-    sub-int/2addr v6, v7
+    sub-int/2addr v8, v9
 
-    iput v6, v5, Landroid/view/WindowManager$LayoutParams;->x:I
+    iput v8, v7, Landroid/view/WindowManager$LayoutParams;->x:I
 
     .line 672
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
-    iget v6, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mLogicalHeight:I
+    iget v8, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mLogicalHeight:I
 
-    iget v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWidth:I
+    iget v9, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWidth:I
 
-    sub-int/2addr v6, v7
+    sub-int/2addr v8, v9
 
-    iget v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->MH:I
+    iget v9, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->MH:I
 
-    sub-int/2addr v6, v7
+    sub-int/2addr v8, v9
 
-    iget v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->KH:I
+    iget v9, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->KH:I
 
-    sub-int/2addr v6, v7
+    sub-int/2addr v8, v9
 
-    add-int/lit8 v6, v6, -0x1
+    add-int/lit8 v8, v8, -0x1
 
-    iput v6, v5, Landroid/view/WindowManager$LayoutParams;->y:I
+    iput v8, v7, Landroid/view/WindowManager$LayoutParams;->y:I
 
     .line 673
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
-    iget v6, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mHeight:I
+    iget v8, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mHeight:I
 
-    iput v6, v5, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v8, v7, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 674
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
-    iget v6, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWidth:I
+    iget v8, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWidth:I
 
-    iget v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->MH:I
+    iget v9, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->MH:I
 
-    add-int/2addr v6, v7
+    add-int/2addr v8, v9
 
-    iget v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->KH:I
+    iget v9, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->KH:I
 
-    add-int/2addr v6, v7
+    add-int/2addr v8, v9
 
-    iput v6, v5, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iput v8, v7, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     goto :goto_2
 
     .line 682
     :cond_4
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
-    iput v8, v5, Landroid/view/WindowManager$LayoutParams;->x:I
+    iput v10, v7, Landroid/view/WindowManager$LayoutParams;->x:I
 
     goto/16 :goto_0
 
     .line 710
     .end local v1           #deviceMemory:Ljava/lang/String;
     :pswitch_1
-    iget-object v5, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mContext:Landroid/content/Context;
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v5}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {v7}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    move-result-object v5
+    move-result-object v7
 
-    const-string v6, "nubia_overlay_display_devices"
+    const-string v8, "single_ui_mode"
 
-    const-string v7, ""
+    invoke-static {v7, v8, v10, v11}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
-    invoke-static {v5, v6, v7}, Landroid/provider/Settings$Global;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
+    move-result v4
 
     .line 712
-    const-string v5, "zhanjin"
+    .local v4, singleMode:I
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mContext:Landroid/content/Context;
 
-    const-string v6, "Rotion to land"
+    invoke-virtual {v7}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    invoke-static {v5, v6}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    move-result-object v7
+
+    const-string v8, "single_ui_mode_sensor_switch"
+
+    invoke-static {v7, v8, v10, v11}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v5
+
+    .line 713
+    .local v5, singleModeSensor:I
+    const-string v7, "SingleUICtrl"
+
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v9, "nubiaoverlaydisplaywindow:rotion to land,singleMode="
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    const-string v9, " ,singleModeSensor="
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v7, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 715
+    if-ne v12, v4, :cond_5
+
+    if-nez v5, :cond_5
+
+    .line 716
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v7}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v7
+
+    const-string v8, "single_ui_mode_sensor_switch"
+
+    invoke-static {v7, v8, v12, v11}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
+
+    .line 720
+    :cond_5
+    iget-object v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v7}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v7
+
+    const-string v8, "nubia_overlay_display_devices"
+
+    const-string v9, ""
+
+    invoke-static {v7, v8, v9, v11}, Landroid/provider/Settings$Global;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
 
     goto/16 :goto_1
 
     .line 636
-    nop
-
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1
@@ -3060,14 +3131,14 @@
 
     const/4 v6, -0x2
 
-    .line 942
+    .line 945
     iget-object v3, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 943
+    .line 946
     .local v0, cr:Landroid/content/ContentResolver;
     const-string v3, "single_ui_mode_sensor_switch"
 
@@ -3075,7 +3146,7 @@
 
     move-result v2
 
-    .line 944
+    .line 947
     .local v2, singleModeSensor:I
     const-string v3, "nubia_overlay_display_devices"
 
@@ -3083,7 +3154,7 @@
 
     move-result-object v1
 
-    .line 946
+    .line 949
     .local v1, screenStatus:Ljava/lang/String;
     const-string v3, "NubiaOverlayDisplayWindow"
 
@@ -3129,42 +3200,42 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 949
+    .line 952
     iget-boolean v3, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mIsLock:Z
 
     if-eqz v3, :cond_1
 
-    .line 951
+    .line 954
     iput-boolean v7, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mIsLock:Z
 
-    .line 952
+    .line 955
     const-string v3, "NubiaOverlayDisplayWindow"
 
     const-string v4, "onDoubleTouch,do unlock"
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 953
+    .line 956
     iget-object v3, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mMoveStatusView:Landroid/widget/ImageView;
 
     const v4, 0x10805d8
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 954
+    .line 957
     if-nez v2, :cond_0
 
-    .line 955
+    .line 958
     const-string v3, "single_ui_mode_sensor_switch"
 
     invoke-static {v0, v3, v8, v6}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 968
+    .line 971
     :cond_0
     :goto_0
     return-void
 
-    .line 961
+    .line 964
     :cond_1
     if-ne v2, v8, :cond_0
 
@@ -3172,26 +3243,26 @@
 
     if-eq v3, v1, :cond_0
 
-    .line 962
+    .line 965
     const-string v3, "NubiaOverlayDisplayWindow"
 
     const-string v4, "onDoubleTouch,do lock"
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 963
+    .line 966
     const-string v3, "single_ui_mode_sensor_switch"
 
     invoke-static {v0, v3, v7, v6}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 964
+    .line 967
     iget-object v3, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mMoveStatusView:Landroid/widget/ImageView;
 
     const v4, 0x10805d5
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 965
+    .line 968
     iput-boolean v8, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mIsLock:Z
 
     goto :goto_0
@@ -3205,7 +3276,7 @@
 
     const/4 v5, -0x2
 
-    .line 928
+    .line 931
     const-string v2, "NubiaOverlayDisplayWindow"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -3230,14 +3301,14 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 929
+    .line 932
     iget-object v2, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 930
+    .line 933
     .local v0, cr:Landroid/content/ContentResolver;
     const-string v2, "nubia_overlay_display_devices"
 
@@ -3245,33 +3316,33 @@
 
     invoke-static {v0, v2, v3}, Landroid/provider/Settings$Global;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 931
+    .line 934
     iget-boolean v2, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mIsLock:Z
 
     if-eqz v2, :cond_0
 
-    .line 932
+    .line 935
     iput-boolean v6, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mIsLock:Z
 
-    .line 933
+    .line 936
     const-string v2, "single_ui_mode_sensor_switch"
 
     invoke-static {v0, v2, v6, v5}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v1
 
-    .line 934
+    .line 937
     .local v1, singleModeSensor:I
     if-nez v1, :cond_0
 
-    .line 935
+    .line 938
     const-string v2, "single_ui_mode_sensor_switch"
 
     const/4 v3, 0x1
 
     invoke-static {v0, v2, v3, v5}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 938
+    .line 941
     .end local v1           #singleModeSensor:I
     :cond_0
     return-void
@@ -3470,7 +3541,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1000
+    .line 1003
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -3483,13 +3554,13 @@
 
     move-result v0
 
-    .line 1001
+    .line 1004
     .local v0, isMultiWindow:I
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 1003
+    .line 1006
     iget-object v1, p0, Lcom/android/server/display/nubiaOverlayDisplayWindow;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -3502,7 +3573,7 @@
 
     invoke-static {v1, v2, v4, v3}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 1006
+    .line 1009
     :cond_0
     return-void
 .end method

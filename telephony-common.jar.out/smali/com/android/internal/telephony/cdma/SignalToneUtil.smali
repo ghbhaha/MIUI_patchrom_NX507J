@@ -118,12 +118,14 @@
 
     const/4 v3, 0x0
 
+    .line 80
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     sput-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
+    .line 110
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     invoke-static {v5, v3, v3}, Lcom/android/internal/telephony/cdma/SignalToneUtil;->signalParamHash(III)Ljava/lang/Integer;
@@ -138,6 +140,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 113
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     invoke-static {v5, v3, v5}, Lcom/android/internal/telephony/cdma/SignalToneUtil;->signalParamHash(III)Ljava/lang/Integer;
@@ -152,6 +155,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 117
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     invoke-static {v5, v3, v4}, Lcom/android/internal/telephony/cdma/SignalToneUtil;->signalParamHash(III)Ljava/lang/Integer;
@@ -166,6 +170,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 120
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     invoke-static {v5, v3, v7}, Lcom/android/internal/telephony/cdma/SignalToneUtil;->signalParamHash(III)Ljava/lang/Integer;
@@ -180,6 +185,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 123
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     invoke-static {v5, v3, v6}, Lcom/android/internal/telephony/cdma/SignalToneUtil;->signalParamHash(III)Ljava/lang/Integer;
@@ -194,6 +200,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 126
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/4 v1, 0x5
@@ -210,6 +217,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 129
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/4 v1, 0x6
@@ -226,6 +234,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 132
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/4 v1, 0x7
@@ -242,6 +251,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 135
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/16 v1, 0xf
@@ -258,6 +268,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 140
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     invoke-static {v3, v3, v3}, Lcom/android/internal/telephony/cdma/SignalToneUtil;->signalParamHash(III)Ljava/lang/Integer;
@@ -272,6 +283,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 143
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     invoke-static {v3, v3, v5}, Lcom/android/internal/telephony/cdma/SignalToneUtil;->signalParamHash(III)Ljava/lang/Integer;
@@ -286,6 +298,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 146
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     invoke-static {v3, v3, v4}, Lcom/android/internal/telephony/cdma/SignalToneUtil;->signalParamHash(III)Ljava/lang/Integer;
@@ -300,6 +313,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 149
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     invoke-static {v3, v3, v7}, Lcom/android/internal/telephony/cdma/SignalToneUtil;->signalParamHash(III)Ljava/lang/Integer;
@@ -314,6 +328,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 152
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     invoke-static {v3, v3, v6}, Lcom/android/internal/telephony/cdma/SignalToneUtil;->signalParamHash(III)Ljava/lang/Integer;
@@ -328,6 +343,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 155
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/4 v1, 0x5
@@ -344,6 +360,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 158
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/4 v1, 0x6
@@ -360,6 +377,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 161
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/4 v1, 0x7
@@ -376,6 +394,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 164
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/16 v1, 0x8
@@ -392,6 +411,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 167
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/16 v1, 0x9
@@ -408,6 +428,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 170
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/16 v1, 0xa
@@ -424,6 +445,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 173
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/16 v1, 0x3f
@@ -440,6 +462,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 177
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     invoke-static {v4, v5, v5}, Lcom/android/internal/telephony/cdma/SignalToneUtil;->signalParamHash(III)Ljava/lang/Integer;
@@ -454,6 +477,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 180
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     invoke-static {v4, v3, v5}, Lcom/android/internal/telephony/cdma/SignalToneUtil;->signalParamHash(III)Ljava/lang/Integer;
@@ -468,6 +492,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 183
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     invoke-static {v4, v4, v5}, Lcom/android/internal/telephony/cdma/SignalToneUtil;->signalParamHash(III)Ljava/lang/Integer;
@@ -482,6 +507,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 186
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     invoke-static {v4, v5, v4}, Lcom/android/internal/telephony/cdma/SignalToneUtil;->signalParamHash(III)Ljava/lang/Integer;
@@ -496,6 +522,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 189
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     invoke-static {v4, v3, v4}, Lcom/android/internal/telephony/cdma/SignalToneUtil;->signalParamHash(III)Ljava/lang/Integer;
@@ -510,6 +537,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 192
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     invoke-static {v4, v4, v4}, Lcom/android/internal/telephony/cdma/SignalToneUtil;->signalParamHash(III)Ljava/lang/Integer;
@@ -524,6 +552,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 195
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     invoke-static {v4, v5, v7}, Lcom/android/internal/telephony/cdma/SignalToneUtil;->signalParamHash(III)Ljava/lang/Integer;
@@ -538,6 +567,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 198
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     invoke-static {v4, v3, v7}, Lcom/android/internal/telephony/cdma/SignalToneUtil;->signalParamHash(III)Ljava/lang/Integer;
@@ -552,6 +582,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 201
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     invoke-static {v4, v4, v7}, Lcom/android/internal/telephony/cdma/SignalToneUtil;->signalParamHash(III)Ljava/lang/Integer;
@@ -566,6 +597,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 204
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     invoke-static {v4, v5, v6}, Lcom/android/internal/telephony/cdma/SignalToneUtil;->signalParamHash(III)Ljava/lang/Integer;
@@ -580,6 +612,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 207
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     invoke-static {v4, v3, v6}, Lcom/android/internal/telephony/cdma/SignalToneUtil;->signalParamHash(III)Ljava/lang/Integer;
@@ -594,6 +627,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 210
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     invoke-static {v4, v4, v6}, Lcom/android/internal/telephony/cdma/SignalToneUtil;->signalParamHash(III)Ljava/lang/Integer;
@@ -608,6 +642,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 213
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/4 v1, 0x5
@@ -624,6 +659,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 216
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/4 v1, 0x5
@@ -640,6 +676,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 219
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/4 v1, 0x5
@@ -656,6 +693,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 222
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/4 v1, 0x6
@@ -672,6 +710,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 225
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/4 v1, 0x6
@@ -688,6 +727,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 228
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/4 v1, 0x6
@@ -704,6 +744,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 231
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/4 v1, 0x7
@@ -720,6 +761,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 234
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/4 v1, 0x7
@@ -736,6 +778,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 237
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/4 v1, 0x7
@@ -752,6 +795,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 240
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/16 v1, 0x8
@@ -768,6 +812,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 243
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/16 v1, 0x8
@@ -784,6 +829,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 246
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/16 v1, 0x8
@@ -800,6 +846,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 249
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/16 v1, 0x9
@@ -816,6 +863,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 252
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/16 v1, 0x9
@@ -832,6 +880,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 255
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/16 v1, 0x9
@@ -848,6 +897,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 258
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/16 v1, 0xa
@@ -864,6 +914,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 261
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/16 v1, 0xa
@@ -880,6 +931,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 264
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/16 v1, 0xa
@@ -896,6 +948,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 267
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/16 v1, 0xb
@@ -912,6 +965,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 270
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/16 v1, 0xb
@@ -928,6 +982,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 273
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/16 v1, 0xb
@@ -944,6 +999,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 276
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     invoke-static {v4, v3, v3}, Lcom/android/internal/telephony/cdma/SignalToneUtil;->signalParamHash(III)Ljava/lang/Integer;
@@ -958,6 +1014,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 279
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     invoke-static {v6, v3, v3}, Lcom/android/internal/telephony/cdma/SignalToneUtil;->signalParamHash(III)Ljava/lang/Integer;
@@ -972,6 +1029,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 283
     sget-object v0, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     const/16 v1, 0x3f
@@ -988,6 +1046,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 287
     return-void
 .end method
 
@@ -995,8 +1054,10 @@
     .locals 0
 
     .prologue
+    .line 290
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 291
     return-void
 .end method
 
@@ -1007,6 +1068,7 @@
     .parameter "signal"
 
     .prologue
+    .line 100
     sget-object v1, Lcom/android/internal/telephony/cdma/SignalToneUtil;->mHm:Ljava/util/HashMap;
 
     invoke-static {p0, p1, p2}, Lcom/android/internal/telephony/cdma/SignalToneUtil;->signalParamHash(III)Ljava/lang/Integer;
@@ -1019,11 +1081,14 @@
 
     check-cast v0, Ljava/lang/Integer;
 
+    .line 101
     .local v0, result:Ljava/lang/Integer;
     if-nez v0, :cond_0
 
+    .line 102
     const/4 v1, -0x1
 
+    .line 104
     :goto_0
     return v1
 
@@ -1044,6 +1109,7 @@
     .prologue
     const/16 v0, 0x100
 
+    .line 83
     if-ltz p0, :cond_0
 
     if-gt p0, v0, :cond_0
@@ -1056,6 +1122,7 @@
 
     if-gez p2, :cond_1
 
+    .line 85
     :cond_0
     new-instance v0, Ljava/lang/Integer;
 
@@ -1063,16 +1130,20 @@
 
     invoke-direct {v0, v1}, Ljava/lang/Integer;-><init>(I)V
 
+    .line 96
     :goto_0
     return-object v0
 
+    .line 93
     :cond_1
     const/4 v0, 0x2
 
     if-eq p0, v0, :cond_2
 
+    .line 94
     const/4 p1, 0x0
 
+    .line 96
     :cond_2
     new-instance v0, Ljava/lang/Integer;
 
