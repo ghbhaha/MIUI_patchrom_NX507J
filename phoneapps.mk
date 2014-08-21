@@ -13,7 +13,6 @@ private-phone-apps := com.qualcomm.services.location \
 					  CellBroadcastReceiver \
 					  CertInstaller \
 					  DocumentsUI \
-					  Galaxy4 \
                                           HoloSpiralWallpaper \
 					  HTMLViewer \
 					  KeyChain \
