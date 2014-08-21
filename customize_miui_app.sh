@@ -66,3 +66,9 @@ fi
 if [ $1 = "QuickSearchBox" ];then
 	applyPatch $1 $2
 fi
+
+if [ $1 = "MiuiVideo" ];then
+	applyPatch $1 $2
+fi
+
+
