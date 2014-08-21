@@ -1,5 +1,5 @@
 #
-# Makefile for Find5
+# Makefile for NX507J
 #
 
 # The original zip file, MUST be specified by each product
@@ -50,8 +50,8 @@ local-pre-zip-misc:
 	@echo Update boot.img
 	cp other/boot.img $(ZIP_DIR)/boot.img
 	
-#	@echo Update build.prop
-#	cp other/build.prop $(ZIP_DIR)/system/build.prop
+	@echo Update build.prop
+	cp other/build.prop $(ZIP_DIR)/system/build.prop
 
 	@echo Replace app and priv-app
 	cp other/app/* $(ZIP_DIR)/system/app/
@@ -83,12 +83,12 @@ local-pre-zip-misc:
 	rm -rf $(ZIP_DIR)/system/media/theme/shutdown
 	rm -rf $(ZIP_DIR)/system/media/video
 	rm -rf $(ZIP_DIR)/system/etc/.has_su_daemon
+	rm -rf $(ZIP_DIR)/system/app/ContactsProvider.apk
 	rm -rf $(ZIP_DIR)/system/priv-app/Phone.apk
 	rm -rf $(ZIP_DIR)/system/priv-app/Mms.apk
 	rm -rf $(ZIP_DIR)/system/media/theme/bootup/*
+	rm -rf $(ZIP_DIR)/system/media/bootanimation.zip
 	cp other/media/theme/bootup/* $(ZIP_DIR)/system/media/theme/bootup/
 	cp other/media/theme/miui_mod_icons/* $(ZIP_DIR)/system/media/theme/miui_mod_icons/
-#	rm -rf $(ZIP_DIR)/system/app/Weather.apk
-#	rm -rf $(ZIP_DIR)/system/app/WeatherProvider.apk
 
 

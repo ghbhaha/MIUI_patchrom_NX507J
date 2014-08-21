@@ -2,6 +2,8 @@ local-phone-apps = $(private-phone-apps)
 local-phone-priv-apps = $(private-phone-priv-apps)
 
 private-phone-apps := com.qualcomm.services.location \
+					  nubia_ZFM \
+					  FMRecord \
 					  NetworkSetting \
 					  BasicDreams \
  					  TelephonyProvider \
@@ -27,17 +29,19 @@ private-phone-apps := com.qualcomm.services.location \
                                           Stk \
 					  UserDictionaryProvider \
 					  VisualizationWallpapers \
-					  WAPPushManager
+					  WAPPushManager \
+					  ZFreeSnapShot \
+					  ZSRSTruMedia
 
 private-phone-priv-apps := BackupRestoreConfirmation \
 					  Contacts \
-					  ContactsProvider \
+					  MediaProvider \
 					  InCallUI \
 					  TeleService \
 					  DefaultContainerService \
 					  ExternalStorageProvider \
-                                          MediaProvider \
 					  ProxyHandler \
                                           SharedStorageBackup \
 					  Shell \
+					  ContactsProvider \
 					  WallpaperCropper
